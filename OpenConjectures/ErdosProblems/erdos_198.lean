@@ -1,0 +1,45 @@
+/-
+Copyright 2025 Google LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-/
+
+-- Erdos Problems URL: https://www.erdosproblems.com/198
+import Mathlib
+
+open Function Set
+
+/-- A Sidon sequence (also called a Sidon set) is a sequence of natural numbers $a_0, a_1, ...$
+such that all pairwise sums $a_i + a_j$ are distinct for $i ≤ j$.
+
+In other words, all pairwise sums of elements are distinct apart from coincidences forced by the
+commutativity of addition. -/
+def IsSidon {ι α : Type*} [Preorder ι] [Add α] (a : ι → α) : Prop :=
+  ∀ i₁ j₁ i₂ j₂, i₁ ≤ j₁ → i₂ ≤ j₂ → a i₁ + a j₁ = a i₂ + a j₂ → i₁ = i₂ ∧ j₁ = j₂
+
+lemma IsSidon.Injective {ι α : Type*} [Preorder ι] [Add α] (a : ι → α) (ha : IsSidon a) :
+    Injective a :=
+  fun i₁ i₂ hi ↦ (ha i₁ i₁ i₂ i₂ (le_refl _) (le_refl _) (by rw [hi])).1
+
+/--
+If $A ⊆ ℕ$ is a Sidon set then must the complement of $A$ contain an infinite arithmetic
+progression?
+
+Answer "yes" proved in:
+Baumgartner, James E., Partitioning vector spaces. J. Combinatorial Theory Ser. A (1975), 231-233.
+-/
+theorem erdos_198
+    (A : ℕ → ℕ)
+    (hA : IsSidon A) :
+    ∃ᵉ (a ∈ (range A)ᶜ) (d > 0), ∀ n, a + n * d ∈ (range A)ᶜ := by
+  sorry

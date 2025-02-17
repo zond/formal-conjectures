@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 --Wikipedia URL: https://en.wikipedia.org/wiki/Schanuel%27s_conjecture
-import Mathlib
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
 
 open scoped Real Complex
 

@@ -14,8 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
-import Mathlib
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
 
 /--
 Can every even integer greater than 2 be written as the sum of two primes?

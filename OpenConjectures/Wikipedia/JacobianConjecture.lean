@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 --Wikipedia URL: https://en.wikipedia.org/wiki/Jacobian_conjecture
-import Mathlib
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
 
 open Classical
 

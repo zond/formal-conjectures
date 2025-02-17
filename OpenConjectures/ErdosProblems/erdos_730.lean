@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 -- Erdős Problem URL: https://www.erdosproblems.com/730
-import Mathlib
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
 
 abbrev S := {(n, m) : ℕ × ℕ | n ≠ m ∧ ((2*n).choose n).primeFactors = ((2*m).choose m).primeFactors}
 

@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 -- https://teorth.github.io/equational_theories/implications/?677&finite
-import Mathlib
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
 
 class Magma (α : Type) where
   op : α → α → α

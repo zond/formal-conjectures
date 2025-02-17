@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 --Wikipedia URL: https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function
-import Mathlib
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
 
 namespace RiemannZeta
 

@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/258
-import Mathlib
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
 
 /--
 Let `a_n → ∞` be a sequence of non-zero natural numbers. Is `∑_n, d(n)/(a_1 ... a_n)` irrational, where `d(n)`

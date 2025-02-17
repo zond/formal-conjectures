@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 -- Erdős Problems URL: https://www.erdosproblems.com/412
-import Mathlib
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
 
 /--Let `σ_1(n)=σ(n)`, the sum of divisors function, and `σ_k(n)=σ(σ_{k−1}(n))`-/
 abbrev σ (k : ℕ) : ℕ → ℕ := (ArithmeticFunction.sigma 1)^[k]

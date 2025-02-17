@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 --Wikipedia URL: https://en.wikipedia.org/wiki/Abc_conjecture
-import Mathlib
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
 
 /--
 The radical of `n` denoted is the product of the distinct prime factors of `n`.

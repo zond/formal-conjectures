@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/672
-import Mathlib
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
 
 /-- Erdos problem 672 conjectures the below holds for all `k ≥ 4` and `l > 1`. -/
 def Erdos672With (k l : ℕ) [NeZero k] : Prop :=

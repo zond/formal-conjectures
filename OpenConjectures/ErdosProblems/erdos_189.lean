@@ -15,7 +15,8 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/189
-import GDMLib.ProblemImports
+import OpenConjectures.Util.ProblemImports
+import OpenConjectures.ForMathlib.Geometry.«2d»
 
 open Affine EuclideanGeometry
 

@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/694
-import GDMLib.ProblemImports
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
 
 /--
 Let $f_{\max}(n)$ be the largest $m$ such that $\phi(m) = n$, and

@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/931
-import GDMLib.ProblemImports
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
 
 /--
 Let $k_1 \geq k_2 \geq 3$. Are there only finitely many $n_2\geq n_1 + k_1$

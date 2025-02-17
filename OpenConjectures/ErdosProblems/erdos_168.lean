@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/168
-import GDMLib.ProblemImports
-import GDMLib.Answer
+import OpenConjectures.Util.ProblemImports
 
 open scoped Topology
 

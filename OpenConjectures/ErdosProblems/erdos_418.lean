@@ -15,8 +15,8 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/418
-import GDMLib.ProblemImports
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
+import OpenConjectures.ForMathlib.Data.Set.Density
 
 open scoped ArithmeticFunction
 

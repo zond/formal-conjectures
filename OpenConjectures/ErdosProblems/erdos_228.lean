@@ -15,7 +15,7 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/228
-import Google.ProblemImports
+import OpenConjectures.Util.ProblemImports
 
 /--
 Does there exist, for all large $n$, a polynomial $P$

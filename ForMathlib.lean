@@ -14,14 +14,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdos Problems URL: https://www.erdosproblems.com/370
-import OpenConjectures.Util.ProblemImports
+import OpenConjectures.ForMathlib.Algebra.Order.Group.Pointwise.Interval
+import OpenConjectures.ForMathlib.Analysis.NormedSpace.WithLp
 import OpenConjectures.ForMathlib.Data.Nat.MaxPrimeFac
-
-/--
-Are there infinitely many $n$ such that the largest prime factor of $n$ is $< n^{1/2}$ and
-the largest prime factor of $n + 1$ is $< (n + 1)^{1/2}$.
--/
-theorem erdos_370 :
-    { n | Nat.maxPrimeFac n < √n ∧ Nat.maxPrimeFac (n + 1) < √(n + 1) }.Infinite :=
-  sorry
+import OpenConjectures.ForMathlib.Data.Set.density
+import OpenConjectures.ForMathlib.Geometry.«2d»
+import OpenConjectures.ForMathlib.Logic.Equiv.Fin
+import OpenConjectures.ForMathlib.Order.Interval.Finset.Basic
+import OpenConjectures.ForMathlib.Order.Interval.Finset.Nat

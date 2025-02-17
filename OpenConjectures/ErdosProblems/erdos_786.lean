@@ -16,7 +16,7 @@ limitations under the License.
 
 -- Erdos Problems URL: https://www.erdosproblems.com/786
 import OpenConjectures.Util.ProblemImports
-import GDMLib.ProblemImports
+import OpenConjectures.ForMathlib.Data.Set.Density
 
 open Filter
 

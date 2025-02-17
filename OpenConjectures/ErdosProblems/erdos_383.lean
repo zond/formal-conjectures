@@ -15,8 +15,8 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/383
-import GDMLib.ProblemImports
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
+import OpenConjectures.ForMathlib.Data.Nat.MaxPrimeFac
 
 /--
 Is it true that for every $k$ there are infinitely many primes $p$ such that the largest prime

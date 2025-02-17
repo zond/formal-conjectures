@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/348
-import GDMLib.ProblemImports
-import OpenConjectures.Util.OpenProblemAttr
+import OpenConjectures.Util.ProblemImports
 
 section Prelims
 

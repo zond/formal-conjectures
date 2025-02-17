@@ -14,14 +14,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdos Problems URL: https://www.erdosproblems.com/370
-import OpenConjectures.Util.ProblemImports
-import OpenConjectures.ForMathlib.Data.Nat.MaxPrimeFac
+/-!
+Syntax definitions used in `Google.Answer`.
 
-/--
-Are there infinitely many $n$ such that the largest prime factor of $n$ is $< n^{1/2}$ and
-the largest prime factor of $n + 1$ is $< (n + 1)^{1/2}$.
+We separate them to allow handling the syntax without the full implementation.
 -/
-theorem erdos_370 :
-    { n | Nat.maxPrimeFac n < √n ∧ Nat.maxPrimeFac (n + 1) < √(n + 1) }.Infinite :=
-  sorry
+
+/-- Indicates where the answer is in a problem statement. -/
+syntax (name := Google.answer) "answer(" term ")" : term

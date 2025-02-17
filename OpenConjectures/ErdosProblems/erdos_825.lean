@@ -27,7 +27,7 @@ $\sigma(n) > Cn$ is the distinct sum of proper divisors of $n$?
 @[open_problem]
 theorem erdos_825 :
     ∃ (C : ℝ) (_ : C > 0),
-      ∀ (n) (_ : σ n 1 > C * n),
+      ∀ (n) (_ : σ 1 n > C * n),
         ∃ s ⊆ n.properDivisors, n = s.sum id :=
   sorry
 
@@ -38,7 +38,7 @@ must have $C > 2$.
 -/
 @[open_problem]
 theorem erdos_825.variants.necessary_cond (C : ℝ) (hC : 0 < C)
-    (h : ∀ (n : ℕ) (_ : σ n 1 > C * n),
+    (h : ∀ (n : ℕ) (_ : σ 1 n > C * n),
         ∃ s ⊆ n.properDivisors, n = s.sum id) :
     2 < C :=
   sorry

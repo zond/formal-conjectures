@@ -33,6 +33,6 @@ Solved by Nesterenko in [Ne96]
 Mat. Sb. 187 *9* (1996), 1319--1348.
 -/
 theorem erdos_250 (x : ℝ)
-    (h : HasSum (fun (n : ℕ) => σ n 1 / (2 : ℝ) ^ n) x) :
+    (h : HasSum (fun (n : ℕ) => σ 1 n / (2 : ℝ) ^ n) x) :
     Irrational x :=
   sorry

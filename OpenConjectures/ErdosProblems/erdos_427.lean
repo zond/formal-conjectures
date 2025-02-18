@@ -15,7 +15,7 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/427
-import Mathlib
+import OpenConjectures.Util.ProblemImports
 
 /--
 The predicate that for every $n$ and $d$, there exists $k$ such that

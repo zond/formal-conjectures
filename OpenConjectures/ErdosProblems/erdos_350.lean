@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
-import Mathlib
+import OpenConjectures.Util.ProblemImports
 
 /--The predicate that all (finite) subsets of `A` have distinct sums-/
 def DistinctSubsetSums {M : Type*} [AddCommMonoid M] (A : Set M) : Prop :=

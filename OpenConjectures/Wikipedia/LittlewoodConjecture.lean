@@ -15,7 +15,7 @@ limitations under the License.
 -/
 
 --Wikipedia URL: https://en.wikipedia.org/wiki/Littlewood_conjecture
-import Mathlib
+import OpenConjectures.Util.ProblemImports
 
 open Filter
 

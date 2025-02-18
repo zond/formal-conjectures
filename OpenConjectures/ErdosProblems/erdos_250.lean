@@ -15,7 +15,7 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/250
-import Mathlib
+import OpenConjectures.Util.ProblemImports
 
 -- TODO(mercuris@): Are we allowed this open scoped?
 open scoped ArithmeticFunction

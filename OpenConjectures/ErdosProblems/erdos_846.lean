@@ -19,8 +19,6 @@ import OpenConjectures.Util.ProblemImports
 
 open scoped EuclideanGeometry
 
-notation "ℝ²" => EuclideanSpace ℝ (Fin 2)
-
 def Triplewise {α : Type*} (s : Set α) (r : α → α → α → Prop) : Prop :=
   ∀ ⦃x⦄, x ∈ s → ∀ ⦃y⦄, y ∈ s → ∀ ⦃z⦄, z ∈ s → x ≠ y → y ≠ z → x ≠ z → r x y z
 

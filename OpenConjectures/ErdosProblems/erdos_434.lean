@@ -16,7 +16,6 @@ limitations under the License.
 
 -- Erdos Problems URL: https://www.erdosproblems.com/434
 import OpenConjectures.Util.ProblemImports
-import OpenConjectures.Util.Answer
 
 /--
 A natural $n$ is representable as a set $A$ if it can be

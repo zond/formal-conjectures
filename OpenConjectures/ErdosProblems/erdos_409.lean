@@ -16,7 +16,6 @@ limitations under the License.
 
 -- Erdos Problems URL: https://www.erdosproblems.com/409
 import OpenConjectures.Util.ProblemImports
-import OpenConjectures.ForMathlib.Data.Set.Density
 
 open scoped Topology ArithmeticFunction
 

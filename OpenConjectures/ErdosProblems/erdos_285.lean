@@ -15,7 +15,7 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/285
-import Mathlib
+import OpenConjectures.Util.ProblemImports
 
 open Filter
 

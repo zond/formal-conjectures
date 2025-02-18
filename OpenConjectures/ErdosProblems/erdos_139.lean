@@ -15,7 +15,7 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/139
-import Mathlib
+import OpenConjectures.Util.ProblemImports
 
 open Classical
 open scoped Topology

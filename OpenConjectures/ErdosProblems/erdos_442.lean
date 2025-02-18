@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/442
-import Mathlib
-
+import OpenConjectures.Util.ProblemImports
 open scoped Topology
 
 open Filter

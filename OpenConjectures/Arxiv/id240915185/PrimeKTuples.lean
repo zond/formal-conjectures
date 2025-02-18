@@ -15,7 +15,7 @@ limitations under the License.
 -/
 
 -- arXiv URL: https://arxiv.org/pdf/2409.15185
-import Mathlib
+import OpenConjectures.Util.ProblemImports
 
 open Polynomial
 

@@ -29,7 +29,7 @@ $$
 $$
 for all $n$?
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_377 : ∃ C > (0 : ℝ),
     ∀ (n : ℕ),
       ∑ p ∈ Finset.Icc 1 n, (if p ∣ (2 * n).choose n then 0 else (1 : ℝ) / p) ≤ C :=
@@ -50,6 +50,7 @@ $$
 
 [EGRS75] Erdős, P. and Graham, R. L. and Ruzsa, I. Z. and Straus, E. G., _On the prime factors of $(\sp{2n}\sb{n})$_. Math. Comp. (1975), 83-92.
 -/
+@[problem_status solved]
 theorem erdos_377.variants.limit.i (f : ℕ → ℝ)
     (hf : ∀ n,
       f n = ∑ p ∈ Finset.Icc 1 n, (if p ∣ (2 * n).choose n then 0 else (1 : ℝ) / p))
@@ -74,6 +75,7 @@ $$
 
 [EGRS75] Erdős, P. and Graham, R. L. and Ruzsa, I. Z. and Straus, E. G., _On the prime factors of $(\sp{2n}\sb{n})$_. Math. Comp. (1975), 83-92.
 -/
+@[problem_status solved]
 theorem erdos_377.variants.limit.ii (f : ℕ → ℝ)
     (hf : ∀ n,
       f n = ∑ p ∈ Finset.Icc 1 n, (if p ∣ (2 * n).choose n then 0 else (1 : ℝ) / p))
@@ -96,6 +98,7 @@ then for almost all integers $f(m) = \gamma_0 + o(1)$.
 
 [EGRS75] Erdős, P. and Graham, R. L. and Ruzsa, I. Z. and Straus, E. G., _On the prime factors of $(\sp{2n}\sb{n})$_. Math. Comp. (1975), 83-92.
 -/
+@[problem_status solved]
 theorem erdos_377.variants.ae (f : ℕ → ℝ)
     (hf : ∀ n,
       f n = ∑ p ∈ Finset.Icc 1 n, (if p ∣ (2 * n).choose n then 0 else (1 : ℝ) / p))
@@ -117,6 +120,7 @@ $$
 
 [EGRS75] Erdős, P. and Graham, R. L. and Ruzsa, I. Z. and Straus, E. G., _On the prime factors of $(\sp{2n}\sb{n})$_. Math. Comp. (1975), 83-92.
 -/
+@[problem_status solved]
 theorem erdos_377.variants.ub (f : ℕ → ℝ)
     (hf : ∀ n,
       f n = ∑ p ∈ Finset.Icc 1 n, (if p ∣ (2 * n).choose n then 0 else (1 : ℝ) / p)) :

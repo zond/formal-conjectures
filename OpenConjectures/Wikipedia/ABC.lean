@@ -44,7 +44,7 @@ noncomputable def quality (a b c : ℕ) : ℝ := (c : ℝ).log / (radical <| a *
 /--
 For every positive real number `ε`, there exist only finitely many triples `(a, b, c)` of coprime positive integers, with `a + b = c`, such that `c > rad(abc)^(1+ε)`
 -/
-@[open_problem]
+@[problem_status open]
 theorem abc (ε : ℝ) (hε : 0 < ε) :
     {(a, b, c) : ℕ × ℕ × ℕ | 0 < a ∧ 0 < b ∧ 0 < c ∧ ({a, b, c} : Set ℕ).Pairwise Nat.Coprime ∧
     a + b = c ∧ (radical <| a * b * c : ℝ)^(1 + ε) < c}.Finite := by
@@ -53,7 +53,7 @@ theorem abc (ε : ℝ) (hε : 0 < ε) :
 /--
 For every positive real number ε, there exists a constant `K_ε` such that for all triples (a, b, c) of coprime positive integers, with a + b = c we have `c < K_ε rad(abc)^(1+ε)`.
 -/
-@[open_problem]
+@[problem_status open]
 theorem abc.variants.lt_constant_mul (ε : ℝ) (hε : 0 < ε) : ∃ K,
     ∀ (a b c : ℕ), 0 < a → 0 < b → 0 < c → ({a, b, c} : Set ℕ).Pairwise Nat.Coprime → a + b = c →
     c < K * (radical <| a * b * c : ℝ)^(1 + ε) := by
@@ -62,7 +62,7 @@ theorem abc.variants.lt_constant_mul (ε : ℝ) (hε : 0 < ε) : ∃ K,
 /--
 For every positive real number ε, there exist only finitely many triples `(a, b, c)` of coprime positive integers with `a + b = c` such that `q(a, b, c) > 1 + ε`.
 -/
-@[open_problem]
+@[problem_status open]
 theorem abc.variants.quality (ε : ℝ) (hε : 0 < ε) :
     {(a, b, c) : ℕ × ℕ × ℕ | 0 < a ∧ 0 < b ∧ 0 < c ∧ ({a, b, c} : Set ℕ).Pairwise Nat.Coprime ∧
     a + b = c ∧ quality a b c > (1 + ε)}.Finite := by

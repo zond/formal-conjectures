@@ -15,8 +15,7 @@ limitations under the License.
 -/
 
 -- Erdos Problems URL: https://www.erdosproblems.com/219
-import Mathlib
-
+import OpenConjectures.Util.ProblemImports
 
 /--
 The set of arithmetic progressions of primes
@@ -48,5 +47,6 @@ Are there arbitrarily long arithmetic progressions of primes?
 Solution: yes.
 Ref: Green, Ben and Tao, Terence, _The primes contain arbitrarily long arithmetic progressions_
 -/
+@[problem_status solved]
 theorem erdos_219 : ∀ N, ∃ l ∈ primeArithmeticProgressions, N ≤ l.length := by
   sorry

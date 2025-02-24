@@ -22,7 +22,7 @@ def Erdos672With (k l : ℕ) [NeZero k] : Prop :=
   ∀ᵉ (s : Fin k → ℕ), 0 < s 0 → (∃ d > 0, ∀ i, s i = s 0 + i * d) → ¬ ∃ q, ∏ i, s i = q ^ l
 
 /-- Can the product of an arithmetic progression of positive integers of length ≥ 4 be a perfect power? -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_672
     (k l : ℕ) (hk : 4 ≤ k) (hl : 1 < l)
     (hk' : NeZero k := ⟨Nat.not_eq_zero_of_lt hk⟩) :

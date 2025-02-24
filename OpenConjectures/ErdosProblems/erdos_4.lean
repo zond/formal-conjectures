@@ -31,6 +31,7 @@ $$
 
 Status: Solved
 -/
+@[problem_status solved]
 theorem erdos_4 (C : ℝ) (hC : 0 < C) :
     Erdos4For C :=
   sorry

@@ -35,6 +35,7 @@ theorem Equation677_not_implies_Equation255 :
   sorry
 
 /-- Note that this is a stronger form of `Equation255_not_implies_Equation677`. -/
+@[problem_status solved]
 theorem Finite.Equation255_not_implies_Equation677 :
     ∃ (G : Type) (_ : Magma G), Finite G ∧ Equation255 G ∧ ¬ Equation677 G :=
   sorry
@@ -46,7 +47,7 @@ Probably this is true. It would be a stronger form of
 
 Discussion thread here:
 https://leanprover.zulipchat.com/#narrow/channel/458659-Equational/topic/FINITE.3A.20677.20-.3E.20255 -/
-@[open_problem]
+@[problem_status open]
 theorem Finite.Equation677_not_implies_Equation255 :
     ∃ (G : Type) (_ : Magma G), Finite G ∧ Equation677 G ∧ ¬ Equation255 G :=
   sorry
@@ -54,7 +55,7 @@ theorem Finite.Equation677_not_implies_Equation255 :
 /-- The negation of `Finite.Equation677_not_implies_Equation255`.
 
 Probably this is false. -/
-@[open_problem]
+@[problem_status open]
 theorem Finite.Equation677_implies_Equation255 (G : Type) [Magma G] [Finite G]
     (h : Equation677 G) : Equation255 G :=
   sorry

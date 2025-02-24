@@ -40,7 +40,7 @@ $A = \{a_1 \leq a_2 \leq \cdots\}$ of integers such that
 \item $A$ is not complete after removing any $n$ elements.
 \end{enumerate}
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_348 :
     { (m, n) | (m) (n) (_ : m < n) (a : ℕ → ℕ) (_ : Monotone a)
       (_ : ∀ s, s.card = m → (Function.updateFinset a s 0).IsCompleteNatSeq)

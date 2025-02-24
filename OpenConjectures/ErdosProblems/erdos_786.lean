@@ -35,7 +35,7 @@ Let $\epsilon > 0$. Is there some set $A\subset\mathbb{N}$ of density $> 1 - \ep
 such that $a_1\cdots a_r = b_1\cdots b_s$ with $a_i, b_j\in A$ can only hold when
 $r = s$?
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_786.parts.i (ε δ : ℝ) (hε : 0 < ε ∧ ε ≤ 1) (hδ : 1 - ε < δ) :
     ∃ (A : Set ℕ), 0 ∉ A ∧ A.HasDensity δ ∧
       A.IsMulCardSet :=
@@ -47,7 +47,7 @@ $> 1 - \epsilon$ and size $\geq (1 - o(1))N$ such that
 $a_1\cdots a_r = b_1\cdots b_s$ with $a_i, b_j\in A$ can only hold when
 $r = s$?
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_786.parts.ii (ε δ : ℝ) (hε : 0 < ε ∧ ε ≤ 1) (hδ : 1 - ε < δ) :
     ∃ (N : ℕ) (A : ℕ → Set ℕ) (f : ℕ → ℝ) (_ : Tendsto f atTop (𝓝 0)),
       ∀ N, A N ⊆ Set.Icc 1 N ∧ (1 - f N) * N ≤ (A N).ncard ∧
@@ -58,6 +58,7 @@ theorem erdos_786.parts.ii (ε δ : ℝ) (hε : 0 < ε ∧ ε ≤ 1) (hδ : 1 - 
 /--
 An example of such a set with density $1/4$ is given by the integers $\equiv 2\pmod{4}$
 -/
+@[problem_status solved]
 theorem erdos_786.parts.i.example (A : Set ℕ) (hA : A = { n | n % 4 = 2 }) :
     A.HasDensity (1 / 4) ∧
       A.IsMulCardSet :=
@@ -82,6 +83,7 @@ the set $A$ of all naturals divisible by exactly one of $p_1, ..., p_k$ has
 density $1 / e - \epsilon$ and has the property that $a_1\cdots a_r = b_1\cdots b_s$
 with $a_i, b_j\in A$ can only hold when $r = s$.
 -/
+@[problem_status solved]
 theorem erdos_786.parts.i.selfridge (ε : ℝ) (hε : 0 < ε ∧ ε ≤ 1) :
     -- TODO(mercuris) : I think we want `k` to be allowed to vary somehow as well, but maybe the exists is sufficient
     ∃ (k : ℕ),

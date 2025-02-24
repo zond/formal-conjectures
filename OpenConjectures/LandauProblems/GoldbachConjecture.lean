@@ -19,7 +19,7 @@ import OpenConjectures.Util.ProblemImports
 /--
 Can every even integer greater than 2 be written as the sum of two primes?
 -/
-@[open_problem]
+@[problem_status open]
 theorem goldbach (n : ℕ) (hn : 2 < n) (hn_even : Even n) :
     ∃ p q, Prime p ∧ Prime q ∧ n = p + q := by
   sorry

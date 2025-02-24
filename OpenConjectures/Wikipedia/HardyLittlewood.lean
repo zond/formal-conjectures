@@ -74,7 +74,7 @@ $$
   \pi_P(n)\tilde C_P\int_2^n\frac{dt}{\log^{k+1}t}.
 $$
 -/
-@[open_problem]
+@[problem_status open]
 theorem first_hardy_littlewood_conjecture {k : ℕ} (m : Fin k.succ → ℕ) :
     FirstHardyLittlewoodConjectureFor m :=
   sorry
@@ -93,7 +93,7 @@ $$
 where $\pi(z)$ denotes the prime-counting function, giving the number of primes up to
 and including $z$.
 -/
-@[open_problem]
+@[problem_status open]
 theorem second_hardy_littlewood_conjecture {x y : ℕ} (hx : 2 ≤ x) (hy : 2 ≤ y) :
     SecondHardyLittlewoodConjectureFor x y :=
   sorry
@@ -102,6 +102,7 @@ theorem second_hardy_littlewood_conjecture {x y : ℕ} (hx : 2 ≤ x) (hy : 2 �
 
 [Ri74] Richards, Ian (1974). _On the Incompatibility of Two Conjectures Concerning Primes_. Bull. Amer. Math. Soc. 80: 419–438.
 -/
+@[problem_status solved]
 theorem not_first_and_secondHardyLittlewoodConjecture :
     (∀ {k : ℕ} (m : Fin k.succ → ℕ), FirstHardyLittlewoodConjectureFor m) →
       ¬(∀ {x y : ℕ} (hx : 2 ≤ x) (hy : 2 ≤ y), SecondHardyLittlewoodConjectureFor x y) :=

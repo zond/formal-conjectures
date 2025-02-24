@@ -100,7 +100,7 @@ local notation "alpha_"l"("n")" => Nat.choose n (l + 1)
 /--
 If $nk-\alpha_{\lambda}(n) \leq \lambda v < (n+1)k-\alpha_{\lambda}(n+1)$, then $\PDN_{\lambda}(k,v)=n$.
 -/
-@[open_problem]
+@[problem_status open]
 theorem arxiv.id421022607.conjecture6_2
     (hl : 0 < l) (htk : 2 ≤ k) (hkv : k ≤ v) (hln : l + 2 ≤ n)
     (h_lower : n * k ≤ l * v + (alpha_(l)(n)))

@@ -25,6 +25,6 @@ TODO(lezeau): Formalize the Turing Machine version of this problem.
 Source: *Hardness of Busy Beaver Value BB(15)*: https://link.springer.com/chapter/10.1007/978-3-031-72621-7_9
 This is also https://arxiv.org/abs/2107.12475.
 -/
-@[open_problem]
+@[problem_status open]
 theorem CollatzLike (n : ℕ) (hn : 8 < n) : 2 ∈ Nat.digits 3 (2^n) := by
   sorry

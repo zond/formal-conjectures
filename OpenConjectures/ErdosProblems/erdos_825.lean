@@ -24,7 +24,7 @@ open scoped ArithmeticFunction
 Is there an absolute constant $C > 0$ such that every integer $n$ with
 $\sigma(n) > Cn$ is the distinct sum of proper divisors of $n$?
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_825 :
     ∃ (C : ℝ) (_ : C > 0),
       ∀ (n) (_ : σ 1 n > C * n),
@@ -36,7 +36,7 @@ Show that if the constant $C > 0$ is such that every integer $n$ with
 $\sigma(n) > Cn$ is the distinct sum of proper divisors of $n$, then we
 must have $C > 2$.
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_825.variants.necessary_cond (C : ℝ) (hC : 0 < C)
     (h : ∀ (n : ℕ) (_ : σ 1 n > C * n),
         ∃ s ⊆ n.properDivisors, n = s.sum id) :

@@ -94,6 +94,7 @@ Let $\mathcal{L} = \{L_1,\ldots,L_K\}$ be an admissible set of linear forms.
 Then there are infinitely many integers $n$ such that $L_1(n),\ldots,L_K(n)$
 are all prime.
 -/
+@[problem_status open]
 theorem conjecture_1_1 {ι : Type*} [Fintype ι] (ℒ : AdmissibleLinearForm ι) :
     { n | 0 < n ∧ ∀ i, (ℒ i).eval n |>.natAbs.Prime }.Infinite :=
   sorry
@@ -134,6 +135,7 @@ $K \leq 100\log \log \log x$, then
 \end{align*}
 where $o(1)$ denotes a quantity which goes to zero as $x$ goes to infinity.
 -/
+@[problem_status open]
 theorem conjecture_1_2 : QuantitativePrimeKTuples := sorry
 
 end QuantitativePrimeKTuples
@@ -146,6 +148,7 @@ Assume Conjecture 1.2. Then, for every integer $t\geq 2$, the number
 \end{align}
 is irrational.
 -/
+@[problem_status solved]
 theorem conditional_erdos_69 {t : ℕ} (ht : 2 ≤ t) (h : QuantitativePrimeKTuples) :
     Irrational <| ∑' n, ω (n + 1) / t ^ n :=
   sorry

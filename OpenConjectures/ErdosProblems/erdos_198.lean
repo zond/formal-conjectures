@@ -38,6 +38,7 @@ progression?
 Answer "yes" proved in:
 Baumgartner, James E., Partitioning vector spaces. J. Combinatorial Theory Ser. A (1975), 231-233.
 -/
+@[problem_status solved]
 theorem erdos_198
     (A : ℕ → ℕ)
     (hA : IsSidon A) :

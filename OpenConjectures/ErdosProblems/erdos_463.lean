@@ -27,7 +27,7 @@ n + f(n) < m < n + p(m)
 $$
 (Here $p(m)$ is the least prime factor of $m$.)
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_463 : ∃ (f : ℕ → ℕ) (_ : Tendsto f atTop atTop),
     ∀ᶠ n in atTop,
       ∃ m, ¬m.Prime ∧

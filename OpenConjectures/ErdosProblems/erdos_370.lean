@@ -21,6 +21,7 @@ import OpenConjectures.Util.ProblemImports
 Are there infinitely many $n$ such that the largest prime factor of $n$ is $< n^{1/2}$ and
 the largest prime factor of $n + 1$ is $< (n + 1)^{1/2}$.
 -/
+@[problem_status solved]
 theorem erdos_370 :
     { n | Nat.maxPrimeFac n < √n ∧ Nat.maxPrimeFac (n + 1) < √(n + 1) }.Infinite :=
   sorry

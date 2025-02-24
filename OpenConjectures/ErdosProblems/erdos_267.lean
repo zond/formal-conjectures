@@ -21,6 +21,7 @@ import OpenConjectures.Util.ProblemImports
 Let `F_1=F_2=1` and `F_{n+1} = F_n + F_{n−1}` be the Fibonacci sequence. Let `n_1 < n_2 < ⋯` be an infinite sequence with `n_{k+1}/n_k≥c>1`. Must
 `∑_k, 1/F_{n_k}` be irrational?
 -/
+@[problem_status open]
 theorem erdos_267 (n : ℕ → ℕ)
     (hn : StrictMono n) (c : ℚ) (hc : 1 < c)
     (hnc : ∀ k, c ≤ n (k+1) / n k) :
@@ -32,6 +33,13 @@ theorem erdos_267 (n : ℕ → ℕ)
 Let `F_1=F_2=1` and `F_{n+1} = F_n + F_{n−1}` be the Fibonacci sequence. Let `n_1 < n_2 < ⋯` be an infinite sequence with `n_k/k→∞`. Must
 `∑_k, 1/F_{n_k}` be irrational?
 -/
+@[problem_status open]
+theorem erdos_267.variants.generalisation_ratio_limit_to_infinity (n : ℕ → ℕ)
+    (hn : StrictMono n)
+    (hnc : Filter.Tendsto (fun k => (n (k+1) / k.succ : ℝ)) Filter.atTop Filter.atTop) :
+    Irrational <| ∑' k, 1 / (Nat.fib <| n k) :=
+  sorry
+
 theorem erdos_267.variants.generalisation_ratio_limit (n : ℕ → ℕ)
     (hn : StrictMono n)
     (hnc : Filter.Tendsto (fun k => (n (k+1) / k.succ : ℝ)) Filter.atTop Filter.atTop) :
@@ -45,6 +53,7 @@ Ref:
 * [Go74] Good, I. J., _A reciprocal series of Fibonacci numbers_
 * [BiHo76] Hoggatt, Jr., V. E. and Bicknell, Marjorie, _A reciprocal series of Fibonacci numbers with subscripts $2\sp{n}k$_
 -/
+@[problem_status solved]
 theorem erdos_267.variants.specialization_pow_two :
     Irrational <| ∑' k, 1 / (Nat.fib <| 2^k) :=
   sorry
@@ -54,6 +63,7 @@ theorem erdos_267.variants.specialization_pow_two :
 The sum `∑1/F_n` itself was proved to be irrational by André-Jeannin.
 Ref: André-Jeannin, Richard, _Irrationalité de la somme des inverses de certaines suites récurrentes_.
 -/
+@[problem_status solved]
 theorem erdos_267.variants.fibonacci_inverse_sum :
     Irrational <| ∑' k, 1 / (Nat.fib k) :=
   sorry

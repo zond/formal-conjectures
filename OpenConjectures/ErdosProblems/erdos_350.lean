@@ -35,6 +35,7 @@ example : DistinctSubsetSums ({1, 2} : Finset ℕ).toSet := by
 
 
 /--Small sanity check: the two predicates are saying the same thing.-/
+@[problem_status solved]
 theorem DistinctSubsetSums_iff_DecidableDistinctSubsetSums
     {M : Type*} [AddCommMonoid M] [DecidableEq M] (A : Finset M) :
     DistinctSubsetSums (A : Set M) ↔ DecidableDistinctSubsetSums A := by
@@ -44,6 +45,7 @@ theorem DistinctSubsetSums_iff_DecidableDistinctSubsetSums
 If `A ⊂ ℕ` is a finite set of integers all of whose subset sums are distinct then `∑ n ∈ A, 1/n < 2`.
 Proved by Ryavec.
 -/
+@[problem_status solved]
 theorem erdos_350 (A : Finset ℕ) (hA : DecidableDistinctSubsetSums A) :
     ∑ n ∈ A, (1 / n : ℝ) < 2 := by
   sorry
@@ -52,6 +54,7 @@ theorem erdos_350 (A : Finset ℕ) (hA : DecidableDistinctSubsetSums A) :
 If `A ⊂ ℕ` is a finite set of integers all of whose subset sums are distinct then `∑ n ∈ A, 1/n < 1/(1 - 2^(-s))`.
 Proved by Hanson, Steele, and Stenger.
 -/
+@[problem_status solved]
 theorem erdos_350.variants.strengthening (A : Finset ℕ) (hA : DecidableDistinctSubsetSums A)
     (s : ℝ) (hs : 0 ≤ s) : ∑ n ∈ A, (1 / n : ℝ)^s < 1 / (1 - 2^(-s)) := by
   sorry

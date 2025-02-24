@@ -24,6 +24,7 @@ Are there infinitely many integers `n,m` such that `ϕ(n)=σ(m)`
 ?
 Status: Solved
 -/
+@[problem_status solved]
 theorem erdos_48 :
     {(n, m) : ℕ × ℕ | n.totient = σ 1 m}.Infinite := by
   sorry

@@ -36,12 +36,12 @@ def IsHadamard (n : ℕ) (M : Matrix (Fin n) (Fin n) ℝ) : Prop :=
 /--
 Does a Hadamard matrix exist for all n = 4a? No one knows.
 -/
-@[open_problem]
+@[problem_status open]
 theorem HadamardConjecture (k : ℕ) : ∃ M, IsHadamard (4 * k) M := sorry
 
 /--
 The answer is yes for \(n\) up to the current record n = 664.
 The first unknown case 668 = 4 * 167
 -/
-@[open_problem]
+@[problem_status open]
 theorem HadamardConjecture.variant: ∃ M, IsHadamard (4 * 167) M := sorry

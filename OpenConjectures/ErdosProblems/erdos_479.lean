@@ -21,6 +21,6 @@ import OpenConjectures.Util.ProblemImports
 Is it true that, for all $k\neq 1$, there are infinitely many $n$ such that
 $2n\equiv k\pmod{n}$?
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_479 (k : ℕ) (h : 1 < k) : { n | 2 * n % n = k }.Infinite :=
   sorry

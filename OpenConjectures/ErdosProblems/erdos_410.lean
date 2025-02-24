@@ -29,7 +29,7 @@ Erdos, Granville, Pomerance, Spiro
 "On the normal behavior of the iterates of some arithmetical functions"
 (page 169 of the book "Analytic Number Theory", 1990).
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_410 (n : ℕ) (hn : 1 < n) :
     Tendsto (fun k : ℕ ↦ ((sigma 1)^[k] n : ℝ) ^ (1 / (k : ℝ))) atTop atTop :=
   sorry

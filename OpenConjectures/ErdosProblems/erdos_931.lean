@@ -25,7 +25,7 @@ $$
 $$
 have the same prime factors?
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_931 (k₁ k₂ : ℕ) (h₁ : k₂ ≤ k₁) (h₂ : 3 ≤ k₂) :
     { (n₁, n₂) | n₁ + k₁ ≤ n₂ ∧
       (∏ i ∈ Finset.Icc 1 k₁, (n₁ + i)).primeFactors =
@@ -36,7 +36,7 @@ theorem erdos_931 (k₁ k₂ : ℕ) (h₁ : k₂ ≤ k₁) (h₂ : 3 ≤ k₂) :
 Erd\"{o}s thought perhaps if the two products have the same factors then
 $n_2 > 2(n_1 + k_1)$.
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_931.variants.necessary_cond (k₁ k₂ n₁ n₂ : ℕ) (h₁ : k₂ ≤ k₁) (h₂ : 3 ≤ k₂)
     (h₃ : (∏ i ∈ Finset.Icc 1 k₁, (n₁ + i)).primeFactors =
       (∏ j ∈ Finset.Icc 1 k₂, (n₂ + j)).primeFactors) :
@@ -47,7 +47,7 @@ theorem erdos_931.variants.necessary_cond (k₁ k₂ n₁ n₂ : ℕ) (h₁ : k�
 Erd\"{o}s was unable to prove that if the two products have the same factors
 then there must exist a prime between $n_1$ and $n_2$.
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_931.variants.exists_prime (k₁ k₂ n₁ n₂ : ℕ) (h₁ : k₂ ≤ k₁) (h₂ : 3 ≤ k₂)
     (h₃ : (∏ i ∈ Finset.Icc 1 k₁, (n₁ + i)).primeFactors =
       (∏ j ∈ Finset.Icc 1 k₂, (n₂ + j)).primeFactors) :

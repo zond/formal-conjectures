@@ -22,7 +22,7 @@ open scoped Topology ArithmeticFunction
 /--
 How many iterations of $n\mapsto\phi(n) + 1$ are needed before a prime is reached?
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_409.parts.i (n : ℕ) :
     IsLeast { i | (fun j => j.totient + 1)^[i] n |>.Prime } answer(sorry) :=
   sorry
@@ -30,7 +30,7 @@ theorem erdos_409.parts.i (n : ℕ) :
 /--
 Can infinitely many $n$ reach the same prime under the iteration $n\mapsto\phi(n) + 1$?
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_409.parts.ii
     (iterEnd : ℕ → ℕ)
     (iterEnd_spec: ∀ n, IsLeast { i | (fun j => j.totient + 1)^[i] n |>.Prime } (iterEnd n)) :
@@ -41,7 +41,7 @@ theorem erdos_409.parts.ii
 /--
 What is the density of $n$ which reach any fixed prime under the iteration $n\mapsto\phi(n) + 1$?
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_409.parts.iii (p : ℕ)
     (h : p.Prime)
     (iterEnd : ℕ → ℕ)
@@ -54,7 +54,7 @@ theorem erdos_409.parts.iii (p : ℕ)
 /--
 How many iterations of $n\mapsto\sigma(n) - 1$ are needed before a prime is reached?
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_409.variants.sigma.parts.i (n : ℕ) :
     IsLeast { i | (fun j => (σ 1 j - 1 : ℕ))^[i] n |>.Prime } answer(sorry) :=
   sorry
@@ -62,7 +62,7 @@ theorem erdos_409.variants.sigma.parts.i (n : ℕ) :
 /--
 Can infinitely many $n$ reach the same prime under the iteration $n\mapsto\sigma(n) - 1$?
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_409.variants.sigma.parts.ii
     (iterEnd : ℕ → ℕ)
     (iterEnd_spec: ∀ n, IsLeast { i | (fun j => (σ 1 j - 1 : ℕ))^[i] n |>.Prime } (iterEnd n)) :
@@ -73,7 +73,7 @@ theorem erdos_409.variants.sigma.parts.ii
 /--
 What is the density of $n$ which reach any fixed prime under the iteration $n\mapsto\sigma(n) - 1$?
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_409.variants.sigma.parts.iii (p : ℕ)
     (h : p.Prime)
     (iterEnd : ℕ → ℕ)

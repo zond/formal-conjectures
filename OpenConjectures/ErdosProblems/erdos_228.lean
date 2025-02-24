@@ -24,6 +24,7 @@ $$\sqrt n \ll |P(z)| \ll \sqrt n$$
 for all $|z|=1$,
 with the implied constants independent of $z$ and $n$?
 -/
+@[problem_status solved]
 theorem erdos_228 :
     ∃ (c₁ : ℝ) (c₂ : ℝ), ∀ᶠ n : ℕ in Filter.atTop,
     ∃ p : Polynomial ℂ, p.degree = n ∧

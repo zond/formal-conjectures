@@ -105,6 +105,7 @@ noncomputable abbrev r (k : ℕ) (N : ℕ) : ℕ :=
 Let `r_k(N)` be the size of the largest subset of `{1,…,N}` which does not contain a non-trivial
 `k`-step arithmetic progression. Prove that `r_k(N) = o(N)`.
 -/
+@[problem_status solved]
 theorem erdos_139 (k : ℕ) (hk : 1 ≤ k) :
     Filter.Tendsto (fun N => (r k N / N : ℝ)) Filter.atTop (𝓝 0) := by
   sorry

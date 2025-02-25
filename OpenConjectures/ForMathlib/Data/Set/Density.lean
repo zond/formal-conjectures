@@ -38,10 +38,14 @@ def HasDensity {β : Type*} [Preorder β] [LocallyFiniteOrderBot β]
   Tendsto (fun (b : β) => ((S ∩ A ∩ Set.Iio b).ncard : ℝ) / (A ∩ Set.Iio b).ncard)
     atTop (𝓝 α)
 
+namespace HasDensity
+
+-- TODO(mercuris): generalise these to non-univ `A`
+
 /-- In a directed non-trivial partial order with a least element, the set of all
 elements has density one. -/
 @[simp]
-theorem hasDensity_univ {β : Type*} [PartialOrder β] [LocallyFiniteOrder β]
+theorem univ {β : Type*} [PartialOrder β] [LocallyFiniteOrder β]
     [OrderBot β] [Nontrivial β] [IsDirected β fun x1 x2 ↦ x1 ≤ x2] :
     (@Set.univ β).HasDensity 1 := by
   simp [HasDensity]
@@ -51,9 +55,30 @@ theorem hasDensity_univ {β : Type*} [PartialOrder β] [LocallyFiniteOrder β]
       ⟨b, fun n hn => (div_self <| Nat.cast_ne_zero.2 (hb n hn)).symm⟩)
     tendsto_const_nhds
 
-example : (@Set.univ ℕ).HasDensity 1 := hasDensity_univ
+example : (@Set.univ ℕ).HasDensity 1 := univ
 
-end Set
+@[simp]
+theorem empty {β : Type*} [Preorder β] [LocallyFiniteOrderBot β] (A : Set β := Set.univ) :
+    Set.HasDensity (∅ : Set β) 0 A := by
+  simpa [HasDensity] using tendsto_const_nhds
+
+theorem mono {β : Type*} [PartialOrder β] [LocallyFiniteOrder β] [OrderBot β] {S T : Set β} {αS αT : ℝ}
+    [(atTop : Filter β).NeBot] [IsDirected β fun x1 x2 ↦ x1 ≤ x2] [Nontrivial β]
+    (h : S ⊆ T) (hS : S.HasDensity αS) (hT : T.HasDensity αT) : αS ≤ αT := by
+    simp_all [HasDensity]
+    apply le_of_tendsto_of_tendsto hS hT
+    rw [EventuallyLE, eventually_atTop]
+    let ⟨b, hb⟩ := Set.Iio_eventually_ncard_ne_zero β
+    refine ⟨b, fun c hc => ?_⟩
+    rw [div_le_div_iff_of_pos_right (by simpa using Nat.pos_of_ne_zero (hb c hc))]
+    simpa using Set.ncard_le_ncard (Set.inter_subset_inter_left _ h)
+
+theorem nonneg {β : Type*} [Preorder β] [LocallyFiniteOrderBot β] [(atTop : Filter β).NeBot]
+    {S : Set β} {α : ℝ}  (h : S.HasDensity α) :
+    0 ≤ α :=
+  le_of_tendsto_of_tendsto' empty h fun b => by simp [div_nonneg]
+
+end Set.HasDensity
 
 namespace Nat
 
@@ -93,5 +118,10 @@ theorem hasDensity_zero_of_finite {S : Set ℕ} (h : S.Finite) :
   exact tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds
     (tendsto_const_div_atTop_nhds_zero_nat S.ncard)
     (fun _ => div_nonneg (cast_nonneg _) (cast_nonneg _)) this
+
+/-- A set of positive natural density is infinite. -/
+theorem infinite_of_hasDensity_pos {S : Set ℕ} {α : ℝ} (h : S.HasDensity α) (hα : 0 < α) :
+    S.Infinite :=
+  mt hasDensity_zero_of_finite fun h' => (_root_.ne_of_lt hα).symm (tendsto_nhds_unique h h')
 
 end Nat

@@ -30,7 +30,7 @@ Matrices A with ±1-entries that achieve equality are aptly called
 \textit{Hadamard matrices}.
 -/
 def IsHadamard (n : ℕ) (M : Matrix (Fin n) (Fin n) ℝ) : Prop :=
-    ∀ (i j : Fin n), M i j ∈ ({1, -1} : Finset ℝ) ∧
+    (∀ (i j : Fin n), M i j ∈ ({1, -1} : Finset ℝ)) ∧
     Matrix.det M = n ^ ((n : ℝ) / 2)
 
 /--
@@ -44,4 +44,4 @@ The answer is yes for \(n\) up to the current record n = 664.
 The first unknown case 668 = 4 * 167
 -/
 @[problem_status open]
-theorem HadamardConjecture.variant: ∃ M, IsHadamard (4 * 167) M := sorry
+theorem HadamardConjecture.variant : ∃ M, IsHadamard (4 * 167) M := sorry

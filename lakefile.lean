@@ -29,4 +29,4 @@ package open_conjectures where
 lean_lib OpenConjectures where
   globs := #[.submodules `OpenConjectures]
 
-require mathlib from git "https://github.com/leanprover-community/mathlib4.git" @ "v4.14.0"
+require mathlib from git "https://github.com/leanprover-community/mathlib4.git" @ "v4.15.0"

@@ -21,7 +21,7 @@ import OpenConjectures.Util.ProblemImports
 Is it true that there are only finitely many powers of $2$ which have only the digits $0$
 and $1$ when written in base $3$?
 -/
-@[open_problem]
+@[problem_status open]
 theorem erdos_406 : { n | n.isPowerOfTwo ∧ Nat.digits 3 n ⊆ [0, 1] }.Finite :=
   sorry
 
@@ -29,6 +29,7 @@ theorem erdos_406 : { n | n.isPowerOfTwo ∧ Nat.digits 3 n ⊆ [0, 1] }.Finite 
 If we only allow the digits $1$ and $2$ then $2^15$ seems to be the largest such power
 of $2$.
 -/
+@[problem_status open]
 theorem erdos_406.variants.one_two :
     IsGreatest { n | n.isPowerOfTwo ∧ Nat.digits 3 n ⊆ [1, 2] } (2 ^ 15) :=
   sorry

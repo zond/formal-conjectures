@@ -23,54 +23,54 @@ open Finset
 local notation "e" => exp 1
 
 /-- $e + \pi$ is irrational -/
-@[open_problem]
+@[problem_status open]
 theorem irrational_e_plus_pi : Irrational (e + π) := sorry
 
 /-- $e \pi$ is irrational -/
-@[open_problem]
+@[problem_status open]
 theorem irrational_e_times_pi : Irrational (e * π) := sorry
 
 /-- $e ^ e$ is irrational -/
-@[open_problem]
+@[problem_status open]
 theorem irrational_e_to_e : Irrational (e ^ e) := sorry
 
 /-- $\pi ^ e$ is irrational -/
-@[open_problem]
+@[problem_status open]
 theorem irrational_pi_to_e : Irrational (π ^ e) := sorry
 
 /-- $\pi ^ \pi$ is irrational -/
-@[open_problem]
+@[problem_status open]
 theorem irrational_pi_to_pi : Irrational (π ^ π) := sorry
 
 /-- $\ln(\pi)$ is irrational -/
-@[open_problem]
+@[problem_status open]
 theorem irrational_ln_pi : Irrational (log π) := sorry
 
 /-- The the difference between harmonic series and natural logarithm, also known
 as Euler-Mascheroni constant $\gamma$ is irrational -/
-@[open_problem]
+@[problem_status open]
 theorem irrational_euler_mascheroni :
     Irrational eulerMascheroniConstant := sorry
 
 /-- $\zeta(5)$ is irrational where $\zeta$ is the Riemann zeta function. -/
-@[open_problem]
+@[problem_status open]
 theorem irrational_zeta_5 : Irrational (riemannZeta 5).re := sorry
 
 /-- $\zeta(7)$ is irrational where $\zeta$ is the Riemann zeta function. -/
-@[open_problem]
+@[problem_status open]
 theorem irrational_zeta_7 : Irrational (riemannZeta 7).re := sorry
 
 /-- $\zeta(9)$ is irrational where $\zeta$ is the Riemann zeta function. -/
-@[open_problem]
+@[problem_status open]
 theorem irrational_zeta_9 : Irrational (riemannZeta 9).re := sorry
 
 /-- $\zeta(n)$ is irrational for all odd $n > 3$,
 where $\zeta$ is the Riemann zeta function. -/
-@[open_problem]
+@[problem_status open]
 theorem irrational_zeta_all_odd :
     ∀ n : ℕ, Irrational (riemannZeta (2*n+5)).re := sorry
 
 /-- The Catalan constant is irrational -/
-@[open_problem]
+@[problem_status open]
 theorem irrational_catalan_constant :
-    Irrational (∑' n : ℕ, (-1)^n / (2*n + 1)^2 ) := sorry
+    Irrational (∑' n : ℕ, (-1)^n / (2*n + 1)^2) := sorry

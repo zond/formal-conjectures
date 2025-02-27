@@ -32,7 +32,7 @@ allowing to retrieve $\lambda (A)_i$ as $D_1_{i,i}$, whereas the current mathlib
 doesn't support obtaining the vector of eigenvalues from a general normal
 non-Hermitian matrix.
 -/
-@[open_problem]
+@[problem_status open]
 theorem determinantal_conjecture
     (n : Type) [Fintype n] [DecidableEq n]
     (d1 d2 : n → ℂ) (U1 U2 : unitary (Matrix n n ℂ)) :

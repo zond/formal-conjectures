@@ -16,11 +16,6 @@ limitations under the License.
 
 import OpenConjectures.Util.OpenProblemAttr
 
-@[open_problem]
-theorem test : 1 + 1 = 2 := by
-  sorry
-
-
 @[problem_status open]
 theorem test' : 1 + 1 = 2 := by
   sorry

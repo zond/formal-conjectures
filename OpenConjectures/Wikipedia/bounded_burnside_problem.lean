@@ -21,6 +21,6 @@ import OpenConjectures.Util.ProblemImports
 Let G be a finitely generated group, and assume there exists n such that for every g in G,
 g^n = 1. Does G must be necessarily finite?
 -/
-@[open_problem]
+@[problem_status open]
 theorem bounded_burnside_problem (G : Type) [Group G] (fin_gen : Group.FG G)
     (n : ℕ) (hn : n > 0) (bounded : ∀ g : G, g^n = 1) : Finite G := sorry

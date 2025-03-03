@@ -25,6 +25,7 @@ variable {k : Type*} [CommRing k]
 variable {σ τ ι : Type*}
 
 variable (k σ τ) in
+/--Implicitly use `σ` as an index set and `k` as coefficient ring. -/
 abbrev RegularFunction := τ → MvPolynomial σ k
 
 namespace RegularFunction
@@ -81,6 +82,7 @@ noncomputable def RegularFunction.aeval {S₁ : Type*} [CommSemiring S₁] [Alge
   fun a t ↦ MvPolynomial.aeval a (F t)
 
 
+omit [CharZero k] [Fintype σ] in
 --Let's just add one small sanity check for now
 /--`aeval` is compatible with composition of regular functions-/
 lemma comp_aeval

@@ -59,7 +59,7 @@ Standard heuristics then predict there should be `≫ x/(log x)^2`
 many `n≤x` such that `(n, n+1) ∈ S`.
 -/
 @[problem_status open]
-theorem erdos_730.variants.variants.succ_pair_growth :
+theorem erdos_730.variants.succ_pair_growth :
     let C (x : ℝ) : ℝ := (Finset.Icc 0 ⌊x⌋₊ |>.filter fun n => (n, n+1) ∈ S).card
     Filter.Tendsto (fun (x : ℝ) => x / (x.log^2) / C x) Filter.atTop (𝓝 0) := by
   sorry

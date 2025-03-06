@@ -15,6 +15,7 @@ limitations under the License.
 -/
 
 import OpenConjectures.ForMathlib.Algebra.Order.Group.Pointwise.Interval
+import OpenConjectures.ForMathlib.Analysis.SpecialFunctions.Log.Basic
 import OpenConjectures.ForMathlib.Analysis.NormedSpace.WithLp
 import OpenConjectures.ForMathlib.Combinatorics.Basic
 import OpenConjectures.ForMathlib.Data.Nat.MaxPrimeFac

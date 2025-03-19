@@ -14,29 +14,23 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdos Problems URL: https://www.erdosproblems.com/4
+-- Erdos Problems URL: https://www.erdosproblems.com/469
 import OpenConjectures.Util.ProblemImports
 
-open Real
-
-def Erdos4For (C : ℝ) : Prop :=
-  {n : ℕ | Nat.nth Prime (n + 1) - Nat.nth Prime n >
-    C * log (log n) * log (log (log (log n))) / (log (log (log n))) ^ 2 * log n}.Infinite
+/-- The proposition that `n` is a sum of distinct proper divisors. -/
+def Nat.IsSumDivisors (n : ℕ) : Prop :=
+  ∃ S ⊆ n.properDivisors, ∑ d ∈ S, d = n
 
 /--
-Is it true that, for any $C > 0$, there infinitely many $n$ such that:
+Let $A$ be the set of all $n$ such that $n = d_1 + ⋯ + d_k$ with $d_i$ distinct
+proper divisors of $n$, but this is not true for any $m ∣ n$ with $m < n$. Does:
 $$
-  p_{n + 1} - p_n > C \frac{\log\log n\log\log\log\log n}{(\log\log\log n) ^ 2}\log n
+  ∑_{n ∈ A} 1 / n
 $$
-
-Status: Solved
+converge?
 -/
-@[problem_status solved]
-theorem erdos_4 (C : ℝ) (hC : 0 < C) :
-    Erdos4For C :=
-  sorry
-
-@[problem_status solved]
-theorem erdos_4.variants.rankin :
-    ∃ C > 0, Erdos4For C :=
+@[problem_status open]
+theorem erdos_469 :
+    letI A := {n : ℕ | 0 < n ∧ n.IsSumDivisors ∧ ∀ m < n, m ∣ n → ¬ m.IsSumDivisors}
+    Summable fun n : A ↦ 1 / (n : ℝ) :=
   sorry

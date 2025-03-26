@@ -47,8 +47,7 @@ example : Real.iteratedLog 4 = 2 := by
       rw [← this]
       norm_num
       convert Real.log_le_sub_one_of_pos (show 0 < 2 by norm_num)
-      · rw [Real.sqrt_eq_iff_mul_self_eq_of_pos (by norm_num)]; norm_num
-      · norm_num
+      norm_num
     have : Real.log 4 - 1 ≤ 1 := by convert sub_le_sub_right this 1; norm_num
     exact le_trans (Real.log_le_sub_one_of_pos (Real.log_pos <| by norm_num)) this
   rw [Nat.sInf_def ⟨2, by aesop⟩]

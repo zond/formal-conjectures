@@ -16,6 +16,7 @@ limitations under the License.
 
 import OpenConjectures.Util.ProblemImports
 
+open scoped Function
 
 /--
 The set of solutions to the Fermat-Catalan Conjecture, i.e. the

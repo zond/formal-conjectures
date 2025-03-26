@@ -18,7 +18,6 @@ import Mathlib.LinearAlgebra.Orientation
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Geometry.Euclidean.Angle.Oriented.Affine
 import Mathlib.Geometry.Euclidean.Triangle
-import OpenConjectures.ForMathlib.Analysis.NormedSpace.WithLp
 import OpenConjectures.ForMathlib.Logic.Equiv.Fin
 
 scoped[EuclideanGeometry] notation "ℝ²" => EuclideanSpace ℝ (Fin 2)

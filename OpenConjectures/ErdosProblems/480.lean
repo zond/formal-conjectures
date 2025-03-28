@@ -22,11 +22,11 @@ import OpenConjectures.Util.ProblemImports
 Let `x_1,x_2,…∈[0,1]` be an infinite sequence. Is it true that there are infinitely many `m,n`
 such that `|x_{m+n}−x_n|≤1/(√5 n)`?
 -/
+@[problem_status solved]
 theorem erdos_480
     (x : ℕ → ℝ) (hx : ∀ n, x n ∈ Set.Icc 0 1) :
-    {(m, n) | |x (m + n) - x n| ≤ 1 / (√5 * n)}.Infinite := by
+    {(m, n) | (m) (n) (_ : m ≠ 0) (_ : |x (m + n) - x n| ≤ 1 / (√5 * n))}.Infinite := by
   sorry
-
 
 /--
 For any `ϵ>0` there must exist some `n` such that there are infinitely many `m`
@@ -34,9 +34,10 @@ for which `|x_{m+n}−x_m|<1/((c−ϵ)n)`, where
 `c=1+∑_{k≥1} 1/(F_{2k} =2.535⋯`
 and `F_m` is the `m`th Fibonacci number. This constant is best possible.
 -/
+@[problem_status solved]
 theorem erdos_480.variants.chung_graham :
     let c : ℝ := 1 + ∑' (k : ℕ+), (1 : ℝ) / (2*k : ℕ).fib
     IsGreatest {C : ℝ | C > 0 ∧ ∀ (x : ℕ → ℝ) (hx : ∀ n, x n ∈ Set.Icc 0 1),
-      ∀ ε ∈ Set.Ioo 0 C, ∃ n, {m | |x (n + m) - x m| < 1 / ((C - ε) * n)}.Infinite}
+      ∀ ε ∈ Set.Ioo 0 C, ∃ n, {m | m ≠ 0 ∧ |x (n + m) - x m| < 1 / ((C - ε) * n)}.Infinite}
     c := by
   sorry

@@ -21,24 +21,23 @@ open Filter Finset
 open scoped Topology
 
 /--
-Let A ⊆ (1, \infty) be a countably infinite set such that for all x ≠ y ∈ A and integers k ≥ 1 we have
-
-|kx - y| ≥ 1.
-
+Let $A \subseteq (1, \infty)$ be a countably infinite set such that for all $x\neq y\in A$ and
+integers $k \geq 1$ we have $|kx - y| \geq 1$.
 -/
 def WellSeparatedSet (A : Set ℝ) : Prop :=
-   (A ⊆ (Set.Ioi (1 : ℝ))) ∧ Set.Infinite A ∧ Set.Countable A ∧
-   (∀ x ∈ A, ∀ y ∈ A, x ≠ y → (∀ k, 1 ≤ k → 1 ≤ |k * x - y|))
+  (A ⊆ (Set.Ioi (1 : ℝ))) ∧ Set.Infinite A ∧ Set.Countable A ∧
+  (∀ x ∈ A, ∀ y ∈ A, x ≠ y → (∀ k ≥ (1 : ℕ), 1 ≤ |k * x - y|))
+
 /--
 Does this imply that
-
 \[
 \liminf \frac{|A \cap [1,x]|}{x} = 0?
 \]
 -/
 @[problem_status open]
 theorem erdos_143.parts.i (A : Set ℝ) (h : WellSeparatedSet A):
-   liminf (fun x => (A ∩ (Set.Icc 1 x)).ncard / x) atTop = 0 := sorry
+    liminf (fun x => (A ∩ (Set.Icc 1 x)).ncard / x) atTop = 0 := by
+  sorry
 
 /--
 Or
@@ -48,7 +47,9 @@ Or
 -/
 @[problem_status open]
 theorem erdos_143.parts.ii (A : Set ℝ) (h : WellSeparatedSet A):
-   ∃ (s : ℝ),  Tendsto (fun n ↦ ∑ x ∈ range n, 1 / (x * Real.log x)) atTop (𝓝 s) := sorry
+    ∃ (s : ℝ),
+      Tendsto (fun n ↦ ∑ x ∈ range n, 1 / (x * Real.log x)) atTop (𝓝 s) :=
+  sorry
 
 
 -- TODO(firsching): add the two other conjectures.

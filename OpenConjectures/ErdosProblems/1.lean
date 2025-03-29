@@ -61,9 +61,10 @@ $$
 [Er56] Erdős, P., _Problems and results in additive number theory_. Colloque sur la Th\'{E}orie des Nombres, Bruxelles, 1955 (1956), 127-137.
 -/
 @[problem_status solved]
-theorem erdos_1.variants.lb (N : ℕ) (A : Finset ℕ) (h : IsSumDistinctSet A N) :
+theorem erdos_1.variants.lb :
     ∃ (o : ℕ → ℝ) (_ : Tendsto o atTop (𝓝 0)),
-      (1 / 4 - o A.card) * 2 ^ A.card / (A.card : ℝ).sqrt ≤ N :=
+      ∀ (N : ℕ) (A : Finset ℕ) (h : IsSumDistinctSet A N),
+        (1 / 4 - o A.card) * 2 ^ A.card / (A.card : ℝ).sqrt ≤ N :=
   sorry
 
 /--
@@ -71,9 +72,10 @@ A number of improvements of the constant $1 / 4$ have been given, with the curre
 record $\sqrt{2 / \pi}$ first provied in unpublished work of Elkies and Gleason.
 -/
 @[problem_status solved]
-theorem erdos_1.variants.lb_strong (N : ℕ) (A : Finset ℕ) (h : IsSumDistinctSet A N) :
+theorem erdos_1.variants.lb_strong :
     ∃ (o : ℕ → ℝ) (_ : Tendsto o atTop (𝓝 0)),
-      (√(2 / π) - o A.card) * 2 ^ A.card / (A.card : ℝ).sqrt ≤ N :=
+      ∀ (N : ℕ) (A : Finset ℕ) (h : IsSumDistinctSet A N),
+        (√(2 / π) - o A.card) * 2 ^ A.card / (A.card : ℝ).sqrt ≤ N :=
   sorry
 
 /--

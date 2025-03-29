@@ -33,7 +33,7 @@ written as $n - \phi(n)$.
 -/
 @[problem_status solved]
 theorem erdos_418.variants.conditional
-    (goldbach : ∀ (n : ℕ) (hn : 2 < n),
+    (goldbach : ∀ (n : ℕ) (_ : 2 < n) (_ : Even n),
       ∃ p q, Prime p ∧ Prime q ∧ n = p + q)
     (m : ℕ)
     (h : Odd m) :

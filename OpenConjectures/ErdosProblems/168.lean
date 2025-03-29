@@ -67,5 +67,5 @@ theorem erdos_168.parts.ii :
 (proved by Graham, Spencer, and Witsenhausen)-/
 @[problem_status solved]
 theorem erdos_168.variants.limit_exists :
-    ∃ x, Filter.Tendsto (fun N => (F N / N : ℝ)) Filter.atTop x := by
+    ∃ x, Filter.Tendsto (fun N => (F N / N : ℝ)) Filter.atTop (𝓝 x) := by
   sorry

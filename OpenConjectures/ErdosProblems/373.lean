@@ -53,7 +53,7 @@ the equation `n!=a_1!a_2!···a_k!`, with `n−1 > a_1 ≥ a_2 ≥ ··· ≥ a
 -/
 @[problem_status solved]
 theorem erdos_373.variants.of_lower_bound
-    (H : ∀ (n : ℕ), 4*(n : ℝ).log < (n*(n-1 : ℕ)).maxPrimeFac) :
+    (H : ∀ n > (0 : ℕ), 4*(n : ℝ).log < (n*(n-1 : ℕ)).maxPrimeFac) :
     S.Finite := by
   sorry
 

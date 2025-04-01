@@ -27,6 +27,7 @@ def FermatCatalanSet : Set (Fin 6 → ℕ) :=
     { f : Fin 6 → ℕ |
         (∀ i, 0 < f i) ∧
         (({0, 1, 2} : Set <| Fin 6).Pairwise (Nat.Coprime on f)) ∧
+        (f 0) ^ (f 3) + (f 1) ^ (f 4) = (f 2) ^ (f 5) ∧
         ∑ i in Finset.Icc 3 5, (1 / f i : ℝ) < 1 }
 
 

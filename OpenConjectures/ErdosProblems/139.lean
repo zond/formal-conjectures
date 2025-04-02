@@ -77,7 +77,7 @@ lemma IsArithmeticProgression_map_range [AddCommMonoid M] (a b : M) (n : ℕ) :
   rw [Option.mem_iff, List.map_singleton, List.head?_singleton, Option.some.injEq] at hy
   cases n with | zero => aesop | succ m =>
   rw [Option.mem_iff, List.getLast?_map, List.range_succ, List.getLast?_append, List.getLast?_singleton,
-    Option.or_some, Option.map_some', Option.some.injEq] at hx
+    Option.some_or, Option.map_some', Option.some.injEq] at hx
   rw [←hx, ←hy, add_smul]
   abel
 

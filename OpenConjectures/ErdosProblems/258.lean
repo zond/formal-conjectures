@@ -25,7 +25,7 @@ is the number of divisors of `n`?
 theorem erdos_258
     (a : ℕ → ℕ) (ha : ∀ n, a n ≠ 0)
     (ha : Filter.Tendsto a Filter.atTop Filter.atTop) :
-    Irrational (∑' (n : ℕ), ((n+1).divisors.card / ∏ i in Finset.Icc 1 n, a i)) := by
+    Irrational (∑' (n : ℕ), ((n+1).divisors.card / ∏ i ∈ Finset.Icc 1 n, a i)) := by
   sorry
 
 
@@ -39,7 +39,7 @@ Solution: True (proved by Erdős and Straus, see Erdos Problems website).
 theorem erdos_258.variants.Monotone
     (a : ℕ → ℤ) (ha : ∀ n, a n ≠ 0) (ha : Monotone a)
     (ha : Filter.Tendsto a Filter.atTop Filter.atTop) :
-    Irrational (∑' (n : ℕ), ((n+1).divisors.card / ∏ i in Finset.Icc 1 n, a i)) := by
+    Irrational (∑' (n : ℕ), ((n+1).divisors.card / ∏ i ∈ Finset.Icc 1 n, a i)) := by
   sorry
 
 

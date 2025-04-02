@@ -73,10 +73,10 @@ is given by `p(p-2) / (p^2 - p - 1) * C` where `C` is Artin's constant. If there
 -/
 @[problem_status open]
 theorem artin_primitive_roots.variants.part_ii_prime_power
-    (a m b : ℕ) (ha : a = b^m) (hb : ∀ u v, 1 < u → b ≠ v^u) 
+    (a m b : ℕ) (ha : a = b^m) (hb : ∀ u v, 1 < u → b ≠ v^u)
     (hm : m.primeFactorsList.Nodup)  :
     (S a).HasDensity
-      (ArtinConstant * ∏ p in m.primeFactors, p * (p-2 : ℝ) / (p^2 - p - 1))
+      (ArtinConstant * ∏ p ∈ m.primeFactors, p * (p-2 : ℝ) / (p^2 - p - 1))
       {p | p.Prime} := by
   sorry
 
@@ -91,6 +91,6 @@ theorem artin_primitive_roots.variants.part_ii
     (a a_0 b : ℕ) (ha : a = a_0 * b^2) (ha' : ∀ n m, a ≠ n^m)
     (ha' : Squarefree a) (ha_0' : a_0 ≡ 1 [MOD 4]):
     (S a).HasDensity
-      (ArtinConstant * ∏ p in a_0.primeFactors, p * (p-1 : ℝ) / (p^2 - p - 1))
+      (ArtinConstant * ∏ p ∈ a_0.primeFactors, p * (p-1 : ℝ) / (p^2 - p - 1))
       {p | p.Prime} := by
   sorry

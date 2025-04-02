@@ -18,7 +18,7 @@ import OpenConjectures.Util.ProblemImports
 
 open BigOperators Nat
 
-def left_factorial (n : ℕ) := ∑ m in Finset.range n, m !
+def left_factorial (n : ℕ) := ∑ m ∈ Finset.range n, m !
 
 local notation  "!" n => left_factorial n
 

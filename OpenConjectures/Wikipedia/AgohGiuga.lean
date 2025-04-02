@@ -44,7 +44,7 @@ An integer `p ≥ 2` is prime if and only if it satifies the congruence
 `∑_{i=1}^{p-1} i^{p-1} ≡ -1 [MOD p]`.
 -/
 def AgohGiugaSum : Prop := ∀ p ≥ 2, p.Prime ↔
-  p ∣ 1 + ∑ i in Finset.Ioo 0 p, i^(p - 1 : ℕ)
+  p ∣ 1 + ∑ i ∈ Finset.Ioo 0 p, i^(p - 1 : ℕ)
 
 
 /--The **Agoh-Giuga Conjecture**, Agoh's formulation-/
@@ -69,7 +69,7 @@ theorem agoh_giuga.variants.equivalence : AgohGiugaCongr ↔ AgohGiugaSum := by
 A Giuga number is a counterexample to Giuga's conjecture.
 -/
 def IsGiuga (p : ℕ) : Prop :=
-    ¬ p.Prime ∧ p ∣ 1 + ∑ i in Finset.Ioo 0 p, i^(p - 1 : ℕ)
+    ¬ p.Prime ∧ p ∣ 1 + ∑ i ∈ Finset.Ioo 0 p, i^(p - 1 : ℕ)
 
 /--
 A Carmichael number is a natural number `n` such that for all `b ≥ 1`,
@@ -104,7 +104,7 @@ Ref: G. Giuga, _Su una presumibile proprieta caratteristica dei numeri primi_
 -/
 @[problem_status solved]
 theorem agoh_giuga.variants.isGiuga_iff (a : ℕ) :
-    IsGiuga a ↔ IsCarmichael a ∧ ∃ n, ∑ p in a.primeFactors, (1 / p : ℚ) - 1 / a = n := by
+    IsGiuga a ↔ IsCarmichael a ∧ ∃ n, ∑ p ∈ a.primeFactors, (1 / p : ℚ) - 1 / a = n := by
   sorry
 
 

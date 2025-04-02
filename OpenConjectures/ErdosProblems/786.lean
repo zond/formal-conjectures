@@ -89,7 +89,7 @@ theorem erdos_786.parts.i.selfridge (ε : ℝ) (hε : 0 < ε ∧ ε ≤ 1) :
     ∃ (k : ℕ),
       -- Sufficient to take L^∞ norm to guarantee all primes are large, due to the consecutivePrimes assertion
       ∀ᶠ (p : Fin k.succ → ℕ) in atTop, consecutivePrimes p ∧
-        ∑ i in Finset.univ.filter (· < Fin.last _), (1 : ℝ) / p i < 1 ∧
+        ∑ i ∈ Finset.univ.filter (· < Fin.last _), (1 : ℝ) / p i < 1 ∧
           1 < ∑ i, (1 : ℝ) / p i →
     { n | ∃! i < k, p i ∣ n }.HasDensity (1 / Real.exp 1 - ε) ∧
       { n | ∃! i < k, p i ∣ n }.IsMulCardSet :=

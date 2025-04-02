@@ -79,9 +79,9 @@ https://arxiv.org/pdf/2407.04226
 theorem erdos_442
     (A : Set ℕ)
     (hA : Tendsto (fun (x : ℝ) =>
-      1 / x.maxLogOne.maxLogOne * ∑ n in A.bdd x, (1 : ℝ) / n) atTop atTop) :
-    Tendsto (fun (x : ℝ) => 1 / (∑ n in A.bdd x, (1 : ℝ) / n) ^ 2 *
-      ∑ nm in A.bddProdUpper x, (1 : ℝ) / nm.1.lcm nm.2) atTop atTop :=
+      1 / x.maxLogOne.maxLogOne * ∑ n ∈ A.bdd x, (1 : ℝ) / n) atTop atTop) :
+    Tendsto (fun (x : ℝ) => 1 / (∑ n ∈ A.bdd x, (1 : ℝ) / n) ^ 2 *
+      ∑ nm ∈ A.bddProdUpper x, (1 : ℝ) / nm.1.lcm nm.2) atTop atTop :=
   sorry
 
 /--
@@ -103,8 +103,8 @@ $$
 theorem erdos_442.variants.tao :
     ∃ (A : Set ℕ) (f : ℝ → ℝ) (C: ℝ) (hC : 0 < C) (hf : Tendsto f atTop (𝓝 0)),
       ∀ (x : ℝ),
-        ∑ n in A.bdd x, (1 : ℝ) / n =
+        ∑ n ∈ A.bdd x, (1 : ℝ) / n =
           Real.exp ((1 / 2 + f x) * √x.maxLogOne.maxLogOne * x.maxLogOne.maxLogOne.maxLogOne) ∧
-        |∑ nm in A.bdd x ×ˢ A.bdd x, (1 : ℝ) / nm.1.lcm nm.2| ≤
-          C * (∑ n in A.bdd x, (1 : ℝ) / n) ^ 2 :=
+        |∑ nm ∈ A.bdd x ×ˢ A.bdd x, (1 : ℝ) / nm.1.lcm nm.2| ≤
+          C * (∑ n ∈ A.bdd x, (1 : ℝ) / n) ^ 2 :=
   sorry

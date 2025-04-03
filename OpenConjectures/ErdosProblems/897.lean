@@ -26,7 +26,7 @@ Is it true that `limsup_n (f(n+1)−f(n))/ log n = ∞`?
 -/
 theorem erdos_897.parts.i
     (f : ℕ → ℝ)
-    (hf : ∀ a b, a.Coprime b → f (a * b) = f a + f b)
+    (hf : ∀ᵉ (a > 0) (b > 0), a.Coprime b → f (a * b) = f a + f b)
     (hf' : (Filter.atTop ⊓ Filter.principal {(p, k) : ℕ × ℕ | p.Prime}).limsup (fun (p, k) => (f (p^k) / (p^k : ℝ).log : EReal)) = ⊤) :
     Filter.atTop.limsup (fun (n : ℕ) => ((f (n+1) - f n) / (n : ℝ).log : EReal)) = ⊤ := by
   sorry
@@ -34,14 +34,14 @@ theorem erdos_897.parts.i
 /--
 Let `f(n)` be an additive function (so that `f(ab)=f(a)+f(b)`
 if `(a,b)=1`) such that `limsup_{p,k} f(p^k) log(p^k) = ∞`.
-Is it true that `limsup_n f(n+1)/ log n = ∞`?
+Is it true that `limsup_n f(n+1)/ f(n) = ∞`?
 -/
 theorem erdos_897.parts.ii
     (f : ℕ → ℝ)
-    (hf : ∀ a b, a.Coprime b → f (a * b) = f a + f b)
+    (hf : ∀ᵉ (a > 0) (b > 0), a.Coprime b → f (a * b) = f a + f b)
     (hf' : (Filter.atTop ⊓ Filter.principal {(p, k) : ℕ × ℕ | p.Prime}).limsup
       (fun (p, k) => (f (p^k) / (p^k : ℝ).log : EReal)) = ⊤) :
-    Filter.atTop.limsup (fun (n : ℕ) => (f (n+1) / (n : ℝ).log : EReal)) = ⊤ := by
+    Filter.atTop.limsup (fun (n : ℕ) => (f (n+1) / f n : EReal)) = ⊤ := by
   sorry
 
 /--
@@ -50,7 +50,7 @@ for some constant `c`.
 -/
 theorem erdos_897.variants.log_growth
     (f : ℕ → ℝ)
-    (hf : ∀ a b, a.Coprime b → f (a * b) = f a + f b)
+    (hf : ∀ᵉ (a > 0) (b > 0), a.Coprime b → f (a * b) = f a + f b)
     (C : ℝ) (hf' : ∀ n, |f (n+1) - f n| ≤ C) :
     ∃ c O, ∀ n, |f n - c*Real.log n| ≤ O := by
   sorry
@@ -64,7 +64,7 @@ Is it true that `limsup_n (f(n+1)−f(n))/ log n = ∞`?
 -/
 theorem erdos_897.variants.parts.i
     (f : ℕ → ℝ)
-    (hf : ∀ a b, a.Coprime b → f (a * b) = f a + f b)
+    (hf : ∀ᵉ (a > 0) (b > 0), a.Coprime b → f (a * b) = f a + f b)
     (hf' : (Filter.atTop ⊓ Filter.principal {(p, k) : ℕ × ℕ | p.Prime}).limsup (fun (p, k) => (f (p^k) / (p^k : ℝ).log : EReal)) = ⊤)
     (hf'' : (∀ k p, p.Prime → f (p^k) = f p) ∨ (∀ (k p : ℕ), p.Prime → f (p^k) = k*f p)) :
     Filter.atTop.limsup (fun (n : ℕ) => ((f (n+1) - f n) / (n : ℝ).log : EReal)) = ⊤ := by
@@ -74,12 +74,12 @@ theorem erdos_897.variants.parts.i
 Let `f(n)` be an additive function (so that `f(ab)=f(a)+f(b)`
 if `(a,b)=1`) such that `limsup_{p,k} f(p^k) log(p^k) = ∞` and `f(p^k) = f(p)`
 or `f(p^k) = kf(p)`.
-Is it true that `limsup_n f(n+1)/ log n = ∞`?
+Is it true that `limsup_n f(n+1)/f(n) = ∞`?
 -/
 theorem erdos_897.variants.parts.ii
     (f : ℕ → ℝ)
-    (hf : ∀ a b, a.Coprime b → f (a * b) = f a + f b)
+    (hf : ∀ᵉ (a > 0) (b > 0), a.Coprime b → f (a * b) = f a + f b)
     (hf' : (Filter.atTop ⊓ Filter.principal {(p, k) : ℕ × ℕ | p.Prime}).limsup (fun (p, k) => (f (p^k) / (p^k : ℝ).log : EReal)) = ⊤)
     (hf'' : (∀ k p, p.Prime → f (p^k) = f p) ∨ (∀ (k p : ℕ), p.Prime → f (p^k) = k*f p)) :
-    Filter.atTop.limsup (fun (n : ℕ) => (f (n+1) / (n : ℝ).log : EReal)) = ⊤ := by
+    Filter.atTop.limsup (fun (n : ℕ) => (f (n+1) / f n : EReal)) = ⊤ := by
   sorry

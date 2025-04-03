@@ -18,6 +18,7 @@ import OpenConjectures.ForMathlib.Algebra.Order.Group.Pointwise.Interval
 import OpenConjectures.ForMathlib.Analysis.SpecialFunctions.Log.Basic
 import OpenConjectures.ForMathlib.Combinatorics.Basic
 import OpenConjectures.ForMathlib.Data.Nat.MaxPrimeFac
+import OpenConjectures.ForMathlib.Data.Nat.Prime.Defs
 import OpenConjectures.ForMathlib.Data.Set.Density
 import OpenConjectures.ForMathlib.Geometry.«2d»
 import OpenConjectures.ForMathlib.Logic.Equiv.Fin

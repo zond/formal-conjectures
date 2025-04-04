@@ -51,7 +51,8 @@ is independent of `a` and equals Artin's constant,
 @[problem_status open]
 theorem artin_primitive_roots.parts.ii
     (a a_0 b : ℤ) (ha : a = a_0 * b^2)
-    (ha' : ∀ n m, a ≠ n^m) (ha_0 : Squarefree a_0) (ha_0' : ¬ a_0 ≡ 1 [ZMOD 4]):
+    (ha' : ∀ n m, m ≠ 1 → a ≠ n^m) (ha_0 : Squarefree a_0)
+    (ha_0' : ¬ a_0 ≡ 1 [ZMOD 4]):
     (S a).HasDensity ArtinConstant {p | p.Prime}  := by
   sorry
 
@@ -59,7 +60,8 @@ theorem artin_primitive_roots.parts.ii
 **Artin's Conjecture on Primitive Roots**, second half, different residue version
 If `a` is a square number or `a = −1`, then the density of the set `S(a)` of primes `p` such that `a` is a primitive root modulo `p` is `0`.
 -/
-@[problem_status open]
+@[problem_status solved] --Note: this is too easy to still be open!
+--See https://math.stackexchange.com/questions/2780014/prove-that-a-perfect-square-is-not-a-primitive-root-modulo-p-for-any-prime-p
 theorem artin_primitive_roots.variants.part_ii_square_or_minus_one
     (a : ℤ) (ha : IsSquare a ∨ a = -1) :
     (S a).HasDensity 0 {p | p.Prime} := by
@@ -88,7 +90,7 @@ is given by `C * ∏_p, p(p-1) / (p^2 - p - 1)` where `C` is Artin's constant an
 -/
 @[problem_status open]
 theorem artin_primitive_roots.variants.part_ii
-    (a a_0 b : ℕ) (ha : a = a_0 * b^2) (ha' : ∀ n m, a ≠ n^m)
+    (a a_0 b : ℕ) (ha : a = a_0 * b^2) (ha' : ∀ n m, m ≠ 1 → a ≠ n^m)
     (ha' : Squarefree a) (ha_0' : a_0 ≡ 1 [MOD 4]):
     (S a).HasDensity
       (ArtinConstant * ∏ p ∈ a_0.primeFactors, p * (p-1 : ℝ) / (p^2 - p - 1))

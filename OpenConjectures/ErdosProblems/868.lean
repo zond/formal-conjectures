@@ -87,6 +87,6 @@ theorem erdos_868.variants.fixed_ε {A : Set ℕ} (hA₁ : IsAddBasis A 2)
 /-- H\"artter and Nathanson proved that there exist additive bases which do not contain
 any minimal additive bases. -/
 @[problem_status solved]
-theorem erdos_868.variants.Hartter_Nathanson : ∃ A o, IsAddBasis A o ∧
+theorem erdos_868.variants.Hartter_Nathanson : ∃ A, ∃ o > 1, IsAddBasis A o ∧
     ∀ B ⊆ A, IsAddBasis B o → ∃ b ∈ B, IsAddBasis (B \ {b}) o :=
   sorry

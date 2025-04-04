@@ -26,6 +26,6 @@ $$
 $$
 -/
 @[problem_status open]
-theorem erdos_826 : { n | ∃ C > (0 : ℝ),
-    ∀ k ≥ 1, σ 0 (n + k) ≤ C * k }.Infinite :=
+theorem erdos_826 : ∃ C > (0 : ℝ),
+    { n | ∀ k ≥ 1, σ 0 (n + k) ≤ C * k }.Infinite :=
   sorry

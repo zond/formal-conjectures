@@ -114,7 +114,7 @@ conjectures and solved statements from dedicated problem lists.
     `example`.
 4.  Every file should come with a reference to where the problem was sourced
     from, and be put in the corresponding directory of the repository, e.g. a
-    problem sourced from wikipedia should live in `OpenConjectures/Wikipedia`.
+    problem sourced from wikipedia should live in `FormalConjectures/Wikipedia`.
 
 ## Versioning
 

@@ -14,19 +14,19 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
-import Lake
-open Lake DSL
+-- Erdos Problems URL: https://www.erdosproblems.com/248
+import FormalConjectures.Util.ProblemImports
 
-package formal_conjectures where
-  leanOptions := #[
-    ⟨`pp.unicode.fun, true⟩, -- pretty-prints `fun a ↦ b`
-    ⟨`pp.proofs.withType, false⟩,
-    ⟨`autoImplicit, false⟩,
-    ⟨`relaxedAutoImplicit, false⟩
-  ]
+open scoped ArithmeticFunction
 
-@[default_target]
-lean_lib FormalConjectures where
-  globs := #[.submodules `FormalConjectures]
-
-require mathlib from git "https://github.com/leanprover-community/mathlib4.git" @ "v4.17.0"
+/--
+Are there infinitely many $n$ such that, for all $k\geq 1$
+$$
+  \omega(n + k) \ll k?
+$$
+(Here $\omega(n)$ is the number of distinct prime divisors
+of $n$.)
+-/
+@[problem_status open]
+theorem erdos_826 : ∃ C > (0 : ℝ), { n | ∀ k ≥ 1, ω (n + k) ≤ C * k }.Infinite :=
+  sorry

@@ -91,5 +91,5 @@
    "inputRev": "main",
    "inherited": true,
    "configFile": "lakefile.toml"}],
- "name": "open_conjectures",
+ "name": "formal_conjectures",
  "lakeDir": ".lake"}

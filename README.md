@@ -128,4 +128,10 @@ theorem HadwigerNelsonProblem :
 
 ## Versioning
 
-We provide releases for the monthly stable versions of lean/mathlib.
+This repo will track the monthly tagged releases of mathlib (which correspond to
+Lean releases), rather than tracking mathlib master.
+
+To minimize friction when adding problem statements that need definitions that
+are not yet in mathlib, such definitions can be added to the `ForMathlib`
+directory. This ensures that the addition of these problems to
+formal-conjectures is not locked to the mathlib release cadence.

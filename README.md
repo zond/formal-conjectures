@@ -1,4 +1,4 @@
-### Formal Conjectures
+## Formal Conjectures
 
 A collection of formalized statements of conjectures in
 [lean](https://leanprover.github.io/lean4/doc/whatIsLean.html), using
@@ -6,14 +6,52 @@ A collection of formalized statements of conjectures in
 
 <!--TODO(firsching): insert link to autmatically generated documentation once docgen4 works-->
 
-**Goals:**
+## Goals
 
-*   Provide a benchmark for automated theorem provers and automated
+While there is a growing corpus of formalized theorems including proofs, there
+is a lack of open conjectures where only the statement has been formalized. This
+would be useful for a few reasons. It could
+
+*   Become a great benchmark for automated theorem provers and automated
     formalization tools.
 *   Help clarify the precise meaning of conjectures through formalization.
 *   Encourage the expansion of `mathlib` by highlighting needed definitions.
 
-## Usage, Features & Structure
+## Contributing
+
+Contributions are most welcome, consider adding (or even just opening an issue
+describing) your favorite conjecture.
+
+Unlike other conjecture lists (the Millenium problems, Smale's list, Yau's
+problems, ...) the problems in this repo can come from various places and we
+encourage all sorts of contributions. For example, conjectures can be sourced
+from various places, including:
+
+*   Mathematical Textbooks
+*   Research Papers (including preprints on the
+    [arxiv](https://arxiv.org/archive/math))
+*   [MathOverflow](https://mathoverflow.net/) Questions
+*   Dedicated Problem Lists (e.g.,
+    [Erdős Problems](https://www.erdosproblems.com/),
+    [Wikipedia's list of unsolved problems](https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_mathematics),
+    [the Scottish Book](https://en.wikipedia.org/wiki/Scottish_Book), ...)
+*   ...
+
+We are also interested in the formalized statement of solved variants of open
+conjectures and solved statements from dedicated problem lists.
+
+### How to Contribute
+
+1.  Fork the repository on GitHub.
+2.  Add your formalized conjecture(s) in the appropriate file/directory
+    structure to a branch in your fork.
+    *   Include comments linking to the source of the conjecture (paper,
+        website, book).
+    *   Use the attribute `@[problem_status open]` for unsolved conjectures.
+3.  Ensure the code builds (`lake build`).
+4.  Submit a Pull Request to the main repository.
+
+## Usage, Structure & Features
 
 This is a lean 4 project managed with `lake` and a dependency `mathlib`. You
 first need to
@@ -24,6 +62,20 @@ and then run
 lake exe cache get
 lake build
 ```
+
+### Directory structure
+
+The directory structure is organized by the type of sources of the conjectures.
+There are two special directories:
+
+-   `Util` contains utilities like the
+    [`problem_status` attribute](./FormalConjectures/Util/OpenProblemAttr.lean),
+    the [`answer( )` elaborator](./FormalConjectures/Util/Answer.lean) and some
+    linters.
+-   `ForMathlib` contains code potentially suitable to be upstreamed to
+    [mathlib](https://github.com/leanprover-community/mathlib4). Here we follow
+    mathlib's directory structure.
+
 
 ### Two features
 
@@ -59,52 +111,10 @@ theorem HadwigerNelsonProblem :
   sorry
 ```
 
-### Directory structure
-
-The directory structure is organized by the type of sources of the conjectures.
-There are two special directories:
-
--   `Util` contains utilities like the
-    [`problem_status` attribute](./FormalConjectures/Util/OpenProblemAttr.lean),
-    the [`answer( )` elaborator](./FormalConjectures/Util/Answer.lean) and some
-    linters.
--   `ForMathlib` contains code potentially suitable to be upstreamed to
-    [mathlib](https://github.com/leanprover-community/mathlib4). Here we follow
-    mathlib's directory structure.
-
-## Contributing
-
-Contributions are most welcome, consider adding your favorite conjecture!
-
-Conjectures can be sourced from various places, including:
-
-*   Mathematical Textbooks
-*   Research Papers (including preprints on the
-    [arxiv](https://arxiv.org/archive/math))
-*   [MathOverflow](https://mathoverflow.net/) Questions
-*   Dedicated Problem Lists (e.g.,
-    [Erdős Problems](https://www.erdosproblems.com/),
-    [Wikipedia's list of unsolved problems](https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_mathematics),
-    [the Scottish Book](https://en.wikipedia.org/wiki/Scottish_Book), ...)
-
-We are also interested in the formalized statement of solved variants of open
-conjectures and solved statements from dedicated problem lists.
-
-**How to Contribute**
-
-1.  Fork the repository on GitHub.
-2.  Add your formalized conjecture(s) in the appropriate file/directory
-    structure to a branch in your fork.
-    *   Include comments linking to the source of the conjecture (paper,
-        website, book).
-    *   Use the attribute `@[problem_status open]` for unsolved conjectures.
-3.  Ensure the code builds (`lake build`).
-4.  Submit a Pull Request to the main repository.
-
 ## Style Guidelines
 
 1.  Generally speaking, every problem should have its own file, though there is
-    some flexibility here (e.g. variants and special cases can go in the same
+    some flexibility here (e.g. variants and special cases should go in the same
     file).
 2.  Bespoke definitions are allowed, as long as they help clarify problem
     statements. We also encourage contributors to provide some very basic API

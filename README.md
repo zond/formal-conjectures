@@ -17,6 +17,14 @@ would be useful for a few reasons. It could
 *   Help clarify the precise meaning of conjectures through formalization.
 *   Encourage the expansion of `mathlib` by highlighting needed definitions.
 
+### Note on Formalisation Accuracy
+
+Formalizing mathematical statements without proofs is inherently challenging.
+Subtle inaccuracies can arise where the formal statement might not perfectly
+capture the nuances of the original conjecture. To mitigate this issue, we will
+rely on careful human review of contributions, and plan to periodically leverage
+AlphaProof to help identify potential misformalisations.
+
 ## Contributing
 
 Contributions are most welcome, consider adding (or even just opening an issue

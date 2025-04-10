@@ -38,5 +38,6 @@ def IsZeroOne (P : ℝ[X]) := P.coeffs ⊆ {1}
 -- that coefficients must at least lie in `[0, 1]`
 @[problem_status open]
 theorem mathoverflow_339137 (P Q R : ℝ[X]) (hP: P.Monic) (hQ : Q.Monic)
+    (hp : ∀ c ∈ P.coeffs, 0 ≤ c) (hq : ∀ c ∈ P.coeffs, 0 ≤ c)
     (h : R = P * Q) (hR : IsZeroOne R):
     IsZeroOne P ∧ IsZeroOne Q := sorry

@@ -30,15 +30,15 @@ theorem erdos_913 :
   sorry
 
 /--
-It is likely that there are infinitely many primes $p$ such that $8p^2 + 1$ is also prime.
+It is likely that there are infinitely many primes $p$ such that $8p^2 - 1$ is also prime.
 -/
 @[problem_status open]
 theorem erdos_913.variants.infinite_many_8p_sq_add_one_primes :
-    { p | p.Prime ∧ (8 * p ^ 2 + 1).Prime }.Infinite :=
+    { p | p.Prime ∧ (8 * p ^ 2 - 1).Prime }.Infinite :=
   sorry
 
-/-- If there are infinitely many primes $p$ such that $8p^2 + 1$ is prime, then this is true. -/
+/-- If there are infinitely many primes $p$ such that $8p^2 - 1$ is prime, then this is true. -/
 @[problem_status solved]
-theorem erdos_913.variants.conditional (h : { p | p.Prime ∧ (8 * p ^ 2 + 1).Prime }.Infinite) :
+theorem erdos_913.variants.conditional (h : { p | p.Prime ∧ (8 * p ^ 2 - 1).Prime }.Infinite) :
     { n | Set.InjOn (n * (n + 1)).factorization (n * (n + 1)).primeFactors }.Infinite :=
   sorry

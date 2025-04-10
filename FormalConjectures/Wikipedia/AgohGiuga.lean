@@ -36,7 +36,9 @@ An integer `p ≥ 2` is prime if and only if we have
 `p*B_{p-1} ≡ -1 [MOD p]`
 -/
 def AgohGiugaCongr : Prop :=
-  ∀ p ≥ 2, p.Prime ↔ ∃ (k : ℤ), p*k = p*bernoulli' (p-1 : ℕ) + 1
+  ∀ p ≥ 2, p.Prime ↔ ∃ (k : ℤ),
+  let B := bernoulli' (p - 1)
+  p * B.num + B.den = k * p
 
 /--
 The **Agoh-Giuga Conjecture**, Giuga's formulation.
@@ -69,7 +71,7 @@ theorem agoh_giuga.variants.equivalence : AgohGiugaCongr ↔ AgohGiugaSum := by
 A Giuga number is a counterexample to Giuga's conjecture.
 -/
 def IsGiuga (p : ℕ) : Prop :=
-    ¬ p.Prime ∧ p ∣ 1 + ∑ i ∈ Finset.Ioo 0 p, i^(p - 1 : ℕ)
+    2 ≤ p ∧ ¬ p.Prime ∧ p ∣ 1 + ∑ i ∈ Finset.Ioo 0 p, i^(p - 1 : ℕ)
 
 /--
 A Carmichael number is a natural number `n` such that for all `b ≥ 1`,

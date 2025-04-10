@@ -40,7 +40,7 @@ $m = 2 * k$ is even, and $\sigma := \sqrt{p(1-p)}$,
 -/
 @[problem_status open]
 theorem arxiv.id0911_2077.conjecture6_3
-  (p : ℝ) (h_p : p ∈ Set.Ioo 0 (1 / 2)) (k : ℕ)
+  (p : ℝ) (h_p : p ∈ Set.Ioo 0 (1 / 2)) (k : ℕ) (hk : 0 < k)
   (hp' : (.ofReal p : ℝ≥0∞) ≤ 1 :=
     ENNReal.ofReal_le_one.mpr <| le_trans (le_of_lt (Set.mem_Ioo.mp h_p).right) (by linarith))
   (σ : ℝ) (h_σ : σ = (p * (1 - p)).sqrt) :

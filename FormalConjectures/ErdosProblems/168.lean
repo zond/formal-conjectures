@@ -48,7 +48,7 @@ lemma mem_IntervalNonTernarySets_iff (N : ℕ) (S : Finset ℕ) :
 /-Sanity check: if `S` is a maximal non ternary subset of `{1,..., N}` then `F N` is given by the cardinality of `S`-/
 lemma F_eq_card (N : ℕ) (S : Finset ℕ) (hS : S ⊆ Finset.Icc 1 N)
     (hS' : NonTernary S) (hS'' : ∀ T, T ⊆ Finset.Icc 1 N → NonTernary T → S ⊆ T → T = S) :
-    N = S.card := by
+    F N = S.card := by
   sorry
 
 /--What is the limit `F(N)/N` as `N → ∞`? -/

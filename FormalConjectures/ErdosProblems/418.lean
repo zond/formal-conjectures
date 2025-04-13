@@ -54,14 +54,14 @@ theorem erdos_418.variants.sigma :
 
 /--
 A solution to erdos_418 was shown by Browkin and Schinzel [BrSc95] by
-showing that any integer of the form $2^k\cdot 509203$ is not of the
+showing that any integer of the form $2^(k + 1)\cdot 509203$ is not of the
 form $n - \phi(n)$.
 
 [BrSc95] Browkin, J. and Schinzel, A., _On integers not of the form {$n-\phi(n)$}_. Colloq. Math. (1995), 55-58.
 -/
 @[problem_status solved]
 theorem erdos_418.variants.soln :
-    { 2 ^ k * 509203 | k } ⊆ { (n - n.totient : ℕ) | n }ᶜ :=
+    { 2 ^ (k + 1) * 509203 | k } ⊆ { (n - n.totient : ℕ) | n }ᶜ :=
   sorry
 
 /--

@@ -38,7 +38,7 @@ $n_2 > 2(n_1 + k_1)$.
 -/
 @[problem_status open]
 theorem erdos_931.variants.necessary_cond (k₁ k₂ n₁ n₂ : ℕ) (h₁ : k₂ ≤ k₁) (h₂ : 3 ≤ k₂)
-    (h₃ : (∏ i ∈ Finset.Icc 1 k₁, (n₁ + i)).primeFactors =
+    (h₃ : n₁ + k₁ ≤ n₂) (h₄ : (∏ i ∈ Finset.Icc 1 k₁, (n₁ + i)).primeFactors =
       (∏ j ∈ Finset.Icc 1 k₂, (n₂ + j)).primeFactors) :
     2 * (n₁ + k₁) < n₂ :=
   sorry
@@ -49,7 +49,7 @@ then there must exist a prime between $n_1$ and $n_2$.
 -/
 @[problem_status open]
 theorem erdos_931.variants.exists_prime (k₁ k₂ n₁ n₂ : ℕ) (h₁ : k₂ ≤ k₁) (h₂ : 3 ≤ k₂)
-    (h₃ : (∏ i ∈ Finset.Icc 1 k₁, (n₁ + i)).primeFactors =
+    (h₃ : n₁ + k₁ ≤ n₂) (h₄ : (∏ i ∈ Finset.Icc 1 k₁, (n₁ + i)).primeFactors =
       (∏ j ∈ Finset.Icc 1 k₂, (n₂ + j)).primeFactors) :
     ∃ (p : ℕ), p.Prime ∧ n₁ ≤ p ∧ p ≤ n₂ :=
   sorry

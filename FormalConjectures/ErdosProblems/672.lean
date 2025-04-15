@@ -19,7 +19,8 @@ import FormalConjectures.Util.ProblemImports
 
 /-- Erdos problem 672 conjectures the below holds for all `k ≥ 4` and `l > 1`. -/
 def Erdos672With (k l : ℕ) [NeZero k] : Prop :=
-  ∀ᵉ (s : Fin k → ℕ), 0 < s 0 → (∃ d > 0, ∀ i, s i = s 0 + i * d) → ¬ ∃ q, ∏ i, s i = q ^ l
+  ∀ᵉ (s : Fin k → ℕ), 0 < s 0 → (∃ d > 0, Nat.gcd (s 0) d = 1 ∧ ∀ i, s i = s 0 + i * d) →
+  ¬ ∃ q, ∏ i, s i = q ^ l
 
 /-- Can the product of an arithmetic progression of positive integers of length ≥ 4 be a perfect power? -/
 @[problem_status open]

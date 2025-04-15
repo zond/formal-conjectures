@@ -41,14 +41,14 @@ theorem erdos_730.variants.explicit_pairs :
 Show that for all `n`, the binomial coefficient $\binom{2n}{n}$ is even.
 -/
 @[problem_status solved]
-theorem erdos_730.variants.two_div_forall (n : ℕ) : 2 ∣ (2*n).choose n := by
+theorem erdos_730.variants.two_div_forall (n : ℕ) (h : 0 < n) : 2 ∣ (2*n).choose n := by
   sorry
 
 /--
 Show that `(n,n+1) ∈ S` if and only if for all odd primes `p≤n` we have `n∉{(p−1)/2,p−1}(mod p)`.
 -/
 @[problem_status solved]
-theorem erdos_730.variants.succ_pair_criterion (n : ℕ) :
+theorem erdos_730.variants.succ_pair_criterion (n : ℕ) (h : 0 < n):
     (n, n+1) ∈ S ↔ ∀ p ∈ Set.Ioc 2 n, ∀ [hp : Fact p.Prime], (n : ZMod p) ≠ (p-1) / 2 ∧
       (n : ZMod p) ≠ p-1 := by
   sorry

@@ -21,6 +21,12 @@ import FormalConjectures.Util.ProblemImports
 open Filter
 
 open scoped Topology
+/--
+The sum of the inverses of all primes smaller than `n`, which don't divide the central
+binom coefficient.
+-/
+noncomputable abbrev sumInvPrimesNotDvdCentralBinom (n : ℕ) : ℝ :=
+  ∑ p ∈ Finset.Icc 1 n with p.Prime, if p ∣ (2 * n).choose n then 0 else (1 : ℝ) / p
 
 /--
 Is there some absolute constant $C > 0$ such that
@@ -31,8 +37,7 @@ for all $n$?
 -/
 @[problem_status open]
 theorem erdos_377 : ∃ C > (0 : ℝ),
-    ∀ (n : ℕ),
-      ∑ p ∈ Finset.Icc 1 n, (if p ∣ (2 * n).choose n then 0 else (1 : ℝ) / p) ≤ C :=
+    ∀ (n : ℕ), sumInvPrimesNotDvdCentralBinom n ≤ C :=
   sorry
 
 /--
@@ -51,12 +56,9 @@ $$
 [EGRS75] Erdős, P. and Graham, R. L. and Ruzsa, I. Z. and Straus, E. G., _On the prime factors of $(\sp{2n}\sb{n})$_. Math. Comp. (1975), 83-92.
 -/
 @[problem_status solved]
-theorem erdos_377.variants.limit.i (f : ℕ → ℝ)
-    (hf : ∀ n,
-      f n = ∑ p ∈ Finset.Icc 1 n, (if p ∣ (2 * n).choose n then 0 else (1 : ℝ) / p))
-    (γ₀ : ℝ)
+theorem erdos_377.variants.limit.i (γ₀ : ℝ)
     (hγ₀ : γ₀ = ∑' (k : ℕ), (k + 2 : ℝ).log / 2 ^ (k + 2)) :
-    Tendsto (fun (x : ℕ) => (1 : ℝ) / x * ∑ n ∈ Finset.Icc 1 x, f n)
+    Tendsto (fun (x : ℕ) => (1 : ℝ) / x * ∑ n ∈ Finset.Icc 1 x, sumInvPrimesNotDvdCentralBinom n)
       atTop (𝓝 γ₀) :=
   sorry
 
@@ -76,13 +78,11 @@ $$
 [EGRS75] Erdős, P. and Graham, R. L. and Ruzsa, I. Z. and Straus, E. G., _On the prime factors of $(\sp{2n}\sb{n})$_. Math. Comp. (1975), 83-92.
 -/
 @[problem_status solved]
-theorem erdos_377.variants.limit.ii (f : ℕ → ℝ)
-    (hf : ∀ n,
-      f n = ∑ p ∈ Finset.Icc 1 n, (if p ∣ (2 * n).choose n then 0 else (1 : ℝ) / p))
-    (γ₀ : ℝ)
+theorem erdos_377.variants.limit.ii (γ₀ : ℝ)
     (hγ₀ : γ₀ = ∑' (k : ℕ), (k + 2 : ℝ).log / 2 ^ (k + 2)) :
-    Tendsto (fun (x : ℕ) => (1 : ℝ) / x * ∑ n ∈ Finset.Icc 1 x, f n ^ 2)
-      atTop (𝓝 (γ₀ ^ 2)) :=
+    Tendsto (fun (x : ℕ) =>
+      (1 : ℝ) / x * ∑ n ∈ Finset.Icc 1 x, sumInvPrimesNotDvdCentralBinom n ^ 2)
+      atTop (𝓝 (γ₀ ^ 2)) := by
   sorry
 
 /--
@@ -99,13 +99,9 @@ then for almost all integers $f(m) = \gamma_0 + o(1)$.
 [EGRS75] Erdős, P. and Graham, R. L. and Ruzsa, I. Z. and Straus, E. G., _On the prime factors of $(\sp{2n}\sb{n})$_. Math. Comp. (1975), 83-92.
 -/
 @[problem_status solved]
-theorem erdos_377.variants.ae (f : ℕ → ℝ)
-    (hf : ∀ n,
-      f n = ∑ p ∈ Finset.Icc 1 n, (if p ∣ (2 * n).choose n then 0 else (1 : ℝ) / p))
-    (γ₀ : ℝ)
-    (hγ₀ : γ₀ = ∑' (k : ℕ), (k + 2 : ℝ).log / 2 ^ (k + 2)) :
+theorem erdos_377.variants.ae (γ₀ : ℝ) (hγ₀ : γ₀ = ∑' (k : ℕ), (k + 2 : ℝ).log / 2 ^ (k + 2)) :
     ∃ (o : ℕ → ℝ) (_ : Tendsto o atTop (𝓝 0)),
-      ∀ᶠ n in cofinite, f n = γ₀ + o n :=
+      ∀ᶠ n in cofinite, sumInvPrimesNotDvdCentralBinom n = γ₀ + o n :=
   sorry
 
 /--
@@ -121,9 +117,6 @@ $$
 [EGRS75] Erdős, P. and Graham, R. L. and Ruzsa, I. Z. and Straus, E. G., _On the prime factors of $(\sp{2n}\sb{n})$_. Math. Comp. (1975), 83-92.
 -/
 @[problem_status solved]
-theorem erdos_377.variants.ub (f : ℕ → ℝ)
-    (hf : ∀ n,
-      f n = ∑ p ∈ Finset.Icc 1 n, (if p ∣ (2 * n).choose n then 0 else (1 : ℝ) / p)) :
-    ∃ c < (1 : ℝ),
-      ∀ᶠ n in atTop, f n ≤ c * (n : ℝ).log.log :=
+theorem erdos_377.variants.ub : ∃ c < (1 : ℝ),
+      ∀ᶠ n in atTop, sumInvPrimesNotDvdCentralBinom n ≤ c * (n : ℝ).log.log :=
   sorry

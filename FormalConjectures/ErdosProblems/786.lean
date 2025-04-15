@@ -36,8 +36,8 @@ such that $a_1\cdots a_r = b_1\cdots b_s$ with $a_i, b_j\in A$ can only hold whe
 $r = s$?
 -/
 @[problem_status open]
-theorem erdos_786.parts.i (ε δ : ℝ) (hε : 0 < ε ∧ ε ≤ 1) (hδ : 1 - ε < δ) :
-    ∃ (A : Set ℕ), 0 ∉ A ∧ A.HasDensity δ ∧
+theorem erdos_786.parts.i (ε : ℝ) (hε : 0 < ε ∧ ε ≤ 1) :
+    ∃ (A : Set ℕ) (δ : ℝ), 0 ∉ A ∧ 1 - ε < δ ∧ A.HasDensity δ ∧
       A.IsMulCardSet :=
   sorry
 
@@ -48,8 +48,9 @@ $a_1\cdots a_r = b_1\cdots b_s$ with $a_i, b_j\in A$ can only hold when
 $r = s$?
 -/
 @[problem_status open]
-theorem erdos_786.parts.ii (ε δ : ℝ) (hε : 0 < ε ∧ ε ≤ 1) (hδ : 1 - ε < δ) :
-    ∃ (N : ℕ) (A : ℕ → Set ℕ) (f : ℕ → ℝ) (_ : Tendsto f atTop (𝓝 0)),
+theorem erdos_786.parts.ii (ε : ℝ) (hε : 0 < ε ∧ ε ≤ 1) :
+    ∃ (N : ℕ) (A : ℕ → Set ℕ) (f : ℕ → ℝ) (_ : Tendsto f atTop (𝓝 0)) (δ : ℝ),
+      1 - ε < δ ∧
       ∀ N, A N ⊆ Set.Icc 1 N ∧ (1 - f N) * N ≤ (A N).ncard ∧
         (A N).HasDensity δ ∧
           (A N).IsMulCardSet :=

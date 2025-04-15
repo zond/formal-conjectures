@@ -19,13 +19,12 @@ import FormalConjectures.Util.ProblemImports
 
 
 open scoped Nat
-
 /--
-Let `S` be the set of solutions to the equation `n! = a₁! ··· aₖ!` such that `a₁ ≥ ... ≥ aₖ` and `n-1 ≥ a₁`.
+Let `S` be the set of non-trivial solutions to the equation `n! = a₁! ··· aₖ!` such that `a₁ ≥ ... ≥ aₖ` and `n-1 > a₁`.
 -/
 abbrev S : Set (ℕ × List ℕ) :=
   {(n, l) | n ! = (l.map Nat.factorial).prod ∧ l.Sorted (· ≥ ·)
-    ∧ l.headI < (n - 1 : ℕ)}
+    ∧ l.headI < (n - 1 : ℕ) ∧ ∀ a ∈ l, 1 < a }
 
 
 /--
@@ -74,6 +73,6 @@ is `6!7!=10!`.
 -/
 @[problem_status open]
 theorem erdos_373.variants.suranyi :
-    {(n, a, b) : ℕ × ℕ × ℕ | n ! = a ! * b ! ∧ 1 < n}
+    {(n, a, b) : ℕ × ℕ × ℕ | n ! = a ! * b ! ∧ 1 < n ∧ 1 < a ∧ 1 < b}
       = {(10, 6, 7), (10, 7, 6)} := by
   sorry

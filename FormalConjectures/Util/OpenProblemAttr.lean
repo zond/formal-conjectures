@@ -44,13 +44,7 @@ theorem bar : 1 + 1 = 2 := by
   sorry
 ```
 
-
---TODO(lezeau): deprecate the `open_problem` tag in favor of the `problem_status` tag.
 -/
-
---TODO(lezeau): maybe the contents of this file should just be included in `GDMLib.Metadata`?
-
-section
 
 section
 

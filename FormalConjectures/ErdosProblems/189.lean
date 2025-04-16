@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdos Problems URL: https://www.erdosproblems.com/189
+-- Erdős Problems URL: https://www.erdosproblems.com/189
 import FormalConjectures.Util.ProblemImports
 
 open Affine EuclideanGeometry

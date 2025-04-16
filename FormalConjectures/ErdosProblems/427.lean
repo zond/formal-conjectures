@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdos Problems URL: https://www.erdosproblems.com/427
+-- Erdős Problems URL: https://www.erdosproblems.com/427
 import FormalConjectures.Util.ProblemImports
 
 /--
@@ -64,7 +64,7 @@ theorem erdos_427.shiu : ShiuTheorem :=
 
 
 /--
-Cedric Pilatte has observed that a positive solution to Erdös Problem 427 follows from Shiu's theorem.
+Cedric Pilatte has observed that a positive solution to Erdős Problem 427 follows from Shiu's theorem.
 -/
 @[problem_status solved]
 theorem erdos_427.of_shiu (H : ShiuTheorem) : Erdos427 := by

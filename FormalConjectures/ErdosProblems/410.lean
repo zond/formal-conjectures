@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdos Problems URL: https://www.erdosproblems.com/410
+-- Erdős Problems URL: https://www.erdosproblems.com/410
 import FormalConjectures.Util.ProblemImports
 
 open ArithmeticFunction Filter

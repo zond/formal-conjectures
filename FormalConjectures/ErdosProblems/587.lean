@@ -14,6 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
+-- Erdős Problems URL: https://www.erdosproblems.com/509
 import FormalConjectures.Util.ProblemImports
 
 /--

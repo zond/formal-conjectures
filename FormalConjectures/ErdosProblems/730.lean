@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problem URL: https://www.erdosproblems.com/730
+-- Erdős Problems URL: https://www.erdosproblems.com/730
 import FormalConjectures.Util.ProblemImports
 
 abbrev S := {(n, m) : ℕ × ℕ | n ≠ m ∧ ((2*n).choose n).primeFactors = ((2*m).choose m).primeFactors}

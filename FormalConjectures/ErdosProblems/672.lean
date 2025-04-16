@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdos Problems URL: https://www.erdosproblems.com/672
+-- Erdős Problems URL: https://www.erdosproblems.com/672
 import FormalConjectures.Util.ProblemImports
 
 /-- Erdos problem 672 conjectures the below holds for all `k ≥ 4` and `l > 1`. -/

@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdos Problems URL: https://www.erdosproblems.com/303
+-- Erdős Problems URL: https://www.erdosproblems.com/303
 import FormalConjectures.Util.ProblemImports
 
 /--Is it true that in any finite colouring of the integers there exists a monochromatic solution to `1/a=1/b+1/c` with distinct `a,b,c`?-/

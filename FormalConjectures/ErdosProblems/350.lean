@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdos Problems URL: https://www.erdosproblems.com/350
+-- Erdős Problems URL: https://www.erdosproblems.com/350
 import FormalConjectures.Util.ProblemImports
 
 /--The predicate that all (finite) subsets of `A` have distinct sums-/

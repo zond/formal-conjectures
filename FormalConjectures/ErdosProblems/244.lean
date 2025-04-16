@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdos Problems URL: https://www.erdosproblems.com/244
+-- Erdős Problems URL: https://www.erdosproblems.com/244
 import FormalConjectures.Util.ProblemImports
 
 /-- Let $C > 1$. Does the set of integers of the form $p + \lfloor C^k \rfloor$,

@@ -14,7 +14,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdos Problems URL: https://www.erdosproblems.com/469
+-- Erdős Problems URL: https://www.erdosproblems.com/469
 import FormalConjectures.Util.ProblemImports
 
 /-- The proposition that `n` is a sum of distinct proper divisors. -/

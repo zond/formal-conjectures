@@ -15,7 +15,15 @@ limitations under the License.
 -/
 
 import FormalConjectures.Util.ProblemImports
-
+/-
+For a standard reference on this topic see:
+Kuipers, L., and Niederreiter, H. Uniform Distribution of Sequences. Wiley, 1974
+https://books.google.ch/books/about/Uniform_Distribution_of_Sequences.html?id=lCTvAAAAMAAJ
+Corollary 4.2 of Chapter 1 states that the sequence $(x^n), n = 1, 2, ... ,$ is equidistributed modulo 1 for
+almost all x > 1. And a little bit further down:
+"one does not know whether sequences such as $(e^n)$, $(π^n7)$, or even $((3/2)^n)$"
+are equidistributed modulo 1 or not.
+-/
 open scoped Topology
 
 /--
@@ -24,7 +32,7 @@ an interval `[a, b]` if for every subinterval `[c, d ]` of `[a, b]` we have
 `lim_{n→ ∞} |{s_1, ..., s_n} ∩ [c, d]| / n = (d - c)/(b-a)`
 -/
 def IsEquidistributed (a b : ℝ) (s : ℕ → ℝ) : Prop :=
-  ∀ c d, Set.Icc c d ⊆ Set.Icc a b →
+  ∀ c d, c ≤ d → Set.Icc c d ⊆ Set.Icc a b →
   Filter.atTop.Tendsto (fun n => ((Finset.range n).filter
     fun m => s m ∈ Set.Icc c d).card / (n : ℝ)) (𝓝 <| (d - c) / (b - a))
 
@@ -34,8 +42,7 @@ modulo 1 or uniformly distributed modulo 1 if the sequence of the fractional par
 `a_n`, denoted by `(a_n)` or by `a_n − ⌊a_n⌋`, is equidistributed in the interval `[0, 1]`.
 -/
 def IsEquidistributedModuloOne (s : ℕ → ℝ) : Prop :=
-  IsEquidistributed 0 1 (fun n => s n - Int.fract (s n))
-
+  IsEquidistributed 0 1 (fun n => Int.fract (s n))
 
 /--
 A point `x` is an accumulation point of a sequence `s_0, s_1, ...`
@@ -44,7 +51,6 @@ from `x`.
 -/
 def IsAccumulationPoint (x : ℝ) (s : ℕ → ℝ) : Prop :=
   x ∈ closure (Set.range s \ {x})
-
 
 /--
 If a point `x` is an accumulation point of a sequence `s_0, s_1, ...` then
@@ -64,11 +70,11 @@ theorem isEquidistributedModuloOne_three_halves_pow :
   sorry
 
 /--
-The sequence `(3/2)^n` has infinitely many accumulation points
+The sequence `(3/2)^n` has infinitely many accumulation points modulo `1`.
 -/
 @[problem_status solved]
 theorem isAccumulationPoint_three_halves_pow_infinite :
-    {x | IsAccumulationPoint x (fun n => (3 / 2 : ℝ)^n)}.Infinite := by
+    {x | IsAccumulationPoint x (fun n => Int.fract <| (3 / 2 : ℝ)^n)}.Infinite := by
   sorry
 
 /--

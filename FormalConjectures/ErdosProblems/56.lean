@@ -25,6 +25,12 @@ def WeaklyDivisible (k : ℕ) (A : Finset ℕ) : Prop :=
     ∀ s ∈ A.powersetCard (k+1),
     ∃ᵉ (a ∈ s) (b ∈ s), ¬ a.Coprime b
 
+lemma weaklyDivisible_empty (k : ℕ): WeaklyDivisible k {} := by
+  simp [WeaklyDivisible]
+
+lemma weaklyDivisible_one (k : ℕ): WeaklyDivisible k {1} ↔ k ≠ 0 := by
+  simp [WeaklyDivisible]
+
 --TODO(lezeau): we shouldn't need to open `Classical` here!
 open Classical in
 /--
@@ -34,6 +40,21 @@ noncomputable def MaxWeaklyDivisible (N : ℕ) (k : ℕ) : ℕ :=
     (Finset.Icc 1 N).powerset.filter (WeaklyDivisible k) |>.sup
     Finset.card
 
+example (k : ℕ) : MaxWeaklyDivisible 0 k = 0 := by
+  simp [MaxWeaklyDivisible]
+
+open Classical
+
+example (k : ℕ) : MaxWeaklyDivisible 1 k = if k = 0 then 0 else 1 := by
+  simp [MaxWeaklyDivisible]
+  have : (Finset.filter (WeaklyDivisible k) ({1} : Finset ℕ).powerset) = if k = 0 then {{}} else {{}, {1}} := by
+    show Finset.filter (WeaklyDivisible k) {∅, {1}} = _
+    rw [Finset.filter_insert (WeaklyDivisible k) ({} : Finset ℕ) {{1}}]
+    simp only [weaklyDivisible_empty k, Finset.filter_singleton, weaklyDivisible_one]
+    by_cases hk : k = 0 <;> simp [hk]
+  rw [this]
+  by_cases hk : k = 0 <;> simp [hk]
+
 /--
 `FirstPrimesMultiples N k` is the set of numbers in `{1,..., N}` that are
 a multiple of one of the first `k` primes.
@@ -41,14 +62,21 @@ a multiple of one of the first `k` primes.
 noncomputable def FirstPrimesMultiples (N k : ℕ) : Finset ℕ :=
     (Finset.Icc 1 N).filter fun i => ∃ j < k, (j.nth Nat.Prime ∣ i)
 
+example (k : ℕ) : (FirstPrimesMultiples 1 k).card = 0 := by
+  simp [FirstPrimesMultiples, Finset.filter_singleton]
+  intro n h
+  by_contra hprime
+  have : Nat.Prime 1 := by
+    convert Nat.prime_nth_prime n
+    exact hprime.symm
+  tauto
+
 /--
 An example of a `k`-weakly divisible set is the subset of `{1, ..., N}`
 containing the multiples of the first `k` primes.
 -/
 lemma weaklyDivisible_firstPrimesMultiples (N k : ℕ) (hN : 1 ≤ N) :
-    WeaklyDivisible k (FirstPrimesMultiples N k) := by
-  sorry
-
+    WeaklyDivisible k (FirstPrimesMultiples N k) := sorry
 
 /--
 Suppose `A⊆{1,…,N}` is such that there are no `k+1` elements of `A`
@@ -56,6 +84,6 @@ which are relatively prime. An example is the set of all multiples of
 the first `k` primes. Is this the largest such set?
 -/
 @[problem_status solved]
-theorem erdos_56 (N : ℕ) (hN : 1 ≤ N)
+theorem erdos_56 (N : ℕ) (hN : 2 ≤ N)
     (k : ℕ) : MaxWeaklyDivisible N k = (FirstPrimesMultiples N k).card := by
   sorry

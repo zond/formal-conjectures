@@ -22,14 +22,18 @@ Say a set of natural numbers is `k`-weakly divisible if any `k+1` elements
 of `A` are not relatively prime.
 -/
 def WeaklyDivisible (k : ℕ) (A : Finset ℕ) : Prop :=
-    ∀ s ∈ A.powersetCard (k+1),
-    ∃ᵉ (a ∈ s) (b ∈ s), ¬ a.Coprime b
+    ∀ s ∈ A.powersetCard (k+1), Pairwise (¬ Nat.Coprime · ·)
 
 lemma weaklyDivisible_empty (k : ℕ): WeaklyDivisible k {} := by
   simp [WeaklyDivisible]
 
 lemma weaklyDivisible_one (k : ℕ): WeaklyDivisible k {1} ↔ k ≠ 0 := by
-  simp [WeaklyDivisible]
+  simp [WeaklyDivisible, Pairwise]
+  by_cases hk: k = 0 <;> simp only [hk]
+  · simp only [forall_const, not_true_eq_false, iff_false, not_forall]
+    use 1, 2
+    norm_num
+  · tauto
 
 --TODO(lezeau): we shouldn't need to open `Classical` here!
 open Classical in

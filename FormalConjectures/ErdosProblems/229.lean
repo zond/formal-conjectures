@@ -28,7 +28,7 @@ $$
 @[problem_status solved]
 theorem erdos_229
     (S : ℕ → Set ℂ)
-    (h : ∀ (n) (z) (_ : z ∉ S n), z ∉ closure (S n)) :
+    (h : ∀ (n), derivedSet (S n) = ∅) :
     ∃ (f : ℂ → ℂ) (k : ℕ → ℕ), (∃ x y, f x ≠ f y) ∧ Differentiable ℂ f ∧ ∀ (n) (z) (_ : z ∈ S n),
       iteratedDeriv (k n) f z = 0 :=
   sorry
@@ -46,7 +46,7 @@ _the derivatives of an entire function_. Proc. Amer. Math. Soc. (1972), 229--232
 @[problem_status solved]
 theorem theorem_1
     {S : ℕ → Set ℂ}
-    (h : ∀ (k) (z) (_ : z ∉ S k), z ∉ closure (S k)) :
+    (h : ∀ (k), derivedSet (S k) = ∅) :
   letI := Polynomial.algebraPi ℂ ℂ ℂ
   ∃ (f : ℂ → ℂ) (n : ℕ → ℕ),
     Differentiable ℂ f ∧ Transcendental (Polynomial ℂ) f ∧ ∀ k, 0 < n k ∧ ∀ {z} (_: z ∈ S k),

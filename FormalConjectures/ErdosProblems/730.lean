@@ -48,7 +48,7 @@ theorem erdos_730.variants.two_div_forall (n : ℕ) (h : 0 < n) : 2 ∣ (2*n).ch
 Show that `(n,n+1) ∈ S` if and only if for all odd primes `p≤n` we have `n∉{(p−1)/2,p−1}(mod p)`.
 -/
 @[category research solved]
-theorem erdos_730.variants.succ_pair_criterion (n : ℕ) (h : 0 < n):
+theorem erdos_730.variants.succ_pair_criterion (n : ℕ) (h : 2 < n) :
     (n, n+1) ∈ S ↔ ∀ p ∈ Set.Ioc 2 n, ∀ [hp : Fact p.Prime], (n : ZMod p) ≠ (p-1) / 2 ∧
       (n : ZMod p) ≠ p-1 := by
   sorry

@@ -42,7 +42,7 @@ The **Fermat–Catalan conjecture** states that the equation
 `(a^m, b^n, c^k)` where `a, b, c` are positive coprime integers and `m, n, k` are positive integers satisfying
 `1/m + 1/n + 1/k < 1`.
 -/
-@[problem_status open]
+@[category research open]
 theorem fermat_catalan : FermatCatalanConjecture := by
   sorry
 
@@ -51,7 +51,7 @@ By the **Darmon-Granville** theorem,
 for any fixed choice of positive integers m, n and k satisfying `1/m + 1/n + 1/k < 1`,
 only finitely many coprime triples `(a, b, c)` solving `a^m + b^n = c^k` exist.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem fermat_catalan.variants.darmon_granville
     (m n k : ℕ) (hm : 0 < m) (hn : 0 < n) (hk : 0 < k)
     (H : (1 / m : ℝ) + 1 / n + 1 / k < 1) :

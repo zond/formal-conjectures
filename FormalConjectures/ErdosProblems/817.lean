@@ -66,7 +66,7 @@ $$
   g_3(n) \gg 3^n
 $$ -/
 -- Formalisation note : only formalising the "In particular" part
-@[problem_status open]
+@[category research open]
 theorem erdos_817 :
     (fun n => (3 ^ n : ℝ)) =O[atTop] fun n => (g 3 n : ℝ) :=
   sorry
@@ -75,7 +75,7 @@ theorem erdos_817 :
 $$
   g_3(n) \gg \frac{3^n}{n^{O(1)}}.
 $$ -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_817.variants.bdd_power : ∃ O > (0 : ℝ),
     (fun (n : ℕ) => (3 ^ n : ℝ) / n ^ O) =O[atTop] fun n => (g 3 n : ℝ) :=
   sorry

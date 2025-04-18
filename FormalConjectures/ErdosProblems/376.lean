@@ -21,7 +21,7 @@ import FormalConjectures.Util.ProblemImports
 Are there infinitely many $n$ such that ${2n\choose n}$ is
 coprime to $105$?
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_376 :
     { n | ((2 * n).choose n).Coprime 105 }.Infinite :=
   sorry
@@ -30,7 +30,7 @@ theorem erdos_376 :
 Erd\"{o}s, Graham, Ruzsa, and Straus [EGRS75] have shown that, for any two odd primes $p$ and $q$, there are infinite many $n$ such
 that ${2n\choose n}$ is coprime to $pq$.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_376.variants.prime {p q : ℕ} (h₁ : p.Prime)
     (h₂ : Odd p) (h₃ : q.Prime) (h₄ : Odd q) :
     { n | ((2 * n).choose n).Coprime (p * q) }.Infinite :=

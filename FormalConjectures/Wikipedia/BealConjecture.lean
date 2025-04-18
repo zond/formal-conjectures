@@ -25,14 +25,14 @@ def BealConjecture : Prop := ∀ {A B C x y z : ℕ},
 The **Beal Conjecture**: if we are given positive integers `A, B, C, x, y, z` such that
 `x, y, z > 2` and `A^x + B^y = C^z` then `A, B, C` have a common divisor.
 -/
-@[problem_status open]
+@[category research open]
 theorem beal_conjecture : BealConjecture := by
   sorry
 
 /--
 The Beal Conjecture implies Fermat's last theorem
 -/
-@[problem_status solved]
+@[category research solved]
 theorem flt_of_beal_conjecture (H : BealConjecture) :
     FermatLastTheorem := by
   intro n hn x y z hx hy hz

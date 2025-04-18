@@ -47,6 +47,6 @@ Are there arbitrarily long arithmetic progressions of primes?
 Solution: yes.
 Ref: Green, Ben and Tao, Terence, _The primes contain arbitrarily long arithmetic progressions_
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_219 : ∀ N, ∃ l ∈ primeArithmeticProgressions, N ≤ l.length := by
   sorry

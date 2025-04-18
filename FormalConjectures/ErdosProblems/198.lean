@@ -71,7 +71,7 @@ progression?
 Answer "yes" according to remark on page 23 of:
 Erdös and Graham, "Old and new problems and results in combinatorial number theory", 1980.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_198
     (A : ℕ →o ℕ)
     (hA : IsSidon A) :

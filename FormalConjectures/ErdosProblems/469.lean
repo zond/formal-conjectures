@@ -29,7 +29,7 @@ $$
 $$
 converge?
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_469 :
     letI A := {n : ℕ | 0 < n ∧ n.IsSumDivisors ∧ ∀ m < n, m ∣ n → ¬ m.IsSumDivisors}
     Summable fun n : A ↦ 1 / (n : ℝ) :=

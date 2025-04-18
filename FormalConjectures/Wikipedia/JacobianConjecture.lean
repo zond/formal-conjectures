@@ -60,7 +60,7 @@ variable {σ : Type*} [Fintype σ]
 (i.e. vector valued polynomial function from) `kⁿ → kᵐ`
 whose Jacobian is a non-zero constant has an inverse that
 is given by a regular function, where `k` is a field of characteristic `0`-/
-@[problem_status open]
+@[category research open]
 theorem jacobian_conjecture (F : RegularFunction k σ σ)
     (H : IsUnit F.Jacobian.det) :
     ∃ (G : RegularFunction k σ σ), G.comp F = id k σ ∧

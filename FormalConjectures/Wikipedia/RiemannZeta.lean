@@ -22,35 +22,35 @@ namespace RiemannZeta
 /--
 $\zeta(5)$ is irrational.
 -/
-@[problem_status open]
+@[category research open]
 theorem irrational_five : ∃ x, Irrational x ∧ riemannZeta 5 = x :=
   sorry
 
 /--
 $\zeta(7)$ is irrational.
 -/
-@[problem_status open]
+@[category research open]
 theorem irrational_seven : ∃ x, Irrational x ∧ riemannZeta 7 = x :=
   sorry
 
 /--
 $\zeta(9)$ is irrational.
 -/
-@[problem_status open]
+@[category research open]
 theorem irrational_nine : ∃ x, Irrational x ∧ riemannZeta 9 = x :=
   sorry
 
 /--
 $\zeta(11)$ is irrational.
 -/
-@[problem_status open]
+@[category research open]
 theorem irrational_eleven : ∃ x, Irrational x ∧ riemannZeta 11 = x :=
   sorry
 
 /--
 $\zeta(2n + 1)$ is irrational for any $n\in\mathbb{N}$.
 -/
-@[problem_status open]
+@[category research open]
 theorem irrational_odd (n : ℕ) : ∃ x, Irrational x ∧ riemannZeta (2 * n + 1) = x :=
   sorry
 
@@ -59,7 +59,7 @@ $\zeta(3)$ is irrational.
 
 [Ap79] Apéry, R. (1979). _Irrationalité de ζ(2) et ζ(3)_. Astérisque. 61: 11–13.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem irrational_three : ∃ x, Irrational x ∧ riemannZeta 3 = x :=
   sorry
 
@@ -68,7 +68,7 @@ There are infinite many $\zeta(2n + 1)$, $n \in \mathbb{N}$, that are irrational
 
 [Ri00] Rivoal, T. (2000). _La fonction zeta de Riemann prend une infinité de valeurs irrationnelles aux entiers impairs_. Comptes Rendus de l'Académie des Sciences, Série I. 331 (4): 267–270.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem infinite_irrational_at_odd :
     { n | ∃ x, Irrational x ∧ riemannZeta (2 * n + 1) = x }.Infinite :=
   sorry
@@ -78,7 +78,7 @@ At least one of $zeta(5), \zeta(7), \zeta(9)$ or $\zeta(11)$ is irrational.
 
 [Zu01]  W. Zudilin (2001). _One of the numbers ζ(5), ζ(7), ζ(9), ζ(11) is irrational_. Russ. Math. Surv. 56 (4): 774–776.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem exists_irrational_of_five_seven_nine_eleven :
     {5, 7, 9, 11} ∩ { a | ∃ x, Irrational x ∧ riemannZeta a = x} |>.Nonempty :=
   sorry

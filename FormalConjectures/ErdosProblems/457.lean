@@ -24,7 +24,7 @@ $$
   \prod_{1\leq i\leq \log n} (n + i)?
 $$
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_457 : ∃ ε > (0 : ℝ),
     { (n : ℕ) | ∀ (p : ℕ), p ≤ (2 + ε) * Real.log n → p.Prime →
       p ∣ ∏ i in Finset.Icc 1 ⌊Real.log n⌋₊, (n + i) }.Infinite :=
@@ -42,7 +42,7 @@ does not divide $\prod_{1\leq i\leq k}(n + i)$. This
 problem asks whether $q(n,\log n)\geq(2+\epsilon)\log n$
 infinitely often.
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_457.variants.qnk : ∃ ε > (0 : ℝ),
     { (n : ℕ) | (2 + ε) * Real.log n ≤ q n (Real.log n) }.Infinite :=
   sorry
@@ -56,7 +56,7 @@ $$
 Can one prove that $q(n,\log n)<(1−\epsilon)(\log n)^2$
 for all large $n$ and some $\epsilon > 0$?
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_457.variants.one_sub : ∃ ε > (0 : ℝ),
     ∀ᶠ n in Filter.atTop, q n (Real.log n) < (1 - ε) * Real.log n ^ 2 :=
   sorry

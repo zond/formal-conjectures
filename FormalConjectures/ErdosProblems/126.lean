@@ -30,7 +30,7 @@ Let $f(n)$ be maximal such that if $A\subseteq\mathbb{N}$ has $|A| = n$ then
 $\prod_{a\neq b\in A}(a + b)$ has at least $f(n)$ distinct prime factors.
 Is it true that $f(n)/\log n \to\infty$?
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_126
     (f : ℕ → ℕ)
     (hf : IsMaximalAddFactorsCard f) :
@@ -54,7 +54,7 @@ theorem erdos_126.variants.IsBigO
 /--
 Erd\"{o}s says that $f(n) = o(n / \log n)$ has never been proved.
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_126.variants.isLittleO
     (f : ℕ → ℕ)
     (hf : IsMaximalAddFactorsCard f) :

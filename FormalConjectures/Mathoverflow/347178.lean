@@ -25,17 +25,17 @@ asked by user "Biagio Ricceri", https://mathoverflow.net/users/149235/biagio-ric
 Let f: R^n → R,  n ≥ 2 be a C¹ function. Is it true that
 $$\sup_{x\in {\bf R}^n}f(x)=\sup_{x\in {\bf R}^n}f(x+\nabla f(x))$$?
 -/
-@[problem_status open]
+@[category research open]
 theorem conjecture {n : ℕ} (f : EuclideanSpace ℝ (Fin n) → ℝ) (hf : ContDiff ℝ 1 f) :
     (BddAbove (range f) ↔ BddAbove (range (fun x ↦ f (x + gradient f x)))) ∧
     (⨆ x, f x) = ⨆ x, f (x + gradient f x) := sorry
 
-@[problem_status open]
+@[category research open]
 theorem conjecture.variants.bounded_iff {n : ℕ} (f : EuclideanSpace ℝ (Fin n) → ℝ)
     (hf : ContDiff ℝ 1 f) :
     (BddAbove (range f) ↔ BddAbove (range (fun x ↦ f (x + gradient f x)))) := sorry
 
-@[problem_status open]
+@[category research open]
 theorem conjecture.variant.bounded_only {n : ℕ} (f : EuclideanSpace ℝ (Fin n) → ℝ)
     (hf : ContDiff ℝ 1 f)
     (h : BddAbove (range f)) (h' : BddAbove (range (fun x ↦ f (x + gradient f x)))) :

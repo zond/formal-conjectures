@@ -56,7 +56,7 @@ $$
 
 [Ha59]  Hardy, G. H. (1959). _Ramanujan: Twelve Lectures on Subjects Suggested by His Life and Work_(3rd ed.). New York: Chelsea Publishing Company. p. 67
 -/
-@[problem_status solved]
+@[category research solved]
 theorem error_le (r : ℝ) (hr : 0 ≤ r) : |E r| ≤ 2 * √2 * π * r := sorry
 
 /--
@@ -65,7 +65,7 @@ $$
   |E(r)| \neq o\left(r^{1/2}(\log r)^{1/4}\right)
 $$
 -/
-@[problem_status solved]
+@[category research solved]
 theorem error_not_isLittleO (r : ℝ) (hr : 0 ≤ r) :
     ¬E =o[atTop] (fun r => √r * √√r.log) :=
   sorry
@@ -80,7 +80,7 @@ $$
 
 See also https://arxiv.org/abs/2305.03549
 -/
-@[problem_status open]
+@[category research open]
 theorem error_isBigO : ∃ (o : ℝ → ℝ) (_ : Tendsto o atTop (𝓝 0)),
     E =O[atTop] fun r => r ^ (1/2 + o r) :=
   sorry
@@ -92,7 +92,7 @@ $$
     \left\lfloor\frac{r^2}{4i + 3}\right\rfloor\right).
 $$
 -/
-@[problem_status solved]
+@[category research solved]
 theorem exact_form_floor (r : ℝ) (hr : 0 ≤ r) :
     N r = 1 + 4 * ∑' i, (⌊r ^ 2 / (4 * i + 1)⌋ - ⌊r ^ 2 / (4 * i + 3)⌋) :=
   sorry

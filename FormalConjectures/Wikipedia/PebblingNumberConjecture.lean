@@ -81,6 +81,6 @@ The pebbling number conjecture:
 the pebbling number of a Cartesian product of graphs is at most equal to the product of the
 pebbling numbers of the factors.
 -/
-@[problem_status open]
+@[category research open]
 theorem pebbling_number_conjecture (G H : SimpleGraph V) :
   PebblingNumber (G □ H) ≤ PebblingNumber G * PebblingNumber H := sorry

@@ -24,7 +24,7 @@ abbrev S := {(n, m) : ℕ × ℕ | n ≠ m ∧ ((2*n).choose n).primeFactors = (
 Are there infinitely many pairs of integers `n≠m` such that $\bimom{2n}{n}$
 and $\bimom{2m}{m}$ have the same set of prime divisors?
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_730 : S.Infinite := by
   sorry
 
@@ -32,7 +32,7 @@ theorem erdos_730 : S.Infinite := by
 /--
 For example, `(87,88)` and `(607,608)` are such pairs.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_730.variants.explicit_pairs :
     {(87, 88), (607, 608)} ⊆ S := by
   sorry
@@ -40,14 +40,14 @@ theorem erdos_730.variants.explicit_pairs :
 /--
 Show that for all `n`, the binomial coefficient $\binom{2n}{n}$ is even.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_730.variants.two_div_forall (n : ℕ) (h : 0 < n) : 2 ∣ (2*n).choose n := by
   sorry
 
 /--
 Show that `(n,n+1) ∈ S` if and only if for all odd primes `p≤n` we have `n∉{(p−1)/2,p−1}(mod p)`.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_730.variants.succ_pair_criterion (n : ℕ) (h : 0 < n):
     (n, n+1) ∈ S ↔ ∀ p ∈ Set.Ioc 2 n, ∀ [hp : Fact p.Prime], (n : ZMod p) ≠ (p-1) / 2 ∧
       (n : ZMod p) ≠ p-1 := by
@@ -58,7 +58,7 @@ open scoped Topology in
 Standard heuristics then predict there should be `≫ x/(log x)^2`
 many `n≤x` such that `(n, n+1) ∈ S`.
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_730.variants.succ_pair_growth :
     let C (x : ℝ) : ℝ := (Finset.Icc 0 ⌊x⌋₊ |>.filter fun n => (n, n+1) ∈ S).card
     Filter.Tendsto (fun (x : ℝ) => x / (x.log^2) / C x) Filter.atTop (𝓝 0) := by

@@ -23,7 +23,7 @@ $$
   n(n + 1) \cdots (n + k - 1) \mid (n + k) \cdots (n + 2k - 1)?
 $$
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_389 (n : ℕ) (h : 1 ≤ n) :
     ∃ k ≥ 1,
       ∏ i ∈ Finset.range k, (n + i) ∣ ∏ i ∈ Finset.range k, (n + k + i) :=
@@ -33,7 +33,7 @@ theorem erdos_389 (n : ℕ) (h : 1 ≤ n) :
 Bhavik Mehta has computed the minimal such $k$ for $1 \leq n \leq 18$.
 For example, the minimal $k$ for $n = 4$ is $207$.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_389.variants.mehta_four :
     IsLeast
       { k | 1 ≤ k ∧ ∏ i ∈ Finset.range k, (4 + i) ∣ ∏ i ∈ Finset.range k, (4 + k + i) }

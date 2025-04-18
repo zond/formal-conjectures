@@ -32,7 +32,7 @@ $$
 \limsup_{N\to\infty}\frac{|(A + A)\cap \{1, ..., N\}|}{|A \cap \{1, ..., N\}|} \geq 3?
 $$
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_245 (A : Set ℕ) (h_inf : A.Infinite)
     (hf : Tendsto (fun N => (A.bdd N |>.ncard : ℝ) / N) atTop (𝓝 0)) :
     3 ≤ limsup (fun N => ((A + A).bdd N |>.ncard : ℝ) / (A.bdd N).ncard) atTop :=
@@ -46,7 +46,7 @@ $$
 $$
 as $N\to\infty$.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_245.variants.exists_limit (A : Set ℕ) (h_inf : A.Infinite)
     (hf : Tendsto (fun N => (A.bdd N |>.ncard : ℝ) / N) atTop (𝓝 0)) :
     -- Use `EReal` to disinguish infinite limit from other types of non-existence
@@ -61,7 +61,7 @@ $$
 \limsup_{N\to\infty}\frac{|(A + A)\cap \{1, ..., N\}|}{|A \cap \{1, ..., N\}|} \geq 2.
 $$
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_245.variants.two (A : Set ℕ) (h_inf : A.Infinite)
     (hf : Tendsto (fun N => (A.bdd N |>.ncard : ℝ) / N) atTop (𝓝 0)) :
     2 ≤ limsup (fun N => ((A + A).bdd N |>.ncard : ℝ) / (A.bdd N).ncard) atTop :=

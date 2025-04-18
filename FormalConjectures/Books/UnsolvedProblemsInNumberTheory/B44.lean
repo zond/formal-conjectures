@@ -28,13 +28,13 @@ B44 Sums of factorials.
 Đura Kurepa defined \(!n=0!+1!+2!+...+(n-1)!\) and asks if \(!n\not\equiv0\) mod n
 for all n
 -/
-@[problem_status open]
+@[category research open]
 theorem kurepa_conjecture (n : ℕ) (h_n : 2 < n) : (!n : ℕ) % n ≠ 0 := sorry
 
 /--
 This statement can be reduced to the prime case only.
 -/
-@[problem_status open]
+@[category research open]
 theorem kurepa_conjecture.variant.prime (p : ℕ) (h_p : 2 < p) : p.Prime → (!p : ℕ) % p ≠ 0 := sorry
 
 -- TODO(firsching): show equivalence
@@ -45,7 +45,7 @@ theorem kurepa_conjecture.prime_reduction  : (∀ n, ∀ h_n : 2 < n, (!n : ℕ)
 /--
 An equivalent formulation in terms of the gcd of n! and !n.
 -/
-@[problem_status open]
+@[category research open]
 theorem kurepa_conjecture.variant.gcd (n : ℕ) : 2 < n → (n !).gcd (! n) = 2 := sorry
 
 
@@ -56,7 +56,7 @@ theorem kurepa_conjecture.gcd_reduction : (∀ n, ∀ h_n : 2 < n, (!n : ℕ) % 
 /--
 Sanity check: for small values we can just compute that the conjecture is true
 -/
-@[problem_status solved]
+@[category research solved]
 theorem kurepa_conjecture.variant.first_cases (n : ℕ) (h_n : 2 < n) (h_n_upper : n < 50) :
     (!n : ℕ) % n ≠ 0 := by
   interval_cases n <;> decide
@@ -64,7 +64,7 @@ theorem kurepa_conjecture.variant.first_cases (n : ℕ) (h_n : 2 < n) (h_n_upper
 /--
 Sanity check: for small values we can just compute that the conjecture is true.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem kurepa_conjecture.variant.gcd.first_cases (n : ℕ) (h_n : 2 < n) (h_n_upper : n < 50) :
     (n !).gcd (! n) = 2 := by
   interval_cases n <;> decide

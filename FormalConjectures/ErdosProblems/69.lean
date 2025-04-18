@@ -26,7 +26,7 @@ $$
 $$
 irrational? (Here $\omega(n)$ counts the number of distinct prime divisors of $n$.)
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_69 : Irrational <| ∑' n, ω (n + 2) / 2 ^ n :=
   sorry
 
@@ -36,7 +36,7 @@ $$
 \sum_{n\geq 2}\frac{\omega(n)}{2^n} = \sum_p \frac{1}{2^p - 1}.
 $$
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_69.specialisation_of_erdos_257 :
     let A := { n : ℕ | n.Prime }
     ∑' n, ω (n + 2) / (2 ^ (n + 2) : ℝ) = ∑' p : A, 1 / (2 ^ p.1 - 1) :=

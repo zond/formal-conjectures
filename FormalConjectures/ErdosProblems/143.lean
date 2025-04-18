@@ -34,7 +34,7 @@ Does this imply that
 \liminf \frac{|A \cap [1,x]|}{x} = 0?
 \]
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_143.parts.i (A : Set ℝ) (h : WellSeparatedSet A):
     liminf (fun x => (A ∩ (Set.Icc 1 x)).ncard / x) atTop = 0 := by
   sorry
@@ -45,7 +45,7 @@ Or
 \sum_{x \in A} \frac{1}{x \log x} < \infty,
 \]
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_143.parts.ii (A : Set ℝ) (h : WellSeparatedSet A):
     ∃ (s : ℝ),
       Tendsto (fun n ↦ ∑ x ∈ range n, 1 / (x * Real.log x)) atTop (𝓝 s) :=

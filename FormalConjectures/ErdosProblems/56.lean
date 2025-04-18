@@ -87,7 +87,7 @@ Suppose `A⊆{1,…,N}` is such that there are no `k+1` elements of `A`
 which are relatively prime. An example is the set of all multiples of
 the first `k` primes. Is this the largest such set?
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_56 (N : ℕ) (hN : 2 ≤ N)
     (k : ℕ) : MaxWeaklyDivisible N k = (FirstPrimesMultiples N k).card := by
   sorry

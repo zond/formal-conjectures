@@ -18,7 +18,7 @@ limitations under the License.
 import FormalConjectures.Util.ProblemImports
 
 /--Is it true that in any finite colouring of the integers there exists a monochromatic solution to `1/a=1/b+1/c` with distinct `a,b,c`?-/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_303 :
     --For any finite colouring of the integers
     ∀ (𝓒 : ℤ → ℤ), (Set.range 𝓒).Finite →

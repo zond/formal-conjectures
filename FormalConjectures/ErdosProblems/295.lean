@@ -41,7 +41,7 @@ Let `k(N)` denote the smallest `k` such that there exists
 
 Is it true that `lim_{N→∞} k(N)−(e−1)N=∞`?
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_295 :
     Filter.atTop.Tendsto (fun N => k N - (rexp 1 - 1)*N) Filter.atTop := by
   sorry
@@ -50,7 +50,7 @@ theorem erdos_295 :
 Erdős and Straus have proved the existence of some constant `c>0`
 such that `−c < k(N)−(e−1)N ≪ N/ log N`
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_295.variants.erdos_straus :
     ∃ᵉ (C > 0) (O > 0), ∀ᶠ (N : ℕ) in Filter.atTop,
       (k N - (rexp 1 - 1)*N) ∈ Set.Ioc (-C) (O * N / (N : ℝ).log):= by

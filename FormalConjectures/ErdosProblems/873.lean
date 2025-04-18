@@ -26,7 +26,7 @@ noncomputable abbrev F (a : ℕ → ℕ) (X : ℝ) (k : ℕ) : ℕ∞ :=
 /--Let `A={a_1 < a_2 <⋯} ⊆ ℕ` and let `F(A,X,k)` count the number of `i` such that
 `[a_i,a_{i+1}, … ,a_{i+k−1}] < X`, where the left-hand side is the least common multiple.
 Is it true that, for every `ϵ > 0`, there exists some `k` such that `F(A,X,k) < X^ϵ`?-/
-@[problem_status open]
+@[category research open]
 theorem erdos_873 (a : ℕ → ℕ) (hapos : 0 < a 0) (ha : StrictMono a) (ε : ℝ) (hε : 0 < ε):
     ∃ k, ∀ X > 0, F a X k < (X^ε).toEReal :=
   sorry

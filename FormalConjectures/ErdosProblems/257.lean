@@ -24,7 +24,7 @@ $$
 $$
 irrational?
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_257 (A : Set ℕ) (h : A.Infinite) :
     Irrational <| ∑' n : A, (1 : ℝ) / (2 ^ n.1 - 1) :=
   sorry
@@ -36,7 +36,7 @@ $$
 $$
 where $d(n)$ is the number of divisors of $n$.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_257.variants.tsum_top_eq :
     ∑' n, 1 / (2 ^ n - 1 : ℝ) = ∑' n, n.divisors.card / (2 ^ n : ℝ) :=
   sorry
@@ -50,7 +50,7 @@ is irrational.
 
 [Er48] Erdős, P., _On arithmetical properties of Lambert series_. J. Indian Math. Soc. (N.S.) (1948), 63-66.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_257.variants.tsum_top :
     Irrational <| ∑' n, n.divisors.card / (2 ^ n : ℝ) :=
   sorry

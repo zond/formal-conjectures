@@ -23,7 +23,7 @@ open scoped Topology
 For every $n>2$ there exist distinct integers $1 ≤ x < y < z$
 such that $4/n=1/x+1/y+1/z$.
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_242 (n : ℕ) (hn : 2 < n) :
     ∃ x y z : ℕ, 1 ≤ x ∧ x < y ∧ y < z ∧
       (4 / n : ℚ) = 1 / x + 1 / y + 1 / z := by
@@ -34,7 +34,7 @@ For any fixed $a$, if $n$ is sufficiently large in terms of $a$
 then there exist distinct integers $1 ≤ x < y < z$ such that
 a/n=1/x+1/y+1/z$.
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_242_schinzel_generalization
     (a : ℕ) (ha : 0 < a) :
     ∀ᶠ (n : ℕ) in Filter.atTop, ∃ x y z : ℕ, 1 ≤ x ∧ x < y ∧ y < z ∧

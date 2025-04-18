@@ -31,12 +31,12 @@ $$
 
 Status: Solved
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_4 (C : ℝ) (hC : 0 < C) :
     Erdos4For C :=
   sorry
 
-@[problem_status solved]
+@[category research solved]
 theorem erdos_4.variants.rankin :
     ∃ C > 0, Erdos4For C :=
   sorry

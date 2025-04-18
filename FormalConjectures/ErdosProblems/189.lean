@@ -39,7 +39,7 @@ Vjekoslav Kovač, "Coloring and density theorems for configurations of a given v
 https://arxiv.org/abs/2309.09973
 In fact, Kovač's colouring is even Jordan measurable (the topological boundary of each
 monochromatic region is Lebesgue measurable and has measure zero). -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_189 :
     ¬ Erdos189For
       (fun a b c d ↦
@@ -49,7 +49,7 @@ theorem erdos_189 :
 sorry
 
 /-- Graham claims this is "easy to see". -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_189.variants.square :
     ¬ Erdos189For
       (fun a b c d ↦
@@ -62,7 +62,7 @@ theorem erdos_189.variants.square :
 /--
 Seems to be open, as of January 2025.
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_189.variants.parallelogram :
     ¬ Erdos189For
       (fun a b c d ↦

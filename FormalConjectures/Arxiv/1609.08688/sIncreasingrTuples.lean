@@ -201,7 +201,7 @@ theorem maximalLength_pow {n e : ℕ} (h : F n = n ^ e) :
   sorry
 
 /-- $F(n) \leq n^{3/2}$. -/
-@[problem_status open]
+@[category research open]
 theorem maximalLength_le_strong (n : ℕ) : F n ≤ n.sqrt ^ 3 := sorry
 
 end Arxiv.id160908688

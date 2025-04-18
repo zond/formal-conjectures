@@ -34,7 +34,7 @@ $$
 where $\||nx\|| := \min(|x - \lfloor x \rfloor|, |x - \lceil x \rceil|)$ is the distance
 to the nearest integer.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem littlewood_conjecture (α β : ℝ) :
     atTop.liminf (fun (n : ℕ) => n * distToNearestInt (n * α) * distToNearestInt (n * β)) = 0 :=
   sorry

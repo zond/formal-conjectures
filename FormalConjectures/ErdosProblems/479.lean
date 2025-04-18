@@ -21,6 +21,6 @@ import FormalConjectures.Util.ProblemImports
 Is it true that, for all $k\neq 1$, there are infinitely many $n$ such that
 $2^n\equiv k\pmod{n}$?
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_479 (k : ℕ) (h : 1 < k) : { n | 2 ^ n ≡ k [MOD n]}.Infinite :=
   sorry

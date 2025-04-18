@@ -25,7 +25,7 @@ lemma sigma_0 : σ 0 = id := rfl
 lemma sigma_1 : σ 1 = ArithmeticFunction.sigma 1 := rfl
 
 /--Is it true that, for every `m,n≥2`, there exist some `i,j` such that `σ_i(m)=σ_j(n)`?-/
-@[problem_status open]
+@[category research open]
 theorem erdos_412 (m n : ℕ) (hm : 2 ≤ m) (hn : 2 ≤ n) :
     ∃ i j, σ i m = σ j n := by
   sorry

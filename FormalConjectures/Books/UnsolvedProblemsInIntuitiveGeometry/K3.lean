@@ -24,7 +24,7 @@ Problem K3.
 Suppose `I` is a closed interval of real numbers, and `f` and `g` are commuting
 continuous maps of `I` into itself. Must they have a common fixed point?
 -/
-@[problem_status open]
+@[category research open]
 theorem K3 {a b : ℝ} (hab : a ≤ b) (f g : (Set.Icc a b) → (Set.Icc a b))
     (h: ∀ z, f (g z) = g (f z)) (hf : Continuous  f) (hg : Continuous g) :
     ∃ x, (f x = x ∧ g x = x) := sorry

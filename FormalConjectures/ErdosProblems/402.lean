@@ -24,7 +24,7 @@ that
 $$
   \gcd(a, b)\leq a/|A|.
 $$ -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_402 (A : Finset ℕ) (h₁ : 0 ∉ A) (h₂ : A.Nonempty) : ∃ᵉ (a ∈ A) (b ∈ A),
     a.gcd b ≤ (a / A.card : ℚ) :=
   sorry
@@ -33,7 +33,7 @@ theorem erdos_402 (A : Finset ℕ) (h₁ : 0 ∉ A) (h₂ : A.Nonempty) : ∃ᵉ
 has no common divisor) the only cases where equality is achieved are when
 $A = \{1, ..., n\}$ or $\{L/1, ..., L/n\}$ (where $L = \lcm(1, ..., n)$) or
 $\{2, 3, 4, 6\}$. -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_402.variants.equality (A : Finset ℕ) (h₀ : 0 ∉ A) (h₁ : A.gcd id = 1) :
     (∃ᵉ (a ∈ A) (b ∈ A), a.gcd b = (a / A.card : ℚ)) ↔
       (∃ n > 0, A = Finset.Icc 1 n ∨
@@ -51,7 +51,7 @@ $\max_{i, j} \frac{a_i}{(a_i, a_j)} \geq n$.
 (ii) If equality holds then the system $\{a_1, a_2, ..., a_n\}$ is either of the
 type $\{k, 2k, ..., nk\}$ or of the type
 $\left\{\frac{k}{1}, \frac{k}{2}, ..., \frac{k}{n}\right\}-/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_402.variants.szegedy_zaharescu_weak : ∀ᶠ n in atTop,
     ∀ (A : Finset ℕ), A.card = n → 0 ∉ A →
       (n ≤ (A ×ˢ A).sup (fun x => x.1 / x.1.gcd x.2)) ∧

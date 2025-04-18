@@ -24,7 +24,7 @@ $$
 $$
 is the factorisation into distinct primes then all exponents $k_i$ are distinct?
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_913 :
     { n | Set.InjOn (n * (n + 1)).factorization (n * (n + 1)).primeFactors }.Infinite :=
   sorry
@@ -32,13 +32,13 @@ theorem erdos_913 :
 /--
 It is likely that there are infinitely many primes $p$ such that $8p^2 - 1$ is also prime.
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_913.variants.infinite_many_8p_sq_add_one_primes :
     { p | p.Prime ∧ (8 * p ^ 2 - 1).Prime }.Infinite :=
   sorry
 
 /-- If there are infinitely many primes $p$ such that $8p^2 - 1$ is prime, then this is true. -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_913.variants.conditional (h : { p | p.Prime ∧ (8 * p ^ 2 - 1).Prime }.Infinite) :
     { n | Set.InjOn (n * (n + 1)).factorization (n * (n + 1)).primeFactors }.Infinite :=
   sorry

@@ -27,7 +27,7 @@ It is a relatively new open problem with, so it might be solvable, although
 seems quite hard. It is equivalent to non-termination of a particular 6-state
 turing machine.
 -/
-@[problem_status open]
+@[category research open]
 theorem busy_beaver_antihydra (a : ℕ → ℕ) (b : ℕ → ℤ)
     (a_ini : a 0 = 8) (a_rec : ∀ n, a (n+1) = (3*a n/2 : ℕ)) (b_ini : b 0 = 0)
     (b_rec : ∀ n, b (n+1) = if a n % 2 = 0 then b n + 2 else b n - 1) :
@@ -37,7 +37,7 @@ theorem busy_beaver_antihydra (a : ℕ → ℕ) (b : ℕ → ℤ)
 Alternative statement of busy_beaver_antihydra
 using set size comparison instead of a recurrent sequence b.
 -/
-@[problem_status open]
+@[category research open]
 theorem busy_beaver_antihydra.variants.set (a : ℕ → ℕ)
     (a_ini : a 0 = 8) (a_rec : ∀ n, a (n+1) = (3*a n/2 : ℕ)) :
     ∀ n, ((Finset.Ico 0 n).filter fun x ↦ Odd (a x)).card ≤

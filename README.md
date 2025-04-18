@@ -55,7 +55,7 @@ conjectures and solved statements from dedicated problem lists.
     structure to a branch in your fork.
     *   Include comments linking to the source of the conjecture (paper,
         website, book).
-    *   Use the attribute `@[problem_status open]` for unsolved conjectures.
+    *   Use the attribute `@[category research open]` for unsolved conjectures.
 3.  Ensure the code builds (`lake build`).
 4.  Submit a Pull Request to the main repository.
 
@@ -77,7 +77,7 @@ The directory structure is organized by the type of sources of the conjectures.
 There are two special directories:
 
 -   `Util` contains utilities like the
-    [`problem_status` attribute](./FormalConjectures/Util/OpenProblemAttr.lean),
+    [`category` attribute](./FormalConjectures/Util/Attributes.lean),
     the [`answer( )` elaborator](./FormalConjectures/Util/Answer.lean) and some
     linters.
 -   `ForMathlib` contains code potentially suitable to be upstreamed to
@@ -94,11 +94,11 @@ A tag to mark the status of a problem statement: either `open` or `solved`.
 The tag should be used as follows:
 
 ```lean4
-@[problem_status open]
+@[category research open]
 theorem foo : MyOpenProblem := by
   sorry
 
-@[problem_status solved]
+@[category research solved]
 theorem bar : 1 + 1 = 2 := by
   sorry
 ```
@@ -113,7 +113,7 @@ points exactly one unit distance apart have the same color. The `answer( )`
 elaborator allows us to formulate the problem without deciding for an answer.
 
 ```lean4
-@[problem_status open]
+@[category research open]
 theorem HadwigerNelsonProblem :
     IsLeast { n : ℕ | ExistsColoring n } answer(sorry) :=
   sorry

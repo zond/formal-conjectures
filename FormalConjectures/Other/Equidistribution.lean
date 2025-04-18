@@ -64,7 +64,7 @@ def isAccumulationPoint_iff_exists_subsequence_tendsto
 /--
 The sequence `(3/2)^n` is equidistributed modulo `1`.
 -/
-@[problem_status open]
+@[category research open]
 theorem isEquidistributedModuloOne_three_halves_pow :
     IsEquidistributedModuloOne (fun n => (3 / 2 : ℝ)^n) := by
   sorry
@@ -72,7 +72,7 @@ theorem isEquidistributedModuloOne_three_halves_pow :
 /--
 The sequence `(3/2)^n` has infinitely many accumulation points modulo `1`.
 -/
-@[problem_status solved]
+@[category research solved]
 theorem isAccumulationPoint_three_halves_pow_infinite :
     {x | IsAccumulationPoint x (fun n => Int.fract <| (3 / 2 : ℝ)^n)}.Infinite := by
   sorry
@@ -80,7 +80,7 @@ theorem isAccumulationPoint_three_halves_pow_infinite :
 /--
 Find an accumulation point of the sequence `(3/2)^n`
 -/
-@[problem_status open]
+@[category research open]
 theorem isAccumulationPoint_three_halves_pow :
     IsAccumulationPoint answer(sorry) (fun n => (3 / 2 : ℝ)^n) := by
   sorry

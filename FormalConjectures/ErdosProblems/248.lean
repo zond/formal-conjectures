@@ -27,6 +27,6 @@ $$
 (Here $\omega(n)$ is the number of distinct prime divisors
 of $n$.)
 -/
-@[problem_status open]
+@[category research open]
 theorem erdos_826 : ∃ C > (0 : ℝ), { n | ∀ k ≥ 1, ω (n + k) ≤ C * k }.Infinite :=
   sorry

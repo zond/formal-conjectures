@@ -36,7 +36,7 @@ def IsZeroOne (P : ℝ[X]) := P.coeffs ⊆ {1}
 
 -- TODO(lezeau): add probabilistic reformulation and statament
 -- that coefficients must at least lie in `[0, 1]`
-@[problem_status open]
+@[category research open]
 theorem mathoverflow_339137 (P Q R : ℝ[X]) (hP: P.Monic) (hQ : Q.Monic)
     (hp : ∀ c ∈ P.coeffs, 0 ≤ c) (hq : ∀ c ∈ Q.coeffs, 0 ≤ c)
     (h : R = P * Q) (hR : IsZeroOne R):

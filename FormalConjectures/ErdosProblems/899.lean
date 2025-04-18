@@ -32,7 +32,7 @@ $$
 \limsup_{N\to\infty}\frac{|(A - A)\cap \{1, ..., N\}|}{|A \cap \{1, ..., N\}|} = \infty?
 $$
 -/
-@[problem_status solved]
+@[category research solved]
 theorem erdos_899 (A : Set ℕ) (h_inf : A.Infinite)
     (hf : Tendsto (fun N => (A.bdd N |>.ncard : ℝ) / N) atTop (𝓝 0)) :
     Tendsto (fun N => ((A - A : Set ℕ).bdd N |>.ncard : ℝ) / (A.bdd N).ncard) atTop atTop :=

@@ -69,14 +69,16 @@ theorem artin_primitive_roots.variants.part_ii_square_or_minus_one
 
 /--
 **Artin's Conjecture on Primitive Roots**, second half, power version
-If `a` is a perfect pth power for prime `p`, then the density of the set `S(a)` of primes `p` such that `a` is a primitive root modulo `p`
-is given by `p(p-2) / (p^2 - p - 1) * C` where `C` is Artin's constant. If there are more than one such prime `p`, then the number needs to be multiplied by
+If `a` is a perfect pth power for prime `p`, then the density of the set `S(a)` of
+primes `p` such that `a` is a primitive root modulo `p`
+is given by `p(p-2) / (p^2 - p - 1) * C` where `C` is Artin's constant. If there are
+more than one such prime `p`, then the number needs to be multiplied by
 ``p(p-2) / (p^2 - p - 1)` for all such primes `p`.
 -/
 @[category research open]
 theorem artin_primitive_roots.variants.part_ii_prime_power
-    (a m b : ℕ) (ha : a = b^m) (hb : ∀ u v, 1 < u → b ≠ v^u)
-    (hm : m.primeFactorsList.Nodup)  :
+    (a m b : ℕ) (ha : a = b^m) (hb : ∀ u v, 1 < u → b ≠ v^u) (hm₁ : 1 < m)
+    (hm₂ : m.primeFactorsList.Nodup)  :
     (S a).HasDensity
       (ArtinConstant * ∏ p ∈ m.primeFactors, p * (p-2 : ℝ) / (p^2 - p - 1))
       {p | p.Prime} := by

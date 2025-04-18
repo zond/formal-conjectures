@@ -17,5 +17,5 @@ limitations under the License.
 --A standard set of imports for open problems.
 import Mathlib
 import FormalConjectures.Util.Answer
+import FormalConjectures.Util.Attributes
 import FormalConjectures.Util.ForMathlib
-import FormalConjectures.Util.OpenProblemAttr

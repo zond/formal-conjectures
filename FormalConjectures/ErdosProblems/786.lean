@@ -42,18 +42,14 @@ theorem erdos_786.parts.i (ε : ℝ) (hε : 0 < ε ∧ ε ≤ 1) :
   sorry
 
 /--
-Let $\epsilon > 0$. Is there some set $A\subset\{1, ..., N\}$ of density
-$> 1 - \epsilon$ and size $\geq (1 - o(1))N$ such that
+Is there some set $A\subset\{1, ..., N\}$ of size $\geq (1 - o(1))N$ such that
 $a_1\cdots a_r = b_1\cdots b_s$ with $a_i, b_j\in A$ can only hold when
 $r = s$?
 -/
 @[category research open]
-theorem erdos_786.parts.ii (ε : ℝ) (hε : 0 < ε ∧ ε ≤ 1) :
-    ∃ (N : ℕ) (A : ℕ → Set ℕ) (f : ℕ → ℝ) (_ : Tendsto f atTop (𝓝 0)) (δ : ℝ),
-      1 - ε < δ ∧
-      ∀ N, A N ⊆ Set.Icc 1 N ∧ (1 - f N) * N ≤ (A N).ncard ∧
-        (A N).HasDensity δ ∧
-          (A N).IsMulCardSet :=
+theorem erdos_786.parts.ii : ∃ (A : ℕ → Set ℕ) (f : ℕ → ℝ) (_ : Tendsto f atTop (𝓝 0)),
+      ∀ N, A N ⊆ Set.Icc 1 (N + 1) ∧ (1 - f N) * N ≤ (A N).ncard ∧
+        (A N).IsMulCardSet :=
   sorry
 
 /--

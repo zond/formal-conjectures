@@ -141,8 +141,9 @@ example : maximalLength 4 = 8 := sorry
 have two triples that are equal in their first two coordinates. -/
 lemma exists_pair_of_mem_Icc {s : List (Fin 3 → ℕ)} {n : ℕ} (hn : 2 ≤ n)
     (hs₁ : ∀ a ∈ s, Set.range a ⊆ Set.Icc 1 n) (hs₂ : s.length > n ^ 2) :
-    ∃ᵉ (a ∈ s) (b ∈ s) (a ≠ b),
-      a 0 = b 0 ∧ a 1 = b 1 := sorry
+    ∃ᵉ (a ∈ s) (b ∈ s),
+      a ≠ b ∧ a 0 = b 0 ∧ a 1 = b 1 :=
+  sorry
 
 /-- For all $n$ we have $F(n) \leq n^2$. -/
 theorem maximalLength_le (n : ℕ) : F n ≤ n ^ 2 := sorry

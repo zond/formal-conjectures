@@ -48,24 +48,20 @@ An integer `p ≥ 2` is prime if and only if it satifies the congruence
 def AgohGiugaSum : Prop := ∀ p ≥ 2, p.Prime ↔
   p ∣ 1 + ∑ i ∈ Finset.Ioo 0 p, i^(p - 1 : ℕ)
 
-
 /--The **Agoh-Giuga Conjecture**, Agoh's formulation-/
 @[category research open]
 theorem agoh_giuga : AgohGiugaCongr := by
   sorry
-
 
 /--The **Agoh-Giuga Conjecture**, Giuga's formulation-/
 @[category research open]
 theorem agoh_giuga.variants.giuga : AgohGiugaSum := by
   sorry
 
-
 /--The two statements of the conjecture are equivalent.-/
 @[category research solved]
 theorem agoh_giuga.variants.equivalence : AgohGiugaCongr ↔ AgohGiugaSum := by
   sorry
-
 
 /--
 A Giuga number is a counterexample to Giuga's conjecture.
@@ -73,22 +69,21 @@ A Giuga number is a counterexample to Giuga's conjecture.
 def IsGiuga (p : ℕ) : Prop :=
     2 ≤ p ∧ ¬ p.Prime ∧ p ∣ 1 + ∑ i ∈ Finset.Ioo 0 p, i^(p - 1 : ℕ)
 
+-- Wikipedia URL: https://en.wikipedia.org/wiki/Carmichael_number
 /--
-A Carmichael number is a natural number `n` such that for all `b ≥ 1`,
+A Carmichael number is a composite number `n` such that for all `b ≥ 1`,
 we have `b^n ≡ b (mod n)`.
 -/
 def IsCarmichael (n : ℕ) : Prop :=
   ∀ b ≥ 1, n.FermatPsp b
 
-/--
-A natural number `a` is Carmichael if and only it it is squarefree and
-for all primes `p` that divide it, we have `p^2(p-1) | (a - p)`.
--/
-@[category research solved]
-theorem agoh_giuga.variants.nat_fermatPsp_iff (a : ℕ) :
+-- Wikipedia URL: https://en.wikipedia.org/wiki/Carmichael_number
+/-- A composite number `a` is Carmichael if and only if it is squarefree
+and, for all prime `p` dividing `a`, we have `p - 1 ∣ a - 1`. -/
+@[category undergraduate]
+theorem korselts_criterion (a : ℕ) (ha₁ : 1 < a) (ha₂ : ¬a.Prime) :
     IsCarmichael a ↔ Squarefree a ∧
-      ∀ p, p.Prime → p ∣ a → p^2 * (p-1 : ℕ) ∣ (a - p : ℕ) := by
-  --This should probably be in Mathlib
+      ∀ p, p.Prime → p ∣ a → (p - 1 : ℕ) ∣ (a - 1 : ℕ) := by
   sorry
 
 /--
@@ -109,7 +104,6 @@ theorem agoh_giuga.variants.isGiuga_iff (a : ℕ) :
     IsGiuga a ↔ IsCarmichael a ∧ ∃ n, ∑ p ∈ a.primeFactors, (1 / p : ℚ) - 1 / a = n := by
   sorry
 
-
 /--
 Giuga showed that a Giuga number has at least 9 prime factors.
 Ref: G. Giuga, _Su una presumibile proprieta caratteristica dei numeri primi_
@@ -118,7 +112,6 @@ Ref: G. Giuga, _Su una presumibile proprieta caratteristica dei numeri primi_
 theorem agoh_giuga.variants.le_primeFactors_card_of_isGiuga
     (a : ℕ) (ha : IsGiuga a) : 9 ≤ a.primeFactors.card := by
   sorry
-
 
 /--
 Giuga showed that any Giuga number has at least 1000 digits.
@@ -129,7 +122,6 @@ theorem agoh_giuga.variants._1000_le_digits_length_of_isGiuga
     (a : ℕ) (ha : IsGiuga a) : 1000 ≤ (Nat.digits 10 a).length := by
   sorry
 
-
 /--
 Bedocchi showed that any Giuga number has at least 1700 digits.
 Ref: E. Bedocchi, _Note on a conjecture about prime numbers_
@@ -138,7 +130,6 @@ Ref: E. Bedocchi, _Note on a conjecture about prime numbers_
 theorem agoh_giuga.variants._1700_le_digits_length_of_isGiuga
     (a : ℕ) (ha : IsGiuga a) : 1700 ≤ (Nat.digits 10 a).length := by
   sorry
-
 
 /--
 Borwein, Borwein, Borwein and Girgensohn showed that any Giuga
@@ -149,7 +140,6 @@ Ref: D. Borwein, J. M. Borwein, P. B. Borwein, and R. Girgensohn, _Giuga’s con
 theorem agoh_giuga.variants._13000_le_digits_length_of_isGiuga
     (a : ℕ) (ha : IsGiuga a) : 13000 ≤ (Nat.digits 10 a).length := by
   sorry
-
 
 open Classical in
 /--

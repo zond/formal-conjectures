@@ -19,8 +19,8 @@ import FormalConjectures.Util.ProblemImports
 
 
 /--
-Let `x_1,x_2,…∈[0,1]` be an infinite sequence. Is it true that there are infinitely many `m,n`
-such that `|x_{m+n}−x_n|≤1/(√5 n)`?
+Let $x_1,x_2,...∈[0, 1]$ be an infinite sequence. Is it true that there are infinitely many $m, n$
+such that $|x_{m+n} - x_n| ≤ \frac 1 {\sqrt 5 n}$?
 -/
 @[category research solved]
 theorem erdos_480
@@ -29,10 +29,10 @@ theorem erdos_480
   sorry
 
 /--
-For any `ϵ>0` there must exist some `n` such that there are infinitely many `m`
-for which `|x_{m+n}−x_m|<1/((c−ϵ)n)`, where
-`c=1+∑_{k≥1} 1/(F_{2k} =2.535⋯`
-and `F_m` is the `m`th Fibonacci number. This constant is best possible.
+For any $ϵ>0$ there must exist some $n$ such that there are infinitely many $m$
+for which $|x_{m+n} - x_m| < \frac 1 {(c−ϵ)n}$, where
+$c= 1 + \sum_{k≥1} \frac 1 {F_{2k}} =2.535370508...$
+and $F_m$ is the $m$th Fibonacci number. This constant is best possible.
 -/
 @[category research solved]
 theorem erdos_480.variants.chung_graham :

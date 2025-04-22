@@ -20,7 +20,7 @@ import FormalConjectures.Util.ProblemImports
 open scoped Nat
 
 /--
-Let k≥2. Does ((n+k)!)^2∣(2n)! for infinitely many n?
+Let $k ≥ 2$. Does $((n+k)!)^2∣(2n)!$ hold for infinitely many $n$?
 -/
 @[category research open]
 theorem erdos_727
@@ -30,8 +30,8 @@ theorem erdos_727
   sorry
 
 /--
-It is open even for k=2.
-Let k=2. Does ((n+k)!)^2∣(2n)! for infinitely many n?
+It is open even for $k = 2$.
+Let $k = 2$. Does $((n+k)!)^2∣(2n)!$ hold for infinitely many n?
 -/
 @[category research open]
 theorem erdos_727_variants.k_2
@@ -41,11 +41,9 @@ theorem erdos_727_variants.k_2
   sorry
 
 /--
-Balakran proved this holds for  k=1.
+Balakran proved this holds for $k = 1$.
 
-Let k=1. Does ((n+k)!)^2∣(2n)! for infinitely many n?
-
-Status: Solved
+Let $k = 1$. Does $((n+k)!)^2∣(2n)!$ for infinitely many $n$?
 -/
 @[category research solved]
 theorem erdos_727_variants.k_1
@@ -55,11 +53,9 @@ theorem erdos_727_variants.k_1
   sorry
 
 /--
-Erdős, Graham, Ruzsa, and Straus observe that the method of Balakran can be further used to prove that there are infinitely many n
+Erdős, Graham, Ruzsa, and Straus observe that the method of Balakran can be further used to prove that there are infinitely many $n$
  such that
-(n+k)!(n+1)!∣(2n)!
-
-Status: Solved
+$(n+k)!(n+1)!∣(2n)!$
 -/
 @[category research solved]
 theorem erdos_727_variants.k_1_2

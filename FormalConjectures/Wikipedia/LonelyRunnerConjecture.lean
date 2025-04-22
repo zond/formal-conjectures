@@ -18,11 +18,11 @@ limitations under the License.
 import FormalConjectures.Util.ProblemImports
 
 /--
-Consider n runners on a circular track of unit length. At the initial time
-t = 0, all runners are at the same position and start to run; the runners'
+Consider $n$ runners on a circular track of unit length. At the initial time
+$t = 0$, all runners are at the same position and start to run; the runners'
 speeds are constant, all distinct, and may be negative. A runner is said to be
-lonely at time t if they are at a distance (measured along the circle) of at
-least 1/n from every other runner. The lonely runner conjecture states that each
+lonely at time $t$ if they are at a distance (measured along the circle) of at
+least $\frac 1 n$ from every other runner. The lonely runner conjecture states that each
 runner is lonely at some time, no matter the choice of speeds.
 -/
 @[category research open]

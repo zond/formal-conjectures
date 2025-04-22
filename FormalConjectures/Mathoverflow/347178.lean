@@ -22,7 +22,7 @@ open Real Set
 https://mathoverflow.net/questions/347178
 asked by user "Biagio Ricceri", https://mathoverflow.net/users/149235/biagio-ricceri
 
-Let f: R^n → R,  n ≥ 2 be a C¹ function. Is it true that
+Let $f\colon ℝ^n → ℝ,  n ≥ 2$ be a $C^1$ function. Is it true that
 $$\sup_{x\in {\bf R}^n}f(x)=\sup_{x\in {\bf R}^n}f(x+\nabla f(x))$$?
 -/
 @[category research open]

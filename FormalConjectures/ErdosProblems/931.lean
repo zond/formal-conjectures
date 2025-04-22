@@ -33,7 +33,7 @@ theorem erdos_931 (k₁ k₂ : ℕ) (h₁ : k₂ ≤ k₁) (h₂ : 3 ≤ k₂) :
   sorry
 
 /--
-Erd\"{o}s thought perhaps if the two products have the same factors then
+Erdős thought perhaps if the two products have the same factors then
 $n_2 > 2(n_1 + k_1)$.
 -/
 @[category research open]
@@ -44,7 +44,7 @@ theorem erdos_931.variants.necessary_cond (k₁ k₂ n₁ n₂ : ℕ) (h₁ : k�
   sorry
 
 /--
-Erd\"{o}s was unable to prove that if the two products have the same factors
+Erdős was unable to prove that if the two products have the same factors
 then there must exist a prime between $n_1$ and $n_2$.
 -/
 @[category research open]

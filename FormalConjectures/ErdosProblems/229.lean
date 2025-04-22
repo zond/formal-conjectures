@@ -40,7 +40,7 @@ Let $\{S_k\}$ be any sequence of sets in the complex plane, each of which has no
 limit point. Then there exists a sequence $\{n_k\}$ of positive integers and a
 transcendental entire function $f(z)$ such that $f^{(n_k)}(z) = 0$ if $z \in S_k$.
 
-[BaSc72] Barth, K. F. and Schneider, W. J., _On a problem of Erd\"{o}s concerning the zeros of_
+[BaSc72] Barth, K. F. and Schneider, W. J., _On a problem of Erdős concerning the zeros of_
 _the derivatives of an entire function_. Proc. Amer. Math. Soc. (1972), 229--232.
 -/
 @[category research solved]

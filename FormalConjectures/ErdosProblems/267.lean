@@ -18,8 +18,9 @@ limitations under the License.
 import FormalConjectures.Util.ProblemImports
 
 /--
-Let `F_1=F_2=1` and `F_{n+1} = F_n + F_{n−1}` be the Fibonacci sequence. Let `n_1 < n_2 < ⋯` be an infinite sequence with `n_{k+1}/n_k≥c>1`. Must
-`∑_k, 1/F_{n_k}` be irrational?
+Let $F_1=F_2=1$ and $F_{n+1} = F_n + F_{n−1}$ be the Fibonacci sequence.
+Let $n_1 < n_2 < ...$ be an infinite sequence with $\frac{n_{k+1}}{n_k} ≥ c > 1$. Must
+$\sum_k \frac 1 {F_{n_k}}$ be irrational?
 -/
 @[category research open]
 theorem erdos_267 (n : ℕ → ℕ)
@@ -30,8 +31,9 @@ theorem erdos_267 (n : ℕ → ℕ)
 
 
 /--
-Let `F_1=F_2=1` and `F_{n+1} = F_n + F_{n−1}` be the Fibonacci sequence. Let `n_1 < n_2 < ⋯` be an infinite sequence with `n_k/k→∞`. Must
-`∑_k, 1/F_{n_k}` be irrational?
+Let $F_1=F_2=1$ and $F_{n+1} = F_n + F_{n−1}$ be the Fibonacci sequence.
+Let $n_1 < n_2 < ...$ be an infinite sequence with $\frac {n_k}{k} → ∞$. Must
+$\sum_k \frac 1 {F_{n_k}}$ be irrational?
 -/
 @[category research open]
 theorem erdos_267.variants.generalisation_ratio_limit_to_infinity (n : ℕ → ℕ)
@@ -60,7 +62,7 @@ theorem erdos_267.variants.specialization_pow_two :
 
 
 /--
-The sum `∑1/F_n` itself was proved to be irrational by André-Jeannin.
+The sum $\sum_n \frac 1 {F_{n}}$ itself was proved to be irrational by André-Jeannin.
 Ref: André-Jeannin, Richard, _Irrationalité de la somme des inverses de certaines suites récurrentes_.
 -/
 @[category research solved]

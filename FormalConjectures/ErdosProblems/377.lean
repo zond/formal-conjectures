@@ -22,7 +22,7 @@ open Filter
 
 open scoped Topology
 /--
-The sum of the inverses of all primes smaller than `n`, which don't divide the central
+The sum of the inverses of all primes smaller than $n$, which don't divide the central
 binom coefficient.
 -/
 noncomputable abbrev sumInvPrimesNotDvdCentralBinom (n : ℕ) : ℝ :=
@@ -48,6 +48,7 @@ $$
 and
 $$
   \gamma_0 = \sum_{k = 2}^{\infty} \frac{\log k}{2^k}
+$$
 then
 $$
   \lim_{x\to\infty} \frac{1}{x}\sum_{n\leq x} f(n) = \gamma_0
@@ -70,6 +71,7 @@ $$
 and
 $$
   \gamma_0 = \sum_{k = 2}^{\infty} \frac{\log k}{2^k}
+$$
 then
 $$
   \lim_{x\to\infty} \frac{1}{x}\sum_{n\leq x} f(n)^2 = \gamma_0^2

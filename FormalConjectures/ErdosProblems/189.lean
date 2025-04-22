@@ -19,7 +19,7 @@ import FormalConjectures.Util.ProblemImports
 
 open Affine EuclideanGeometry
 
-/-- Erdos problem 189 asked whether the below holds for all rectangles. -/
+/-- Erdős problem 189 asked whether the below holds for all rectangles. -/
 def Erdos189For (P : ℝ² → ℝ² → ℝ² → ℝ² → Prop) (A : ℝ² → ℝ² → ℝ² → ℝ² → ℝ) :=
     ∀ᵉ (n > 0) (colouring : ℝ² → Fin n), ∃ colour, ∀ area > (0 : ℝ), ∃ a b c d,
       {a, b, c, d} ⊆ colouring⁻¹' {colour} ∧

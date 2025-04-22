@@ -21,8 +21,8 @@ abbrev S := {(n, m) : ℕ × ℕ | n ≠ m ∧ ((2*n).choose n).primeFactors = (
 
 
 /--
-Are there infinitely many pairs of integers `n≠m` such that $\bimom{2n}{n}$
-and $\bimom{2m}{m}$ have the same set of prime divisors?
+Are there infinitely many pairs of integers $n ≠ m$ such that $\binom{2n}{n}$
+and $\binom{2m}{m}$ have the same set of prime divisors?
 -/
 @[category research open]
 theorem erdos_730 : S.Infinite := by
@@ -30,7 +30,7 @@ theorem erdos_730 : S.Infinite := by
 
 
 /--
-For example, `(87,88)` and `(607,608)` are such pairs.
+For example, $(87,88)$ and $(607,608)$ are such pairs.
 -/
 @[category research solved]
 theorem erdos_730.variants.explicit_pairs :
@@ -38,14 +38,14 @@ theorem erdos_730.variants.explicit_pairs :
   sorry
 
 /--
-Show that for all `n`, the binomial coefficient $\binom{2n}{n}$ is even.
+Show that for all $n$, the binomial coefficient $\binom{2n}{n}$ is even.
 -/
 @[category research solved]
 theorem erdos_730.variants.two_div_forall (n : ℕ) (h : 0 < n) : 2 ∣ (2*n).choose n := by
   sorry
 
 /--
-Show that `(n,n+1) ∈ S` if and only if for all odd primes `p≤n` we have `n∉{(p−1)/2,p−1}(mod p)`.
+Show that $(n, n+1) ∈ S$ if and only if for all odd primes $p ≤ n$ we have $n ∉ \{\frac {p−1} 2, p−1\} \mod p$.
 -/
 @[category research solved]
 theorem erdos_730.variants.succ_pair_criterion (n : ℕ) (h : 2 < n) :
@@ -55,8 +55,8 @@ theorem erdos_730.variants.succ_pair_criterion (n : ℕ) (h : 2 < n) :
 
 open scoped Topology in
 /--
-Standard heuristics then predict there should be `≫ x/(log x)^2`
-many `n≤x` such that `(n, n+1) ∈ S`.
+Standard heuristics then predict there should be $≫ \frac x {(\log x)^2}$
+many $n ≤ x$ such that $(n, n+1) ∈ S$.
 -/
 @[category research open]
 theorem erdos_730.variants.succ_pair_growth :

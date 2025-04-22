@@ -77,14 +77,14 @@ theorem erdos_868.parts.ii {A : Set ℕ} (hA₁ : IsAddBasis A 2) {ε : ℝ} (h�
     (hA₂ : ∀ᶠ (n : ℕ) in atTop, ε * Real.log n < ncard_add_repr A 2 n) :
     ∃ B ⊆ A, IsAddBasis B 2 ∧ ∀ b ∈ B, ¬IsAddBasis (B \ {b}) 2 := sorry
 
-/-- Erd\"os and Nathanson proved that this is true if $f(n) > (\log\frac{4}{3})^{-1}\log n$ for
+/-- Erdős and Nathanson proved that this is true if $f(n) > (\log\frac{4}{3})^{-1}\log n$ for
 all large $n$. -/
 @[category research solved]
 theorem erdos_868.variants.fixed_ε {A : Set ℕ} (hA₁ : IsAddBasis A 2)
     (hA₂ : ∀ᶠ (n : ℕ) in atTop, (Real.log (4 / 3))⁻¹ * Real.log n < ncard_add_repr A 2 n) :
     ∃ B ⊆ A, IsAddBasis B 2 ∧ ∀ b ∈ B, ¬IsAddBasis (B \ {b}) 2 := sorry
 
-/-- H\"artter and Nathanson proved that there exist additive bases which do not contain
+/-- Härtter and Nathanson proved that there exist additive bases which do not contain
 any minimal additive bases. -/
 @[category research solved]
 theorem erdos_868.variants.Hartter_Nathanson : ∃ A, ∃ o > 1, IsAddBasis A o ∧

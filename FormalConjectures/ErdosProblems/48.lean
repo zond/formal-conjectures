@@ -20,9 +20,7 @@ import FormalConjectures.Util.ProblemImports
 open scoped ArithmeticFunction
 
 /--
-Are there infinitely many integers `n,m` such that `ϕ(n)=σ(m)`
-?
-Status: Solved
+Are there infinitely many integers $n, m$ such that $ϕ(n) = σ(m)$?
 -/
 @[category research solved]
 theorem erdos_48 :

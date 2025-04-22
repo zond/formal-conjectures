@@ -23,7 +23,7 @@ import FormalConjectures.Util.ProblemImports
 This file contains the formalisation of [GoLo21] up to and
 including Conjecture 1.8
 
-[GoLo21] W.~T.~Gowers and J.~Long, _The length of an $s$-increasing sequence of $r$-tuples_,
+[GoLo21] W.T.Gowers and J.Long, _The length of an $s$-increasing sequence of $r$-tuples_,
 Combinatorics, Probability and Computing (2021), 686-721.
 -/
 

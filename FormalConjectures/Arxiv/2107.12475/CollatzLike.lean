@@ -17,9 +17,9 @@ limitations under the License.
 import FormalConjectures.Util.ProblemImports
 
 /--
-For all n > 8 there is at least one digit 2 in the base 3 representation of 2^n.
+For all $n > 8$ there is at least one digit $2$ in the base $3$ representation of $2^n$.
 
-This conjecture is equivalent to the halting of a 15-state 2-symbol Turing Machine.
+This conjecture is equivalent to the halting of a $15$-state $2$-symbol Turing Machine.
 TODO(lezeau): Formalize the Turing Machine version of this problem.
 
 Source: *Hardness of Busy Beaver Value BB(15)*: https://link.springer.com/chapter/10.1007/978-3-031-72621-7_9

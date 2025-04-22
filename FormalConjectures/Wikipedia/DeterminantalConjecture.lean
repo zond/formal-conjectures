@@ -17,7 +17,7 @@ limitations under the License.
 -- https://en.wikipedia.org/wiki/Determinantal_conjecture
 import FormalConjectures.Util.ProblemImports
 
-/-
+/--
 Determinantal Conjecture asks whether the determinant of a sum $A + B$
 of two $n$ by $n$ normal complex matrices A and B lies in the convex hull
 of the n! points $\prod i (\lambda(A)_i + \lambda(B)_{σ(i)})$,
@@ -28,7 +28,7 @@ group $S_n$.
 Here, we represent the two normal matrices as $U_1 D_1 U_1^*$ and
 $U_2 D_2 U_2^*$ respectively, where $U_1, U_2$ are unitary and $D_1, D_2$
 are diagonal. This is an universal form of a normal matrix,
-allowing to retrieve $\lambda (A)_i$ as $D_1_{i,i}$, whereas the current mathlib
+allowing to retrieve $\lambda (A)_i$ as ${D_1}_{i,i}$, whereas the current mathlib
 doesn't support obtaining the vector of eigenvalues from a general normal
 non-Hermitian matrix.
 -/

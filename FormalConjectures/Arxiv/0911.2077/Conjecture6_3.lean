@@ -30,13 +30,13 @@ local notation "Φ" => gaussianPDFReal 0 1
 
 /--
 Empirical evidence seems to suggest that Slud's bound does not hold for all $p$, and in fact, as $n\to\infty$,
-the maximal permissible $p$ shrinks to $1/2$.  Also, the following appears to be true.
+the maximal permissible $p$ shrinks to $\frac{1}{2}$.  Also, the following appears to be true:
 
 When $p\in(0,1/2)$ and
-$m = 2 * k$ is even, and $\sigma := \sqrt{p(1-p)}$,
-\[
-  \mathbb{P}[B(p,m) \geq m/2] \geq 1 - \Phi\left(\frac{(1/2-p)\sqrt{m}}{\sigma}\right) + \frac 1 2\binom{m}{m/2}\sigma^{m}
-\]
+$m = 2k$ is even, and $\sigma := \sqrt{p(1-p)}$,
+$$
+  \mathbb{P}[B(p,m) \geq m/2] \geq 1 - \Phi\left(\frac{(1/2-p)\sqrt{m}}{\sigma}\right) + \frac 1 2\binom{m}{m/2}\sigma^{m}.
+$$
 -/
 @[category research open]
 theorem arxiv.id0911_2077.conjecture6_3

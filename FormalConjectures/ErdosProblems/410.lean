@@ -22,7 +22,7 @@ open ArithmeticFunction Filter
 /--
 Let $σ_1(n) = σ(n)$, the sum of divisors function, and $σ_k(n) = σ(σ_{k−1}(n))$.
 
-Is it true that $\lim_{k → ∞} σ_k(n)^{1 / k} = ∞$?
+Is it true that $\lim_{k → ∞} σ_k(n)^{\frac 1 k} = ∞$?
 
 This is problem (iii) from
 Erdos, Granville, Pomerance, Spiro

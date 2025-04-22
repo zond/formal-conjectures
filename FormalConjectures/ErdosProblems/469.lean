@@ -25,7 +25,7 @@ def Nat.IsSumDivisors (n : ℕ) : Prop :=
 Let $A$ be the set of all $n$ such that $n = d_1 + ⋯ + d_k$ with $d_i$ distinct
 proper divisors of $n$, but this is not true for any $m ∣ n$ with $m < n$. Does:
 $$
-  ∑_{n ∈ A} 1 / n
+  \sum_{n ∈ A} \frac 1 n
 $$
 converge?
 -/

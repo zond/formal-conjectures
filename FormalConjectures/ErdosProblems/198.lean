@@ -40,7 +40,7 @@ lemma baumgartner_headline (V : Type*) [AddCommGroup V] [Module ℚ V] :
       (∀ Y, IsAPOfLength Y 3 → (X ∩ Y).ncard ≤ 2) :=
   baumgartner_strong V 3
 
-/-- Erdos and Graham, as well as Bloom, report Baumgartner also proved this.
+/-- Erdős and Graham, as well as Bloom, report Baumgartner also proved this.
 Erdos and Graham give no citation (though they do cite Baumgartner[75] for
 `baumgartner_headline`) whereas Bloom cites Baumgartner[75] for this.
 

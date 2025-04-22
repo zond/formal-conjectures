@@ -26,7 +26,7 @@ theorem erdos_406 : { n | n.isPowerOfTwo ∧ Nat.digits 3 n ⊆ [0, 1] }.Finite 
   sorry
 
 /--
-If we only allow the digits $1$ and $2$ then $2^15$ seems to be the largest such power
+If we only allow the digits $1$ and $2$ then $2^{15}$ seems to be the largest such power
 of $2$.
 -/
 @[category research open]

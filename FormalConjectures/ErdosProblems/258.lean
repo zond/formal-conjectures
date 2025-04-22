@@ -18,8 +18,8 @@ limitations under the License.
 import FormalConjectures.Util.ProblemImports
 
 /--
-Let `a_n → ∞` be a sequence of non-zero natural numbers. Is `∑_n, d(n)/(a_1 ... a_n)` irrational, where `d(n)`
-is the number of divisors of `n`?
+Let $a_n → ∞$ be a sequence of non-zero natural numbers. Is $\sum_n \frac{d(n)}{(a_1 ... a_n)}$
+irrational, where $d(n)$ is the number of divisors of $n$?
 -/
 @[category research open]
 theorem erdos_258
@@ -30,10 +30,10 @@ theorem erdos_258
 
 
 /--
-Let `a_n → ∞` be a monotone sequence of non-zero natural numbers. Is `∑_n, d(n)/(a_1 ... a_n)` irrational, where `d(n)`
-is the number of divisors of `n`?
+Let $a_n → ∞$ be a monotone sequence of non-zero natural numbers.
+Is $\sum_n \frac{d(n)}{(a_1 ... a_n)}$ irrational, where $d(n)$ is the number of divisors of $n$?
 
-Solution: True (proved by Erdős and Straus, see Erdos Problems website).
+Solution: True (proved by Erdős and Straus, see Erdős Problems website).
 -/
 @[category research solved]
 theorem erdos_258.variants.Monotone
@@ -44,9 +44,9 @@ theorem erdos_258.variants.Monotone
 
 
 /--
-Is `∑_n, d(n)/(t^n)` irrational, where `t ≥ 2` is an integer.
+Is $\sum_n \frac{d(n)}{t^n}$ irrational, where $t ≥ 2$ is an integer.
 
-Solution: True (proved by Erdős, see Erdos Problems website)
+Solution: True (proved by Erdős, see Erdős Problems website)
 -/
 @[category research solved]
 theorem erdos_258.variants.Constant (t : ℕ) (ht : 2 ≤ t):

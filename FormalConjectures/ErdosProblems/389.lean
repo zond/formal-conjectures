@@ -18,7 +18,7 @@ limitations under the License.
 import FormalConjectures.Util.ProblemImports
 
 /--
-Is it true that for every $n geq 1$ there is a $k$ such that
+Is it true that for every $n \geq 1$ there is a $k$ such that
 $$
   n(n + 1) \cdots (n + k - 1) \mid (n + k) \cdots (n + 2k - 1)?
 $$

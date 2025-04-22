@@ -27,7 +27,7 @@ theorem erdos_376 :
   sorry
 
 /--
-Erd\"{o}s, Graham, Ruzsa, and Straus [EGRS75] have shown that, for any two odd primes $p$ and $q$, there are infinite many $n$ such
+Erdős, Graham, Ruzsa, and Straus [EGRS75] have shown that, for any two odd primes $p$ and $q$, there are infinite many $n$ such
 that ${2n\choose n}$ is coprime to $pq$.
 -/
 @[category research solved]

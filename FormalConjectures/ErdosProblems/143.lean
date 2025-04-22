@@ -30,9 +30,9 @@ def WellSeparatedSet (A : Set ℝ) : Prop :=
 
 /--
 Does this imply that
-\[
+$$
 \liminf \frac{|A \cap [1,x]|}{x} = 0?
-\]
+$$
 -/
 @[category research open]
 theorem erdos_143.parts.i (A : Set ℝ) (h : WellSeparatedSet A):
@@ -41,9 +41,9 @@ theorem erdos_143.parts.i (A : Set ℝ) (h : WellSeparatedSet A):
 
 /--
 Or
-\[
+$$
 \sum_{x \in A} \frac{1}{x \log x} < \infty,
-\]
+$
 -/
 @[category research open]
 theorem erdos_143.parts.ii (A : Set ℝ) (h : WellSeparatedSet A):
@@ -54,13 +54,13 @@ theorem erdos_143.parts.ii (A : Set ℝ) (h : WellSeparatedSet A):
 
 -- TODO(firsching): add the two other conjectures.
 /-
-\[
+$$
 \sum_{\substack{x < n \\ x \in A}} \frac{1}{x} = o(\log n)?
-\]
+$$
 
 Perhaps even
 
-\[
+$$
 \sum_{\substack{x < n \\ x \in A}} \frac{1}{x} \ll \frac{\log x}{\sqrt{\log \log x}}?
-\]
+$$
 -/

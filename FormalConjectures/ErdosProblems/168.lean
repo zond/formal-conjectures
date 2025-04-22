@@ -40,12 +40,16 @@ lemma F_2 : F 2 = 2 := rfl
 
 lemma F_3 : F 3 = 2 := rfl
 
-/-Sanity check: elements of `IntervalNonTernarySets N` are precisely non ternary subsets of `{1,...,N}`-/
+/--
+Sanity check: elements of `IntervalNonTernarySets N` are precisely non ternary subsets of `{1,...,N}`
+-/
 lemma mem_IntervalNonTernarySets_iff (N : ℕ) (S : Finset ℕ) :
     S ∈ IntervalNonTernarySets N ↔ NonTernary S ∧ S ⊆ Finset.Icc 1 N := by
   sorry
 
-/-Sanity check: if `S` is a maximal non ternary subset of `{1,..., N}` then `F N` is given by the cardinality of `S`-/
+/--
+Sanity check: if `S` is a maximal non ternary subset of `{1,..., N}` then `F N` is given by the cardinality of `S`
+-/
 lemma F_eq_card (N : ℕ) (S : Finset ℕ) (hS : S ⊆ Finset.Icc 1 N)
     (hS' : NonTernary S) (hS'' : ∀ T, T ⊆ Finset.Icc 1 N → NonTernary T → S ⊆ T → T = S) :
     F N = S.card := by

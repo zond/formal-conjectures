@@ -39,7 +39,8 @@ theorem IsFiniteAP.zero_diff {k : ℕ} [NeZero k] {s : Set ℕ} :
   simp [IsFiniteAPWith]
 
 /--
-A set $s$ contains a non-trivial $k$-term, if there is a difference $d$ such that $s$ is a $k$-term progression with that difference and it contains more than 1 element.
+A set $s$ contains a non-trivial $k$-term, if there is a difference $d$ such that $s$ is a $k$-term
+progression with that difference and it contains more than 1 element.
 -/
 def ContainsNontrivialAP (k : ℕ) (s : Set ℕ) := ∃ d, IsFiniteAPWith k d s ∧ 1 < s.ncard
 
@@ -71,7 +72,7 @@ theorem erdos_817 :
     (fun n => (3 ^ n : ℝ)) =O[atTop] fun n => (g 3 n : ℝ) :=
   sorry
 
-/-- A problem of Erd\"{o}s and Sa\'{a}rk\"{o}zy who proved
+/-- A problem of Erdős and Sárközy who proved
 $$
   g_3(n) \gg \frac{3^n}{n^{O(1)}}.
 $$ -/

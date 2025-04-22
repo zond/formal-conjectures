@@ -27,7 +27,7 @@ theorem erdos_244 {C : ℝ} (hC : 1 < C) {α : ℝ}
 
 /-- Romanoff [Ro34] proved that the answer is yes if $C$ is an integer.
 
-[Ro34] Romanoff, N. P., _Über einige S\"Atze der additiven Zahlentheorie_.
+[Ro34] Romanoff, N. P., _Über einige Sätze der additiven Zahlentheorie_.
 Math. Ann. (1934), 668-678.-/
 @[category research solved]
 theorem erdos_244.variants.Romanoff {C : ℕ} (hC : 1 < C) {α : ℝ}

@@ -22,11 +22,11 @@ From "Proofs from THE BOOK", by Martin Aigner and Günter M. Ziegler (6th editio
 
 A version of the Hadamard conjecture as stated on page 44, chapter 7:
 
-|A| ≤ n^{n/2}.
+$$|A| ≤ n^\frac{n}{2}.$$
 
 When do we have equality?
 [...]
-Matrices A with ±1-entries that achieve equality are aptly called
+Matrices $A$ with $±1$-entries that achieve equality are aptly called
 \textit{Hadamard matrices}.
 -/
 def IsHadamard (n : ℕ) (M : Matrix (Fin n) (Fin n) ℝ) : Prop :=
@@ -34,14 +34,14 @@ def IsHadamard (n : ℕ) (M : Matrix (Fin n) (Fin n) ℝ) : Prop :=
     Matrix.det M = n ^ ((n : ℝ) / 2)
 
 /--
-Does a Hadamard matrix exist for all n = 4a? No one knows.
+Does a Hadamard matrix exist for all $n = 4a$? No one knows.
 -/
 @[category research open]
 theorem HadamardConjecture (k : ℕ) : ∃ M, IsHadamard (4 * k) M := sorry
 
 /--
-The answer is yes for \(n\) up to the current record n = 664.
-The first unknown case 668 = 4 * 167
+The answer is yes for $n$ up to the current record $n = 664$.
+The first unknown case $668 = 4 \cdot 167$
 -/
 @[category research open]
 theorem HadamardConjecture.variant : ∃ M, IsHadamard (4 * 167) M := sorry

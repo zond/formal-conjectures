@@ -28,7 +28,7 @@ theorem erdos_932 :
   sorry
 
 /--
-Erd\"{o}s could show that the density of $r$ such that at least one such $n$
+Erdős could show that the density of $r$ such that at least one such $n$
 exist is $0$.
 -/
 @[category research solved]

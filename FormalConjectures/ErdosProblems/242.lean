@@ -21,7 +21,7 @@ open scoped Topology
 
 /--
 For every $n>2$ there exist distinct integers $1 ≤ x < y < z$
-such that $4/n=1/x+1/y+1/z$.
+such that $\frac 4 n = \frac 1 x + \frac 1 y + \frac 1 z$.
 -/
 @[category research open]
 theorem erdos_242 (n : ℕ) (hn : 2 < n) :
@@ -32,7 +32,7 @@ theorem erdos_242 (n : ℕ) (hn : 2 < n) :
 /--
 For any fixed $a$, if $n$ is sufficiently large in terms of $a$
 then there exist distinct integers $1 ≤ x < y < z$ such that
-a/n=1/x+1/y+1/z$.
+$\frac a n = \frac 1 x + \frac 1 y + \frac 1 z$.
 -/
 @[category research open]
 theorem erdos_242_schinzel_generalization

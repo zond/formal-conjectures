@@ -88,7 +88,7 @@ lemma IsArithmeticProgression_pair [AddCommGroup M] (a b : M) :
 variable [AddCommMonoid M]
 
 /--
-Say a set `A` is a *k-non-arithmetic subset* if it contains non non-trivial
+Say a set `A` is a *`k`-non-arithmetic subset* if it contains non non-trivial
 arithmetic progressions of length `k`.
 -/
 def NonArithmeticSubset (k : ℕ) (A : Set M) : Prop :=
@@ -96,14 +96,14 @@ def NonArithmeticSubset (k : ℕ) (A : Set M) : Prop :=
     AP.length = k → {x | x ∈ (AP : List M)} ⊆ (A : Set M) →
     hAP.step = 0
 
-/--Denote by `r_k(N)` the size of the largest k-non-arithmetic subset of `{1,...,N}`-/
+/--Denote by $r_k(N)$ the size of the largest k-non-arithmetic subset of ${1,...,N}$-/
 noncomputable abbrev r (k : ℕ) (N : ℕ) : ℕ :=
     ((Finset.Icc (1 : ℤ) N).powerset.filter fun S => NonArithmeticSubset k S.toSet).sup Finset.card
 
 /--
 **Erdős Problem 139**:
-Let `r_k(N)` be the size of the largest subset of `{1,…,N}` which does not contain a non-trivial
-`k`-step arithmetic progression. Prove that `r_k(N) = o(N)`.
+Let $r_k(N)$ be the size of the largest subset of ${1,...,N}$ which does not contain a non-trivial
+$k$-step arithmetic progression. Prove that $r_k(N) = o(N)$.
 -/
 @[category research solved]
 theorem erdos_139 (k : ℕ) (hk : 1 ≤ k) :
@@ -113,5 +113,7 @@ theorem erdos_139 (k : ℕ) (hk : 1 ≤ k) :
 /-
 TODO(lezeau):
 1 - add the various known bounds as variants.
-2 - we could consider making some unified "Mathlib"-ready API for Arithmetic progressions since these appear in various settings (and other Erdős problems!). Ideally, this should allow for possibly infinite indexing types, so let's deal with that can of worms later.
+2 - we could consider making some unified "Mathlib"-ready API for Arithmetic progressions since
+  these appear in various settings (and other Erdős problems!). Ideally, this should allow for
+  possibly infinite indexing types, so let's deal with that can of worms later.
 -/

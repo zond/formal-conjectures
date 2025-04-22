@@ -25,8 +25,8 @@ local notation  "!" n => left_factorial n
 /--
 B44 Sums of factorials.
 
-Đura Kurepa defined \(!n=0!+1!+2!+...+(n-1)!\) and asks if \(!n\not\equiv0\) mod n
-for all n
+Đura Kurepa defined $!n = 0!+1!+2!+...+(n-1)!$ and asks if $!n\not\equiv0 \mod n$
+for all $n$.
 -/
 @[category research open]
 theorem kurepa_conjecture (n : ℕ) (h_n : 2 < n) : (!n : ℕ) % n ≠ 0 := sorry
@@ -43,7 +43,7 @@ theorem kurepa_conjecture.prime_reduction  : (∀ n, ∀ h_n : 2 < n, (!n : ℕ)
 
 
 /--
-An equivalent formulation in terms of the gcd of n! and !n.
+An equivalent formulation in terms of the gcd of $n!$ and $!n$.
 -/
 @[category research open]
 theorem kurepa_conjecture.variant.gcd (n : ℕ) : 2 < n → (n !).gcd (! n) = 2 := sorry

@@ -26,8 +26,8 @@ universe u v
 
 variable {M : Type u} [MetricSpace M]
 
-/--An `r`-bounded disc cover of a subset of a metric space `M`
-is an indexed family of closed discs whose radii sum to at most `r`.-/
+/--An $r$-bounded disc cover of a subset of a metric space $M$
+is an indexed family of closed discs whose radii sum to at most $r$.-/
 structure BoundedDiscCover (S : Set M) (r : ℝ) (ι : Type v) where
   (C : ι → M)
   (R : ι → ℝ)
@@ -67,9 +67,9 @@ lemma BoundedDiscCover.bound_nonneg_of_nonempty
 end BoundedDiscCover
 
 /--
-Let `f(z)∈ ℂ[z]` be a monic non-constant polynomial. Can the set
-`{z∈C:|f(z)|≤1}`
-be covered by a set of closed discs the sum of whose radii is ≤2?
+Let $f(z) ∈ ℂ[z]$ be a monic non-constant polynomial. Can the set
+$\{z ∈ ℂ : |f(z)| ≤ 1\}$
+be covered by a set of closed discs the sum of whose radii is $≤ 2$?
 -/
 @[category research open]
 theorem erdos_509
@@ -78,8 +78,8 @@ theorem erdos_509
   sorry
 
 /--
-Let `f(z)∈ ℂ[z]` be a monic non-constant polynomial. Can the set
-`{z∈C:|f(z)|≤1}`
+Let $f(z) ∈ ℂ[z]$ be a monic non-constant polynomial. Can the set
+$\{z ∈ ℂ : |f(z)| ≤ 1\}$
 be covered by a set of closed discs the sum of whose radii is ≤2e?
 Solution: True. This is due to Cartan.
 See *Sur les systèmes de fonctions holomorphes à variétés linéaires
@@ -93,9 +93,9 @@ theorem erdos_509.variants.Cartan_bound
   sorry
 
 /--
-Let `f(z)∈ ℂ[z]` be a monic non-constant polynomial. Can the set
-`{z∈C:|f(z)|≤1}`
-be covered by a set of closed discs the sum of whose radii is ≤2.59?
+Let $f(z) ∈ ℂ[z]$ be a monic non-constant polynomial. Can the set
+$\{z ∈ ℂ : |f(z)| ≤ 1\}$
+be covered by a set of closed discs the sum of whose radii is $≤ 2.59$?
 Solution: True. This is due to Pommerenke.
 -/
 @[category research solved]
@@ -105,9 +105,9 @@ theorem erdos_509.variants.Pommerenke_bound
   sorry
 
 /--
-Let `f(z)∈ ℂ[z]` be a monic non-constant polynomial.
-If it is connected, can the set `{z∈C:|f(z)|≤1}`
-be covered by a set of circles the sum of whose radii is `≤2`?
+Let $f(z) ∈ ℂ[z]$ be a monic non-constant polynomial.
+If it is connected, can the set $\{z ∈ C : |f(z)| ≤ 1\}$
+be covered by a set of circles the sum of whose radii is $≤ 2$?
 Solution: True. This is due to Pommerenke.
 -/
 @[category research solved]

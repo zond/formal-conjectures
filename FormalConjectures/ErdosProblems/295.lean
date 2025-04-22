@@ -21,25 +21,25 @@ open Classical
 open scoped Real
 
 /--
-Helper lemma: for each `N`, there exists `k` and `n_1 < ⋯ < n_k` such that
-`N ≤ n_1 < ⋯ < n_k` with `1=1/n_1+⋯+1/n_k.`
+Helper lemma: for each $N$, there exists $k$ and $n_1 < ... < n_k$ such that
+$N ≤ n_1 < ⋯ < n_k$ with $\frac 1 {n_1} + ... + \frac 1 {n_k} = 1$.
 -/
 lemma exists_k (N : ℕ) : ∃ (k : ℕ) (n : Fin k.succ → ℕ),
     (∀ i, N ≤ n i) ∧ StrictMono n ∧ ∑ i, (1 / n i : ℝ) = 1 := by
   sorry
 
 /--
-Let `k(N)` denote the smallest `k` such that there exists
-`N ≤ n_1 < ⋯ < n_k` with `1=1/n_1+⋯+1/n_k.`
+Let $k(N)$ denote the smallest $k$ such that there exists
+$N ≤ n_1 < ⋯ < n_k$ with $\frac 1 {n_1} + ... + \frac 1 {n_k} = 1$.
 -/
 noncomputable abbrev k (N : ℕ) : ℕ := Nat.find (exists_k N)
 
 
 /--
-Let `k(N)` denote the smallest `k` such that there exists
-`N ≤ n_1 < ⋯ < n_k` with `1=1/n_1+⋯+1/n_k.`
+Let $k(N)$ denote the smallest $k$ such that there exists
+$N ≤ n_1 < ⋯ < n_k$ with $\frac 1 {n_1} + ... + \frac 1 {n_k} =
 
-Is it true that `lim_{N→∞} k(N)−(e−1)N=∞`?
+Is it true that $lim_{N→∞} k(N) - (e - 1)N = ∞$?
 -/
 @[category research open]
 theorem erdos_295 :
@@ -47,8 +47,8 @@ theorem erdos_295 :
   sorry
 
 /--
-Erdős and Straus have proved the existence of some constant `c>0`
-such that `−c < k(N)−(e−1)N ≪ N/ log N`
+Erdős and Straus have proved the existence of some constant $c>0$
+such that $-c < k(N)-(e-1)N ≪ \frac N {log N}$
 -/
 @[category research solved]
 theorem erdos_295.variants.erdos_straus :

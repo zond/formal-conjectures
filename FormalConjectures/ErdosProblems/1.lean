@@ -22,7 +22,7 @@ open Filter
 open scoped Topology Real
 
 /--
-A finite set of naturals $A$ is said to be a sum-distinct set for $N in mathbb{N}$ if
+A finite set of naturals $A$ is said to be a sum-distinct set for $N in \mathbb{N}$ if
 $A\subseteq\{1, ..., N\}$ and the sums  $\sum_{a\in S}a$ are distinct for all $S\subseteq A$
 -/
 abbrev IsSumDistinctSet (A : Finset ℕ) (N : ℕ) : Prop :=
@@ -63,7 +63,7 @@ theorem erdos_1.variants.lb : ∃ (o : ℕ → ℝ) (_ : Tendsto o atTop (𝓝 0
   sorry
 
 /--
-A number of improvements of the constant $1 / 4$ have been given, with the current
+A number of improvements of the constant $\frac{1}{4}$ have been given, with the current
 record $\sqrt{2 / \pi}$ first provied in unpublished work of Elkies and Gleason.
 -/
 @[category research solved]

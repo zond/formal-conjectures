@@ -22,11 +22,11 @@ open Finset Nat
 /--
 A Conjecture of Marian Deaconescu, see p.120 in https://doi.org/10.2307/2975810
 
-[Needed to index shift in order to avoid trivial case n = 0,
+[Needed to index shift in order to avoid trivial case $n = 0$,
 where the conjecture is trivially false.]
 -/
 -- TODO(firsching): add formalization of the known cases for this conjecture:
--- n  ≤ 1000, as well as the conjecture that p ≤ n^O(1)
+-- n ≤ 1000, as well as the conjecture that p ≤ n^O(1)
 @[category research open]
 theorem erdos_779 (n : ℕ) (hn : n ≥ 1): let P := ∏ i ∈ range (n + 1), nth Nat.Prime i
     ∃ p, p.Prime ∧ (P + p).Prime ∧ nth Nat.Prime n < p ∧ p < P := sorry

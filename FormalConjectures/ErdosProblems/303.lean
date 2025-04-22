@@ -17,7 +17,8 @@ limitations under the License.
 -- Erdős Problems URL: https://www.erdosproblems.com/303
 import FormalConjectures.Util.ProblemImports
 
-/--Is it true that in any finite colouring of the integers there exists a monochromatic solution to `1/a=1/b+1/c` with distinct `a,b,c`?-/
+/--Is it true that in any finite colouring of the integers there exists a monochromatic solution
+to $\frac 1 a = \frac 1 b + \frac 1 c$ with distinct $a, b, c$?-/
 @[category research solved]
 theorem erdos_303 :
     --For any finite colouring of the integers

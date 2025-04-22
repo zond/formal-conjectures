@@ -38,7 +38,7 @@ theorem erdos_126
   sorry
 
 /--
-Erd\"{o}s and Tur\'{a}n proved [ErTu34] in their first joint paper that
+Erdős and Tur\'{a}n proved [ErTu34] in their first joint paper that
 $$
   \log n \ll f(n) \ll n/\log n
 $$
@@ -52,7 +52,7 @@ theorem erdos_126.variants.IsBigO
       (fun (n : ℕ) => (f n : ℝ)) =O[atTop] fun (n : ℕ) => n / Real.log n := sorry
 
 /--
-Erd\"{o}s says that $f(n) = o(n / \log n)$ has never been proved.
+Erdős says that $f(n) = o(n / \log n)$ has never been proved.
 -/
 @[category research open]
 theorem erdos_126.variants.isLittleO

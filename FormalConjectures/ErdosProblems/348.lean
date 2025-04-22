@@ -35,10 +35,8 @@ end Prelims
 /--
 For what values of $0 \leq m < n$ is there a complete sequence
 $A = \{a_1 \leq a_2 \leq \cdots\}$ of integers such that
-\begin{enumerate}
-\item $A$ remains complete after removing any $m$ elements, but
-\item $A$ is not complete after removing any $n$ elements.
-\end{enumerate}
+ 1. $A$ remains complete after removing any $m$ elements, but
+ 2. $A$ is not complete after removing any $n$ elements.
 -/
 @[category research open]
 theorem erdos_348 :

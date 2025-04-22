@@ -27,7 +27,7 @@ section Prelims
 namespace Real
 
 /--
-The function $Log x := \max\{log x, 1\}$.
+The function $\operatorname{Log} x := \max\{log x, 1\}$.
 -/
 def maxLogOne (x : ℝ) := max x.log 1
 
@@ -60,15 +60,17 @@ end Set
 end Prelims
 
 /--
-Let $Log x := \max\{log x, 1\}$, $Log_2x = Log (Log x)$, and $Log_3x = Log (Log (Log x)))$.
+Let $\operatorname{Log} x := \max\{\log x, 1\}$,
+$\operatorname{Log}_2x = \operatorname{Log} (\operatorname{Log} x)$, and
+$\operatorname{Log}_3x = \operatorname{Log}(\operatorname{Log}(\operatorname{Log} x)).$
 Is it true that if $A\subseteq\mathbb{N}$ is such that
 $$
-\frac{1}{Log_2 x} \sum_{n\in A: n\leq x} \frac{1}{n}\to\infty
+\frac{1}{\operatorname{Log}_2 x} \sum_{n\in A: n\leq x} \frac{1}{n}\to\infty
 $$
 then
 $$
-\left(\sum_{n\in A: n\leq x} \frac{1}{n}\right)^2 \sum_{n, m in A: n < m \leq x}
-\frac{1}{\lcm(n, m)}\to\infty
+\left(\sum_{n\in A: n\leq x} \frac{1}{n}\right)^2 \sum_{n, m \in A: n < m \leq x}
+\frac{1}{\operatorname{lcm}(n, m)}\to\infty
 $$
 as $x\to\infty$?
 
@@ -88,15 +90,17 @@ theorem erdos_442
 Tao resolved erdos_442 in the negative in Theorem 1 of https://arxiv.org/pdf/2407.04226.
 The following is a formalisation of that theorem with $C_0 = 1$.
 
-Let $Log x := \max\{log x, 1\}$, $Log_2x = Log (Log x)$, and $Log_3x = Log (Log (Log x)))$.
+Let $\operatorname{Log} x := \max\{\log x, 1\}$,
+$\operatorname{Log}_2x = \operatorname{Log} (\operatorname{Log} x)$, and
+$\operatorname{Log}_3x = \operatorname{Log}(\operatorname{Log}(\operatorname{Log} x)).$
 There exists a set $A$ of natural numbers such that
 $$
 \sum_{n\in A: n\leq x} \frac{1}{n} =
-  \exp\left(\left(\left(\frac{1}{2} + o(1)\right)Log_2^{1/2}x Log_3x\right)\right)
+  \exp\left(\left(\left(\frac{1}{2} + o(1)\right)\operatorname{Log}_2^{1/2}x \operatorname{Log}_3x\right)\right)
 $$
 and
 $$
-\sum_{n, m\in A: n, m\leq x} frac{1}{\lcm(n, m)}\ll\left(sum_{n\in A: n\leq x} \frac{1}{n}\right)^2
+\sum_{n, m\in A: n, m\leq x} \frac{1}{\operatorname{lcm}(n, m)}\ll\left(\sum_{n\in A: n\leq x} \frac{1}{n}\right)^2
 $$
 -/
 @[category research solved]

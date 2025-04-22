@@ -74,7 +74,7 @@ theorem infinite_irrational_at_odd :
   sorry
 
 /--
-At least one of $zeta(5), \zeta(7), \zeta(9)$ or $\zeta(11)$ is irrational.
+At least one of $\zeta(5), \zeta(7), \zeta(9)$ or $\zeta(11)$ is irrational.
 
 [Zu01]  W. Zudilin (2001). _One of the numbers ζ(5), ζ(7), ζ(9), ζ(11) is irrational_. Russ. Math. Surv. 56 (4): 774–776.
 -/

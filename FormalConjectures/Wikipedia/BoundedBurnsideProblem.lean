@@ -18,8 +18,8 @@ limitations under the License.
 import FormalConjectures.Util.ProblemImports
 
 /--
-Let G be a finitely generated group, and assume there exists n such that for every g in G,
-g^n = 1. Does G must be necessarily finite?
+Let $G$ be a finitely generated group, and assume there exists $n$ such that for every $g$ in $G$,
+$g^n = 1$. Is $G$ necessarily finite?
 -/
 @[category research open]
 theorem bounded_burnside_problem (G : Type) [Group G] (fin_gen : Group.FG G)

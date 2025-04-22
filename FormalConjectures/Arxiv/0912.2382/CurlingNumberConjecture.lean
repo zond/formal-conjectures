@@ -26,10 +26,10 @@ Authors: Benjamin Chaffin and N. J. A. Sloane
 /--
 The curling number
 
-Let S be a finite nonempty sequence of integers. By grouping adjacent terms, it is always possible
-to write it as `S = X Y Y . . . Y = X Y^k`, where `X` and `Y` are sequences of integers and `Y` is nonempty
-(`X` is allowed to be the empty sequence `∅`). There may be several ways to do this: choose the one
-that maximizes the value of `k`: this `k` is the curling number of `S`, denoted by `k S`.
+Let $S$ be a finite nonempty sequence of integers. By grouping adjacent terms, it is always possible
+to write it as $S = X Y Y . . . Y = X Y^k$, where $X$ and $Y$ are sequences of integers and $Y$ is nonempty
+(4X$ is allowed to be the empty sequence $∅$). There may be several ways to do this: choose the one
+that maximizes the value of $k$: this $k$ is the curling number of $S$, denoted by $k S$.
 -/
 noncomputable def k (S : List ℤ) : ℕ :=
   sSup {k : ℕ | ∃ X Y  : List ℤ, Y ≠ [] ∧ S = X  ++ (List.replicate k Y).flatten}
@@ -37,7 +37,7 @@ noncomputable def k (S : List ℤ) : ℕ :=
 
 /--
 One starts with any initial
-sequence of integers S₀, and extends it by repeatedly appending the curling number of the current
+sequence of integers $S₀$, and extends it by repeatedly appending the curling number of the current
 sequence.
 -/
 noncomputable def S (S₀ : List ℤ) (n : ℕ) : List ℤ :=
@@ -46,7 +46,7 @@ noncomputable def S (S₀ : List ℤ) (n : ℕ) : List ℤ :=
   | n + 1 => (S S₀ n) ++ [Int.ofNat (k (S S₀ n))]
 
 /--
-The sequence will eventually reach 1.
+The sequence will eventually reach $1$.
 -/
 @[category research open]
 theorem curling_number_conjecture (S₀ : List ℤ) (h : S₀ ≠ []) : ∃ m, k (S S₀ m) = 1 := sorry

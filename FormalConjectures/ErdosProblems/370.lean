@@ -18,8 +18,8 @@ limitations under the License.
 import FormalConjectures.Util.ProblemImports
 
 /--
-Are there infinitely many $n$ such that the largest prime factor of $n$ is $< n^{1/2}$ and
-the largest prime factor of $n + 1$ is $< (n + 1)^{1/2}$.
+Are there infinitely many $n$ such that the largest prime factor of $n$ is $< n^{\frac 1 2}$ and
+the largest prime factor of $n + 1$ is $< (n + 1)^{\frac 1 2}$.
 -/
 @[category research solved]
 theorem erdos_370 :

@@ -17,7 +17,6 @@ limitations under the License.
 -- Erdős Problems URL: https://www.erdosproblems.com/825
 import FormalConjectures.Util.ProblemImports
 
--- TODO(mercuris): Is this open scoped allowed?
 open scoped ArithmeticFunction
 
 /--

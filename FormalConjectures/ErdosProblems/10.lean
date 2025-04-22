@@ -18,32 +18,32 @@ limitations under the License.
 import FormalConjectures.Util.ProblemImports
 
 /--
-The lower asymptotic density of a set `S` is the liminf as `n → ∞` of the
-ratio `|{a ∈ S | a < n}| / n`
+The lower asymptotic density of a set $S$ is the $\liminf$ as $n → ∞$ of the
+ratio $\frac{|\{a ∈ S | a < n\}|}{n}$.
 -/
 noncomputable def lowerDensity (S : Set ℕ) : ℝ :=
     Filter.atTop.liminf (fun n => (Set.Iio n ∩ S).ncard / n)
 
 /--
 The set of natural numbers that can be written as a sum
-of a prime and at most `k` powers of 2.
+of a prime and at most $k$ powers of $2$.
 -/
 abbrev sumPrimeAndTwoPows (k : ℕ) : Set ℕ :=
   { p + (pows.map (2 ^ ·)).sum | (p : ℕ) (pows : Multiset ℕ) (_ : p.Prime)
     (_ : pows.card ≤ k)}
 
 /--
-Is there some `k` such that every integer is the sum of a prime and at most `k`
- powers of `2`?
+Is there some $k$ such that every integer is the sum of a prime and at most $k$
+ powers of $2$?
 -/
 @[category research open]
 theorem erdos_10 : ∃ k, sumPrimeAndTwoPows k = Set.univ \ {0, 1} := by
   sorry
 
 /--
-Gallagher [Ga75] has shown that for any `ϵ>0` there exists `k(ϵ)`
-such that the set of integers which are the sum of a prime and at most `k(ϵ)`
-many powers of 2 has lower density at least `1−ϵ`.
+Gallagher [Ga75] has shown that for any $ϵ > 0$ there exists $k(ϵ)$
+such that the set of integers which are the sum of a prime and at most $k(ϵ)$
+many powers of $2$ has lower density at least $1 - ϵ$.
 
 Ref: Gallagher, P. X., _Primes and powers of 2_.
 -/
@@ -53,8 +53,8 @@ theorem erdos_10.variants.gallagher (ε : ℝ)
   sorry
 
 /--
-Granville and Soundararajan [GrSo98] have conjectured that at most 3
-powers of 2 suffice for all odd integers, and hence at most 4 powers of 2
+Granville and Soundararajan [GrSo98] have conjectured that at most $3$
+powers of $2$ suffice for all odd integers, and hence at most $4$ powers of $2$
 suffice for all even integers.
 
 Ref: Granville, A. and Soundararajan, K., _A Binary Additive Problem of Erdős and the Order of $2$ mod $p^2$_
@@ -67,7 +67,7 @@ theorem erdos_10.variants.granville_soundararajan_odd :
 
 /--
 Bogdan Grechuk has observed that `1117175146` is not the sum of a prime
-and at most 3  powers of 2.
+and at most $3$  powers of $2$.
 -/
 @[category research solved]
 theorem erdos_10.variants.grechuk_example :
@@ -75,7 +75,7 @@ theorem erdos_10.variants.grechuk_example :
   sorry
 
 /--
-There are infinitely many even integers not the sum of a prime and 2 powers of 2
+There are infinitely many even integers not the sum of a prime and $2$ powers of $2$
 -/
 @[category research solved]
 theorem erdos_10.variants.two_pows :
@@ -83,8 +83,8 @@ theorem erdos_10.variants.two_pows :
   sorry
 
 /--
-Bogdan Grechuk has observed that 1117175146 is not the sum of a prime and at most 3
-powers of 2, and pointed out that parity considerations, coupled with the fact that there are many integers not the sum of a prime and 2 powers of 2 suggest that there exist infinitely many even integers which are not the sum of a prime and at most 3 powers of 2).
+Bogdan Grechuk has observed that $1117175146$ is not the sum of a prime and at most $3$
+powers of $2$, and pointed out that parity considerations, coupled with the fact that there are many integers not the sum of a prime and $2$ powers of $2$ suggest that there exist infinitely many even integers which are not the sum of a prime and at most $3$ powers of $2$).
 -/
 @[category research open]
 theorem erdos_10.variants.gretchuk :

@@ -73,6 +73,6 @@ is `6!7!=10!`.
 -/
 @[category research open]
 theorem erdos_373.variants.suranyi :
-    {(n, a, b) : ℕ × ℕ × ℕ | n ! = a ! * b ! ∧ 1 < n ∧ 1 < a ∧ 1 < b}
-      = {(10, 6, 7), (10, 7, 6)} := by
+    {(n, a, b) : ℕ × ℕ × ℕ | n ! = a ! * b ! ∧ 1 < n ∧ 1 < a ∧ 1 < b ∧ b ≤ a ∧ a + 1 ≠ n}
+      = {(10, 7, 6)} := by
   sorry

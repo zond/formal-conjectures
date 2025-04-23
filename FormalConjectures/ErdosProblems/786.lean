@@ -85,7 +85,7 @@ theorem erdos_786.parts.i.selfridge (ε : ℝ) (hε : 0 < ε ∧ ε ≤ 1) :
     -- TODO(mercuris) : I think we want `k` to be allowed to vary somehow as well, but maybe the exists is sufficient
     ∃ (k : ℕ),
       -- Sufficient to take L^∞ norm to guarantee all primes are large, due to the consecutivePrimes assertion
-      ∀ᶠ (p : Fin k.succ → ℕ) in atTop, consecutivePrimes p ∧
+      ∀ᶠ (p : Fin (k + 2) → ℕ) in atTop, consecutivePrimes p ∧
         ∑ i ∈ Finset.univ.filter (· < Fin.last _), (1 : ℝ) / p i < 1 ∧
           1 < ∑ i, (1 : ℝ) / p i →
     { n | ∃! i < k, p i ∣ n }.HasDensity (1 / Real.exp 1 - ε) ∧

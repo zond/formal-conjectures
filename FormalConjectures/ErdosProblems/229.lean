@@ -19,7 +19,7 @@ import FormalConjectures.Util.ProblemImports
 
 /--
 Let $(S_n)_{n \geq 1}$ be a sequence of sets of complex numbers, none of which have a finite
-limit point. Does there exist an entire function $f(z)$ such that, for all $n \geq 1$, there
+limit point. Does there exist an entire transcendental function $f(z)$ such that, for all $n \geq 1$, there
 exists some $k_n \geq 0$ such that
 $$
   f^{(k_n)}(z) = 0\quad\text{for all $z\in S_n$?}
@@ -29,7 +29,8 @@ $$
 theorem erdos_229
     (S : ℕ → Set ℂ)
     (h : ∀ (n), derivedSet (S n) = ∅) :
-    ∃ (f : ℂ → ℂ) (k : ℕ → ℕ), (∃ x y, f x ≠ f y) ∧ Differentiable ℂ f ∧ ∀ (n) (z) (_ : z ∈ S n),
+    letI := Polynomial.algebraPi ℂ ℂ ℂ
+    ∃ (f : ℂ → ℂ) (k : ℕ → ℕ), Transcendental (Polynomial ℂ) f ∧ Differentiable ℂ f ∧ ∀ (n) (z) (_ : z ∈ S n),
       iteratedDeriv (k n) f z = 0 :=
   sorry
 

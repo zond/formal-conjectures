@@ -22,51 +22,35 @@ The `problemStatusLinter` is a linter to aid with formatting contributions to
 the Formal Conjectures repository by ensuring that results in a file have
 the appropriate tags in order to distinguish between open/already solved
 problems and background results/sanity checks.
-
-We do this by requiring that
-1) Benchmark problems should be stated using the `theorem` command
-2) Easy background results/API should use `lemma`
-3) Sanity checks should use `example`.
-
 -/
 
 open Lean Elab Meta Linter Command Parser Term
 
-/-- Convert a syntax node to an array of syntax nodes representing the
-attributes of a declaration. -/
-private def getProblemStatusAttr
+/-- Checks if a command has the `category` attribute. -/
+private def getCategory
   (stx : TSyntax ``Command.declModifiers) :
     CommandElabM (Array <| TSyntax ``attrInstance) := do
   match stx with
   | `(declModifiers| @[$[$atts],*]) =>
     atts.filterM fun att ↦ do
       match att with
-      | `(attrInstance | problem_status $_) => return true
+      | `(attrInstance | category $_) => return true
       | _ => return false
   | _ => return #[]
 
 
-/-- The problem status linter checks that each theorem has precisely
-one problem status attribute and that lemmas/examples do not have any
-attribute. -/
+/-- The problem category linter checks that every theorem/lemma/example
+has been given a problem category attribute. -/
 def problemStatusLinter : Linter where
-  --TODO(lezeau): do we also want to lint on e.g. definitions and instances?
   run := fun stx => do
     match stx with
-      | `(command| $a:declModifiers theorem $_ : $_ := $_) =>
-        let prob_status ← getProblemStatusAttr a
-        match prob_status.size with
-        | 0 => logWarningAt stx "Theorems should have a problem status attribute"
-        | 1 => pure ()
-        | _ => logWarningAt stx "Theorems should have no more than one problem status attribute."
-      | `(command| $a:declModifiers lemma $_ : $_ := $_) =>
-        let prob_status ← getProblemStatusAttr a
-        unless prob_status.size ≥ 1 do return
-        logWarningAt stx "Lemmas shouldn't have a problem status attribute."
+      | `(command| $a:declModifiers theorem $_ : $_ := $_)
+      | `(command| $a:declModifiers lemma $_ : $_ := $_)
       | `(command| $a:declModifiers example : $_ := $_) =>
-        let prob_status ← getProblemStatusAttr a
-        unless prob_status.size ≥ 1 do return
-        logWarningAt stx "Examples shouldn't have a problem status attribute."
+        let prob_status ← getCategory a
+        match prob_status.size with
+        | 0 => logWarningAt stx "Missing problem category attribute"
+        | _ => pure ()
       | _ => return
 
 initialize do

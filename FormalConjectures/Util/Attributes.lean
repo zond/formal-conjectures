@@ -14,7 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
-import FormalConjectures.Util.OpenProblemAttr
 import FormalConjectures.Util.Attributes.AMS
 
 open Lean Elab Meta Qq
@@ -75,7 +74,12 @@ theorem FLT : FermatLastTheorem := by
 
 -/
 
-open Lean PrettyPrinter Delaborator
+inductive ProblemStatus
+  | open
+  | solved
+  deriving Inhabited
+
+syntax problemStatus := &"open" <|> &"solved"
 
 /-- A type to capture the various types of statements that appear in our Lean files. -/
 inductive Category

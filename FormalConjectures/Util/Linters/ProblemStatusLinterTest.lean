@@ -16,38 +16,24 @@ limitations under the License.
 
 import FormalConjectures.Util.Linters.ProblemStatusLinter
 
-/-- warning: Theorems should have a problem status attribute -/
+/-- warning: Missing problem category attribute -/
 #guard_msgs in
 theorem test_0 : 1 + 1 = 2 := by
   rfl
 
-/-- warning: Theorems should have no more than one problem status attribute. -/
 #guard_msgs in
-@[problem_status open, problem_status solved]
+@[category research open]
 theorem test_2 : 1 + 1 = 2 := by
   rfl
 
 --The linter is compatible with theorems having other attributes.
 #guard_msgs in
-@[simp, problem_status open]
+@[simp, category research open]
 theorem test_1 : 1 + 1 = 2 := by
   rfl
 
 --The order of attributes is irrelevant.
 #guard_msgs in
-@[problem_status open, simp]
+@[category research open, simp]
 theorem test_3 : 1 + 1 = 2 := by
-  rfl
-
-/-- warning: Lemmas shouldn't have a problem status attribute. -/
-#guard_msgs in
-@[problem_status open]
-lemma test_4 : 1 + 1 = 2 := by
-  rfl
-
-
-/-- warning: Examples shouldn't have a problem status attribute. -/
-#guard_msgs in
-@[problem_status open]
-example : 1 + 1 = 2 := by
   rfl

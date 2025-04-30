@@ -16,11 +16,10 @@ limitations under the License.
 
 import FormalConjectures.Util.ProblemImports
 
-/-
-https://arxiv.org/abs/0912.2382
-The Curling Number Conjecture
+/-!
+# The curling Number Conjecture
 
-Authors: Benjamin Chaffin and N. J. A. Sloane
+*Reference:* [arxiv/0912.2382](https://arxiv.org/abs/0912.2382) **The Curling Number Conjecture** by *Benjamin Chaffin and N. J. A. Sloane*
 -/
 
 /--

@@ -16,6 +16,14 @@ limitations under the License.
 
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Digit $2$ in base $3$ representation of $2^n$
+
+*References:*
+ - [arxiv/2107.12475](https://arxiv.org/abs/2107.12475) **Hardness of busy beaver value BB(15)** by Tristan Stérin and Damien Woods
+ - [Hardness of Busy Beaver Value BB(15)](https://doi.org/10.1007/978-3-031-72621-7_9), Stérin, T., Woods, D. (2024). In: Kovács, L., Sokolova, A. (eds) Reachability Problems. RP 2024. Lecture Notes in Computer Science, vol 15050. Springer, Cham. https://doi.org/10.1007/978-3-031-72621-7_9
+-/
+
 /--
 For all $n > 8$ there is at least one digit $2$ in the base $3$ representation of $2^n$.
 

@@ -16,11 +16,12 @@ limitations under the License.
 
 import FormalConjectures.Util.ProblemImports
 
-/-
-https://arxiv.org/abs/1601.03081
-The Biharmonic mean
+/-!
+# Unique Crystal Components
 
-Authors: Marco Abrate, Stefano Barbero, Umberto Cerruti, Nadir Murru
+*Reference:* [arxiv/1601.03081](https://arxiv.org/abs/1601.03081)
+**The Biharmonic mean**
+by *Marco Abrate, Stefano Barbero, Umberto Cerruti, Nadir Murru*
 -/
 
 /--

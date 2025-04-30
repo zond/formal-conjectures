@@ -16,15 +16,16 @@ limitations under the License.
 
 import FormalConjectures.Util.ProblemImports
 
-/-
-https://arxiv.org/abs/2410.22607
-Packing Designs with large block size
-Authors: Andrea C. Burgess, Peter Danziger, Muhammad Tariq Javed
+/-!
+# Conjecture 6.2
 
 Definitions from the beginning of the paper, conjecture from the end.
--/
 
--- TODO(firsching): Do we want to be able to define structures / local notation / example defs?
+*Reference:* [arxiv/2410.22607](https://arxiv.org/abs/2410.22607)
+**Packing Designs with large block size**
+by *Andrea C. Burgess, Peter Danziger, Muhammad Tariq Javed*
+
+-/
 
 variable (v k t l n : ℕ) (ht: 0 < t) (hl : 0 < l) (htk : t ≤ k) (hkv : k ≤ v)
 

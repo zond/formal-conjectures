@@ -14,9 +14,15 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- arXiv URL: https://arxiv.org/pdf/2208.14736
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Zariski Cancellation
+
+*Reference:* [arxiv/2208.14736](https://arxiv.org/abs/2208.14736)
+**The Zariski Cancellation Problem and related problems in Affine Algebraic Geometry**
+by *Neena Gupta*
+-/
 open Polynomial
 
 /--

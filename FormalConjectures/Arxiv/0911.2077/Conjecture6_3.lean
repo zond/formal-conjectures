@@ -16,11 +16,12 @@ limitations under the License.
 
 import FormalConjectures.Util.ProblemImports
 
-/-
-https://arxiv.org/abs/0911.2077
-Central Binomial Tail Bounds
+/-!
+# Conjecture 6.3
 
-Author: Matus Telgarsky
+*Reference:* [arxiv/0911.2077](https://arxiv.org/abs/0911.2077)
+**Central Binomial Tail Bounds**
+by *Matus Telgarsky*
 -/
 open NNReal ENNReal ProbabilityTheory
 

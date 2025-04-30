@@ -14,8 +14,6 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- arXiv URL: https://arxiv.org/pdf/1609.08688
--- publication URL: https://www.cambridge.org/core/journals/combinatorics-probability-and-computing/article/abs/length-of-an-sincreasing-sequence-of-rtuples/7301418D47DB1ECD6BE71C20E8A98D0A
 import FormalConjectures.Util.ProblemImports
 
 /-! # The length of an $s$-increasing sequence of $r$-tuples
@@ -25,6 +23,10 @@ including Conjecture 1.8
 
 [GoLo21] W.T.Gowers and J.Long, _The length of an $s$-increasing sequence of $r$-tuples_,
 Combinatorics, Probability and Computing (2021), 686-721.
+
+*References:*
+ - [arxiv/1609.08688](https://arxiv.org/abs/1609.08688) **The length of an $s$-increasing sequence of $r$-tuples** by *W. T. Gowers, J. Long*
+ - [GoLo21]( https://www.cambridge.org/core/journals/combinatorics-probability-and-computing/article/abs/length-of-an-sincreasing-sequence-of-rtuples/7301418D47DB1ECD6BE71C20E8A98D0A) **The length of an $s$-increasing sequence of $r$-tuples** by *W. T. Gowers, J. Long*, 2021
 -/
 
 namespace Arxiv.id160908688

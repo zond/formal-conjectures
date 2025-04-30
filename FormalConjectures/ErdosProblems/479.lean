@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/479
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 479
+
+*Reference:* [erdosproblems.com/479](https://www.erdosproblems.com/479)
+-/
 /--
 Is it true that, for all $k\neq 1$, there are infinitely many $n$ such that
 $2^n\equiv k\pmod{n}$?

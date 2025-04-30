@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/267
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 267
+
+*Reference:* [erdosproblems.com/267](https://www.erdosproblems.com/267)
+-/
 /--
 Let $F_1=F_2=1$ and $F_{n+1} = F_n + F_{n−1}$ be the Fibonacci sequence.
 Let $n_1 < n_2 < ...$ be an infinite sequence with $\frac{n_{k+1}}{n_k} ≥ c > 1$. Must

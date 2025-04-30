@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/228
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 228
+
+*Reference:* [erdosproblems.com/228](https://www.erdosproblems.com/228)
+-/
 /--
 Does there exist, for all large $n$, a polynomial $P$
 of degree $n$, with coefficients $\pm1$, such that

@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/846
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 846
+
+*Reference:* [erdosproblems.com/846](https://www.erdosproblems.com/846)
+-/
 open scoped EuclideanGeometry
 
 def Triplewise {α : Type*} (s : Set α) (r : α → α → α → Prop) : Prop :=

@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/931
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 931
+
+*Reference:* [erdosproblems.com/931](https://www.erdosproblems.com/931)
+-/
 /--
 Let $k_1 \geq k_2 \geq 3$. Are there only finitely many $n_2\geq n_1 + k_1$
 such that

@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/913
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 913
+
+*Reference:* [erdosproblems.com/913](https://www.erdosproblems.com/913)
+-/
 /--
 Are there infinitely many $n$ such that if
 $$

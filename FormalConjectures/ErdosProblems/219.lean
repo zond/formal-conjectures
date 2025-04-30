@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/219
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 219
+
+*Reference:* [erdosproblems.com/219](https://www.erdosproblems.com/219)
+-/
 /--
 The set of arithmetic progressions of primes
 -/

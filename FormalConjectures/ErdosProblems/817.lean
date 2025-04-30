@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/817
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 817
+
+*Reference:* [erdosproblems.com/817](https://www.erdosproblems.com/817)
+-/
 open Filter
 
 /-- A finite arithmetic progression of length $k$ and difference $d$ is a set of the form

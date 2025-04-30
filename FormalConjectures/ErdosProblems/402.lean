@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/402
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 402
+
+*Reference:* [erdosproblems.com/402](https://www.erdosproblems.com/402)
+-/
 open Filter
 
 /-- Prove that, for any finite set $A\subset\mathbb{N}$, there exist $a, b\in A$ such

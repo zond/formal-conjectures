@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/316
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 316
+
+*Reference:* [erdosproblems.com/316](https://www.erdosproblems.com/316)
+-/
 /-- Is it true that if $A \subseteq \mathbb{N}∖{1}$ is a finite set with
 $\sum_{n \in A} \frac{1}{n} < 2$ then there is a partition $A=A_1 \sqcup A_2$
 such that $\sum_{n \in A_i} \frac{1}{n} < 1$ for $i=1,2$?

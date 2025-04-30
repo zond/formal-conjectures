@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/126
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 126
+
+*Reference:* [erdosproblems.com/126](https://www.erdosproblems.com/126)
+-/
 open Filter
 
 def IsMaximalAddFactorsCard (f : ℕ → ℕ) : Prop := ∀ n,

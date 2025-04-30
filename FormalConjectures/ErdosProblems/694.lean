@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/694
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 694
+
+*Reference:* [erdosproblems.com/694](https://www.erdosproblems.com/694)
+-/
 /--
 Let $f_{\max}(n)$ be the largest $m$ such that $\phi(m) = n$, and
 $f_{\min}(n)$ be the smallest such $m$, where $\phi$ is Euler's

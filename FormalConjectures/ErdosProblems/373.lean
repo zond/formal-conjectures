@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/373
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 373
+
+*Reference:* [erdosproblems.com/373](https://www.erdosproblems.com/373)
+-/
 open scoped Nat
 /--
 Let `S` be the set of non-trivial solutions to the equation `n! = a₁! ··· aₖ!`

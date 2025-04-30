@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/469
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 469
+
+*Reference:* [erdosproblems.com/469](https://www.erdosproblems.com/469)
+-/
 /-- The proposition that `n` is a sum of distinct proper divisors. -/
 def Nat.IsSumDivisors (n : ℕ) : Prop :=
   ∃ S ⊆ n.properDivisors, ∑ d ∈ S, d = n

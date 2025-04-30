@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/4
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 4
+
+*Reference:* [erdosproblems.com/4](https://www.erdosproblems.com/4)
+-/
 open Real
 
 def Erdos4For (C : ℝ) : Prop :=

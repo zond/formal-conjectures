@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/779
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 779
+
+*Reference:* [erdosproblems.com/779](https://www.erdosproblems.com/779)
+-/
 open Finset Nat
 
 /--

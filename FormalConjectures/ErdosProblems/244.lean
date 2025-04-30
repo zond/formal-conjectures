@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/244
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 244
+
+*Reference:* [erdosproblems.com/244](https://www.erdosproblems.com/244)
+-/
 /-- Let $C > 1$. Does the set of integers of the form $p + \lfloor C^k \rfloor$,
 for some prime $p$ and $k\geq 0$, have density $>0$? -/
 @[category research open]

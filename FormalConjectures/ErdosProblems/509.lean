@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/509
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 509
+
+*Reference:* [erdosproblems.com/509](https://www.erdosproblems.com/509)
+-/
 open Polynomial
 open scoped Real
 

@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/899
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 899
+
+*Reference:* [erdosproblems.com/899](https://www.erdosproblems.com/899)
+-/
 open Filter
 
 open scoped Pointwise Topology

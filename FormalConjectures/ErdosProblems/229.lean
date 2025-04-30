@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/229
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 229
+
+*Reference:* [erdosproblems.com/229](https://www.erdosproblems.com/229)
+-/
 /--
 Let $(S_n)_{n \geq 1}$ be a sequence of sets of complex numbers, none of which have a finite
 limit point. Does there exist an entire transcendental function $f(z)$ such that, for all $n \geq 1$, there

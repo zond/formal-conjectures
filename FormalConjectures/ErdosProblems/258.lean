@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/258
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 258
+
+*Reference:* [erdosproblems.com/258](https://www.erdosproblems.com/258)
+-/
 /--
 Let $a_n → ∞$ be a sequence of non-zero natural numbers. Is $\sum_n \frac{d(n)}{(a_1 ... a_n)}$
 irrational, where $d(n)$ is the number of divisors of $n$?

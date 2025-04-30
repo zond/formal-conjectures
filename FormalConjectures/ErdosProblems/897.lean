@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/897
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 897
+
+*Reference:* [erdosproblems.com/897](https://www.erdosproblems.com/897)
+-/
 --TODO(lezeau): add `ArithmeticFunction.IsAdditive` to `ForMathlib`
 
 /--

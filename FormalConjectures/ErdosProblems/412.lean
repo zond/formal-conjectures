@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/412
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 412
+
+*Reference:* [erdosproblems.com/412](https://www.erdosproblems.com/412)
+-/
 /--Let $σ_1(n)=σ(n)$, the sum of divisors function, and $σ_k(n) = σ(σ_{k−1}(n))$-/
 abbrev σ (k : ℕ) : ℕ → ℕ := (ArithmeticFunction.sigma 1)^[k]
 

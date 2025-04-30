@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/168
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 168
+
+*Reference:* [erdosproblems.com/168](https://www.erdosproblems.com/168)
+-/
 open scoped Topology
 
 /--Say a finite set of natural numbers is *non ternary* if it contains no

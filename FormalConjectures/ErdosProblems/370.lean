@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/370
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 370
+
+*Reference:* [erdosproblems.com/370](https://www.erdosproblems.com/370)
+-/
 /--
 Are there infinitely many $n$ such that the largest prime factor of $n$ is $< n^{\frac 1 2}$ and
 the largest prime factor of $n + 1$ is $< (n + 1)^{\frac 1 2}$.

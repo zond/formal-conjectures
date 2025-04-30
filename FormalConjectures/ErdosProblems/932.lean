@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/932
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 932
+
+*Reference:* [erdosproblems.com/932](https://www.erdosproblems.com/932)
+-/
 /--
 Let $p_k$ denote the $k$th prime. For infinitely many $r$ there are at least two
 integers $p_r < n < p_{r+1}$ all of whose prime factors are $< p_{r + 1} - p_r$.

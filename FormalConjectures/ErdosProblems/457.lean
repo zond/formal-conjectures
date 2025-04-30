@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/457
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 457
+
+*Reference:* [erdosproblems.com/457](https://www.erdosproblems.com/457)
+-/
 /--
 Is there some $\epsilon > 0$ such that there are infinitely
 many $n$ where all primes $p\leq (2 + \epsilon)\log n$ divide

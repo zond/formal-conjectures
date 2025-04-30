@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/198
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 198
+
+*Reference:* [erdosproblems.com/198](https://www.erdosproblems.com/198)
+-/
 open Function Set
 
 /-- Let $V$ be a vector space over the rationals and let $k$ be a fixed

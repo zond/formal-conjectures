@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/10
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 10
+
+*Reference:* [erdosproblems.com/10](https://www.erdosproblems.com/10)
+-/
 /--
 The lower asymptotic density of a set $S$ is the $\liminf$ as $n → ∞$ of the
 ratio $\frac{|\{a ∈ S | a < n\}|}{n}$.

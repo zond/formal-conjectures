@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/56
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 56
+
+*Reference:* [erdosproblems.com/56](https://www.erdosproblems.com/56)
+-/
 /--
 Say a set of natural numbers is `k`-weakly divisible if any `k+1` elements
 of `A` are not relatively prime.

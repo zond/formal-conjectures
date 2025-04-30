@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/143
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 143
+
+*Reference:* [erdosproblems.com/143](https://www.erdosproblems.com/143)
+-/
 open Filter Finset
 open scoped Topology
 

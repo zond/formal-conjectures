@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/427
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 427
+
+*Reference:* [erdosproblems.com/427](https://www.erdosproblems.com/427)
+-/
 /--
 The predicate that for every $n$ and $d$, there exists $k$ such that
 $$

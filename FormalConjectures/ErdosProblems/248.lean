@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/248
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 248
+
+*Reference:* [erdosproblems.com/248](https://www.erdosproblems.com/248)
+-/
 open scoped ArithmeticFunction
 
 /--

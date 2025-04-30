@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/392
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 392
+
+*Reference:* [erdosproblems.com/392](https://www.erdosproblems.com/392)
+-/
 open Filter
 
 open scoped Nat

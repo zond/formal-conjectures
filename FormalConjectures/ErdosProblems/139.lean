@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/139
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 139
+
+*Reference:* [erdosproblems.com/139](https://www.erdosproblems.com/139)
+-/
 open Classical
 open scoped Topology
 

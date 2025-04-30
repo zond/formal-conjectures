@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/873
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 873
+
+*Reference:* [erdosproblems.com/873](https://www.erdosproblems.com/873)
+-/
 /--Let $a$ be some sequence of natural numbers. We set $F(A,X,k)$ to be the count of
 the number of $i$ such that $[a_i,a_{i+1}, … ,a_{i+k−1}] < X$,
 where the left-hand side is the least common multiple.-/

@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/257
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 257
+
+*Reference:* [erdosproblems.com/257](https://www.erdosproblems.com/257)
+-/
 /--
 Let $A\subseteq\mathbb{N}$ be an infinite set. Is
 $$

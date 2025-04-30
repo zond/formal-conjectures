@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/383
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 383
+
+*Reference:* [erdosproblems.com/383](https://www.erdosproblems.com/383)
+-/
 /--
 Is it true that for every $k$ there are infinitely many primes $p$ such that the largest prime
 divisor of

@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/480
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 480
+
+*Reference:* [erdosproblems.com/480](https://www.erdosproblems.com/480)
+-/
 
 /--
 Let $x_1,x_2,...∈[0, 1]$ be an infinite sequence. Is it true that there are infinitely many $m, n$

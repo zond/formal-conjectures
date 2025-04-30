@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/189
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 189
+
+*Reference:* [erdosproblems.com/189](https://www.erdosproblems.com/189)
+-/
 open Affine EuclideanGeometry
 
 /-- Erdős problem 189 asked whether the below holds for all rectangles. -/

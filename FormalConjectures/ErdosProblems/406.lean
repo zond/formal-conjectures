@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/406
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 406
+
+*Reference:* [erdosproblems.com/406](https://www.erdosproblems.com/406)
+-/
 /--
 Is it true that there are only finitely many powers of $2$ which have only the digits $0$
 and $1$ when written in base $3$?

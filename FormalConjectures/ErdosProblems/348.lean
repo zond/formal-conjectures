@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/348
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 348
+
+*Reference:* [erdosproblems.com/348](https://www.erdosproblems.com/348)
+-/
 section Prelims
 
 namespace Function

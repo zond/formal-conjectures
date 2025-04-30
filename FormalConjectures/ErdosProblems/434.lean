@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/434
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 434
+
+*Reference:* [erdosproblems.com/434](https://www.erdosproblems.com/434)
+-/
 /--
 A natural $n$ is representable as a set $A$ if it can be
 written as the sum of finitely many elements of $A$

@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Erdős Problems URL: https://www.erdosproblems.com/350
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Erdős Problem 350
+
+*Reference:* [erdosproblems.com/350](https://www.erdosproblems.com/350)
+-/
 /--The predicate that all (finite) subsets of `A` have distinct sums-/
 def DistinctSubsetSums {M : Type*} [AddCommMonoid M] (A : Set M) : Prop :=
   Set.Pairwise {X : Finset M | ↑X ⊆ A} fun X Y => X.sum id ≠ Y.sum id

@@ -51,9 +51,8 @@ theorem univ {β : Type*} [PartialOrder β] [LocallyFiniteOrder β]
   simp [HasDensity]
   let ⟨b, hb⟩ := Set.Iio_eventually_ncard_ne_zero β
   exact Tendsto.congr'
-    (eventually_atTop.2
-      ⟨b, fun n hn => (div_self <| Nat.cast_ne_zero.2 (hb n hn)).symm⟩)
-    tendsto_const_nhds
+    (eventually_atTop.2 ⟨b, fun n hn => (div_self <| Nat.cast_ne_zero.2 (hb n hn)).symm⟩)
+      tendsto_const_nhds
 
 example : (@Set.univ ℕ).HasDensity 1 := univ
 
@@ -62,16 +61,16 @@ theorem empty {β : Type*} [Preorder β] [LocallyFiniteOrderBot β] (A : Set β 
     Set.HasDensity (∅ : Set β) 0 A := by
   simpa [HasDensity] using tendsto_const_nhds
 
-theorem mono {β : Type*} [PartialOrder β] [LocallyFiniteOrder β] [OrderBot β] {S T : Set β} {αS αT : ℝ}
-    [(atTop : Filter β).NeBot] [IsDirected β fun x1 x2 ↦ x1 ≤ x2] [Nontrivial β]
-    (h : S ⊆ T) (hS : S.HasDensity αS) (hT : T.HasDensity αT) : αS ≤ αT := by
-    simp_all [HasDensity]
-    apply le_of_tendsto_of_tendsto hS hT
-    rw [EventuallyLE, eventually_atTop]
-    let ⟨b, hb⟩ := Set.Iio_eventually_ncard_ne_zero β
-    refine ⟨b, fun c hc => ?_⟩
-    rw [div_le_div_iff_of_pos_right (by simpa using Nat.pos_of_ne_zero (hb c hc))]
-    simpa using Set.ncard_le_ncard (Set.inter_subset_inter_left _ h)
+theorem mono {β : Type*} [PartialOrder β] [LocallyFiniteOrder β] [OrderBot β]
+    {S T : Set β} {αS αT : ℝ} [(atTop : Filter β).NeBot] [IsDirected β fun x1 x2 ↦ x1 ≤ x2]
+    [Nontrivial β] (h : S ⊆ T) (hS : S.HasDensity αS) (hT : T.HasDensity αT) : αS ≤ αT := by
+  simp_all [HasDensity]
+  apply le_of_tendsto_of_tendsto hS hT
+  rw [EventuallyLE, eventually_atTop]
+  let ⟨b, hb⟩ := Set.Iio_eventually_ncard_ne_zero β
+  refine ⟨b, fun c hc => ?_⟩
+  rw [div_le_div_iff_of_pos_right (by simpa using Nat.pos_of_ne_zero (hb c hc))]
+  simpa using Set.ncard_le_ncard (Set.inter_subset_inter_left _ h)
 
 theorem nonneg {β : Type*} [Preorder β] [LocallyFiniteOrderBot β] [(atTop : Filter β).NeBot]
     {S : Set β} {α : ℝ}  (h : S.HasDensity α) :

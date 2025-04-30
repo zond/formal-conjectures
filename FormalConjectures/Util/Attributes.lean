@@ -72,6 +72,11 @@ theorem FLT : FermatLastTheorem := by
   sorry
 ```
 
+The complete list of subjects can be found here:
+https://mathscinet.ams.org/mathscinet/msc/pdfs/classifications2020.pdf
+
+
+In order to access the list from within a Lean file, use the `#AMS` command.
 -/
 
 inductive ProblemStatus
@@ -135,7 +140,16 @@ private def Syntax.toCategory (stx : TSyntax ``CategorySyntax) : CoreM Category 
 
 syntax (name := Category_attr) "category" CategorySyntax : attr
 
-/-- Specifies the type of a statement, i.e. a math problem, or some API, or some test statement. -/
+/-- Specifies the type of a statement.
+
+This is used as follows: `@[category my_cat]` where `my_cat` is one of:
+- `high_school` : a high school level math problem.
+- `undergraduate` : an undergraduate level math problem.
+- `graduate` : a graduate level math problem.
+- `research open` : an open reseach level math problem.
+- `research solved` : a solved reseach level math problem.
+- `test` : a statement that serves as a sanity check (e.g. for a new definition).
+- `API` : a statement that constructs basic theory around a new definition -/
 initialize CategoryAttr : ParametricAttribute Category ←
   registerParametricAttribute {
     name := `Category_attr
@@ -148,7 +162,12 @@ initialize CategoryAttr : ParametricAttribute Category ←
 
 syntax (name := problemSubject) "AMS" num : attr
 
-/-- Specifies the subject of a math problem. -/
+/-- Specifies the subject of a math problem.
+
+`AMS n` indicates that a problem is related to the subject area
+with index `n` in the AMS subject classification.
+
+Access the full list of subjects and their indices using the `#AMS` command. -/
 initialize problemSubjectAttr : ParametricAttribute AMS ←
   registerParametricAttribute {
     name := `problemSubject

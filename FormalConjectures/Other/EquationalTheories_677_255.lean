@@ -26,10 +26,12 @@ abbrev Equation255 (G: Type) [Magma G] := ∀ x : G, x = ((x ◇ x) ◇ x) ◇ x
 
 abbrev Equation677 (G: Type) [Magma G] := ∀ x y : G, x = y ◇ (x ◇ ((y ◇ x) ◇ y))
 
+@[category research solved]
 theorem Equation255_not_implies_Equation677 :
     ∃ (G : Type) (_ : Magma G), Equation255 G ∧ ¬ Equation677 G :=
   sorry
 
+@[category research open]
 theorem Equation677_not_implies_Equation255 :
     ∃ (G : Type) (_ : Magma G), Equation677 G ∧ ¬ Equation255 G :=
   sorry

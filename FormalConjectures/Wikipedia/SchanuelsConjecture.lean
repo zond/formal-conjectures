@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
---Wikipedia URL: https://en.wikipedia.org/wiki/Schanuel%27s_conjecture
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Schanuel's Conjecture
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Schanuel%27s_conjecture)
+-/
 open scoped Real Complex
 
 noncomputable section

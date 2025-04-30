@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
---Wikipedia URL: https://en.wikipedia.org/wiki/Graph_pebbling
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Pebbling number conjecture
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Graph_pebbling)
+-/
 variable {V : Type} [Fintype V] {G : SimpleGraph V} [DecidableEq V]
 
 /--

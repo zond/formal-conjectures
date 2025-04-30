@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
---Wikipedia URL: https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Particular values of the Riemann zeta function
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Particular_values_of_the_Riemann_zeta_function)
+-/
 namespace RiemannZeta
 
 /--

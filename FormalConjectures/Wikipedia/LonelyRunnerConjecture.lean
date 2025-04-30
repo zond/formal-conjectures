@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- https://en.wikipedia.org/wiki/Lonely_runner_conjecture
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Lonely runner conjecture
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Lonely_runner_conjecture)
+-/
 /--
 Consider $n$ runners on a circular track of unit length. At the initial time
 $t = 0$, all runners are at the same position and start to run; the runners'

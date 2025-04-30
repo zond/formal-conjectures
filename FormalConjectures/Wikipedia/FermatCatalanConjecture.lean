@@ -16,6 +16,11 @@ limitations under the License.
 
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Fermat-Catalan conjecture
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Fermat-Catalan_conjecture)
+-/
 open scoped Function
 
 /--

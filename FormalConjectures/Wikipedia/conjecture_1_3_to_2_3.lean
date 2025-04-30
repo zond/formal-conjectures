@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- https://en.wikipedia.org/wiki/1/3%E2%80%932/3_conjecture
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# The $\frac 1 3$–$\frac 2 3$ conjecture
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/1/3%E2%80%932/3_conjecture)
+-/
 /--
 Does every finite partially ordered set that is not totally ordered
 contain two elements $x$ and $y$ such that the probability that

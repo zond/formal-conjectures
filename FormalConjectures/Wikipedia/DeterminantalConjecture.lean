@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- https://en.wikipedia.org/wiki/Determinantal_conjecture
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Determinantal conjecture
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Determinantal_conjecture)
+-/
 /--
 Determinantal Conjecture asks whether the determinant of a sum $A + B$
 of two $n$ by $n$ normal complex matrices A and B lies in the convex hull

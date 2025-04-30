@@ -14,16 +14,19 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
---Wikipedia URL: https://en.wikipedia.org/wiki/First_Hardy%E2%80%93Littlewood_conjecture
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# First Hardy–Littlewood conjecture
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/First_Hardy%E2%80%93Littlewood_conjecture)
+-/
 open Filter
 
 open scoped Nat.Prime Classical
 
 noncomputable section
 
---Wikipedia URL: https://en.wikipedia.org/wiki/First_Hardy%E2%80%93Littlewood_conjecture
 /-! ## First Hardy-Littlewood Conjecture -/
 
 /--

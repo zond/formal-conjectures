@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Wikipedia URL: https://en.wikipedia.org/wiki/Rational_variety
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Rational_variety
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Rational_variety)
+-/
 /--
 A rational field extension is a field extension `L/K` isomorphic
 to a field of rational functions (in some arbitrary number of indeterminates.)

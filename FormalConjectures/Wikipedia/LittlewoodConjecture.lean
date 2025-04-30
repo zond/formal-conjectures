@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
---Wikipedia URL: https://en.wikipedia.org/wiki/Littlewood_conjecture
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Littlewood conjecture
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Littlewood_conjecture)
+-/
 open Filter
 
 -- TODO(mercuris): This is a norm on ℝ/ℤ, show this?

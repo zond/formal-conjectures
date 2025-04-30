@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
---Wikipedia URL: https://en.wikipedia.org/wiki/Abc_conjecture
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# *abc* conjecture
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Abc_conjecture)
+-/
 /--
 The radical of `n` denoted is the product of the distinct prime factors of `n`.
 -/

@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Wikipedia URL: https://en.wikipedia.org/wiki/Conway%27s_99-graph_problem
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Conway's 99-graph problem
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_99-graph_problem)
+-/
 /-
 Conway's 99-graph problem
 -/

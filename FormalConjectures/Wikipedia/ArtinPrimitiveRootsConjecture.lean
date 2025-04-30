@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Wikipedia URL: https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Artin's conjecture on primitive roots
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Artin%27s_conjecture_on_primitive_roots)
+-/
 open scoped Topology Nat
 
 /--Let `S(a)` be the set of primes such that `a` is a primitive root modulo `p`-/

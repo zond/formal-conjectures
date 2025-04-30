@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- https://en.wikipedia.org/wiki/Burnside_problem#Bounded_Burnside_problem
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Bounded Burnside problem
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Burnside_problem#Bounded_Burnside_problem)
+-/
 /--
 Let $G$ be a finitely generated group, and assume there exists $n$ such that for every $g$ in $G$,
 $g^n = 1$. Is $G$ necessarily finite?

@@ -16,13 +16,14 @@ limitations under the License.
 
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Köthe conjecture
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/K%C3%B6the_conjecture)
+-/
 open Ideal TwoSidedIdeal Classical Polynomial
 
 open Matrix
-
-/-
-https://en.wikipedia.org/wiki/K%C3%B6the_conjecture
--/
 
 variable {R : Type*}
 

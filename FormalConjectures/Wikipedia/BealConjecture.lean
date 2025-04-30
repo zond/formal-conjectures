@@ -16,6 +16,11 @@ limitations under the License.
 
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Beal conjecture
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Beal_conjecture)
+-/
 
 def BealConjecture : Prop := ∀ {A B C x y z : ℕ},
     A ≠ 0 → B ≠ 0 → C ≠ 0 → 2 < x → 2 < y → 2 < z →

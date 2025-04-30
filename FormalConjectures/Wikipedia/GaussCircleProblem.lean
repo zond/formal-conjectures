@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
---Wikipedia URL: https://en.wikipedia.org/wiki/Gauss_circle_problem
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Gauss circle problem
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Gauss_circle_problem)
+-/
 open Filter
 
 open scoped EuclideanGeometry Real Topology

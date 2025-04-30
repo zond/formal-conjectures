@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- Wikipedia URL: https://en.wikipedia.org/wiki/Inverse_Galois_problem
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Inverse Galois problem
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Inverse_Galois_problem)
+-/
 structure GaloisRealization (K G : Type*) [Field K] [Group G] where
   L : Type*
   to_field : Field L

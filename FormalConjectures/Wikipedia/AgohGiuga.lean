@@ -14,9 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
---Wikipedia URL: https://en.wikipedia.org/wiki/Agoh-Giuga_conjecture
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Agoh-Giuga conjecture
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Agoh-Giuga_conjecture)
+-/
 /-!
 
 The **Agoh-Giuga Conjecture**.

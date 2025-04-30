@@ -61,10 +61,11 @@ end IsArithmeticProgression
 
 section
 
-variable [AddCancelMonoid M]
+variable [AddMonoid M]
 
-lemma IsArithmeticProgression_empty : IsArithmeticProgression ([] : List M) := by
-  use 0 ; trivial
+@[simp]
+lemma IsArithmeticProgression_nil : IsArithmeticProgression ([] : List M) := by
+  use 0; trivial
 
 lemma IsArithmeticProgression_singleton (a : M) :
     IsArithmeticProgression [a] := by
@@ -74,16 +75,11 @@ end
 
 lemma IsArithmeticProgression_map_range [AddCommMonoid M] (a b : M) (n : ℕ) :
     IsArithmeticProgression <| List.range n |>.map fun i => a + i • b := by
-  use b
-  induction n with | zero => aesop | succ n hn =>
-  rw [List.range_succ, List.map_append, List.chain'_append]
-  refine ⟨hn, List.chain'_singleton _, fun x hx y hy => ?_⟩
-  rw [Option.mem_iff, List.map_singleton, List.head?_singleton, Option.some.injEq] at hy
-  cases n with | zero => aesop | succ m =>
-  rw [Option.mem_iff, List.getLast?_map, List.range_succ, List.getLast?_append, List.getLast?_singleton,
-    Option.some_or, Option.map_some', Option.some.injEq] at hx
-  rw [←hx, ←hy, add_smul]
-  abel
+  obtain ⟨-, rfl⟩ := (Nat.eq_zero_or_pos n)
+  · simp
+  by_cases hn : n = 0
+  · omega
+  · exact ⟨b, by simp [hn, List.chain'_iff_get, add_assoc, add_smul, one_smul]⟩
 
 lemma IsArithmeticProgression_pair [AddCommGroup M] (a b : M) :
     IsArithmeticProgression [a, b] := by

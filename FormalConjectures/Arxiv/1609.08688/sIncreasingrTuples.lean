@@ -21,7 +21,7 @@ import FormalConjectures.Util.ProblemImports
 This file contains the formalisation of [GoLo21] up to and
 including Conjecture 1.8
 
-[GoLo21] W.T.Gowers and J.Long, _The length of an $s$-increasing sequence of $r$-tuples_,
+[GoLo21] W.T. Gowers and J. Long, _The length of an $s$-increasing sequence of $r$-tuples_,
 Combinatorics, Probability and Computing (2021), 686-721.
 
 *References:*
@@ -41,13 +41,15 @@ def lt₂ {α : Type*} [LT α] (a b : Fin 3 → α) : Prop :=
 
 local infix:50 " <₂ " => lt₂
 
-@[simp]
+@[simp, category API]
 theorem not_lt₂ {α : Type*} [LinearOrder α] {a b : Fin 3 → α} :
     ¬a <₂ b ↔ ∀ i j, i ≠ j → a i < b i → b j ≤ a j := by simp [lt₂]
 
+@[category API]
 theorem not_lt₂_of_forall_le {α : Type*} [LinearOrder α] {a b : Fin 3 → α}
     (h : ∀ i, b i ≤ a i) : ¬a <₂ b := not_lt₂.2 fun _ _ _ _ => h _
 
+@[category API]
 theorem not_lt₂_of_exists {α : Type*} [LinearOrder α] {a b : Fin 3 → α}
     (i j : Fin 3) (hij : i ≠ j) (hi : b i ≤ a i) (hj : b j ≤ a j) :
     ¬a <₂ b := by
@@ -57,24 +59,28 @@ theorem not_lt₂_of_exists {α : Type*} [LinearOrder α] {a b : Fin 3 → α}
   have : l = i ∨ l = j := by omega
   rcases this with (rfl | rfl); exact hi; exact hj
 
+@[category API]
 theorem not_lt₂_self {α : Type*} [LinearOrder α] (a : Fin 3 → α) : ¬a <₂ a := by
   simp
 
 /-- For example, $(3, 3, 9) <_2 (5, 6, 1)$. -/
+@[category test]
 example : ![3, 3, 9] <₂ ![5, 6, 1] := ⟨0, 1, zero_ne_one, by simp⟩
 
 /-- $(5, 6, 1) <_2 (7, 7, 7)$ -/
+@[category test]
 example : ![5, 6, 1] <₂ ![7, 7, 7] := ⟨0, 2, by simp, by simp⟩
 
 /-- $(7, 7, 7) <_2 (7, 8, 9)$ -/
+@[category test]
 example : ![7, 7, 7] <₂ ![7, 8, 9] := ⟨1, 2, by simp, by simp⟩
 
 /-- but $(1, 2, 3)$ is not $2$-less than $(1, 2, 4). -/
+@[category test]
 example : ¬![1, 2, 3] <₂ ![1, 2, 4] := not_lt₂_of_exists 0 1 zero_ne_one (by simp) (by simp)
 
-/--
-The $2$-less relation is not transitive on the naturals.
--/
+/-- The $2$-less relation is not transitive on the naturals. -/
+@[category API]
 theorem not_trans_lt₂_nat : ∃ (a b c : Fin 3 → ℕ),
     a <₂ b ∧ b <₂ c ∧ ¬a <₂ c :=
   ⟨![1, 2, 3], ![2, 3, 1], ![3, 1, 2], ⟨0, 1, zero_ne_one, by simp⟩,
@@ -86,12 +92,15 @@ specify transivity.
 -/
 def IsIncreasing₂ {α : Type*} [LT α] (s : List (Fin 3 → α)) : Prop := s.Pairwise lt₂
 
-@[simp]
-theorem isIncreasing₂_nil {α : Type*} [LT α] : IsIncreasing₂ (α := α) [] := by simp [IsIncreasing₂]
+@[simp, category API]
+theorem isIncreasing₂_nil {α : Type*} [LT α] : IsIncreasing₂ (α := α) [] := by
+  simp [IsIncreasing₂]
 
-@[simp]
-theorem isIncreasing₂_singleton {α : Type*} [LT α] (a : Fin 3 → α) : IsIncreasing₂ [a] := by simp [IsIncreasing₂]
+@[simp, category API]
+theorem isIncreasing₂_singleton {α : Type*} [LT α] (a : Fin 3 → α) : IsIncreasing₂ [a] := by
+  simp [IsIncreasing₂]
 
+@[category API]
 theorem isIncreasing₂_const_length {α : Type*} [LinearOrder α] {val : α} {s : List (Fin 3 → α)}
     (h : IsIncreasing₂ s)
     (h_const : ∀ a ∈ s, ∀ j, a j = val) : s.length < 2 := by
@@ -111,6 +120,7 @@ noncomputable def maximalLength (n : ℕ) : ℕ :=
 
 local notation "F" => maximalLength
 
+@[category test]
 example : maximalLength 0 = 0 := by
   have (x : ℕ) (s : List (Fin 3 → ℕ)) :
       IsIncreasing₂ s ∧ (∀ a, a ∉ s) ∧ s.length = x ↔ s = [] ∧ x = 0 := by
@@ -120,6 +130,7 @@ example : maximalLength 0 = 0 := by
     simpa using ha₂ ai hai
   simp [maximalLength, fun x => exists_congr (this x)]
 
+@[category test]
 example : maximalLength 1 = 1 := by
   classical
   have (x : ℕ) (s : List (Fin 3 → ℕ)) :
@@ -137,10 +148,12 @@ example : maximalLength 1 = 1 := by
   simp [Nat.lt_one_iff.1 hn]
   exact ⟨1, ⟨[fun _ => 1], by simp⟩, one_ne_zero⟩
 
+@[category test]
 example : maximalLength 4 = 8 := sorry
 
 /-- In a set of more than $n^2$ triples with coordinates from $\{1, ..., n\}$ we must
 have two triples that are equal in their first two coordinates. -/
+@[category API]
 lemma exists_pair_of_mem_Icc {s : List (Fin 3 → ℕ)} {n : ℕ} (hn : 2 ≤ n)
     (hs₁ : ∀ a ∈ s, Set.range a ⊆ Set.Icc 1 n) (hs₂ : s.length > n ^ 2) :
     ∃ᵉ (a ∈ s) (b ∈ s),
@@ -148,9 +161,11 @@ lemma exists_pair_of_mem_Icc {s : List (Fin 3 → ℕ)} {n : ℕ} (hn : 2 ≤ n)
   sorry
 
 /-- For all $n$ we have $F(n) \leq n^2$. -/
+@[category research solved]
 theorem maximalLength_le (n : ℕ) : F n ≤ n ^ 2 := sorry
 
 /-- Moreover, whenever $n$ is a perfect square we have $F(n) \geq n^{3/2}$. -/
+@[category research solved]
 theorem maximalLength_ge_of_isSquare {n : ℕ} (h : IsSquare n) :
     n.sqrt ^ 3 ≤ F n :=
   sorry
@@ -166,6 +181,7 @@ def IsComparableSet₂ {α : Type*} [LT α] (s : List (Fin 3 → α)) : Prop :=
 
 open Filter in
 /-- $F(n) \leq n^2 / \exp(\Omega(\log^*(n)))$. -/
+@[category research solved]
 theorem maximalLength_le_isBigO : ∃ Ω : ℕ → ℝ,
     (fun (n : ℕ) => (Real.iteratedLog n : ℝ)) =O[atTop] Ω ∧
       ∀ n, F n ≤ n ^ 2 / Real.exp (Ω n) :=
@@ -175,11 +191,12 @@ theorem maximalLength_le_isBigO : ∃ Ω : ℕ → ℝ,
 $((a, d), (b, e), (c, f))$, where the pairs are arranged in lexicographical order. -/
 def tripleProduct {α : Type*} (a b : Fin 3 → α) : Πₗ (_ : Fin 3), α × α := toLex (Pi.prod a b)
 
-@[simp]
-theorem tripleProduct_const {α : Type*} (a : α) : tripleProduct (fun _ => a) (fun _ => a) = toLex (fun _ => (a, a)) := by
+@[simp, category API]
+theorem tripleProduct_const {α : Type*} (a : α) :
+    tripleProduct (fun _ => a) (fun _ => a) = toLex (fun _ => (a, a)) := by
   simpa [tripleProduct] using funext fun i => by simp
 
-@[simp]
+@[simp, category API]
 theorem tripleProduct_vecConst_const {α : Type*} (a : α) :
     tripleProduct ![a, a, a] ![a, a, a] = toLex ![(a, a), (a, a), (a, a)] := by
   simp [tripleProduct]
@@ -194,11 +211,13 @@ def sequenceProduct {α : Type*} (s t : List (Fin 3 → α)) : Lex (List (Πₗ 
 
 local infix:100 " ⊗₂ " => sequenceProduct
 
+@[category test]
 example : [![1, 1, 1]] ⊗₂ [![1, 1, 1]] = toLex [toLex ![(1, 1), (1, 1), (1, 1)]] := by
   simp [sequenceProduct]
 
 /-- Suppose that for some $n$ we have $F(n) = n ^ {\alpha}$. Then there are arbitrarily
 large $m$ such that $F(m) \geq m^{\alpha}$. -/
+@[category research solved]
 theorem maximalLength_pow {n e : ℕ} (h : F n = n ^ e) :
     ∀ᶠ m in Filter.atTop, m ^ e ≤ F m :=
   sorry

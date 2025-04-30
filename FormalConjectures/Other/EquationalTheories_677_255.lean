@@ -31,7 +31,7 @@ theorem Equation255_not_implies_Equation677 :
     ∃ (G : Type) (_ : Magma G), Equation255 G ∧ ¬ Equation677 G :=
   sorry
 
-@[category research open]
+@[category research solved]
 theorem Equation677_not_implies_Equation255 :
     ∃ (G : Type) (_ : Magma G), Equation677 G ∧ ¬ Equation255 G :=
   sorry

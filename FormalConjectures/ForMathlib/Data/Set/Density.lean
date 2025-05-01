@@ -38,6 +38,15 @@ def HasDensity {β : Type*} [Preorder β] [LocallyFiniteOrderBot β]
   Tendsto (fun (b : β) => ((S ∩ A ∩ Set.Iio b).ncard : ℝ) / (A ∩ Set.Iio b).ncard)
     atTop (𝓝 α)
 
+/--
+A set `S` in an order `β` where all intervals bounded above are finite is said to have
+positive density (relative to a set `A`) if there exists a positive `α : ℝ` such that
+`S` has density `α` (relative to a set `A`).
+-/
+def HasPosDensity {β : Type*} [Preorder β] [LocallyFiniteOrderBot β]
+    (S : Set β) (A : Set β := Set.univ) : Prop :=
+  ∃ α > 0, S.HasDensity α A
+
 namespace HasDensity
 
 -- TODO(mercuris): generalise these to non-univ `A`

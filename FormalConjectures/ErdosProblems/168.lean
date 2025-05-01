@@ -31,7 +31,7 @@ def NonTernary (S : Finset ℕ) : Prop := ∀ n : ℕ, n ∉ S ∨ 2*n ∉ S ∨
 The advantage of defining it as below is that some proofs (e.g. that of `F 3 = 2`) become `rfl`.-/
 def IntervalNonTernarySets (N : ℕ) : Finset (Finset ℕ) :=
   (Finset.Icc 1 N).powerset.filter
-  fun S => ∀ n ∈ Finset.Icc 1 (N / 3 : ℕ), n ∉ S ∨ 2*n ∉ S ∨ 3*n ∉ S
+    fun S => ∀ n ∈ Finset.Icc 1 (N / 3 : ℕ), n ∉ S ∨ 2*n ∉ S ∨ 3*n ∉ S
 
 /--`F N` is the size of the largest non ternary subset of `{1,...,N}`.-/
 abbrev F (N : ℕ) : ℕ := (IntervalNonTernarySets N).sup Finset.card
@@ -54,7 +54,10 @@ Sanity check: elements of `IntervalNonTernarySets N` are precisely non ternary s
 @[category API, AMS 5, AMS 11]
 lemma mem_IntervalNonTernarySets_iff (N : ℕ) (S : Finset ℕ) :
     S ∈ IntervalNonTernarySets N ↔ NonTernary S ∧ S ⊆ Finset.Icc 1 N := by
-  sorry
+  refine ⟨fun h => ?_, fun h => by simpa [h, IntervalNonTernarySets] using fun _ _ _ => h.1 _⟩
+  simp_all [NonTernary, IntervalNonTernarySets, S.subset_iff, Nat.le_div_iff_mul_le, mul_comm,
+      or_iff_not_imp_left]
+  exact fun n hn₁ hn₂ hn₃ => h.2 n (h.1 hn₁).1 (h.1 hn₃).2 hn₁ hn₂ hn₃
 
 /--
 Sanity check: if `S` is a maximal non ternary subset of `{1,..., N}` then `F N` is given by the cardinality of `S`

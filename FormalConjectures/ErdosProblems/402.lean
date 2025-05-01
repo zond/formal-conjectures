@@ -36,13 +36,19 @@ theorem erdos_402 (A : Finset ℕ) (h₁ : 0 ∉ A) (h₂ : A.Nonempty) : ∃ᵉ
 /-- A conjecture of Graham [Gr70], who also conjectured that (assuming $A$ itself
 has no common divisor) the only cases where equality is achieved are when
 $A = \{1, ..., n\}$ or $\{L/1, ..., L/n\}$ (where $L = \operatorname{lcm}(1, ..., n)$) or
-$\{2, 3, 4, 6\}$. -/
+$\{2, 3, 4, 6\}$.
+Note: The source [BaSo96] mentioned on the Erdős page makes it clear what
+quantfiers to use for "where equality is achieved". See Theorem 1.1 there.
+
+TODO(firsching): Consider if we should have the other direction here as well or
+an iff statement.
+-/
 @[category research solved]
-theorem erdos_402.variants.equality (A : Finset ℕ) (h₀ : 0 ∉ A) (h₁ : A.gcd id = 1) :
-    (∃ᵉ (a ∈ A) (b ∈ A), a.gcd b = (a / A.card : ℚ)) ↔
-      (∃ n > 0, A = Finset.Icc 1 n ∨
-        A = (Finset.Icc 1 n).image fun i => ((Finset.Icc 1 n).lcm id / i : ℕ)) ∨
-          A = {2, 3, 4, 6} :=
+theorem erdos_402.variants.equality (A : Finset ℕ) (h₁ : 0 ∉ A) (h₂ : A.Nonempty)
+    (hA : ∀ n, A ≠ Finset.Icc 1 n ∧
+    A ≠ ((Finset.Icc 1 n).image fun i => ((Finset.Icc 1 n).lcm id) / i) ∧
+    A ≠ {2,3,4,6}) :
+    ∃ᵉ (a ∈ A) (b ∈ A), a.gcd b < (a / A.card : ℚ) :=
   sorry
 
 /-- Proved for all sufficiently large sets (including the sharper version which

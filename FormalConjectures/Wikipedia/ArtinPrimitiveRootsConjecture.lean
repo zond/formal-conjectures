@@ -24,14 +24,14 @@ import FormalConjectures.Util.ProblemImports
 open scoped Topology Nat
 
 /--Let `S(a)` be the set of primes such that `a` is a primitive root modulo `p`-/
-abbrev S (a : ℤ) : Set ℕ :=
+private abbrev S (a : ℤ) : Set ℕ :=
   {p : ℕ | p.Prime ∧ orderOf (a : ZMod p) = (p-1 : ℕ)}
 
 /--
 **Artin's Constant** is defined to be the product
 `∏_{p prime}, (1 - 1/(p*(p-1)))`
 -/
-noncomputable def ArtinConstant : ℝ :=
+private noncomputable def ArtinConstant : ℝ :=
   ∏' p : {n : ℕ // n.Prime}, (1 - 1 / (p*(p-1)) : ℝ)
 
 /--

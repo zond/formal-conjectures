@@ -32,5 +32,5 @@ $$
 of $n$.)
 -/
 @[category research open, AMS 11]
-theorem erdos_826 : ∃ C > (0 : ℝ), { n | ∀ k ≥ 1, ω (n + k) ≤ C * k }.Infinite :=
+theorem erdos_248 : ∃ C > (0 : ℝ), { n | ∀ k ≥ 1, ω (n + k) ≤ C * k }.Infinite :=
   sorry

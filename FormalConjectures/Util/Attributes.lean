@@ -79,12 +79,27 @@ https://mathscinet.ams.org/mathscinet/msc/pdfs/classifications2020.pdf
 In order to access the list from within a Lean file, use the `#AMS` command.
 -/
 
+-- TODO(lezeau): can we/should we do this using
+-- `Lean.EnumAttributes` or `Lean.ParametricAttribute` ?
+
+namespace ProblemAttributes
+
 inductive ProblemStatus
+  /-- Indicates that a mathematical problem is still open. -/
   | open
+  /-- Indicates that a mathematical problem is already solved,
+  i.e. there is a pusblished (informal) proof. -/
   | solved
-  deriving Inhabited
+  deriving Inhabited, BEq, Hashable, ToExpr
 
 syntax problemStatus := &"open" <|> &"solved"
+
+/-- Convert from a syntax node to a name. -/
+private def problemStatus.toName (stx : TSyntax ``problemStatus) : Option Name :=
+  match stx with
+    | `(problemStatus| open) => ``ProblemStatus.open
+    | `(problemStatus| solved) => ``ProblemStatus.solved
+    | _ => none
 
 /-- A type to capture the various types of statements that appear in our Lean files. -/
 inductive Category
@@ -100,15 +115,55 @@ inductive Category
   | test
   /-- An "API" statement, i.e. a statement that constructs basic theory around a new definition -/
   | API
+  deriving Inhabited, BEq, Hashable, ToExpr
 
-syntax CategorySyntax := &"high_school" <|> &"undergraduate" <|> &"graduate" <|> (&"research" problemStatus) <|> &"test" <|> &"API"
+syntax CategorySyntax := &"high_school" <|> &"undergraduate" <|> &"graduate"
+    <|> (&"research" problemStatus) <|> &"test" <|> &"API"
 
-/-- Convert from a syntax node to a name. -/
-private def problemStatus.toName (stx : TSyntax ``problemStatus) : Option Name :=
-  match stx with
-    | `(problemStatus| open) => ``ProblemStatus.open
-    | `(problemStatus| solved) => ``ProblemStatus.solved
-    | _ => none
+-- TODO(lezeau): do we eventually want to account for the problem's source?
+structure CategoryTag where
+  /-- The name of the declaration with the given tag. -/
+  declName : Name
+  /-- The status of the problem. -/
+  category : Category
+  /-- The (optional) comment that comes with the given declaration. -/
+  informal : String
+  deriving Inhabited, BEq, Hashable, ToExpr
+
+/-- Defines the `categoryExt` extension for adding a `HashSet` of `Tag`s
+to the environment. -/
+initialize categoryExt : SimplePersistentEnvExtension CategoryTag (Std.HashSet CategoryTag) ←
+  registerSimplePersistentEnvExtension {
+    addImportedFn := fun as => as.foldl Std.HashSet.insertMany {}
+    addEntryFn := .insert
+  }
+
+def addCategoryEntry {m : Type → Type} [MonadEnv m]
+    (declName : Name) (cat : Category) (comment : String) : m Unit :=
+  modifyEnv (categoryExt.addEntry ·
+    { declName := declName, category := cat, informal := comment })
+
+structure SubjectTag where
+  /-- The name of the declaration with the given tag. -/
+  declName : Name
+  /-- The subject(s) of the problem. -/
+  subjects : List AMS
+  /-- The (optional) comment that comes with the given declaration. -/
+  informal : String
+  deriving Inhabited, BEq, Hashable, ToExpr
+
+/-- Defines the `tagExt` extension for adding a `HashSet` of `Tag`s
+to the environment. -/
+initialize subjectExt : SimplePersistentEnvExtension SubjectTag (Std.HashSet SubjectTag) ←
+  registerSimplePersistentEnvExtension {
+    addImportedFn := fun as => as.foldl Std.HashSet.insertMany {}
+    addEntryFn := .insert
+  }
+
+def addSubjectEntry {m : Type → Type} [MonadEnv m] (name : Name)
+    (subjects : List AMS) (informal : String) : m Unit :=
+  modifyEnv (subjectExt.addEntry ·
+    { declName := name, subjects := subjects, informal := informal })
 
 /-- Convert from a syntax node to a term of type `Category` and annotate the syntax
 with the corresponding name's docstring. -/
@@ -150,36 +205,115 @@ This is used as follows: `@[category my_cat]` where `my_cat` is one of:
 - `research solved` : a solved reseach level math problem.
 - `test` : a statement that serves as a sanity check (e.g. for a new definition).
 - `API` : a statement that constructs basic theory around a new definition -/
-initialize CategoryAttr : ParametricAttribute Category ←
-  registerParametricAttribute {
-    name := `Category_attr
-    descr := "Annotation of the Category of a given statement"
-    getParam _ := fun
-      | `(attr| category $s) => withRef s <| do
-        Syntax.toCategory s
+initialize Lean.registerBuiltinAttribute {
+  name := `Category_attr
+  descr := "Annotation of status of a problem."
+  add := fun decl stx _attrKind => do
+    let oldDoc := (← findDocString? (← getEnv) decl).getD ""
+    let (status, comment) ← match stx with
+      | `(attr| category $s) => withRef s do
+        let cat ← Syntax.toCategory s
+        return (cat, "")
       | _ => throwUnsupportedSyntax
-  }
+    addCategoryEntry decl status oldDoc
+  applicationTime := .beforeElaboration
+}
 
-syntax (name := problemSubject) "AMS" num : attr
+syntax subjectList := many(num)
+
+/-- Converts a syntax node to an array of `AMS` subjects.
+
+This also annotates the every natural number litteral encountered, with the
+description of the corresponding AMS subject (i.e. hovering over the number
+in VS Code will show the subject.)
+-/
+def Syntax.toSubjects (stx : TSyntax ``subjectList) : MetaM (Array AMS) := do
+  match stx with
+  | `(subjectList|$[$nums] *) =>
+    nums.mapM fun (n : TSyntax `num) => do
+      let nVal := n.getNat
+      let name ← numToAMSName nVal
+      Elab.addConstInfo n name
+      unsafe Meta.evalExpr AMS q(AMS) (.const name [])
+  | _ => throwUnsupportedSyntax
+
+syntax (name := problemSubject) "AMS" subjectList : attr
 
 /-- Specifies the subject of a math problem.
 
 `AMS n` indicates that a problem is related to the subject area
 with index `n` in the AMS subject classification.
-
-Access the full list of subjects and their indices using the `#AMS` command. -/
-initialize problemSubjectAttr : ParametricAttribute AMS ←
-  registerParametricAttribute {
-    name := `problemSubject
-    descr := "Annotation of the subject of a given problem statement"
-    getParam := fun _  stx =>
-      match stx with
-      | `(attr| AMS $n) => withRef n <| do
-        let nVal := n.getNat
-        let subject ← Lean.Meta.MetaM.run' <| do
-          let name ← numToAMSName nVal
-          Elab.addConstInfo stx name
-          unsafe Meta.evalExpr AMS q(AMS) (.const name [])
-        return subject
+-/
+initialize Lean.registerBuiltinAttribute {
+  name := `problemSubject
+  descr := "Annotation of the subject of a given problem statement"
+  add := fun decl stx _attrKind => do
+    let oldDoc := (← findDocString? (← getEnv) decl).getD ""
+    let subjects ← match stx with
+      | `(attr| AMS $n) => withRef n <|
+        Lean.Meta.MetaM.run' (Syntax.toSubjects n)
       | _ => throwUnsupportedSyntax
-  }
+    addSubjectEntry decl subjects.toList oldDoc
+}
+
+section Helper
+
+/-- Split an array into preimages of a function.
+
+`splitByFun f arr` is the hashmap such that the value for
+key `b : β` is the array of `a : α` in `arr` that get mapped
+to `b` by `f` -/
+private def splitByFun {α β : Type} (f : α → β) [BEq β] [Hashable β]
+    (arr : Array α) : Std.HashMap β (Array α) :=
+  Array.foldr addPreimage {} arr
+where
+  addPreimage (a : α) (m : Std.HashMap β (Array α)) :=
+    m.alter (f a) (appendIfExists a)
+
+  appendIfExists (a) : Option (Array α) → Option (Array α)
+  | some arr => arr.push a
+  | none => #[a]
+
+variable {m : Type → Type} [Monad m] [MonadEnv m]
+
+def getTags : m (Array CategoryTag) := do
+  return categoryExt.getState (← MonadEnv.getEnv) |>.toArray
+
+def getStatementTags : m (Std.HashMap Category (Array CategoryTag)) := do
+  return splitByFun CategoryTag.category (← getTags)
+
+def getCategoryStats : m (Category → Nat) := do
+  let cats ← getStatementTags
+  return fun c => (cats.get! c).size
+
+end Helper
+
+end ProblemAttributes
+
+section Commands
+
+open ProblemAttributes
+
+-- TODO(lezeau): currently this doesn't take examples into
+-- account so some `test` statements aren't counted here.
+
+/-- Prints out the number of problems for each category.
+
+Note that this will depend on what declarations are present in the
+environment at the place where the command is called. -/
+elab "#category_stats" : command => do
+  let stats ← ProblemAttributes.getCategoryStats
+  let out : String :=
+      s!"Open problems: {stats (Category.research ProblemStatus.open)}\n" ++
+      s!"Solved problems: {stats (Category.research ProblemStatus.solved)}\n" ++
+      s!"High School: {stats (Category.highSchool)}\n" ++
+      s!"Undergraduate: {stats (Category.undergraduate)}\n" ++
+      s!"Graduate: {stats (Category.graduate)}\n" ++
+      s!"API: {stats (Category.API)}\n" ++
+      s!"Tests: {stats (Category.test)}\n"
+  Lean.logInfo ("Current benchmark stats:\n" ++ out)
+
+-- TODO(lezeau): add a `#subject_stats` command that does
+-- prints the number of problems per subject (when non-zero)
+
+end Commands

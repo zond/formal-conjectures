@@ -163,6 +163,7 @@ inductive AMS
   | «94»
   /-- Mathematics education -/
   | «97»
+  deriving Inhabited, BEq, Hashable, ToExpr
 
 def numToAMSName (n : Nat) : MetaM Name := do
   let nm : Name := Name.str ``AMS (ToString.toString n)

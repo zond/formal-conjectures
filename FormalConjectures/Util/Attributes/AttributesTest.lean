@@ -28,9 +28,22 @@ theorem FLT : FermatLastTheorem := by
   sorry
 
 open scoped Real in
-@[category research open, AMS 11]
+@[category research open, AMS 11 33]
 theorem an_open_problem : Transcendental ℝ (π + rexp 1) := by
   sorry
+
+/--
+info: Current benchmark stats:
+Open problems: 1
+Solved problems: 1
+High School: 0
+Undergraduate: 0
+Graduate: 0
+API: 0
+Tests: 1
+-/
+#guard_msgs in
+#category_stats
 
 -- The `#AMS` command
 

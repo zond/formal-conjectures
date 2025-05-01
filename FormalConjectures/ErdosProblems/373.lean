@@ -26,7 +26,7 @@ open scoped Nat
 Let `S` be the set of non-trivial solutions to the equation `n! = a₁! ··· aₖ!`
 such that `a₁ ≥ ... ≥ aₖ` and `n-1 > a₁`.
 -/
-abbrev S : Set (ℕ × List ℕ) :=
+private abbrev S : Set (ℕ × List ℕ) :=
   {(n, l) | n ! = (l.map Nat.factorial).prod ∧ l.Sorted (· ≥ ·)
     ∧ l.headI < (n - 1 : ℕ) ∧ ∀ a ∈ l, 1 < a }
 

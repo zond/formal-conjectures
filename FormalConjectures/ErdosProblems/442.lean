@@ -48,7 +48,7 @@ local instance : Fintype <| ↑(A ∩ Set.Icc 1 ⌊x⌋₊) :=
 If `A` is a set of natural numbers, then `A.bdd x` is the finite
 set `{n ∈ A | n ≤ x}`.
 -/
-def bdd : Finset ℕ := (A ∩ Set.Icc 1 ⌊x⌋₊).toFinset
+private def bdd : Finset ℕ := (A ∩ Set.Icc 1 ⌊x⌋₊).toFinset
 
 /--
 If `A` be a set of natural numbers and let `x` be real, then
@@ -56,7 +56,7 @@ If `A` be a set of natural numbers and let `x` be real, then
 of elements of `A` that are `≤ x`. Specifically, it is the set
 `{(n, m) | n ∈ A, n ≤ x, m ∈ A, m ≤ x, n < m}`
 -/
-def bddProdUpper : Finset (ℕ × ℕ) :=
+private def bddProdUpper : Finset (ℕ × ℕ) :=
   (A.bdd x ×ˢ A.bdd x).filter fun (n, m) => n < m
 
 end Set

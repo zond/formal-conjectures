@@ -14,20 +14,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
-import Lake
-open Lake DSL
+import FormalConjectures.Arxiv.«0911.2077».Conjecture6_3
+import FormalConjectures.Arxiv.«0912.2382».CurlingNumberConjecture
+import FormalConjectures.Arxiv.«1601.03081».UniqueCrystalComponents
+import FormalConjectures.Arxiv.«1609.08688».sIncreasingrTuples
+import FormalConjectures.Arxiv.«2107.12475».CollatzLike
+import FormalConjectures.Arxiv.«2208.14736».ZariskiCancellation
+import FormalConjectures.Arxiv.«2410.22607».Conjecture6_2
 
-package formal_conjectures where
-  leanOptions := #[
-    ⟨`pp.unicode.fun, true⟩, -- pretty-prints `fun a ↦ b`
-    ⟨`pp.proofs.withType, false⟩,
-    ⟨`autoImplicit, false⟩,
-    ⟨`relaxedAutoImplicit, false⟩
-  ]
-
-@[default_target]
-lean_lib FormalConjectures where
-  roots := #[`FormalConjectures]
-  globs := #[.submodules `FormalConjectures]
-
-require mathlib from git "https://github.com/leanprover-community/mathlib4.git" @ "v4.17.0"
+#category_stats

@@ -23,7 +23,7 @@ import FormalConjectures.Util.ProblemImports
 -/
 /--Is it true that in any finite colouring of the integers there exists a monochromatic solution
 to $\frac 1 a = \frac 1 b + \frac 1 c$ with distinct $a, b, c$?-/
-@[category research solved]
+@[category research solved, AMS 5, AMS 11]
 theorem erdos_303 :
     --For any finite colouring of the integers
     ∀ (𝓒 : ℤ → ℤ), (Set.range 𝓒).Finite →

@@ -28,9 +28,11 @@ of `A` are not relatively prime.
 def WeaklyDivisible (k : ℕ) (A : Finset ℕ) : Prop :=
     ∀ s ∈ A.powersetCard (k+1), Pairwise (¬ Nat.Coprime · ·)
 
+@[category API, AMS 11]
 lemma weaklyDivisible_empty (k : ℕ): WeaklyDivisible k {} := by
   simp [WeaklyDivisible]
 
+@[category API, AMS 11]
 lemma weaklyDivisible_one (k : ℕ): WeaklyDivisible k {1} ↔ k ≠ 0 := by
   simp [WeaklyDivisible, Pairwise]
   by_cases hk: k = 0 <;> simp only [hk]
@@ -48,11 +50,13 @@ noncomputable def MaxWeaklyDivisible (N : ℕ) (k : ℕ) : ℕ :=
     (Finset.Icc 1 N).powerset.filter (WeaklyDivisible k) |>.sup
     Finset.card
 
+@[category test, AMS 11]
 example (k : ℕ) : MaxWeaklyDivisible 0 k = 0 := by
   simp [MaxWeaklyDivisible]
 
 open Classical
 
+@[category test, AMS 11]
 example (k : ℕ) : MaxWeaklyDivisible 1 k = if k = 0 then 0 else 1 := by
   simp [MaxWeaklyDivisible]
   have : (Finset.filter (WeaklyDivisible k) ({1} : Finset ℕ).powerset) = if k = 0 then {{}} else {{}, {1}} := by
@@ -70,6 +74,7 @@ a multiple of one of the first `k` primes.
 noncomputable def FirstPrimesMultiples (N k : ℕ) : Finset ℕ :=
     (Finset.Icc 1 N).filter fun i => ∃ j < k, (j.nth Nat.Prime ∣ i)
 
+@[category test, AMS 11]
 example (k : ℕ) : (FirstPrimesMultiples 1 k).card = 0 := by
   simp [FirstPrimesMultiples, Finset.filter_singleton]
   intro n h
@@ -83,15 +88,17 @@ example (k : ℕ) : (FirstPrimesMultiples 1 k).card = 0 := by
 An example of a `k`-weakly divisible set is the subset of `{1, ..., N}`
 containing the multiples of the first `k` primes.
 -/
+@[category API, AMS 11]
 lemma weaklyDivisible_firstPrimesMultiples (N k : ℕ) (hN : 1 ≤ N) :
-    WeaklyDivisible k (FirstPrimesMultiples N k) := sorry
+    WeaklyDivisible k (FirstPrimesMultiples N k) := by
+  sorry
 
 /--
-Suppose `A⊆{1,…,N}` is such that there are no `k+1` elements of `A`
+Suppose `A ⊆ {1,…,N}` is such that there are no `k+1` elements of `A`
 which are relatively prime. An example is the set of all multiples of
 the first `k` primes. Is this the largest such set?
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_56 (N : ℕ) (hN : 2 ≤ N)
     (k : ℕ) : MaxWeaklyDivisible N k = (FirstPrimesMultiples N k).card := by
   sorry

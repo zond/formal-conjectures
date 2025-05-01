@@ -35,7 +35,7 @@ $$
 $$
 transcendental?
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_247 (n : ℕ → ℕ)
     (hn : StrictMono n)
     (h : atTop.limsup (fun k => (n k / k.succ : EReal)) = ⊤) :
@@ -48,7 +48,7 @@ $\limsup n_k / k^t = \infty$ for all $t\geq 1$.
 
 [ErGr80] Erdős, P. and Graham, R., _Old and new problems and results in combinatorial number theory_. Monographies de L'Enseignement Mathematique (1980).
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_247.variants.strong_condition (n : ℕ → ℕ)
     (hn : StrictMono n)
     (h : ∀ t ≥ (1 : ℝ),

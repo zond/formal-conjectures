@@ -31,6 +31,7 @@ $k$-element arithmetic progression in at most two points.
 At the end of:
  * Baumgartner, James E., Partitioning vector spaces. J. Combinatorial Theory Ser. A (1975), 231-233.
 the author claims that by "slightly modifying the method of [his proof]", one can prove this. -/
+@[category research solved, AMS 5]
 lemma baumgartner_strong (V : Type*) [AddCommGroup V] [Module ℚ V] (k : ℕ) :
     ∃ X : Set V,
       (∀ Y, Y.IsAPOfLength ⊤ → (X ∩ Y).Nonempty) ∧
@@ -38,6 +39,7 @@ lemma baumgartner_strong (V : Type*) [AddCommGroup V] [Module ℚ V] (k : ℕ) :
   sorry
 
 /-- The statement for which Baumgartner actually writes a proof. -/
+@[category research solved, AMS 5]
 lemma baumgartner_headline (V : Type*) [AddCommGroup V] [Module ℚ V] :
     ∃ X : Set V,
       (∀ Y, IsAPOfLength Y ⊤ → (X ∩ Y).Nonempty) ∧
@@ -52,6 +54,7 @@ However this is a result in the _opposite direction_ to `baumgartner_headline`.
 See `baumgartner_sidon_contrapositive` and `IsSidon.avoids_isAPOfLength_three`.
 
 This easily implies `erdos_198` (below). -/
+@[category research solved, AMS 5, AMS 11]
 lemma baumgartner_sidon
     (A : ℕ →o ℕ) (hA : IsSidon A) :
     ∃ Y, IsAPOfLength Y ⊤ ∧ range A ∩ Y = ∅ :=
@@ -60,6 +63,7 @@ lemma baumgartner_sidon
 /-- Statement of contrapositive of `baumgartner_sidon` for comparison with
 `baumgartner_headline`: it states that one cannot "upgrade" `baumgartner_headline`
 to replace the statement about avoiding length-3 APs with being Sidon. -/
+@[category research solved, AMS 5, AMS 11]
 lemma baumgartner_sidon_contrapositive :
     ¬ ∃ A : ℕ →o ℕ,
       (∀ Y, IsAPOfLength Y ⊤ → ((range A) ∩ Y).Nonempty) ∧
@@ -75,7 +79,7 @@ progression?
 Answer "yes" according to remark on page 23 of:
 Erdös and Graham, "Old and new problems and results in combinatorial number theory", 1980.
 -/
-@[category research solved]
+@[category research solved, AMS 5, AMS 11]
 theorem erdos_198
     (A : ℕ →o ℕ)
     (hA : IsSidon A) :

@@ -36,17 +36,22 @@ def IntervalNonTernarySets (N : ℕ) : Finset (Finset ℕ) :=
 /--`F N` is the size of the largest non ternary subset of `{1,...,N}`.-/
 abbrev F (N : ℕ) : ℕ := (IntervalNonTernarySets N).sup Finset.card
 
+@[category API, AMS 5, AMS 11]
 lemma F_0 : F 0 = 0 := rfl
 
+@[category API, AMS 5, AMS 11]
 lemma F_1 : F 1 = 1 := rfl
 
+@[category API, AMS 5, AMS 11]
 lemma F_2 : F 2 = 2 := rfl
 
+@[category API, AMS 5, AMS 11]
 lemma F_3 : F 3 = 2 := rfl
 
 /--
 Sanity check: elements of `IntervalNonTernarySets N` are precisely non ternary subsets of `{1,...,N}`
 -/
+@[category API, AMS 5, AMS 11]
 lemma mem_IntervalNonTernarySets_iff (N : ℕ) (S : Finset ℕ) :
     S ∈ IntervalNonTernarySets N ↔ NonTernary S ∧ S ⊆ Finset.Icc 1 N := by
   sorry
@@ -54,26 +59,27 @@ lemma mem_IntervalNonTernarySets_iff (N : ℕ) (S : Finset ℕ) :
 /--
 Sanity check: if `S` is a maximal non ternary subset of `{1,..., N}` then `F N` is given by the cardinality of `S`
 -/
+@[category API, AMS 5, AMS 11]
 lemma F_eq_card (N : ℕ) (S : Finset ℕ) (hS : S ⊆ Finset.Icc 1 N)
     (hS' : NonTernary S) (hS'' : ∀ T, T ⊆ Finset.Icc 1 N → NonTernary T → S ⊆ T → T = S) :
     F N = S.card := by
   sorry
 
 /--What is the limit `F(N)/N` as `N → ∞`? -/
-@[category research solved]
+@[category research open, AMS 11]
 theorem erdos_168.parts.i :
     Filter.Tendsto (fun N => (F N / N : ℝ)) Filter.atTop (𝓝 answer(sorry)) := by
   sorry
 
 /--Is the limit `F(N)/N` as `N → ∞` irrational? -/
-@[category research solved]
+@[category research open, AMS 5, AMS 11]
 theorem erdos_168.parts.ii :
     Irrational <| Filter.atTop.limsup (fun N => (F N / N : ℝ)) := by
   sorry
 
 /--The limit `F(N)/N` as `N → ∞` exists.
 (proved by Graham, Spencer, and Witsenhausen)-/
-@[category research solved]
+@[category research open, AMS 5, AMS 11]
 theorem erdos_168.variants.limit_exists :
     ∃ x, Filter.Tendsto (fun N => (F N / N : ℝ)) Filter.atTop (𝓝 x) := by
   sorry

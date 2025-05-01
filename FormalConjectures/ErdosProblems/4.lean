@@ -33,12 +33,12 @@ $$
   p_{n + 1} - p_n > C \frac{\log\log n\log\log\log\log n}{(\log\log\log n) ^ 2}\log n
 $$
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_4 (C : ℝ) (hC : 0 < C) :
     Erdos4For C :=
   sorry
 
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_4.variants.rankin :
     ∃ C > 0, Erdos4For C :=
   sorry

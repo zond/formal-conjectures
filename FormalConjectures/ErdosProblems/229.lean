@@ -29,7 +29,7 @@ $$
   f^{(k_n)}(z) = 0\quad\text{for all $z\in S_n$?}
 $$
 -/
-@[category research solved]
+@[category research solved, AMS 30]
 theorem erdos_229
     (S : ℕ → Set ℂ)
     (h : ∀ (n), derivedSet (S n) = ∅) :
@@ -48,7 +48,7 @@ transcendental entire function $f(z)$ such that $f^{(n_k)}(z) = 0$ if $z \in S_k
 [BaSc72] Barth, K. F. and Schneider, W. J., _On a problem of Erdős concerning the zeros of_
 _the derivatives of an entire function_. Proc. Amer. Math. Soc. (1972), 229--232.
 -/
-@[category research solved]
+@[category research solved, AMS 30]
 theorem theorem_1
     {S : ℕ → Set ℂ}
     (h : ∀ (k), derivedSet (S k) = ∅) :

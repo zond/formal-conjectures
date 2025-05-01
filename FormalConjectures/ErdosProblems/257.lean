@@ -28,7 +28,7 @@ $$
 $$
 irrational?
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_257 (A : Set ℕ) (h : A.Infinite) :
     Irrational <| ∑' n : A, (1 : ℝ) / (2 ^ n.1 - 1) :=
   sorry
@@ -40,7 +40,7 @@ $$
 $$
 where $d(n)$ is the number of divisors of $n$.
 -/
-@[category research solved]
+@[category undergraduate]
 theorem erdos_257.variants.tsum_top_eq :
     ∑' n, 1 / (2 ^ n - 1 : ℝ) = ∑' n, n.divisors.card / (2 ^ n : ℝ) :=
   sorry

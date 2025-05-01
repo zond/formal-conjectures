@@ -16,6 +16,12 @@ limitations under the License.
 
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Legendre's conjecture
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Landau%27s_problems#Legendre%27s_conjecture)
+-/
+
 /--
 Does there always exist at least one prime between consecutive perfect squares?
 -/

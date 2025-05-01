@@ -18,14 +18,15 @@ import FormalConjectures.Util.ProblemImports
 
 open scoped Polynomial
 
-/-
-https://mathoverflow.net/questions/339137
-asked by user "Sil", https://mathoverflow.net/users/136794/sil
+/-!
+# Mathoverflow 339137
 
 Why do polynomials with coefficients 0,1
  like to have only factors with 0,1
  coefficients?
 
+*Reference:* [mathoverflow/339137](https://mathoverflow.net/questions/339137)
+asked by user [*Sil*](https://mathoverflow.net/users/136794/sil)
 -/
 /--
 The predicate that all coefficients of a polynomial are either zero or one.

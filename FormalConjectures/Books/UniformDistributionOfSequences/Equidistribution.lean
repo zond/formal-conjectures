@@ -15,14 +15,16 @@ limitations under the License.
 -/
 
 import FormalConjectures.Util.ProblemImports
-/-
-For a standard reference on this topic see:
-Kuipers, L., and Niederreiter, H. Uniform Distribution of Sequences. Wiley, 1974
-https://books.google.ch/books/about/Uniform_Distribution_of_Sequences.html?id=lCTvAAAAMAAJ
+/-!
+# Equidistributed Sequences
+
 Corollary 4.2 of Chapter 1 states that the sequence $(x^n), n = 1, 2, ... ,$ is equidistributed modulo 1 for
 almost all x > 1. And a little bit further down:
 "one does not know whether sequences such as $(e^n)$, $(π^n7)$, or even $((3/2)^n)$"
 are equidistributed modulo 1 or not.
+
+*Reference:* [Uniform Distribution of Sequences](https://store.doverpublications.com/products/9780486149998)
+by *L. Kuipers* and *H. Niederreiter*, 1974
 -/
 open scoped Topology
 

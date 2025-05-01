@@ -15,6 +15,12 @@ limitations under the License.
 -/
 
 import FormalConjectures.Util.ProblemImports
+/-!
+# B44
+
+*Reference:* [Unsolved Problems in Number Theory](https://doi.org/10.1007/978-0-387-26677-0)
+by *Richard K. Guy*
+-/
 
 open BigOperators Nat
 

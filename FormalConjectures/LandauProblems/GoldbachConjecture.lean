@@ -16,6 +16,12 @@ limitations under the License.
 
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Goldbach's conjecture
+
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Landau%27s_problems#Goldbach%27s_conjecture)
+-/
+
 /--
 Can every even integer greater than 2 be written as the sum of two primes?
 -/

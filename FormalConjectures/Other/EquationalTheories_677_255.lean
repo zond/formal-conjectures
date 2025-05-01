@@ -14,8 +14,14 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- https://teorth.github.io/equational_theories/implications/?677&finite
 import FormalConjectures.Util.ProblemImports
+
+/-!
+# Equational Theories
+
+*Reference:* [Equational Theories project site](https://teorth.github.io/equational_theories/implications/?677&finite)
+-/
+
 
 class Magma (α : Type) where
   op : α → α → α

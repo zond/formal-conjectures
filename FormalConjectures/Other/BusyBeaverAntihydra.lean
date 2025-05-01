@@ -14,8 +14,13 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
--- https://wiki.bbchallenge.org/wiki/Antihydra
 import FormalConjectures.Util.ProblemImports
+
+/-!
+# Busy Beaver Challenge: Antihydra
+
+*Reference:* [bbchallenge](https://wiki.bbchallenge.org/wiki/Antihydra)
+-/
 
 /--
 Antihydra is a sequence starting at 8, and iterating the function

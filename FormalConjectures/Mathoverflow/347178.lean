@@ -17,11 +17,14 @@ limitations under the License.
 import FormalConjectures.Util.ProblemImports
 
 open Real Set
+/-!
+# Mathoverflow 347178
+
+*Reference:* [mathoverflow/347178](https://mathoverflow.net/questions/347178)
+asked by user [*Biagio Ricceri*](https://mathoverflow.net/users/149235/biagio-ricceri)
+-/
 
 /--
-https://mathoverflow.net/questions/347178
-asked by user "Biagio Ricceri", https://mathoverflow.net/users/149235/biagio-ricceri
-
 Let $f\colon ℝ^n → ℝ,  n ≥ 2$ be a $C^1$ function. Is it true that
 $$\sup_{x\in {\bf R}^n}f(x)=\sup_{x\in {\bf R}^n}f(x+\nabla f(x))$$?
 -/

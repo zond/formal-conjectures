@@ -16,6 +16,13 @@ limitations under the License.
 
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# Hadamard's conjecture
+
+*Reference:* [Proofs from THE BOOK](https://doi.org/10.1007/978-3-662-57265-8)
+by *Martin Aigner* and *Günter M. Ziegler* (6th edition)
+-/
+
 -- TODO(firsching): consider providing a different source? Perhaps a primary one?
 /--
 From "Proofs from THE BOOK", by Martin Aigner and Günter M. Ziegler (6th edition)

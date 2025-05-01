@@ -16,6 +16,13 @@ limitations under the License.
 
 import FormalConjectures.Util.ProblemImports
 
+/-!
+# K3
+
+*Reference:* [Unsolved Problems in Intuitive Geometry](https://doi.org/10.1007/978-1-4612-0963-8)
+by *Viktor Klee*
+-/
+
 /--
 From "Unsolved Problems in Intuitive Geometry", by Viktor Klee.
 

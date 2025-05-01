@@ -26,6 +26,7 @@ The radical of `n` denoted is the product of the distinct prime factors of `n`.
 -/
 def radical (n : ℕ) : ℕ := n.primeFactors.prod id
 
+@[category test]
 example : radical 16 = 2 := by
   have : Nat.primeFactors 16 = {2} := by
     rw [show 16 = 2 ^ 4 by decide, Nat.primeFactors_pow]
@@ -33,9 +34,11 @@ example : radical 16 = 2 := by
     · decide
   norm_num [radical, this]
 
+@[category test]
 example : radical 17 = 17 := by
   rw [radical, Nat.Prime.primeFactors (by norm_num), Finset.prod_singleton, id]
 
+@[category test]
 example : radical 12 = 6 := by
   rw [radical, show 12 = 2^2 * 3 by rfl, Nat.primeFactors_mul (by norm_num) (by norm_num), Nat.primeFactors_pow _ (by norm_num), Nat.Prime.primeFactors (by norm_num), Nat.Prime.primeFactors (by norm_num)]
   rfl
@@ -48,7 +51,7 @@ noncomputable def quality (a b c : ℕ) : ℝ := (c : ℝ).log / (radical <| a *
 /--
 For every positive real number `ε`, there exist only finitely many triples `(a, b, c)` of coprime positive integers, with `a + b = c`, such that `c > rad(abc)^(1+ε)`
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem abc (ε : ℝ) (hε : 0 < ε) :
     {(a, b, c) : ℕ × ℕ × ℕ | 0 < a ∧ 0 < b ∧ 0 < c ∧ ({a, b, c} : Set ℕ).Pairwise Nat.Coprime ∧
     a + b = c ∧ (radical <| a * b * c : ℝ)^(1 + ε) < c}.Finite := by
@@ -57,7 +60,7 @@ theorem abc (ε : ℝ) (hε : 0 < ε) :
 /--
 For every positive real number ε, there exists a constant `K_ε` such that for all triples (a, b, c) of coprime positive integers, with a + b = c we have `c < K_ε rad(abc)^(1+ε)`.
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem abc.variants.lt_constant_mul (ε : ℝ) (hε : 0 < ε) : ∃ K,
     ∀ (a b c : ℕ), 0 < a → 0 < b → 0 < c → ({a, b, c} : Set ℕ).Pairwise Nat.Coprime → a + b = c →
     c < K * (radical <| a * b * c : ℝ)^(1 + ε) := by
@@ -66,7 +69,7 @@ theorem abc.variants.lt_constant_mul (ε : ℝ) (hε : 0 < ε) : ∃ K,
 /--
 For every positive real number ε, there exist only finitely many triples `(a, b, c)` of coprime positive integers with `a + b = c` such that `q(a, b, c) > 1 + ε`.
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem abc.variants.quality (ε : ℝ) (hε : 0 < ε) :
     {(a, b, c) : ℕ × ℕ × ℕ | 0 < a ∧ 0 < b ∧ 0 < c ∧ ({a, b, c} : Set ℕ).Pairwise Nat.Coprime ∧
     a + b = c ∧ quality a b c > (1 + ε)}.Finite := by

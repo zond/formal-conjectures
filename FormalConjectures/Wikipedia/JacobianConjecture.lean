@@ -64,7 +64,7 @@ variable {σ : Type*} [Fintype σ]
 (i.e. vector valued polynomial function from) `kⁿ → kᵐ`
 whose Jacobian is a non-zero constant has an inverse that
 is given by a regular function, where `k` is a field of characteristic `0`-/
-@[category research open]
+@[category research open, AMS 14]
 theorem jacobian_conjecture (F : RegularFunction k σ σ)
     (H : IsUnit F.Jacobian.det) :
     ∃ (G : RegularFunction k σ σ), G.comp F = id k σ ∧
@@ -87,8 +87,8 @@ noncomputable def RegularFunction.aeval {S₁ : Type*} [CommSemiring S₁] [Alge
 
 
 omit [CharZero k] [Fintype σ] in
---Let's just add one small sanity check for now
 /--`aeval` is compatible with composition of regular functions-/
+@[category API, AMS 14]
 lemma comp_aeval
     (F : RegularFunction k σ τ) (G : RegularFunction k τ ι)
     (a : σ → k) : (F.comp G).aeval a = G.aeval (F.aeval a) := by
@@ -99,6 +99,7 @@ lemma comp_aeval
 
 -- Let's check that we've stated the "invertible Jacobian" condition correctly
 -- by proving an equivalence
+@[category API, AMS 14]
 lemma sanity_check_condition_1 (F : RegularFunction k σ σ) :
     IsUnit F.Jacobian.det ↔ (∃ (c : k), c ≠ 0 ∧
         F.Jacobian.det = .C c) := by
@@ -108,7 +109,8 @@ lemma sanity_check_condition_1 (F : RegularFunction k σ σ) :
 
 
 -- Let's apply the conjecure to a trivial case to make sure things are working as expected.
-lemma application_to_identity :
+@[category test, AMS 14]
+example :
     ∃ (G : RegularFunction k σ σ), G.comp (id k σ) = id k σ ∧
     (id k σ).comp G = id k σ := by
   apply jacobian_conjecture

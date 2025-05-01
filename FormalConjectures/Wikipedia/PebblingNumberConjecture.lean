@@ -78,13 +78,17 @@ noncomputable def PebblingNumber (G : SimpleGraph V) : ℕ :=
 /--
 The pebbling number of the complete graph on `n` vertices is `n`.
 -/
-theorem PebblingNumber_completeGraph : PebblingNumber (completeGraph V) = Fintype.card V := sorry
+@[category API, AMS 5]
+theorem PebblingNumber_completeGraph :
+    PebblingNumber (completeGraph V) = Fintype.card V := by
+  sorry
 
 /--
 The pebbling number conjecture:
 the pebbling number of a Cartesian product of graphs is at most equal to the product of the
 pebbling numbers of the factors.
 -/
-@[category research open]
+@[category research open, AMS 5]
 theorem pebbling_number_conjecture (G H : SimpleGraph V) :
-  PebblingNumber (G □ H) ≤ PebblingNumber G * PebblingNumber H := sorry
+    PebblingNumber (G □ H) ≤ PebblingNumber G * PebblingNumber H := by
+  sorry

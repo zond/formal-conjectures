@@ -29,7 +29,7 @@ lonely at time $t$ if they are at a distance (measured along the circle) of at
 least $\frac 1 n$ from every other runner. The lonely runner conjecture states that each
 runner is lonely at some time, no matter the choice of speeds.
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem lonely_runner_conjecture (n : ℕ)
     (speed : Fin n ↪ ℝ) (lonely : Fin n → ℝ → Prop)
     (lonely_def :

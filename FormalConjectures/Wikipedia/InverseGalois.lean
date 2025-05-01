@@ -41,7 +41,7 @@ The **Inverse Galois Problem**: every finite group is
 isomorphic to the Galois group of a Galois extension of the
 rationals.
 -/
-@[category research open]
+@[category research open, AMS 12]
 theorem inverse_galois_problem {G : Type*} [Fintype G] [Group G] :
     IsRealizable ℚ G := by
   sorry
@@ -50,7 +50,7 @@ theorem inverse_galois_problem {G : Type*} [Fintype G] [Group G] :
 /--
 Every finite cyclic group is realizable.
 -/
-@[category research solved]
+@[category research solved, AMS 12]
 theorem inverse_galois_problem.variants.cyclic
     {G : Type*} [Fintype G] [Group G] [IsCyclic G] :
     IsRealizable ℚ G := by
@@ -60,7 +60,7 @@ theorem inverse_galois_problem.variants.cyclic
 /--
 Every finite abelian group is realizable.
 -/
-@[category research solved]
+@[category research solved, AMS 12]
 theorem inverse_galois_problem.variants.abelian
     {G : Type*} [Fintype G] [CommGroup G] :
     IsRealizable ℚ G := by
@@ -70,7 +70,7 @@ theorem inverse_galois_problem.variants.abelian
 /--
 Every finite symmetric group is realizable.
 -/
-@[category research solved]
+@[category research solved, AMS 12]
 theorem inverse_galois_problem.variants.symmetric_group
     {S : Type*} [Fintype S] :
     IsRealizable ℚ (S ≃ S) := by
@@ -81,7 +81,7 @@ theorem inverse_galois_problem.variants.symmetric_group
 Every finite group is realisable over the field of rational functions
 with complex coefficients.
 -/
-@[category research solved]
+@[category research solved, AMS 12]
 theorem inverse_galois_problem.variants.complex_rational_functions
     {G : Type*} [Fintype G] [Group G] :
     IsRealizable (RatFunc ℂ) G := by
@@ -92,7 +92,7 @@ theorem inverse_galois_problem.variants.complex_rational_functions
 Every finite group is realisable over the field of rational functions
 with coefficients `K`, where `K` is any field of characteristic 0.
 -/
-@[category research solved]
+@[category research solved, AMS 12]
 theorem inverse_galois_problem.variants.complex_function_field
     {G K : Type*} [Field K] [CharZero K] [Fintype G] [Group G] :
     IsRealizable (RatFunc K) G := by

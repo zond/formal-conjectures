@@ -26,13 +26,13 @@ Conway's 99-graph problem
 -/
 --TODO(firsching): Consider using SimpleGraph.IsSRGWith to formulate the conjecture.
 variable {V : Type} {G : SimpleGraph V}
-@[category undergraduate]
+@[category undergraduate, AMS 5]
 lemma completeGraphIsClique (s : Finset V) : (⊤ : SimpleGraph V).IsClique s :=
   Pairwise.set_pairwise (fun _ _ a ↦ a) _
 
 variable [Fintype V]
 
-@[category undergraduate]
+@[category undergraduate, AMS 5]
 lemma completeGraph_cliqueSet :
     (⊤ : SimpleGraph V).cliqueSet (Fintype.card V) = {Set.univ.toFinset} := by
   simp only [SimpleGraph.cliqueSet, SimpleGraph.isNClique_iff ⊤, completeGraphIsClique, true_and,
@@ -54,14 +54,14 @@ Equivalently, every edge should be part of a unique triangle and every non-adjac
 one of the two diagonals of a unique 4-cycle.
 The first condition is equivalent to being locally linear.
 -/
-@[category research open]
+@[category research open, AMS 5]
 theorem Conway99Graph : ∃ G : SimpleGraph (Fin 99), G.LocallyLinear ∧ NonEdgesAreDiagonals G :=
   sorry
 
 /--
 The triangle is an example with 3 vertices satisfying the condition.
 -/
-@[category test]
+@[category test, AMS 5]
 example : (completeGraph (Fin 3)).LocallyLinear ∧ NonEdgesAreDiagonals (completeGraph (Fin 3)) := by
   constructor
   · simp [SimpleGraph.LocallyLinear]
@@ -86,7 +86,7 @@ and it is also isomorphic to it and to the Paley graph and the graph of the
 -/
 def Conway9 := (completeGraph (Fin 3)) □ (completeGraph (Fin 3))
 
-@[category test]
+@[category test, AMS 5]
 example : NonEdgesAreDiagonals Conway9 := by
   simp only [NonEdgesAreDiagonals, Set.Pairwise]
   have : ∀ i, Fintype ↑(Conway9.neighborSet i) := by
@@ -105,6 +105,7 @@ example : NonEdgesAreDiagonals Conway9 := by
     SimpleGraph.boxProd_adj, SimpleGraph.top_adj, SimpleGraph.boxProd_neighborFinset]
   fin_cases x1 <;> fin_cases x2 <;> fin_cases y1 <;> fin_cases y2 <;> decide
 
+@[category API, AMS 5]
 lemma completeGraph_boxProd_completeGraph_cliqueSet :
   ((completeGraph V) □ (completeGraph V)).cliqueSet (Fintype.card V) =
   { ({(p,  σ p)| (p : V) } : Finset (V × V)) | σ : Equiv.Perm V } := by
@@ -112,7 +113,7 @@ lemma completeGraph_boxProd_completeGraph_cliqueSet :
 
 -- TODO(firsching): Make this proof faster
 set_option maxHeartbeats 400000 in
-@[category test]
+@[category test, AMS 5]
 example : Conway9.LocallyLinear := by
   dsimp [SimpleGraph.LocallyLinear]
   constructor
@@ -161,5 +162,3 @@ example : Conway9.LocallyLinear := by
     · dsimp [SimpleGraph.IsClique]
       fin_cases x1 <;> fin_cases x2 <;> fin_cases y1 <;> fin_cases y2 <;> simp at h ⊢
     · fin_cases x1 <;> fin_cases x2 <;> fin_cases y1 <;> fin_cases y2 <;> simp at h ⊢ <;> decide
-
-

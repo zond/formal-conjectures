@@ -14,11 +14,25 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
-import FormalConjectures.Util.Linters.ProblemStatusLinter
+import FormalConjectures.Util.Linters.CategoryLinter
+
+--Definitions aren't required to have a category attribute
+#guard_msgs in
+def foo : Nat := 1
 
 /-- warning: Missing problem category attribute -/
 #guard_msgs in
-theorem test_0 : 1 + 1 = 2 := by
+theorem test_theorem : 1 + 1 = 2 := by
+  rfl
+
+/-- warning: Missing problem category attribute -/
+#guard_msgs in
+lemma test_lemma : 1 + 1 = 2 := by
+  rfl
+
+/-- warning: Missing problem category attribute -/
+#guard_msgs in
+example : 1 + 1 = 2 := by
   rfl
 
 #guard_msgs in

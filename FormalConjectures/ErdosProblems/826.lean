@@ -29,7 +29,7 @@ $$
   \tau(n + k) \ll k?
 $$
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_826 : ∃ C > (0 : ℝ),
     { n | ∀ k ≥ 1, σ 0 (n + k) ≤ C * k }.Infinite :=
   sorry

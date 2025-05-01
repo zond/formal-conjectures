@@ -33,7 +33,7 @@ $$
 $$
 converge?
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_469 :
     letI A := {n : ℕ | 0 < n ∧ n.IsSumDivisors ∧ ∀ m < n, m ∣ n → ¬ m.IsSumDivisors}
     Summable fun n : A ↦ 1 / (n : ℝ) :=

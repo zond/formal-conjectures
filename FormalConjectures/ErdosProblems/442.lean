@@ -81,7 +81,7 @@ as $x\to\infty$?
 Note: the informal and formal statements follow the solution paper
 https://arxiv.org/pdf/2407.04226
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_442
     (A : Set ℕ)
     (hA : Tendsto (fun (x : ℝ) =>
@@ -107,7 +107,7 @@ $$
 \sum_{n, m\in A: n, m\leq x} \frac{1}{\operatorname{lcm}(n, m)}\ll\left(\sum_{n\in A: n\leq x} \frac{1}{n}\right)^2
 $$
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_442.variants.tao :
     ∃ (A : Set ℕ) (f : ℝ → ℝ) (C: ℝ) (hC : 0 < C) (hf : Tendsto f atTop (𝓝 0)),
       ∀ (x : ℝ),

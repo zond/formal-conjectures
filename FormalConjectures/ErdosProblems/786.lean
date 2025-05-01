@@ -39,7 +39,7 @@ Let $\epsilon > 0$. Is there some set $A\subset\mathbb{N}$ of density $> 1 - \ep
 such that $a_1\cdots a_r = b_1\cdots b_s$ with $a_i, b_j\in A$ can only hold when
 $r = s$?
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_786.parts.i (ε : ℝ) (hε : 0 < ε ∧ ε ≤ 1) :
     ∃ (A : Set ℕ) (δ : ℝ), 0 ∉ A ∧ 1 - ε < δ ∧ A.HasDensity δ ∧
       A.IsMulCardSet :=
@@ -50,19 +50,17 @@ Is there some set $A\subset\{1, ..., N\}$ of size $\geq (1 - o(1))N$ such that
 $a_1\cdots a_r = b_1\cdots b_s$ with $a_i, b_j\in A$ can only hold when
 $r = s$?
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_786.parts.ii : ∃ (A : ℕ → Set ℕ) (f : ℕ → ℝ) (_ : Tendsto f atTop (𝓝 0)),
-      ∀ N, A N ⊆ Set.Icc 1 (N + 1) ∧ (1 - f N) * N ≤ (A N).ncard ∧
-        (A N).IsMulCardSet :=
+      ∀ N, A N ⊆ Set.Icc 1 (N + 1) ∧ (1 - f N) * N ≤ (A N).ncard ∧ (A N).IsMulCardSet :=
   sorry
 
 /--
 An example of such a set with density $\frac 1 4$ is given by the integers $\equiv 2\pmod{4}$
 -/
-@[category research solved]
+@[category undergraduate, AMS 11]
 theorem erdos_786.parts.i.example (A : Set ℕ) (hA : A = { n | n % 4 = 2 }) :
-    A.HasDensity (1 / 4) ∧
-      A.IsMulCardSet :=
+    A.HasDensity (1 / 4) ∧ A.IsMulCardSet :=
   sorry
 
 /--

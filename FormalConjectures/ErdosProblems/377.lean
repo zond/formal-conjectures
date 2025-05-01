@@ -39,7 +39,7 @@ $$
 $$
 for all $n$?
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_377 : ∃ C > (0 : ℝ),
     ∀ (n : ℕ), sumInvPrimesNotDvdCentralBinom n ≤ C :=
   sorry
@@ -60,7 +60,7 @@ $$
 
 [EGRS75] Erdős, P. and Graham, R. L. and Ruzsa, I. Z. and Straus, E. G., _On the prime factors of $(\sp{2n}\sb{n})$_. Math. Comp. (1975), 83-92.
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_377.variants.limit.i (γ₀ : ℝ)
     (hγ₀ : γ₀ = ∑' (k : ℕ), (k + 2 : ℝ).log / 2 ^ (k + 2)) :
     Tendsto (fun (x : ℕ) => (1 : ℝ) / x * ∑ n ∈ Finset.Icc 1 x, sumInvPrimesNotDvdCentralBinom n)
@@ -83,7 +83,7 @@ $$
 
 [EGRS75] Erdős, P. and Graham, R. L. and Ruzsa, I. Z. and Straus, E. G., _On the prime factors of $(\sp{2n}\sb{n})$_. Math. Comp. (1975), 83-92.
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_377.variants.limit.ii (γ₀ : ℝ)
     (hγ₀ : γ₀ = ∑' (k : ℕ), (k + 2 : ℝ).log / 2 ^ (k + 2)) :
     Tendsto (fun (x : ℕ) =>
@@ -104,7 +104,7 @@ then for almost all integers $f(m) = \gamma_0 + o(1)$.
 
 [EGRS75] Erdős, P. and Graham, R. L. and Ruzsa, I. Z. and Straus, E. G., _On the prime factors of $(\sp{2n}\sb{n})$_. Math. Comp. (1975), 83-92.
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_377.variants.ae (γ₀ : ℝ) (hγ₀ : γ₀ = ∑' (k : ℕ), (k + 2 : ℝ).log / 2 ^ (k + 2)) :
     ∃ (o : ℕ → ℝ) (_ : Tendsto o atTop (𝓝 0)),
       ∀ᶠ n in cofinite, sumInvPrimesNotDvdCentralBinom n = γ₀ + o n :=
@@ -122,7 +122,7 @@ $$
 
 [EGRS75] Erdős, P. and Graham, R. L. and Ruzsa, I. Z. and Straus, E. G., _On the prime factors of $(\sp{2n}\sb{n})$_. Math. Comp. (1975), 83-92.
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_377.variants.ub : ∃ c < (1 : ℝ),
       ∀ᶠ n in atTop, sumInvPrimesNotDvdCentralBinom n ≤ c * (n : ℝ).log.log :=
   sorry

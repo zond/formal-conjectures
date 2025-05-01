@@ -42,7 +42,7 @@ structure BoundedDiscCover (S : Set M) (r : ℝ) (ι : Type v) where
 
 variable (S : Set M) (r : ℝ)
 
-noncomputable def BoundedDiscCover.empty [Nonempty M] (r : ℝ) (hr : 0 < r) :
+noncomputable def boundedDiscCover_empty [Nonempty M] (r : ℝ) (hr : 0 < r) :
   (BoundedDiscCover (∅ : Set M) r (PUnit : Type v)) where
   C := fun _ => Classical.ofNonempty
   R := fun _ => r
@@ -55,7 +55,7 @@ noncomputable def BoundedDiscCover.empty [Nonempty M] (r : ℝ) (hr : 0 < r) :
     bound
   h_pos := by aesop
 
-
+@[category API, AMS 54]
 lemma BoundedDiscCover.bound_nonneg_of_nonempty
     (S : Set M) (hS : S.Nonempty) (r : ℝ) (ι : Type v)
     (bdc : BoundedDiscCover S r ι) :
@@ -75,7 +75,7 @@ Let $f(z) ∈ ℂ[z]$ be a monic non-constant polynomial. Can the set
 $\{z ∈ ℂ : |f(z)| ≤ 1\}$
 be covered by a set of closed discs the sum of whose radii is $≤ 2$?
 -/
-@[category research open]
+@[category research open, AMS 30]
 theorem erdos_509
     (f : ℂ[X]) (hf : f.Monic) (hf' : f.natDegree ≠ 0) : ∃ (ι : Type),
     Nonempty (BoundedDiscCover {z | ‖f.eval z‖ ≤ 1} 2 ι) := by
@@ -90,7 +90,7 @@ See *Sur les systèmes de fonctions holomorphes à variétés linéaires
 lacunaires et leurs applications*, Henri Cartan,
 http://www.numdam.org/article/ASENS_1928_3_45__255_0.pdf
 -/
-@[category research solved]
+@[category research solved, AMS 30]
 theorem erdos_509.variants.Cartan_bound
     (f : ℂ[X]) (hf : f.Monic) (hf' : f.natDegree ≠ 0) : ∃ (ι : Type),
     Nonempty (BoundedDiscCover {z | ‖f.eval z‖ ≤ 1} (2*rexp 1) ι) := by
@@ -102,7 +102,7 @@ $\{z ∈ ℂ : |f(z)| ≤ 1\}$
 be covered by a set of closed discs the sum of whose radii is $≤ 2.59$?
 Solution: True. This is due to Pommerenke.
 -/
-@[category research solved]
+@[category research solved, AMS 30]
 theorem erdos_509.variants.Pommerenke_bound
     (f : ℂ[X]) (hf : f.Monic) (hf' : f.natDegree ≠ 0) : ∃ (ι : Type),
     Nonempty (BoundedDiscCover {z | ‖f.eval z‖ ≤ 1} 2.59 ι) := by
@@ -114,7 +114,7 @@ If it is connected, can the set $\{z ∈ C : |f(z)| ≤ 1\}$
 be covered by a set of circles the sum of whose radii is $≤ 2$?
 Solution: True. This is due to Pommerenke.
 -/
-@[category research solved]
+@[category research solved, AMS 30]
 theorem erdos_509.variants.Pommerenke_connected
     (f : ℂ[X]) (hf : f.Monic) (hf' : f.natDegree ≠ 0)
     (hf'' : IsConnected {z | ‖f.eval z‖ ≤ 1}) : ∃ (ι : Type),

@@ -29,7 +29,7 @@ $$
   \max_{n\leq x}\frac{f_{\max}(n)}{f_{\min}(n)}.
 $$
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_694 (max min : ℕ → ℕ)
     (hmax : ∀ n, IsGreatest (Nat.totient ⁻¹' {n}) (max n))
     (hmin : ∀ n, IsLeast (Nat.totient ⁻¹' {n}) (min n))
@@ -43,7 +43,7 @@ theorem erdos_694 (max min : ℕ → ℕ)
 Carmichael has asked whether there is an integer $n$ for which $\phi(m) = n$ has
 exactly one solution, that is $\frac{f_{\max}(n)}{f_{\min}(n)} = 1$.
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_694.variants.carmichael :
     ∃ n > 0, ∃! m, Nat.totient m = n :=
   sorry
@@ -52,7 +52,7 @@ theorem erdos_694.variants.carmichael :
 Erdős has proved that if there exists an integer $n$ for which $\phi(m) = n$ has
 exactly one solution, then there must be infinitely many such $n$.
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_694.variants.inf_unique (h : ∃ n > 0, ∃! m, Nat.totient m = n) :
     { n | ∃! m, Nat.totient m = n }.Infinite :=
   sorry

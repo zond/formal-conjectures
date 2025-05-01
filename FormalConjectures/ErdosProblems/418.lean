@@ -26,7 +26,7 @@ open scoped ArithmeticFunction
 /--
 Are there infinitely many integers not of the form $n - \phi(n)$?
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_418 :
     { (n - n.totient : ℕ) | n }ᶜ |>.Infinite :=
   sorry
@@ -35,7 +35,7 @@ theorem erdos_418 :
 It follows from the Goldbach conjecture that every odd number can be
 written as $n - \phi(n)$.
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_418.variants.conditional
     (goldbach : ∀ (n : ℕ) (_ : 2 < n) (_ : Even n),
       ∃ p q, Prime p ∧ Prime q ∧ n = p + q)
@@ -50,7 +50,7 @@ $\sigma(n) - n$.
 
 [Er73b] Erdős, P., _Über die Zahlen der Form $\sigma (n)-n$ und $n-\phi(n)$_. Elem. Math. (1973), 83-86.
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_418.variants.sigma :
     ∃ (S : Set ℕ) (hS : ∀ α, S.HasDensity α → 0 < α),
       S ⊆ { (σ 1 n - n : ℕ) | n }ᶜ :=
@@ -63,7 +63,7 @@ form $n - \phi(n)$.
 
 [BrSc95] Browkin, J. and Schinzel, A., _On integers not of the form {$n-\phi(n)$}_. Colloq. Math. (1995), 55-58.
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_418.variants.soln :
     { 2 ^ (k + 1) * 509203 | k } ⊆ { (n - n.totient : ℕ) | n }ᶜ :=
   sorry
@@ -72,7 +72,7 @@ theorem erdos_418.variants.soln :
 It seems to be open whether there is a positive density set of integers
 not of the form $n - \phi(n)$.
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_418.variants.density :
     ∃ (S : Set ℕ) (hS : ∀ α, S.HasDensity α → 0 < α),
       S ⊆ { (n - n.totient : ℕ) | n }ᶜ :=

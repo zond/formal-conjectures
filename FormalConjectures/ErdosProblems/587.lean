@@ -17,9 +17,9 @@ limitations under the License.
 import FormalConjectures.Util.ProblemImports
 
 /-!
-# Erdős Problem 509
+# Erdős Problem 597
 
-*Reference:* [erdosproblems.com/509](https://www.erdosproblems.com/509)
+*Reference:* [erdosproblems.com/587](https://www.erdosproblems.com/587)
 -/
 /--
 `MaxNotSqSum N` is the size of the largest subset `A` of
@@ -33,6 +33,7 @@ def MaxNotSqSum (N : ℕ) : ℕ :=
 /--
 Nguyen and Vu proved that `|A|≪N^(1/3) * (log N)^O(1)`
 -/
+@[category research solved, AMS 11]
 theorem erdos_587.variants.nguyen_vu : ∃ᵉ (O > 0) (O' > 0),
     ∀ᶠ N in Filter.atTop, (MaxNotSqSum N : ℝ) ≤ O' * N^(1 / 3 : ℝ) * (N : ℝ).log^O := by
   sorry

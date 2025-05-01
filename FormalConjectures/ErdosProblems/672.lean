@@ -27,7 +27,7 @@ def Erdos672With (k l : ℕ) [NeZero k] : Prop :=
   ¬ ∃ q, ∏ i, s i = q ^ l
 
 /-- Can the product of an arithmetic progression of positive integers of length ≥ 4 be a perfect power? -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_672
     (k l : ℕ) (hk : 4 ≤ k) (hl : 1 < l)
     (hk' : NeZero k := ⟨Nat.not_eq_zero_of_lt hk⟩) :
@@ -35,6 +35,7 @@ theorem erdos_672
   sorry
 
 /-- According to https://www.erdosproblems.com/672, Euler proved this. -/
+@[category research solved, AMS 11]
 lemma erdos_672.variants.euler :
     Erdos672With 4 2 :=
   sorry
@@ -43,6 +44,7 @@ lemma erdos_672.variants.euler :
 
 [Ob51] Oblath, Richard, Eine Bemerkung über Produkte aufeinander folgender Zahlen.
 J. Indian Math. Soc. (N.S.) (1951), 135-139. -/
+@[category research solved, AMS 11]
 lemma erdos_672.variants.oblath :
     Erdos672With 5 2 ∧ Erdos672With 3 3 ∧ Erdos672With 3 4 ∧ Erdos672With 3 5 :=
   sorry

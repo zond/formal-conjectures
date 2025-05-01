@@ -24,12 +24,14 @@ import FormalConjectures.Util.ProblemImports
 /--Let $σ_1(n)=σ(n)$, the sum of divisors function, and $σ_k(n) = σ(σ_{k−1}(n))$-/
 abbrev σ (k : ℕ) : ℕ → ℕ := (ArithmeticFunction.sigma 1)^[k]
 
+@[category API, AMS 11]
 lemma sigma_0 : σ 0 = id := rfl
 
+@[category API, AMS 11]
 lemma sigma_1 : σ 1 = ArithmeticFunction.sigma 1 := rfl
 
 /--Is it true that, for every $m, n ≥ 2$, there exist some $i, j$ such that $σ_i(m) = σ_j(n)$?-/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_412 (m n : ℕ) (hm : 2 ≤ m) (hn : 2 ≤ n) :
     ∃ i j, σ i m = σ j n := by
   sorry

@@ -34,11 +34,11 @@ theorem erdos_316 : ∃ A : Finset ℕ, 0 ∉ A ∧ 1 ∉ A ∧
   sorry
 
 /-- It is not true if `A` is a multiset (easier) -/
-@[category undergraduate]
+@[category high_school, AMS 5, AMS 11]
 lemma erdos_316.variants.multiset : ∃ A : Multiset ℕ, 0 ∉ A ∧ 1 ∉ A ∧
   (A.map ((1 : ℚ) / ·)).sum < 2 ∧ ∀ (A₁ A₂ : Multiset ℕ),
     A = A₁ + A₂ →
-      1 ≤ (A₁.map ((1 : ℚ) / ·)).sum∨ 1 ≤ (A₂.map ((1 : ℚ) / ·)).sum := by
+      1 ≤ (A₁.map ((1 : ℚ) / ·)).sum ∨ 1 ≤ (A₂.map ((1 : ℚ) / ·)).sum := by
   sorry
 
 

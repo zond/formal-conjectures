@@ -28,7 +28,7 @@ that
 $$
   \gcd(a, b)\leq a/|A|.
 $$ -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_402 (A : Finset ℕ) (h₁ : 0 ∉ A) (h₂ : A.Nonempty) : ∃ᵉ (a ∈ A) (b ∈ A),
     a.gcd b ≤ (a / A.card : ℚ) :=
   sorry
@@ -43,7 +43,7 @@ quantfiers to use for "where equality is achieved". See Theorem 1.1 there.
 TODO(firsching): Consider if we should have the other direction here as well or
 an iff statement.
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_402.variants.equality (A : Finset ℕ) (h₁ : 0 ∉ A) (h₂ : A.Nonempty)
     (hA : ∀ n, A ≠ Finset.Icc 1 n ∧
     A ≠ ((Finset.Icc 1 n).image fun i => ((Finset.Icc 1 n).lcm id) / i) ∧
@@ -61,7 +61,7 @@ $\max_{i, j} \frac{a_i}{(a_i, a_j)} \geq n$.
 (ii) If equality holds then the system $\{a_1, a_2, ..., a_n\}$ is either of the
 type $\{k, 2k, ..., nk\}$ or of the type
 $\left\{\frac{k}{1}, \frac{k}{2}, ..., \frac{k}{n}\right\}$-/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_402.variants.szegedy_zaharescu_weak : ∀ᶠ n in atTop,
     ∀ (A : Finset ℕ), A.card = n → 0 ∉ A →
       (n ≤ (A ×ˢ A).sup (fun x => x.1 / x.1.gcd x.2)) ∧

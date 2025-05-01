@@ -26,7 +26,7 @@ import FormalConjectures.Util.ProblemImports
 Let $x_1,x_2,...∈[0, 1]$ be an infinite sequence. Is it true that there are infinitely many $m, n$
 such that $|x_{m+n} - x_n| ≤ \frac 1 {\sqrt 5 n}$?
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_480
     (x : ℕ → ℝ) (hx : ∀ n, x n ∈ Set.Icc 0 1) :
     {(m, n) | (m) (n) (_ : m ≠ 0) (_ : |x (m + n) - x n| ≤ 1 / (√5 * n))}.Infinite := by
@@ -38,7 +38,7 @@ for which $|x_{m+n} - x_m| < \frac 1 {(c−ϵ)n}$, where
 $c= 1 + \sum_{k≥1} \frac 1 {F_{2k}} =2.535370508...$
 and $F_m$ is the $m$th Fibonacci number. This constant is best possible.
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_480.variants.chung_graham :
     let c : ℝ := 1 + ∑' (k : ℕ+), (1 : ℝ) / (2*k : ℕ).fib
     IsGreatest {C : ℝ | C > 0 ∧ ∀ (x : ℕ → ℝ) (hx : ∀ n, x n ∈ Set.Icc 0 1),

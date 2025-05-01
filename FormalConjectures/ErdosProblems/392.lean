@@ -35,7 +35,7 @@ $$
   A(n) = \frac{n}{2} - \frac{n}{2\log n} + o\left(\frac{n}{\log n}\right)?
 $$
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_392 (A : ℕ → ℕ)
     (hA : ∀ n > 0, IsLeast
       { t + 1 | (t) (_ : ∃ a : Fin (t + 1) → ℕ, (n)! = ∏ i, a i ∧ Monotone a ∧ a t ≤ n ^ 2) }
@@ -49,7 +49,7 @@ $$
   A(n) = n - \frac{n}{log n} + o\left(\frac{n}{\log n}\right)
 $$
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_392.variants.lower (A : ℕ → ℕ)
     (hA : ∀ n > 0, IsLeast
       { t + 1 | (t) (_ : ∃ a : Fin (t + 1) → ℕ, (n)! = ∏ i, a i ∧ Monotone a ∧ a t ≤ n) }

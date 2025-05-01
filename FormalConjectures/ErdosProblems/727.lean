@@ -26,7 +26,7 @@ open scoped Nat
 /--
 Let $k ≥ 2$. Does $((n+k)!)^2∣(2n)!$ hold for infinitely many $n$?
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_727
     (k : ℕ)
     (hk : k > 1) :
@@ -37,7 +37,7 @@ theorem erdos_727
 It is open even for $k = 2$.
 Let $k = 2$. Does $((n+k)!)^2∣(2n)!$ hold for infinitely many n?
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_727_variants.k_2
     (k : ℕ)
     (hk : k = 2) :
@@ -49,7 +49,7 @@ Balakran proved this holds for $k = 1$.
 
 Let $k = 1$. Does $((n+k)!)^2∣(2n)!$ for infinitely many $n$?
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_727_variants.k_1
     (k : ℕ)
     (hk : k = 1) :
@@ -61,7 +61,7 @@ Erdős, Graham, Ruzsa, and Straus observe that the method of Balakran can be fur
  such that
 $(n+k)!(n+1)!∣(2n)!$
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_727_variants.k_1_2
     (k : ℕ)
     (hk : k > 1) :

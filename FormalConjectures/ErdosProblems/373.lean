@@ -34,7 +34,7 @@ abbrev S : Set (ℕ × List ℕ) :=
 Show that the equation `n!=a_1!a_2!···a_k!`, with `n−1 > a_1 ≥ a_2 ≥ ··· ≥ a_k`, has
 only finitely many solutions.
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_373 : S.Finite := by
   sorry
 
@@ -43,7 +43,7 @@ Show that if `P(n(n+1)) / log n → ∞` where `P(m)` denotes the largest prime 
 the equation `n!=a_1!a_2!···a_k!`, with `n−1 > a_1 ≥ a_2 ≥ ··· ≥ a_k`, has only
 finitely many solutions.
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_373.variants.of_limit
     (H : Filter.atTop.Tendsto (fun (n : ℕ) => (n*(n+1)).maxPrimeFac / (n : ℝ).log) Filter.atTop) :
     S.Finite := by
@@ -60,7 +60,7 @@ Show that if `P(n(n−1)) > 4 log n` for large enough `n`, where `P(m)` denotes 
 largest prime factor of `m`, then the equation `n!=a_1!a_2!···a_k!`, with
 `n−1 > a_1 ≥ a_2 ≥ ··· ≥ a_k`, has only finitely many solutions.
 -/
-@[category research solved]
+@[category research solved, AMS 11]
 theorem erdos_373.variants.of_lower_bound
     (H : ∀ᶠ (n : ℕ) in Filter.atTop, 4*(n : ℝ).log < (n*(n-1 : ℕ)).maxPrimeFac) :
     S.Finite := by
@@ -70,7 +70,7 @@ theorem erdos_373.variants.of_lower_bound
 Hickerson conjectured the largest solution the equation `n!=a_1!a_2!···a_k!`, with
 `n−1 > a_1 ≥ a_2 ≥ ··· ≥ a_k`, is `16!=14!5!2!`.
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_373.variants.maximal_solution :
     (16, [14, 5, 2]) ∈ S ∧ ∀ s ∈ S, s.fst ≤ 16 := by
   sorry
@@ -79,7 +79,7 @@ theorem erdos_373.variants.maximal_solution :
 Surányi was the first to conjecture that the only non-trivial solution to `a!b!=n!`
 is `6!7!=10!`.
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_373.variants.suranyi :
     {(n, a, b) : ℕ × ℕ × ℕ | n ! = a ! * b ! ∧ 1 < n ∧ 1 < a ∧ 1 < b ∧ b ≤ a ∧ a + 1 ≠ n}
       = {(10, 7, 6)} := by

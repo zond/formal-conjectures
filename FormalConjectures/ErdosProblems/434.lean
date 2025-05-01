@@ -42,7 +42,7 @@ maximises the number of integers not representable as the sum of finitely
 many elements from $A$ (with repetitions allowed)?
 Is it $\{n, n - 1, ..., n - k + 1\}$?
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_434.parts.i (n k : ℕ) (hn : 1 ≤ n) (hk : 1 ≤ k) (h : k ≤ n) :
     IsGreatest
       { Nat.NcardUnrepresentable S | (S : Set ℕ) (_ : S ⊆ Set.Icc 1 n) (_ : S.ncard = k) }
@@ -54,7 +54,7 @@ Let $k\leq n$. Out of all $A\subseteq\{1, \dots, n\}$ of size $|A| = k$,
 does $A = \{n, n - 1, ..., n - k + 1\}$ maximise the number of integers
 not representable as the sum of finitely many elements from $A$ (with repetitions allowed)?
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_434.parts.ii (n k : ℕ) (hn : 1 ≤ n) (hk : 1 ≤ k) (h : k ≤ n) :
     IsGreatest
       { Nat.NcardUnrepresentable S | (S : Set ℕ) (_ : S ⊆ Set.Icc 1 n) (_ : S.ncard = k) }

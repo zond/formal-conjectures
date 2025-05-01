@@ -28,7 +28,7 @@ abbrev S := {(n, m) : ℕ × ℕ | n ≠ m ∧ ((2*n).choose n).primeFactors = (
 Are there infinitely many pairs of integers $n ≠ m$ such that $\binom{2n}{n}$
 and $\binom{2m}{m}$ have the same set of prime divisors?
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_730 : S.Infinite := by
   sorry
 
@@ -36,7 +36,7 @@ theorem erdos_730 : S.Infinite := by
 /--
 For example, $(87,88)$ and $(607,608)$ are such pairs.
 -/
-@[category research solved]
+@[category high_school, AMS 11]
 theorem erdos_730.variants.explicit_pairs :
     {(87, 88), (607, 608)} ⊆ S := by
   sorry
@@ -44,14 +44,14 @@ theorem erdos_730.variants.explicit_pairs :
 /--
 Show that for all $n$, the binomial coefficient $\binom{2n}{n}$ is even.
 -/
-@[category research solved]
+@[category high_school]
 theorem erdos_730.variants.two_div_forall (n : ℕ) (h : 0 < n) : 2 ∣ (2*n).choose n := by
   sorry
 
 /--
 Show that $(n, n+1) ∈ S$ if and only if for all odd primes $p ≤ n$ we have $n ∉ \{\frac {p−1} 2, p−1\} \mod p$.
 -/
-@[category research solved]
+@[category undergraduate]
 theorem erdos_730.variants.succ_pair_criterion (n : ℕ) (h : 2 < n) :
     (n, n+1) ∈ S ↔ ∀ p ∈ Set.Ioc 2 n, ∀ [hp : Fact p.Prime], (n : ZMod p) ≠ (p-1) / 2 ∧
       (n : ZMod p) ≠ p-1 := by
@@ -62,7 +62,7 @@ open scoped Topology in
 Standard heuristics then predict there should be $≫ \frac x {(\log x)^2}$
 many $n ≤ x$ such that $(n, n+1) ∈ S$.
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem erdos_730.variants.succ_pair_growth :
     let C (x : ℝ) : ℝ := (Finset.Icc 0 ⌊x⌋₊ |>.filter fun n => (n, n+1) ∈ S).card
     Filter.Tendsto (fun (x : ℝ) => x / (x.log^2) / C x) Filter.atTop (𝓝 0) := by

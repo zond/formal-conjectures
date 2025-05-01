@@ -28,6 +28,7 @@ Let $f(n)$ be an additive function (so that $f(ab)=f(a)+f(b)$
 if $(a,b)=1$ such that $\limsup_{p,k} f(p^k) \log(p^k) = ∞$.
 Is it true that $\limsup_n (f(n+1)−f(n))/ \log n = ∞$?
 -/
+@[category research open, AMS 11]
 theorem erdos_897.parts.i
     (f : ℕ → ℝ)
     (hf : ∀ᵉ (a > 0) (b > 0), a.Coprime b → f (a * b) = f a + f b)
@@ -40,6 +41,7 @@ Let $f(n)$ be an additive function (so that $f(ab)=f(a)+f(b)$
 if $(a,b)=1$) such that $\limsup_{p,k} f(p^k) \log(p^k) = ∞$.
 Is it true that $\limsup_n f(n+1)/ f(n) = ∞$?
 -/
+@[category research open, AMS 11]
 theorem erdos_897.parts.ii
     (f : ℕ → ℝ)
     (hf : ∀ᵉ (a > 0) (b > 0), a.Coprime b → f (a * b) = f a + f b)
@@ -52,6 +54,7 @@ theorem erdos_897.parts.ii
 Wirsing proved that if $|f(n+1)−f(n)| ≤ C$ then $f(n) = c \log n + O(1)$
 for some constant $c$.
 -/
+@[category research open, AMS 11]
 theorem erdos_897.variants.log_growth
     (f : ℕ → ℝ)
     (hf : ∀ᵉ (a > 0) (b > 0), a.Coprime b → f (a * b) = f a + f b)
@@ -66,6 +69,7 @@ if $(a,b)=1$) such that $\limsup_{p,k} f(p^k) \log(p^k) = ∞$ and $f(p^k) = f(p
 or $f(p^k) = kf(p)$.
 Is it true that $\limsup_n (f(n+1)−f(n))/ log n = ∞$?
 -/
+@[category research open, AMS 11]
 theorem erdos_897.variants.parts.i
     (f : ℕ → ℝ)
     (hf : ∀ᵉ (a > 0) (b > 0), a.Coprime b → f (a * b) = f a + f b)
@@ -80,6 +84,7 @@ if $(a,b)=1$) such that $\limsup_{p,k} f(p^k) \log(p^k) = ∞$ and $f(p^k) = f(p
 or $f(p^k) = kf(p)$.
 Is it true that $\limsup_n f(n+1)/f(n) = ∞$?
 -/
+@[category research open, AMS 11]
 theorem erdos_897.variants.parts.ii
     (f : ℕ → ℝ)
     (hf : ∀ᵉ (a > 0) (b > 0), a.Coprime b → f (a * b) = f a + f b)

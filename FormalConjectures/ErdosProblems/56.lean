@@ -26,20 +26,18 @@ Say a set of natural numbers is `k`-weakly divisible if any `k+1` elements
 of `A` are not relatively prime.
 -/
 def WeaklyDivisible (k : ℕ) (A : Finset ℕ) : Prop :=
-    ∀ s ∈ A.powersetCard (k+1), Pairwise (¬ Nat.Coprime · ·)
+    ∀ s ∈ A.powersetCard (k+1), ¬ Pairwise Nat.Coprime
 
 @[category API, AMS 11]
 lemma weaklyDivisible_empty (k : ℕ): WeaklyDivisible k {} := by
   simp [WeaklyDivisible]
 
 @[category API, AMS 11]
-lemma weaklyDivisible_one (k : ℕ): WeaklyDivisible k {1} ↔ k ≠ 0 := by
+lemma weaklyDivisible_one (k : ℕ) : WeaklyDivisible k {1} := by
   simp [WeaklyDivisible, Pairwise]
-  by_cases hk: k = 0 <;> simp only [hk]
-  · simp only [forall_const, not_true_eq_false, iff_false, not_forall]
-    use 1, 2
-    norm_num
-  · tauto
+  intro hk
+  use 4, 2
+  norm_num
 
 --TODO(lezeau): we shouldn't need to open `Classical` here!
 open Classical in
@@ -57,9 +55,9 @@ example (k : ℕ) : MaxWeaklyDivisible 0 k = 0 := by
 open Classical
 
 @[category test, AMS 11]
-example (k : ℕ) : MaxWeaklyDivisible 1 k = if k = 0 then 0 else 1 := by
+example (k : ℕ) : MaxWeaklyDivisible 1 k = 1 := by
   simp [MaxWeaklyDivisible]
-  have : (Finset.filter (WeaklyDivisible k) ({1} : Finset ℕ).powerset) = if k = 0 then {{}} else {{}, {1}} := by
+  have : (Finset.filter (WeaklyDivisible k) ({1} : Finset ℕ).powerset) = {{}, {1}} := by
     show Finset.filter (WeaklyDivisible k) {∅, {1}} = _
     rw [Finset.filter_insert (WeaklyDivisible k) ({} : Finset ℕ) {{1}}]
     simp only [weaklyDivisible_empty k, Finset.filter_singleton, weaklyDivisible_one]

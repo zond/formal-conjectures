@@ -39,7 +39,7 @@ $$
   \mathbb{P}[B(p,m) \geq m/2] \geq 1 - \Phi\left(\frac{(1/2-p)\sqrt{m}}{\sigma}\right) + \frac 1 2\binom{m}{m/2}\sigma^{m}.
 $$
 -/
-@[category research open]
+@[category research open, AMS 60]
 theorem arxiv.id0911_2077.conjecture6_3
   (p : ℝ) (h_p : p ∈ Set.Ioo 0 (1 / 2)) (k : ℕ) (hk : 0 < k)
   (hp' : (.ofReal p : ℝ≥0∞) ≤ 1 :=

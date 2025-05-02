@@ -40,8 +40,8 @@ def IsZeroOne (P : ℝ[X]) := P.coeffs ⊆ {1}
  If $R(x) = P(x)Q(x)$ is a $0,1$ polynomial (coefficients only from $\{0,1\}$), then $P(x)$ and $Q(x)$
  are also $0, 1$ polynomials.
 -/
-@[category research open]
+@[category research open, AMS 12]
 theorem mathoverflow_339137 (P Q R : ℝ[X]) (hP: P.Monic) (hQ : Q.Monic)
     (hp : ∀ c ∈ P.coeffs, 0 ≤ c) (hq : ∀ c ∈ Q.coeffs, 0 ≤ c)
-    (h : R = P * Q) (hR : IsZeroOne R):
+    (h : R = P * Q) (hR : IsZeroOne R) :
     IsZeroOne P ∧ IsZeroOne Q := sorry

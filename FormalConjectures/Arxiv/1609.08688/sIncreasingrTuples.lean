@@ -181,7 +181,7 @@ def IsComparableSet₂ {α : Type*} [LT α] (s : List (Fin 3 → α)) : Prop :=
 
 open Filter in
 /-- $F(n) \leq n^2 / \exp(\Omega(\log^*(n)))$. -/
-@[category research solved]
+@[category research solved, AMS 5]
 theorem maximalLength_le_isBigO : ∃ Ω : ℕ → ℝ,
     (fun (n : ℕ) => (Real.iteratedLog n : ℝ)) =O[atTop] Ω ∧
       ∀ n, F n ≤ n ^ 2 / Real.exp (Ω n) :=
@@ -217,13 +217,13 @@ example : [![1, 1, 1]] ⊗₂ [![1, 1, 1]] = toLex [toLex ![(1, 1), (1, 1), (1, 
 
 /-- Suppose that for some $n$ we have $F(n) = n ^ {\alpha}$. Then there are arbitrarily
 large $m$ such that $F(m) \geq m^{\alpha}$. -/
-@[category research solved]
+@[category research solved, AMS 5]
 theorem maximalLength_pow {n e : ℕ} (h : F n = n ^ e) :
     ∀ᶠ m in Filter.atTop, m ^ e ≤ F m :=
   sorry
 
 /-- $F(n) \leq n^{3/2}$. -/
-@[category research open]
+@[category research open, AMS 5]
 theorem maximalLength_le_strong (n : ℕ) : F n ≤ n.sqrt ^ 3 := sorry
 
 end Arxiv.id160908688

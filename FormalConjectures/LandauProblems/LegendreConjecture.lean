@@ -25,7 +25,7 @@ import FormalConjectures.Util.ProblemImports
 /--
 Does there always exist at least one prime between consecutive perfect squares?
 -/
-@[category research open]
+@[category research open, AMS 11]
 theorem legendre_conjecture (n : ℕ) (hn : 1 ≤ n) :
     ∃ p ∈ Set.Ioo (n^2) ((n+1)^2), Prime p := by
   sorry

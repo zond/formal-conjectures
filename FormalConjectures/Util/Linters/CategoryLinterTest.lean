@@ -22,8 +22,22 @@ def foo : Nat := 1
 
 /-- warning: Missing problem category attribute -/
 #guard_msgs in
+/-- A highly non-trivial theorem -/
 theorem test_theorem : 1 + 1 = 2 := by
   rfl
+
+/-- warning: Missing problem category attribute -/
+#guard_msgs in
+/-- A highly non-trivial theorem with a helpful hypothesis -/
+theorem test_theorem_with_hypothesis (_ : True) : 1 + 1 = 2 := by
+  rfl
+
+/-- warning: Missing problem category attribute -/
+#guard_msgs in
+/-- A highly non-trivial theorem with two helpful hypotheses -/
+theorem test_theorem_with_hypotheses (_ : True) (_ : False): 1 + 1 = 2 := by
+  rfl
+
 
 /-- warning: Missing problem category attribute -/
 #guard_msgs in
@@ -33,6 +47,11 @@ lemma test_lemma : 1 + 1 = 2 := by
 /-- warning: Missing problem category attribute -/
 #guard_msgs in
 example : 1 + 1 = 2 := by
+  rfl
+
+/-- A highly non-trivial theorem with a helpful hypothesis -/
+@[category research open]
+theorem test_theorem_with_docstring : 1 + 1 = 2 := by
   rfl
 
 #guard_msgs in

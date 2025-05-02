@@ -29,11 +29,11 @@ problems and background results/sanity checks.
 open Lean Elab Meta Linter Command Parser Term
 
 /-- Checks if a command has the `category` attribute. -/
-private def getCategory
+private def toCategory
   (stx : TSyntax ``Command.declModifiers) :
     CommandElabM (Array <| TSyntax ``attrInstance) := do
   match stx with
-  | `(declModifiers| @[$[$atts],*]) =>
+  | `(declModifiers| $(_)? @[$[$atts],*] $(_)? $(_)? $(_)? $(_)?) =>
     atts.filterM fun att ↦ do
       match att with
       | `(attrInstance | category $_) => return true
@@ -46,13 +46,11 @@ has been given a problem category attribute. -/
 def problemStatusLinter : Linter where
   run := fun stx => do
     match stx with
-      | `(command| $a:declModifiers theorem $_ : $_ := $_)
-      | `(command| $a:declModifiers lemma $_ : $_ := $_)
-      | `(command| $a:declModifiers example : $_ := $_) =>
-        let prob_status ← getCategory a
-        match prob_status.size with
-        | 0 => logWarningAt stx "Missing problem category attribute"
-        | _ => pure ()
+      | `(command| $a:declModifiers theorem $_ $_:bracketedBinder* : $_ := $_)
+      | `(command| $a:declModifiers lemma $_ $_:bracketedBinder* : $_ := $_)
+      | `(command| $a:declModifiers example $_:bracketedBinder* : $_ := $_) =>
+        let prob_status ← toCategory a
+        if prob_status.size == 0 then logWarningAt stx "Missing problem category attribute"
       | _ => return
 
 initialize do

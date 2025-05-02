@@ -48,6 +48,7 @@ from various places, including:
 We are also interested in the formalized statement of solved variants of open
 conjectures and solved statements from dedicated problem lists.
 
+
 ### How to Contribute
 
 1.  Fork the repository on GitHub.
@@ -143,3 +144,20 @@ To minimize friction when adding problem statements that need definitions that
 are not yet in mathlib, such definitions can be added to the `ForMathlib`
 directory. This ensures that the addition of these problems to
 formal-conjectures is not locked to the mathlib release cadence.
+
+## Licensing
+
+Copyright 2025 Google LLC
+All software is licensed under the Apache License, Version 2.0 (Apache 2.0); you may not use this file except in compliance with the Apache 2.0 license. You may obtain a copy of the Apache 2.0 license at: https://www.apache.org/licenses/LICENSE-2.0
+
+All other materials are licensed under the Creative Commons Attribution 4.0 International License (CC-BY). You may obtain a copy of the CC-BY license at: https://creativecommons.org/licenses/by/4.0/legalcode.
+
+The content may be based on third party sources and may in some cases include third party content. The original source for each conjecture is indicated by a URL within the source file. Third party content may be subject to different licensing requirements. In particular:
+
+ - Material from Wikipedia articles and MathOverflow is released under the Creative Commons Attribution-Share-Alike License 4.0.
+ - Material from bbchallenge.org is used under the Creative Commons Attribution 4.0 International License.
+ - Material from the Equational Theories Project is used under Apache-2.0.
+ - Material from arXiv is used under the licence applicable to the relevant paper, as indicated at the URL within the source file.
+
+Unless required by applicable law or agreed to in writing, all software and materials distributed here under the Apache 2.0 or CC-BY license are distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the licenses for the specific language governing permissions and limitations under those licenses.
+This is not an official Google product.

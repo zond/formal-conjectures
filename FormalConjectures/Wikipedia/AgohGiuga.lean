@@ -79,7 +79,7 @@ A Carmichael number is a composite number `n` such that for all `b ≥ 1`,
 we have `b^n ≡ b (mod n)`.
 -/
 def IsCarmichael (n : ℕ) : Prop :=
-  ∀ b ≥ 1, n.FermatPsp b
+  ∀ b ≥ 1, n.Coprime b → n.FermatPsp b
 
 -- Wikipedia URL: https://en.wikipedia.org/wiki/Carmichael_number
 /-- A composite number `a` is Carmichael if and only if it is squarefree

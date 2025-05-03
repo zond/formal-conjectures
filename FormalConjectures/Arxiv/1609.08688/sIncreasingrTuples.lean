@@ -156,8 +156,7 @@ have two triples that are equal in their first two coordinates. -/
 @[category API]
 lemma exists_pair_of_mem_Icc {s : List (Fin 3 → ℕ)} {n : ℕ} (hn : 2 ≤ n)
     (hs₁ : ∀ a ∈ s, Set.range a ⊆ Set.Icc 1 n) (hs₂ : s.length > n ^ 2) :
-    ∃ᵉ (a ∈ s) (b ∈ s),
-      a ≠ b ∧ a 0 = b 0 ∧ a 1 = b 1 :=
+    ∃ (i j : Fin s.length), i ≠ j ∧ s[i] 0 = s[j] 0 ∧ s[i] 1 = s[j] 1 :=
   sorry
 
 /-- For all $n$ we have $F(n) \leq n^2$. -/

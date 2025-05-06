@@ -77,6 +77,10 @@ https://mathscinet.ams.org/mathscinet/msc/pdfs/classifications2020.pdf
 
 
 In order to access the list from within a Lean file, use the `#AMS` command.
+
+Note: the current implementation of the attribute includes all the main categories
+in the AMS classification for completeness. Some are not relevant to this repository.
+
 -/
 
 -- TODO(lezeau): can we/should we do this using

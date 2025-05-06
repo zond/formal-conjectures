@@ -284,7 +284,7 @@ def getStatementTags : m (Std.HashMap Category (Array CategoryTag)) := do
 
 def getCategoryStats : m (Category → Nat) := do
   let cats ← getStatementTags
-  return fun c => (cats.get! c).size
+  return fun c ↦ (cats.map <| fun _ arr ↦ arr.size).getD c 0
 
 end Helper
 

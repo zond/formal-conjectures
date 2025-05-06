@@ -51,6 +51,8 @@ conjectures and solved statements from dedicated problem lists.
 
 ### How to Contribute
 
+Please see [CONTRIBUTING](./CONTRIBUTING) first.
+
 1.  Fork the repository on GitHub.
 2.  Add your formalized conjecture(s) in the appropriate file/directory
     structure to a branch in your fork.

@@ -23,14 +23,16 @@ almost all x > 1. And a little bit further down:
 "one does not know whether sequences such as $(e^n)$, $(π^n7)$, or even $((3/2)^n)$"
 are equidistributed modulo 1 or not.
 
-*Reference:* [Uniform Distribution of Sequences](https://store.doverpublications.com/products/9780486149998)
+*References:*
+  - [Uniform Distribution of Sequences](https://store.doverpublications.com/products/9780486149998)
 by *L. Kuipers* and *H. Niederreiter*, 1974
+  - [Wikipedia](https://en.wikipedia.org/wiki/Equidistributed_sequence)
 -/
 open scoped Topology
 
 /--
 A sequence `(s_1, s_2, s_3, ...)` of real numbers is said to be equidistributed on
-an interval `[a, b]` if for every subinterval `[c, d ]` of `[a, b]` we have
+an interval `[a, b]` if for every subinterval `[c, d]` of `[a, b]` we have
 `lim_{n→ ∞} |{s_1, ..., s_n} ∩ [c, d]| / n = (d - c)/(b-a)`
 -/
 def IsEquidistributed (a b : ℝ) (s : ℕ → ℝ) : Prop :=

@@ -23,6 +23,7 @@ import FormalConjectures.Wikipedia.Conway99Graph
 import FormalConjectures.Wikipedia.DeterminantalConjecture
 import FormalConjectures.Wikipedia.FermatCatalanConjecture
 import FormalConjectures.Wikipedia.GaussCircleProblem
+import FormalConjectures.Wikipedia.Hadamard
 import FormalConjectures.Wikipedia.HardyLittlewood
 import FormalConjectures.Wikipedia.InverseGalois
 import FormalConjectures.Wikipedia.Irrational

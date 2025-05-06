@@ -62,7 +62,8 @@ theorem Conway99Graph : ∃ G : SimpleGraph (Fin 99), G.LocallyLinear ∧ NonEdg
 The triangle is an example with 3 vertices satisfying the condition.
 -/
 @[category test, AMS 5]
-example : (completeGraph (Fin 3)).LocallyLinear ∧ NonEdgesAreDiagonals (completeGraph (Fin 3)) := by
+example : (completeGraph (Fin 3)).LocallyLinear ∧
+    NonEdgesAreDiagonals (completeGraph (Fin 3)) := by
   constructor
   · simp [SimpleGraph.LocallyLinear]
     constructor
@@ -107,48 +108,27 @@ example : NonEdgesAreDiagonals Conway9 := by
 
 @[category API, AMS 5]
 lemma completeGraph_boxProd_completeGraph_cliqueSet :
-  ((completeGraph V) □ (completeGraph V)).cliqueSet (Fintype.card V) =
-  { ({(p,  σ p)| (p : V) } : Finset (V × V)) | σ : Equiv.Perm V } := by
-  sorry
+  ((completeGraph (Fin 3)) □ (completeGraph (Fin 3))).cliqueSet 3 =
+  {({(p, q)| p} : Finset (Fin 3 × Fin 3)) | q } ∪
+  {({(q, p)| p} : Finset (Fin 3 × Fin 3)) | q } := sorry
 
--- TODO(firsching): Make this proof faster
-set_option maxHeartbeats 400000 in
 @[category test, AMS 5]
 example : Conway9.LocallyLinear := by
   dsimp [SimpleGraph.LocallyLinear]
   constructor
   · simp only [SimpleGraph.EdgeDisjointTriangles, Set.Pairwise]
     intro x hx y hy hxy
-    have := @completeGraph_boxProd_completeGraph_cliqueSet (Fin 3) _ _
-    simp only [SimpleGraph.completeGraph_eq_top, Fintype.card_fin,
-      Finset.univ_filter_exists] at this
-    simp only [Conway9, SimpleGraph.completeGraph_eq_top, this, Set.mem_setOf_eq, Finset.image,
-      Fin.univ_val_map, List.ofFn_succ, Fin.isValue, Fin.succ_zero_eq_one,
-      Fin.succ_one_eq_two, List.ofFn_zero, List.toFinset_coe, List.toFinset_cons, List.toFinset_nil,
-      insert_emptyc_eq] at hx hy
-    have : ∀ (s : Finset (Fin 3 × Fin 3)),
-        (∃ (σ : Equiv.Perm (Fin 3)), {(0, σ 0), (1, σ 1), (2, σ 2)} = s) ↔
-        s ∈ Finset.image (fun (σ : Equiv.Perm (Fin 3)) =>
-        {(0, σ 0), (1, σ 1), (2, σ 2)}) Finset.univ := by
-      intro s
-      simp only [Fin.isValue, Finset.mem_image, Finset.mem_univ, true_and]
-    rw [this x] at hx
-    rw [this y] at hy
-    have : (Finset.univ : Finset (Equiv.Perm (Fin 3))) =
-      {
-        ⟨![0,1,2], ![0,1,2], by decide, by decide⟩,
-        ⟨![0,2,1], ![0,2,1], by decide, by decide⟩,
-        ⟨![1,0,2], ![1,0,2], by decide, by decide⟩,
-        ⟨![1,2,0], ![2,0,1], by decide, by decide⟩,
-        ⟨![2,0,1], ![1,2,0], by decide, by decide⟩,
-        ⟨![2,1,0], ![2,1,0], by decide, by decide⟩
-      } := by decide
-    simp only [Fin.isValue, this, Finset.image_insert, Equiv.coe_fn_mk, Matrix.cons_val_zero,
-      Prod.mk_zero_zero, Matrix.cons_val_one, Matrix.head_cons, Prod.mk_one_one,
-      Matrix.cons_val_two, Nat.succ_eq_add_one, Nat.reduceAdd, Matrix.tail_cons,
-      Finset.image_singleton, Finset.mem_insert, Finset.mem_singleton] at hx hy
-    rcases hx with hx | hx | hx | hx | hx | hx <;>
-    rcases hy with hy | hy | hy | hy | hy | hy <;> simp [hx, hy] at hxy ⊢ <;> decide
+    simp only [Conway9, completeGraph_boxProd_completeGraph_cliqueSet] at hx hy
+    rcases hx with hx | hx <;>
+    rcases hy with hy | hy <;>
+    have ⟨q, hx⟩ := hx <;>
+    have ⟨p, hy⟩ := hy <;>
+    rcases hx with hx | hx | hx <;>
+    rcases hy with hy | hy | hy <;>
+    fin_cases q <;>
+    fin_cases p <;>
+    simp only [Fin.mk_one, ne_eq, not_true_eq_false] at hxy <;>
+    decide
   · intro x y
     have ⟨x1, x2⟩ := x
     have ⟨y1, y2⟩ := y
@@ -159,6 +139,12 @@ example : Conway9.LocallyLinear := by
     simp only [Conway9, SimpleGraph.completeGraph_eq_top, SimpleGraph.boxProd_adj,
       SimpleGraph.top_adj, ne_eq] at h ⊢
     constructor
-    · dsimp [SimpleGraph.IsClique]
-      fin_cases x1 <;> fin_cases x2 <;> fin_cases y1 <;> fin_cases y2 <;> simp at h ⊢
-    · fin_cases x1 <;> fin_cases x2 <;> fin_cases y1 <;> fin_cases y2 <;> simp at h ⊢ <;> decide
+    · dsimp [SimpleGraph.IsClique, ]
+      fin_cases x1 <;> fin_cases x2 <;> fin_cases y1 <;> fin_cases y2 <;>
+      simp only [Fin.reduceFinMk,  not_true_eq_false, Fin.reduceEq, or_true, Fin.reduceAdd,
+        Finset.coe_insert, Finset.coe_singleton, SimpleGraph.isClique_insert,
+        Set.pairwise_singleton, Set.mem_singleton_iff, ne_eq, SimpleGraph.boxProd_adj,
+        SimpleGraph.top_adj, forall_eq, Prod.mk.injEq, and_false, imp_self, Set.mem_insert_iff,forall_eq_or_imp, or_false, and_true, not_false_eq_true] at h ⊢
+    · fin_cases x1 <;> fin_cases x2 <;> fin_cases y1 <;> fin_cases y2 <;>
+      simp only [not_true_eq_false, or_self, or_false, and_true] at h <;>
+      decide

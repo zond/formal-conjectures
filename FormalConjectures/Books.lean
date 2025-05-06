@@ -15,4 +15,3 @@ limitations under the License.
 -/
 
 import FormalConjectures.Books.UniformDistributionOfSequences.Equidistribution
-import FormalConjectures.Books.UnsolvedProblemsInIntuitiveGeometry.K3

@@ -14,6 +14,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -/
 
-import FormalConjectures.Books.ProofsFromTheBook.Hadamard
-import FormalConjectures.Books.UniformDistributionOfSequences.Equidistribution
-import FormalConjectures.Books.UnsolvedProblemsInIntuitiveGeometry.K3
+import FormalConjectures.Paper.Kurepa

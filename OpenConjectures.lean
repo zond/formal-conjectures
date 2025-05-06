@@ -20,6 +20,7 @@ import FormalConjectures.ErdosProblems
 import FormalConjectures.LandauProblems
 import FormalConjectures.Other
 import FormalConjectures.Mathoverflow
+import FormalConjectures.Paper
 import FormalConjectures.Wikipedia
 
 #category_stats

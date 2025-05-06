@@ -16,23 +16,30 @@ limitations under the License.
 
 import FormalConjectures.Util.ProblemImports
 /-!
-# B44
+# Kurepa's conjecture
 
-*Reference:* [Unsolved Problems in Number Theory](https://doi.org/10.1007/978-0-387-26677-0)
-by *Richard K. Guy*
+*Reference:* [On the left factorial function !N](https://oeis.org/A003422), by *Đuro Kurepa* Math. Balkanica 1, p. 147-153, 1971
+
 -/
 
 open BigOperators Nat
 
+/--
+Left factorial of n
+$$$!n = 0!+1!+2!+...+(n-1)!$$
+-/
 def left_factorial (n : ℕ) := ∑ m ∈ Finset.range n, m !
 
 local notation  "!" n => left_factorial n
 
 /--
-B44 Sums of factorials.
+# Kurepa's conjecture
 
-Đura Kurepa defined $!n = 0!+1!+2!+...+(n-1)!$ and asks if $!n\not\equiv0 \mod n$
-for all $n$.
+For all $n$, $$!n\not\equiv 0 \mod n$$
+
+This appears as B44 "Sums of factorials."
+in [Unsolved Problems in Number Theory](https://doi.org/10.1007/978-0-387-26677-0)
+by *Richard K. Guy*
 -/
 @[category research open, AMS 11]
 theorem kurepa_conjecture (n : ℕ) (h_n : 2 < n) : (!n : ℕ) % n ≠ 0 := sorry

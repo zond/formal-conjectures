@@ -96,7 +96,7 @@ def H12 : Matrix (Fin 12) (Fin 12) ℝ :=
      1,  1, -1,   1, -1,  1,   1, -1, -1,  -1, -1,  1;
      1,  1, -1,   1,  1, -1,  -1,  1, -1,   1, -1, -1 ]
 /--
-which satsifies the condition.
+which satisifies the condition.
 -/
 @[category test]
 example : IsHadamard H12 := by

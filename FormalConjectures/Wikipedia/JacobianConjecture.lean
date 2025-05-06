@@ -108,7 +108,7 @@ lemma sanity_check_condition_1 (F : RegularFunction k σ σ) :
   sorry
 
 
--- Let's apply the conjecure to a trivial case to make sure things are working as expected.
+-- Let's apply the conjecture to a trivial case to make sure things are working as expected.
 @[category test, AMS 14]
 example :
     ∃ (G : RegularFunction k σ σ), G.comp (id k σ) = id k σ ∧

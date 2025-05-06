@@ -30,35 +30,56 @@ AlphaProof to help identify potential misformalisations.
 Contributions are most welcome, consider adding (or even just opening an issue
 describing) your favorite conjecture.
 
-Unlike other conjecture lists (the Millenium problems, Smale's list, Yau's
-problems, ...) the problems in this repo can come from various places and we
-encourage all sorts of contributions. For example, conjectures can be sourced
-from various places, including:
+### I'd like to contribute - what can I do?
 
-*   Mathematical Textbooks
-*   Research Papers (including preprints on the
-    [arxiv](https://arxiv.org/archive/math))
-*   [MathOverflow](https://mathoverflow.net/) Questions
-*   Dedicated Problem Lists (e.g.,
-    [Erdős Problems](https://www.erdosproblems.com/),
-    [Wikipedia's list of unsolved problems](https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_mathematics),
-    [the Scottish Book](https://en.wikipedia.org/wiki/Scottish_Book), ...)
-*   ...
+There are various ways of contributing to this repository:
 
-We are also interested in the formalized statement of solved variants of open
-conjectures and solved statements from dedicated problem lists.
+1.  **Adding new problem formalisations**
 
+    Unlike other conjecture lists (the Millenium problems, Smale's list, Yau's
+    problems, ...) the problems in this repo can come from various places and we
+    encourage all sorts of contributions. For example, conjectures can be
+    sourced from various places, including:
+
+    *   Mathematical Textbooks
+    *   Research Papers (including preprints on the
+        [arxiv](https://arxiv.org/archive/math))
+    *   [MathOverflow](https://mathoverflow.net/) Questions
+    *   Dedicated Problem Lists (e.g.,
+        [Erdős Problems](https://www.erdosproblems.com/),
+        [Wikipedia's list of unsolved problems](https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_mathematics),
+        [the Scottish Book](https://en.wikipedia.org/wiki/Scottish_Book), ...)
+    *   ...
+
+    We are also interested in the formalized statement of solved variants of
+    open conjectures and solved statements from dedicated problem lists.
+
+2.  **Opening issues with problems that you would like to see formalised.**
+    Such an issue should contain links to suitable references, and
+    ideally a precise informal statement of the conjecture.
+
+3.  **Improving the referencing and tagging of problems.**
+    For example, adding pointers to references in already existing files, or
+    adding additional relevant `AMS` subject attributes to statements.
+
+4.  **Fixing misformalisations**
+    PRs fixing incorrect formalisations and issues flagging problems are
+    encouraged.
 
 ### How to Contribute
 
 Please see [CONTRIBUTING](./CONTRIBUTING) first.
 
+0.  Open an issue on GitHub specifying what you plan to contribute (and assign yourself!)
 1.  Fork the repository on GitHub.
 2.  Add your formalized conjecture(s) in the appropriate file/directory
     structure to a branch in your fork.
     *   Include comments linking to the source of the conjecture (paper,
         website, book).
-    *   Use the attribute `@[category research open]` for unsolved conjectures.
+    *   Use the `category` attribute to specify what category each of the
+        statements falls into (see below for more details on this.)
+    *   Use the `AMS` attribute to specify what mathematical areas each of
+        the statements are related to.
 3.  Ensure the code builds (`lake build`).
 4.  Submit a Pull Request to the main repository.
 
@@ -87,24 +108,62 @@ There are two special directories:
     [mathlib](https://github.com/leanprover-community/mathlib4). Here we follow
     mathlib's directory structure.
 
+### Some features
 
-### Two features
+#### The `category` attribute
 
-#### The `problem_status` tag:
+A tag to mark the category of a problem statement. In this repository, we allow
+for the following categories:
 
-A tag to mark the status of a problem statement: either `open` or `solved`.
+-   Open research problem: a mathematical problem for which there is no solution
+    accepted by the community.
+-   Solved research problem: a mathematical problem that has an accepted solution
+-   Graduate level problem.
+-   Undergraduate level problem.
+-   High school level problem.
+-   API statement: a statement that constructs basic theory around a new definition.
+-   Test statement: a statement that serves as a "unit test". These are useful to
+    check e.g new definitions or theorem statements.
 
-The tag should be used as follows:
+> This repository targets research level problems. As such, graduate/
+undergraduate/high school level problems should only be contributed if they
+> are directly related to a research level problem (e.g. as a special case,
+etc.).
 
-```lean4
+The tags should be used as follows:
+
+```lean
 @[category research open]
-theorem foo : MyOpenProblem := by
+theorem foo : Transcendental ℚ (rexp 1 + π) := by
   sorry
 
 @[category research solved]
-theorem bar : 1 + 1 = 2 := by
+theorem bar : FermatLastTheorem := by
+  sorry
+
+```
+
+#### The `AMS` attribute
+
+The `AMS` tag is intended to provide some information about the mathematical
+subjects a given statement is related to. For simplicity, we use the main
+subjects listed in the [AMS MSC2020](https://mathscinet.ams.org/mathscinet/msc/pdfs/classifications2020.pdf).
+
+The tag can be used as follows:
+
+```lean
+@[AMS 11] -- `11` means "Number Theory"
+theorem flt : FermatLastTheorem := by
   sorry
 ```
+
+> Within a Lean file, you can use the `#AMS` command to list all the possible
+values.
+
+> To determine the subject associated to tag `AMS foo` in VS Code, you can
+hover over `foo`.
+
+> The attribute allows multiple parameters, e.g. `@[AMS foo bar]` is valid.
 
 #### The `answer( )` elaborator
 
@@ -115,7 +174,7 @@ asks for the minimum number of colors needed to color the plane such that no two
 points exactly one unit distance apart have the same color. The `answer( )`
 elaborator allows us to formulate the problem without deciding for an answer.
 
-```lean4
+```lean
 @[category research open]
 theorem HadwigerNelsonProblem :
     IsLeast { n : ℕ | ExistsColoring n } answer(sorry) :=
@@ -130,10 +189,10 @@ theorem HadwigerNelsonProblem :
 2.  Bespoke definitions are allowed, as long as they help clarify problem
     statements. We also encourage contributors to provide some very basic API
     for such definitions as a way to test whether these behave as expected.
-3.  Benchmark problems should be stated with the `theorem` keyword, and have a
-    `problem_status` tag, while API and test statements should use `lemma` or
-    `example`.
-4.  Every file should come with a reference to where the problem was sourced
+3.  Benchmark problems should be stated with the `theorem` keyword, while for
+    test statements `example` is usually prefered.
+4.  Every statement should have at least one `AMS` subject tag.
+5.  Every file should come with a reference to where the problem was sourced
     from, and be put in the corresponding directory of the repository, e.g. a
     problem sourced from wikipedia should live in `FormalConjectures/Wikipedia`.
 

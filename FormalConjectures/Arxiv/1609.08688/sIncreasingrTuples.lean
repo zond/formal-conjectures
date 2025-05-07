@@ -217,12 +217,12 @@ example : [![1, 1, 1]] ⊗₂ [![1, 1, 1]] = toLex [toLex ![(1, 1), (1, 1), (1, 
 /-- Suppose that for some $n$ we have $F(n) = n ^ {\alpha}$. Then there are arbitrarily
 large $m$ such that $F(m) \geq m^{\alpha}$. -/
 @[category research solved, AMS 5]
-theorem maximalLength_pow {n e : ℕ} (h : F n = n ^ e) :
-    ∀ᶠ m in Filter.atTop, m ^ e ≤ F m :=
+theorem maximalLength_pow {n : ℕ} {e : ℝ} (hn : 1 < n) (h : F n = (n : ℝ) ^ e) :
+    ∀ᶠ m : ℕ in Filter.atTop, (m : ℝ) ^ e ≤ F m :=
   sorry
 
 /-- $F(n) \leq n^{3/2}$. -/
 @[category research open, AMS 5]
-theorem maximalLength_le_strong (n : ℕ) : F n ≤ n.sqrt ^ 3 := sorry
+theorem maximalLength_le_strong (n : ℕ) : F n ≤ Real.sqrt n ^ 3 := sorry
 
 end Arxiv.id160908688

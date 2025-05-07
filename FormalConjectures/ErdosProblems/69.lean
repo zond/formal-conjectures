@@ -45,6 +45,3 @@ theorem erdos_69.specialisation_of_erdos_257 :
     let A := { n : ℕ | n.Prime }
     ∑' n, ω (n + 2) / (2 ^ (n + 2) : ℝ) = ∑' p : A, 1 / (2 ^ p.1 - 1) :=
   sorry
-
--- See `ManualFormalizations/Arxiv/id240915185` for a solution to `erdos_69` conditional
--- on the quantitative prime K-tuples conjecture https://arxiv.org/pdf/2409.15185

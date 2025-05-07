@@ -36,5 +36,3 @@ import FormalConjectures.Wikipedia.PebblingNumberConjecture
 import FormalConjectures.Wikipedia.RiemannZeta
 import FormalConjectures.Wikipedia.SchanuelsConjecture
 import FormalConjectures.Wikipedia.conjecture_1_3_to_2_3
-
-#category_stats

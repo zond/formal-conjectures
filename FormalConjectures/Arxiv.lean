@@ -20,5 +20,3 @@ import FormalConjectures.Arxiv.«1601.03081».UniqueCrystalComponents
 import FormalConjectures.Arxiv.«1609.08688».sIncreasingrTuples
 import FormalConjectures.Arxiv.«2107.12475».CollatzLike
 import FormalConjectures.Arxiv.«2208.14736».ZariskiCancellation
-
-#category_stats

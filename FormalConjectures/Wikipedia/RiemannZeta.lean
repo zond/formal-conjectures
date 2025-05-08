@@ -68,13 +68,13 @@ theorem irrational_three : ∃ x, Irrational x ∧ riemannZeta 3 = x :=
   sorry
 
 /--
-There are infinite many $\zeta(2n + 1)$, $n \in \mathbb{N}$, that are irrational.
+There are infinitely many $\zeta(2n + 1)$, $n \in \mathbb{N}$, that are irrational.
 
 [Ri00] Rivoal, T. (2000). _La fonction zeta de Riemann prend une infinité de valeurs irrationnelles aux entiers impairs_. Comptes Rendus de l'Académie des Sciences, Série I. 331 (4): 267–270.
 -/
 @[category research solved, AMS 11, AMS 33]
 theorem infinite_irrational_at_odd :
-    { n | ∃ x, Irrational x ∧ riemannZeta (2 * n + 1) = x }.Infinite :=
+    { n : ℕ | ∃ x, Irrational x ∧ riemannZeta (2 * n + 1) = x }.Infinite :=
   sorry
 
 /--

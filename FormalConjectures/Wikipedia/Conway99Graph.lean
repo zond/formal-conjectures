@@ -134,8 +134,7 @@ example : Conway9.LocallyLinear := by
     have ⟨y1, y2⟩ := y
     intro h
     use {(x1, x2), (y1, y2), (x1 + x1 + y1 + y1, x2 + x2 + y2 + y2)}
-    simp only [Finset.mem_insert, Prod.mk.injEq, Finset.mem_singleton, true_or, self_eq_add_left,
-      Fin.isValue, or_true, and_self, and_true]
+    simp only [Finset.mem_insert, Prod.mk.injEq, true_or, or_true, and_true]
     simp only [Conway9, SimpleGraph.completeGraph_eq_top, SimpleGraph.boxProd_adj,
       SimpleGraph.top_adj, ne_eq] at h ⊢
     constructor

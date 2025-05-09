@@ -31,13 +31,13 @@ $$
 @[category research open, AMS 11]
 theorem erdos_457 : ∃ ε > (0 : ℝ),
     { (n : ℕ) | ∀ (p : ℕ), p ≤ (2 + ε) * Real.log n → p.Prime →
-      p ∣ ∏ i in Finset.Icc 1 ⌊Real.log n⌋₊, (n + i) }.Infinite :=
+      p ∣ ∏ i ∈ Finset.Icc 1 ⌊Real.log n⌋₊, (n + i) }.Infinite :=
   sorry
 
 /-- Let $q(n, k)$ denote the least prime which does not divide
 $\prod_{1\leq i\leq k}(n + i)$. -/
 noncomputable abbrev q (n : ℕ) (k : ℝ) : ℕ :=
-    Nat.find (Nat.exists_prime_not_dvd (∏ i in Finset.Icc 1 ⌊k⌋₊, (n + i))
+    Nat.find (Nat.exists_prime_not_dvd (∏ i ∈ Finset.Icc 1 ⌊k⌋₊, (n + i))
       (Finset.prod_ne_zero_iff.2 fun a ha => by aesop))
 
 /--

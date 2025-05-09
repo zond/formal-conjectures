@@ -19,8 +19,12 @@ import Mathlib.Data.Complex.ExponentialBounds
 import Mathlib.Tactic
 
 -- TODO(mercuris): define a recursive version of this for better usability?
+-- TODO(mercuris): add `Real.iteratedLogb` for general bases
+/-- The iterated logarithm of `x` is the number of times the natural logarithm
+must be iteratively applied before the result is less than or equal to `1`.
+Reference: https://en.wikipedia.org/wiki/Iterated_logarithm -/
 noncomputable def Real.iteratedLog (x : ℝ) : ℕ :=
-  sInf { (n : ℕ) | (n) (_ : Real.log^[n] x ≤ 1) }
+  sInf { (n : ℕ) | Real.log^[n] x ≤ 1 }
 
 theorem Real.iteratedLog_eq_zero_of_le {x : ℝ} (hx : x ≤ 1) :
     Real.iteratedLog x = 0 := by

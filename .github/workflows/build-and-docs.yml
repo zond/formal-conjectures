@@ -3,7 +3,7 @@ name: Build Lean project and deploy docs
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages

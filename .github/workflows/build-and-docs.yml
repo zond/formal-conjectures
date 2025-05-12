@@ -1,0 +1,84 @@
+name: Build Lean project and deploy docs
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build_project:
+    runs-on: ubuntu-latest
+    name: Build project
+    steps:
+
+      - name: Checkout project
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install elan
+        run: |
+          set -o pipefail
+          curl -sSfL https://github.com/leanprover/elan/releases/download/v1.4.2/elan-x86_64-unknown-linux-gnu.tar.gz | tar xz
+          ./elan-init -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> $GITHUB_PATH
+
+      - name: Restore ~/.cache/mathlib
+        uses: actions/cache/restore@v3
+        with:
+          path: ~/.cache/mathlib
+          key: oleans-${{ hashFiles('lake-manifest.json') }}
+        
+      - name: Get olean cache
+        run: |
+          lake exe cache unpack
+          lake exe cache get
+
+      - name: Build project
+        run: lake build
+
+      - name: Pack olean cache
+        run: |
+          lake exe cache pack
+          ls ~/.cache/mathlib
+        
+      - name: Save ~/.cache/mathlib
+        uses: actions/cache/save@v3
+        with:
+          path: ~/.cache
+          key: oleans-${{ hashFiles('lake-manifest.json') }}
+
+      - name: Prepare documentation
+        run: |
+          cd docbuild
+          export MATHLIB_NO_CACHE_ON_UPDATE=1  # avoids "Failed to prune ProofWidgets cloud release: no such file or directory"
+          lake update open_conjectures
+
+      - name: Cache documentation
+        uses: actions/cache@v4
+        with:
+          path: docbuild/.lake/build/doc
+          key: MathlibDoc-${{ hashFiles('lake-manifest.json') }}
+          restore-keys: MathlibDoc-
+
+      - name: Build documentation
+        run: |
+          cd docbuild
+          lake build FormalConjectures:docs
+
+      - name: Upload docs
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docbuild/.lake/build/doc
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/master'
+        id: deployment
+        uses: actions/deploy-pages@v4

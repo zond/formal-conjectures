@@ -53,6 +53,10 @@ There are various ways of contributing to this repository:
 
     We are also interested in the formalized statement of solved variants of
     open conjectures and solved statements from dedicated problem lists.
+    While the main goal is to collect conjecture statements, we appreciate the
+    inclusion of very short proofs for solved items or counterexamples, 
+    especially if they are illuminating and testing the definitions.
+    Lengthy proofs are are outside the scope of this repository.
 
 2.  **Opening issues with problems that you would like to see formalised.** Such
     an issue should contain links to suitable references, and ideally a precise

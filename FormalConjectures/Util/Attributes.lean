@@ -296,31 +296,3 @@ def getSubjectTags : m (Array SubjectTag) := do
 end Helper
 
 end ProblemAttributes
-
-section Commands
-
-open ProblemAttributes
-
--- TODO(lezeau): currently this doesn't take examples into
--- account so some `test` statements aren't counted here.
-
-/-- Prints out the number of problems for each category.
-
-Note that this will depend on what declarations are present in the
-environment at the place where the command is called. -/
-elab "#category_stats" : command => do
-  let stats ← ProblemAttributes.getCategoryStats
-  let out : String :=
-      s!"Open problems: {stats (Category.research ProblemStatus.open)}\n" ++
-      s!"Solved problems: {stats (Category.research ProblemStatus.solved)}\n" ++
-      s!"High School: {stats (Category.highSchool)}\n" ++
-      s!"Undergraduate: {stats (Category.undergraduate)}\n" ++
-      s!"Graduate: {stats (Category.graduate)}\n" ++
-      s!"API: {stats (Category.API)}\n" ++
-      s!"Tests: {stats (Category.test)}\n"
-  Lean.logInfo ("Current benchmark stats:\n" ++ out)
-
--- TODO(lezeau): add a `#subject_stats` command that does
--- prints the number of problems per subject (when non-zero)
-
-end Commands

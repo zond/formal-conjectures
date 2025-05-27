@@ -122,7 +122,9 @@ for the following categories:
 -   Open research problem: a mathematical problem for which there is no solution
     accepted by the community.
 -   Solved research problem: a mathematical problem that has an accepted
-    solution
+    solution (in the sense that it is widely accepted by experts in the field).
+    In particular this does *not* mean that the statement has been proven in the
+    formal setting.
 -   Graduate level problem.
 -   Undergraduate level problem.
 -   High school level problem.

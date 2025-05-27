@@ -192,7 +192,7 @@ theorem HadwigerNelsonProblem :
 
 Note that providing a term inside the `answer( )` elaborator together with a proof that
 the statement is true *does not* by itself mean that the problem has been solved. For example, a question
-of the form "Find all natural numbers that satisfy the predicate $P$" might be formalised as
+of the form "Which natural numbers satisfy the predicate $P$?" might be formalised as
 ```lean
 theorem myOpenProblem : {n : ℕ | P n} = answer(sorry) := by
   sorry

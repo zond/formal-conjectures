@@ -95,7 +95,7 @@ inductive ProblemStatus
   /-- Indicates that a mathematical problem is still open. -/
   | open
   /-- Indicates that a mathematical problem is already solved,
-  i.e. there is a published widely accepted by experts (informal) proof. -/
+  i.e., there is a published (informal) proof that is widely accepted by experts. -/
   | solved
   deriving Inhabited, BEq, Hashable, ToExpr
 

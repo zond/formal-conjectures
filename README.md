@@ -184,9 +184,24 @@ elaborator allows us to formulate the problem without deciding for an answer.
 ```lean
 @[category research open]
 theorem HadwigerNelsonProblem :
-    IsLeast { n : ℕ | ExistsColoring n } answer(sorry) :=
+    IsLeast {n : ℕ | ExistsColoring n} answer(sorry) :=
   sorry
 ```
+
+## Problems that require answers
+
+Note that providing a term inside the `answer( )` elaborator together with a proof that
+the statement is true *does not* mean that the problem has been solved. For example, a question
+of the form "Find all natural numbers that satisfy the predicate $P$" might be formalised as
+```lean
+theorem myOpenProblem : {n : ℕ | P n} = answer(sorry) := by
+  sorry
+```
+and one can provide trivial answers that aren't mathemetically interesting, e.g. the set
+`{n : ℕ | P n}` itself.
+
+In particular, the question of whether the answer provided corresponds to a mathematically
+meaningful solution of the problem is outside of the scope of this repository. 
 
 ## Style Guidelines
 

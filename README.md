@@ -17,6 +17,9 @@ would be useful for a few reasons. It could
 *   Help clarify the precise meaning of conjectures through formalization.
 *   Encourage the expansion of `mathlib` by highlighting needed definitions.
 
+It is our hope that this initiative will form the seed of a much richer dataset of 
+formalized conjectures.
+
 ### Note on Formalisation Accuracy
 
 Formalizing mathematical statements without proofs is inherently challenging.

@@ -19,7 +19,9 @@ import FormalConjectures.Util.ProblemImports
 /-!
 # Twin prime conjecture
 
-*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Landau%27s_problems#Twin_prime_conjecture)
+*References:*
+- [Landau Problems Wikipedia Page](https://en.wikipedia.org/wiki/Landau%27s_problems#Twin_prime_conjecture)
+- [Twin Primes Conjecture Wikipedia Page](https://en.wikipedia.org/wiki/Twin_prime#Twin_prime_conjecture)
 -/
 
 

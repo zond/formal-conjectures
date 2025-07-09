@@ -17,16 +17,18 @@ limitations under the License.
 import FormalConjectures.Util.ProblemImports
 
 /-!
-# Primes and perfect squares
+# Legendre's conjecture
 
-*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Landau%27s_problems#Near-square_primes)
+*References:*
+- [Landau Problems Wikipedia Page](https://en.wikipedia.org/wiki/Landau%27s_problems#Twin_prime_conjecture)
+- [Legendre Conjecture Wikipedia Page](https://en.wikipedia.org/wiki/Legendre%27s_conjecture)
 -/
-
 
 /--
-Are there infinitely many primes $p$ such that $p − 1$ is a perfect square? In other words: Are there infinitely many primes of the form $n^2 + 1$?
+Does there always exist at least one prime between consecutive perfect squares?
 -/
 @[category research open, AMS 11]
-theorem infinite_prime_sq_add_one :
-    {n : ℕ | Prime (n^2 + 1)}.Infinite ↔ answer(sorry):= by
+theorem legendre_conjecture :
+    (∀ᵉ (n ≥ 1), ∃ p ∈ Set.Ioo (n^2) ((n+1)^2), Prime p)
+      ↔ answer(sorry) := by
   sorry

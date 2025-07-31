@@ -15,7 +15,6 @@ limitations under the License.
 -/
 
 import FormalConjectures.Util.ProblemImports
-import FormalConjectures.ForMathlib.NumberTheory.Powerful
 
 /-!
 # Erdős Problem 364
@@ -23,6 +22,7 @@ import FormalConjectures.ForMathlib.NumberTheory.Powerful
 *Reference:* [erdosproblems.com/364](https://www.erdosproblems.com/364)
 -/
 
+open Nat
 
 /-- There is no consecutive triple of powerful numbers. -/
 @[category research open, AMS 11]
@@ -53,4 +53,4 @@ theorem erdos_364.variants.weak :
   obtain ⟨n, hn⟩ := h
   have h2mod4 : n % 4 = 2 ∨ (n + 1) % 4 = 2 ∨ (n + 2) % 4 = 2 ∨ (n + 3) % 4 = 2 := by omega
   rcases h2mod4 with (_|_|_|_) <;>
-  simp_all [not_powerful_of_2mod4]
+  simp_all [not_full_of_prime_mod_prime_sq _ 1 (Nat.prime_two)]

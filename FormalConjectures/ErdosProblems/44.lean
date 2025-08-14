@@ -24,6 +24,13 @@ import FormalConjectures.Util.ProblemImports
 
 open Function Set
 
+-- Reference: https://arxiv.org/pdf/2103.15850
+/-- The maximum size of a Sidon set in `{1, ..., N}` is less than or equal to `2 * √N`. -/
+@[category undergraduate, AMS 5 11]
+theorem maxSidonSetSize_bound (N : ℕ) (hN : 1 ≤ N) :
+    maxSidonSetSize N ≤ 2 * Real.sqrt N := by
+  sorry
+
 /--
 **Erdős Problem 44:** Let N ≥ 1 and `A ⊆ {1,…,N}` be a Sidon set. Is it true that, for any ε > 0,
 there exist M = M(ε) and `B ⊆ {N+1,…,M}` such that `A ∪ B ⊆ {1,…,M}` is a Sidon set

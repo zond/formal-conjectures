@@ -35,11 +35,11 @@ theorem catalans_conjecture (a b x y : ℕ) (ha : 1 < a) (hb : 1 < b) (hx : 0 < 
 
 /--
 For positive integers a, b, and c, there are only finitely many solutions (x, y, m, n) to the
-equation $ax^n - ay^m = a$ when (m, n) ≠ (2, 2).
+equation $ax^n - by^m = c$ when (m, n) ≠ (2, 2).
 -/
 @[category research open, AMS 11]
 theorem pillais_conjecture (a b c : ℕ) (ha : 0 < a) (hb : 0 < b) (hc : 0 < c)
     : { (x, y, m, n) : (ℕ × ℕ × ℕ × ℕ) | (m, n) ≠ (2, 2) ∧ a * x^n - b * y^m = c }.Finite := by
   sorry
- 
+
 end Catalan

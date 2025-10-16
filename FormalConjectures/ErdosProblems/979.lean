@@ -28,8 +28,8 @@ def solutionSet (n k : ℕ) : Set (Multiset ℕ) :=
   {P | P.card = k ∧ (∀ p ∈ P, Nat.Prime p) ∧ n = (P.map (. ^ k)).sum}
 
 /--
-Let k ≥ 2 , and let f_k ( n ) count the number of solutions to n = p_1^k + \dots + p_k^k,
-where the p_i are prime numbers. Is it true that lim sup f_k ( n ) = \infty?
+Let $k ≥ 2$, and let $f_k(n)$ count the number of solutions to $n = p_1^k + \dots + p_k^k$,
+where the $p_i$ are prime numbers. Is it true that $\limsup f_k(n) = \infty$?
 -/
 @[category research open, AMS 11]
 theorem erdos_979 (k : ℕ) (_ : k >= 2):

@@ -51,7 +51,7 @@ Erdős (unpublished)
 -/
 @[category research solved, AMS 11]
 theorem erdos_979_k3 :
-  Filter.limsup (fun n => (solutionSet n 3).encard) Filter.atTop = ⊤ :=
+    Filter.limsup (fun n => (solutionSet n 3).encard) Filter.atTop = ⊤ :=
   sorry
 
 end Erdos979

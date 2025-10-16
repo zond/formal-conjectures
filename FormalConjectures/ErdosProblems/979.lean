@@ -37,7 +37,9 @@ theorem erdos_979 (k : ℕ) (_ : k >= 2):
   sorry
 
 /--
-Erdős [Er37b] in 1937.
+Erdős [Er37b] proved that if $f_2(n)$ counts the number of solutions to $n = p_1^2 + p_2^2$, where $p_1$ and $p_2$ are prime numbers, then $\lim sup f_2(n) = \infty$.
+
+[Er37b] Erdős, Paul, On the Sum and Difference of Squares of Primes. J. London Math. Soc. (1937), 133--136. 
 -/
 @[category research solved, AMS 11]
 theorem erdos_979_k2 :

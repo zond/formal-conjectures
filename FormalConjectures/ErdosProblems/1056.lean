@@ -25,7 +25,7 @@ import FormalConjectures.Util.ProblemImports
 namespace Erdos1056
 
 /--
-Checks if the modular product of each interval equals 1 modulo the prime p,
+Checks if the modular product of each interval equals $1$ modulo the prime $p$,
 where intervals are defined by consecutive boundaries.
 -/
 def Erdos1056For (p : ℕ) {k : ℕ} (boundaries : Fin (k + 1) → ℕ) : Prop :=

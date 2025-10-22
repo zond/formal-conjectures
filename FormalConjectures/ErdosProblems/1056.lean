@@ -16,6 +16,8 @@ limitations under the License.
 
 import FormalConjectures.Util.ProblemImports
 
+open Nat
+
 /-!
 # Erdős Problem 1056
 
@@ -25,13 +27,10 @@ import FormalConjectures.Util.ProblemImports
 namespace Erdos1056
 
 /--
-Checks if the modular product of each interval equals $1$ modulo the prime $p$,
-where intervals are defined by consecutive boundaries.
+The proposition that the modular product of a collection of consecutive interval equals $1$ modulo $p$,
+where intervals are defined by a function specifying the consecutive boundaries.
 -/
-def Erdos1056For (p : ℕ) {k : ℕ} (boundaries : Fin (k + 1) → ℕ) : Prop :=
-  p.Prime ∧
-  k ≥ 2 ∧
-  StrictMono boundaries ∧
+def AllModProdEqualsOne (p : ℕ) {k : ℕ} (boundaries : Fin (k + 1) → ℕ) : Prop :=
   ∀ i : Fin k,
     (∏ n ∈ Finset.Ico (boundaries i) (boundaries (i + 1)), n) ≡ 1 [MOD p]
 
@@ -41,8 +40,8 @@ such that $\prod\limits_{n{\in}I_i}n \equiv 1 \mod n$ for all $1 \le i \le k$?
 -/
 @[category research open, AMS 11]
 theorem erdos_1056 :
-    (∀ k ≥ 2, ∃ (p : ℕ) (boundaries : Fin (k + 1) → ℕ),
-    Erdos1056For p boundaries)
+    (∀ k ≥ 2, ∃ (p : ℕ) (_ : p.Prime) (boundaries : Fin (k + 1) → ℕ) (_ : StrictMono boundaries),
+    AllModProdEqualsOne p boundaries)
   ↔ answer(sorry) := by
   sorry
 
@@ -50,31 +49,31 @@ theorem erdos_1056 :
 This is problem A15 in Guy's collection [Gu04], where he reports that in a letter in 1979
 Erdős observed that $3 * 4 \equiv 5 * 6 * 7 \equiv 1 \mod 11$.
 -/
-@[category research solved, AMS 11]
+@[category undergraduate, AMS 11]
 theorem erdos_1056_k2 :
-    Erdos1056For 11 ![3, 5, 8] := by
-  unfold Erdos1056For
+    AllModProdEqualsOne 11 ![3, 5, 8] := by
+  unfold AllModProdEqualsOne
   decide
 
 /--
 Makowski [Ma83] found, for $k=3$:
 $2 * 3 * 4 * 5 \equiv 6 * 7 * 8 * 9 * 10 * 11 \equiv 12 * 13 * 14 * 15 \equiv 1 \mod 17$.
 -/
-@[category research solved, AMS 11]
+@[category undergraduate, AMS 11]
 theorem erdos_1056_k3 :
-    Erdos1056For 17 ![2, 6, 12, 16] := by
-  unfold Erdos1056For
+    AllModProdEqualsOne 17 ![2, 6, 12, 16] := by
+  unfold AllModProdEqualsOne
   decide
 
 /--
 Noll and Simmons asked, more generally, whether there are solutions to
-$q_1! \equiv \dots \equiv q_k!~[mod~p]$ for arbitrarily large $k$ (with $q_1 < \dots <q_k$).
+$q_1! \equiv \dots \equiv q_k! \mod p$ for arbitrarily large $k$ (with $q_1 < \dots <q_k$).
 -/
 @[category research open, AMS 11]
 theorem noll_simmons :
-    (∀ k ≥ 2,
+    (∀ᶠ k in Filter.atTop,
     ∃ (p : ℕ) (_ : p.Prime) (Q : Fin k → ℕ) (_ : StrictMono Q),
-    ∀ i j : Fin k, (Nat.factorial (Q i)) ≡ (Nat.factorial (Q j)) [MOD p]) ↔ answer(sorry) := by
+    ∀ i j : Fin k, (Q i)! ≡ (Q j)! [MOD p]) ↔ answer(sorry) := by
   sorry
 
 end Erdos1056

@@ -48,7 +48,7 @@ theorem erdos_1056 :
 
 /--
 This is problem A15 in Guy's collection [Gu04], where he reports that in a letter in 1979
-Erdős observed that $3 * 4 \equiv 5 * 6 * 7 \equiv 1~[mod~11]$.
+Erdős observed that $3 * 4 \equiv 5 * 6 * 7 \equiv 1 \mod 11$.
 -/
 @[category research solved, AMS 11]
 theorem erdos_1056_k2 :

@@ -58,7 +58,7 @@ theorem erdos_1056_k2 :
 
 /--
 Makowski [Ma83] found, for $k=3$:
-$2 * 3 * 4 * 5 \equiv 6 * 7 * 8 * 9 * 10 * 11 \equiv 12 * 13 * 14 * 15 \equiv 1~[mod~17]$.
+$2 * 3 * 4 * 5 \equiv 6 * 7 * 8 * 9 * 10 * 11 \equiv 12 * 13 * 14 * 15 \equiv 1 \mod 17$.
 -/
 @[category research solved, AMS 11]
 theorem erdos_1056_k3 :

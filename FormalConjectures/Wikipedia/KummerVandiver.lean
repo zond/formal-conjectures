@@ -17,28 +17,20 @@ limitations under the License.
 import FormalConjectures.Util.ProblemImports
 
 /-!
-# Erdős Problem 463
+# Kummer–Vandiver conjecture
 
-*Reference:* [erdosproblems.com/463](https://www.erdosproblems.com/463)
+*Reference:* [Wikipedia](https://en.wikipedia.org/wiki/Kummer%E2%80%93Vandiver_conjecture)
 -/
 
-open Filter
+open NumberField CyclotomicField IsCyclotomicExtension
 
-namespace Erdos463
+-- TODO(Paul-Lez): change `PNat` to `Nat` once the version of Mathlib we're on allows it.
 
 /--
-Is there a function $f$ with $f(n)\to\infty$ as $n\to\infty$ such that,
-for all large $n$, there is a composite number $m$ such that
-$$
-n + f(n) < m < n + p(m)
-$$
-Here $p(m)$ is the least prime factor of $m$.
--/
+Kummer–Vandiver conjecture states that for every prime $p$, the class number of the maximal
+real subfield of $\mathbb{Q}(\zeta_p)$ is not divisible by $p$.
+--/
 @[category research open, AMS 11]
-theorem erdos_463 : (∃ (f : ℕ → ℕ) (_ : Tendsto f atTop atTop),
-    ∀ᶠ n in atTop,
-      ∃ m, m.Composite ∧
-        n + f n < m ∧ m < n + m.minFac) ↔ answer(sorry) := by
+theorem kummer_vandiver (p : ℕ+) (hp : p.Prime) :
+    ¬ ↑p ∣ (classNumber (maximalRealSubfield (CyclotomicField p ℚ))) := by
   sorry
-
-end Erdos463

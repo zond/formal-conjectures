@@ -32,7 +32,7 @@ where intervals are defined by a function specifying the consecutive boundaries.
 -/
 def AllModProdEqualsOne (p : ℕ) {k : ℕ} (boundaries : Fin (k + 1) → ℕ) : Prop :=
   ∀ i : Fin k,
-    (∏ n ∈ Finset.Ico (boundaries i) (boundaries (i + 1)), n) ≡ 1 [MOD p]
+    (∏ n ∈ Finset.Ico (boundaries i.castSucc) (boundaries (i.castSucc + 1)), n) ≡ 1 [MOD p]
 
 /--
 Let $k ≥ 2$. Does there exist a prime $p$ and consecutive intervals $I_0,\dots,I_k$
